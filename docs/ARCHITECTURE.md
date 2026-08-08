@@ -1,6 +1,6 @@
 # Architecture
 
-This document defines the initial architecture direction for the EnviSAGE web platform. It is intentionally conservative because Phase 0 establishes governance before implementation.
+This document defines the architecture direction for the EnviSAGE web platform. Phase 1 has established the static-site development foundation while keeping the final website design and feature implementation deferred to later phases.
 
 ## Goals
 
@@ -8,23 +8,23 @@ The platform should become a public-first research laboratory website and catalo
 
 The architecture should stay simple enough for faculty, researchers, students, and future maintainers to understand and extend through GitHub pull requests.
 
-## Initial Stack Direction
+## Phase 1 Stack
 
-The likely initial implementation stack is:
+The Phase 1 implementation stack is:
 
-- Astro for the static site framework
+- Astro 7 for the static site framework
 - TypeScript for typed application and data code
-- Tailwind CSS for styling
-- Markdown/MDX or structured content collections for repository-managed content
-- MapLibre GL JS for browser-based interactive maps
-- GitHub Pages for hosting
-- GitHub Actions for automated deployment
+- Tailwind CSS 4 for styling support
+- Markdown/MDX content collections with Astro schema validation
+- GitHub Actions for CI validation
+- npm for package management
+- Node.js 24 LTS
 
-These choices are not yet installed in Phase 0. They should be introduced in Phase 1 only after the project foundation is ready.
+MapLibre GL JS, spatial explorer functionality, GitHub Pages deployment automation, and final branding are deferred to later phases.
 
 ## Hosting Model
 
-The site should be statically generated and deployed from GitHub to GitHub Pages. This keeps hosting cost low, reduces operational burden, and matches the repository name `UPDGE-EnviSAGE.github.io`.
+The site is configured as a statically generated Astro project suitable for GitHub Pages. Deployment automation is intentionally deferred beyond Phase 1. This keeps hosting cost low, reduces operational burden, and matches the repository name `UPDGE-EnviSAGE.github.io`.
 
 The initial platform should not require a server, database, authentication provider, or cloud processing runtime.
 
@@ -42,6 +42,23 @@ Content should be stored in the repository as Markdown/MDX and structured data. 
 - Training resources
 
 Content should be reviewable through GitHub pull requests.
+
+## Repository Structure
+
+The Phase 1 repository structure includes:
+
+- `.github/workflows/ci.yml` for non-deploying CI
+- `astro.config.mjs` for static Astro configuration
+- `src/content.config.ts` for content collection schema validation
+- `src/content/` for repository-managed content collections
+- `src/layouts/` for reusable page layouts
+- `src/pages/` for Astro routes
+- `src/styles/` for global styles and Tailwind
+- `src/components/` for future reusable components
+- `src/utils/` for future shared utilities
+- `public/` for static assets
+
+The current homepage is a minimal development placeholder and is not the final EnviSAGE homepage.
 
 ## Data Architecture
 

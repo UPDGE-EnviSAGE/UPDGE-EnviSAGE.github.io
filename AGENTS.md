@@ -30,12 +30,15 @@ This repository supports Environmental Systems Applications of Geomatics Enginee
 ## Test and Build Expectations
 
 - Before completing implementation changes, run the relevant format, lint, type-check, build, and test commands available in the repository.
+- For this npm-based Astro foundation, use Node.js 24 LTS and npm.
+- Run `npm run format:check`, `npm run check`, `npm run lint`, and `npm run build` before committing implementation changes.
 - If a command cannot be run, document why in the final response.
 - Do not add test tooling before the project stack is established, but once established, keep verification lightweight and reliable.
 
 ## Content and Data Separation
 
 - Keep site content, metadata, and configuration in repository-managed Markdown/MDX or structured data files.
+- Maintain Astro content collection schema validation in `src/content.config.ts` for major content entities.
 - Keep large raster, scientific, raw, and derived research datasets outside this repository.
 - Commit only lightweight sample data, prepared web data, metadata, thumbnails, and small demonstration assets when appropriate.
 - Document external data sources, licenses, update procedures, and processing assumptions.
