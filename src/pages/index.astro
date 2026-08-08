@@ -1,39 +1,281 @@
 ---
-import BrandLockup from "@components/BrandLockup.astro";
+import ButtonLink from "@components/ButtonLink.astro";
+import FeatureCard from "@components/FeatureCard.astro";
+import FeaturedProjectCard from "@components/FeaturedProjectCard.astro";
+import ResearchThemeCard from "@components/ResearchThemeCard.astro";
+import Section from "@components/Section.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import SpatialExplorerTeaser from "@components/SpatialExplorerTeaser.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import {
+  featuredProjectSlots,
+  openResearchFeatures,
+  researchThemes,
+} from "../data/homepage";
 ---
 
 <BaseLayout
-  title="Website Foundation"
-  description="The EnviSAGE public website foundation is under development."
+  title="EnviSAGE | Environmental Systems Applications of Geomatics Engineering"
+  titleTemplate="plain"
+  description="EnviSAGE is the UP Department of Geodetic Engineering research laboratory applying Geomatics and geospatial technologies to environmental research."
 >
-  <section
-    class="geo-surface flex min-h-[70vh] items-center py-16"
-    aria-labelledby="page-title"
-  >
+  <section class="geo-surface" aria-labelledby="home-title">
     <div
-      class="mx-auto w-full max-w-[var(--content-width)] px-5 sm:px-6 lg:px-8"
+      class="mx-auto grid w-full max-w-[var(--content-width-wide)] gap-10 px-5 py-14 sm:px-6 md:py-18 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8 lg:py-24"
     >
       <div class="max-w-3xl">
         <p
-          class="mb-4 text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
+          class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
         >
-          Website under development
+          UP Department of Geodetic Engineering Research Laboratory
         </p>
-        <h1 id="page-title" class="sr-only">EnviSAGE website foundation</h1>
-        <BrandLockup variant="institutional" />
-        <p class="mt-8 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-          Using Geomatics and geospatial technologies to address environmental
-          issues.
-        </p>
+        <h1
+          id="home-title"
+          class="mt-5 text-5xl leading-none font-semibold text-text sm:text-6xl lg:text-7xl"
+        >
+          EnviSAGE
+        </h1>
         <p
-          class="mt-6 max-w-2xl rounded-card border border-border bg-surface/85 p-4 text-sm text-muted shadow-subtle"
+          class="mt-5 max-w-2xl text-2xl leading-tight font-semibold text-brand-blue-deep sm:text-3xl"
         >
-          Phase 2 establishes the visual identity and design-system foundation.
-          Phase 3A adds the global site shell. Detailed homepage sections are
-          deferred to Phase 3B.
+          Environmental Systems Applications of Geomatics Engineering
         </p>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
+          Advancing environmental research through Geomatics, Earth observation,
+          spatial analysis, and geospatial technologies.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <ButtonLink href="/research/">Explore our research</ButtonLink>
+          <ButtonLink href="/projects/" variant="secondary">
+            View projects
+          </ButtonLink>
+        </div>
+        <a
+          href="/people/"
+          class="mt-6 inline-flex text-sm font-semibold text-brand-blue no-underline hover:text-brand-blue-deep"
+        >
+          Meet the laboratory
+        </a>
       </div>
+
+      <figure
+        class="overflow-hidden rounded-card border border-border bg-surface shadow-subtle"
+      >
+        <div
+          class="raster-surface relative flex aspect-[4/3] min-h-[22rem] items-end p-5 sm:p-7"
+          role="img"
+          aria-label="Placeholder for future approved EnviSAGE environmental geospatial imagery"
+        >
+          <div
+            class="absolute inset-6 rounded-[50%] border border-brand-blue/25"
+            aria-hidden="true"
+          >
+          </div>
+          <div
+            class="absolute top-12 right-8 h-24 w-28 rounded-control border border-brand-blue/25 bg-white/35"
+            aria-hidden="true"
+          >
+          </div>
+          <div
+            class="absolute bottom-20 left-10 h-20 w-32 rounded-control border border-brand-green/30 bg-white/45"
+            aria-hidden="true"
+          >
+          </div>
+          <figcaption
+            class="relative max-w-sm rounded-control bg-white/90 px-4 py-3 text-sm leading-relaxed text-muted shadow-subtle"
+          >
+            Approved EnviSAGE environmental or geospatial imagery pending.
+          </figcaption>
+        </div>
+      </figure>
     </div>
   </section>
+
+  <Section size="wide" aria-labelledby="what-envisage-does">
+    <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <SectionHeading
+        id="what-envisage-does"
+        eyebrow="What EnviSAGE Does"
+        title="Environmental challenges are spatial."
+      />
+      <div class="max-w-3xl">
+        <p class="text-xl leading-relaxed text-text">
+          EnviSAGE is the research laboratory of the UP Department of Geodetic
+          Engineering focused on the use of Geomatics and geospatial
+          technologies in addressing environmental issues.
+        </p>
+        <p class="mt-5 text-base leading-relaxed text-muted">
+          The laboratory applies Geomatics Engineering, remote sensing, GIS and
+          spatial analytics, Earth observation, geospatial AI, modeling, and
+          environmental data science to understand environmental conditions and
+          support practical decisions.
+        </p>
+        <ButtonLink href="/about/" variant="ghost" class="mt-6 px-0">
+          About EnviSAGE
+        </ButtonLink>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    size="wide"
+    tone="muted"
+    class="border-y border-border"
+    aria-labelledby="research-themes"
+  >
+    <div
+      class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
+    >
+      <SectionHeading
+        id="research-themes"
+        eyebrow="Research Themes"
+        title="Geomatics for environmental systems"
+        text="The homepage introduces broad research directions. Formal research-area content will be published through the structured content system in a later phase."
+      />
+      <ButtonLink href="/research/" variant="secondary">
+        Explore all research
+      </ButtonLink>
+    </div>
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        researchThemes.map((theme) => (
+          <ResearchThemeCard
+            title={theme.title}
+            description={theme.description}
+            motif={theme.motif}
+          />
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section size="wide" aria-labelledby="featured-projects">
+    <div
+      class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
+    >
+      <SectionHeading
+        id="featured-projects"
+        eyebrow="Featured Research"
+        title="A project showcase ready for reviewed content"
+        text="The homepage includes the layout for future featured projects without inventing project names, metrics, or results."
+      />
+      <ButtonLink href="/projects/" variant="secondary">
+        View all projects
+      </ButtonLink>
+    </div>
+    <div class="mt-10 grid gap-5 md:grid-cols-3">
+      {
+        featuredProjectSlots.map((project) => (
+          <FeaturedProjectCard
+            title={project.title}
+            description={project.description}
+            researchArea={project.researchArea}
+            status={project.status}
+          />
+        ))
+      }
+    </div>
+  </Section>
+
+  <SpatialExplorerTeaser />
+
+  <Section size="wide" aria-labelledby="open-research">
+    <SectionHeading
+      id="open-research"
+      eyebrow="Open Research Outputs"
+      title="Reusable code, student outputs, tools, and data"
+      text="The platform will help preserve and share selected research code, student thesis outputs, notebooks, geospatial tools, and reproducible workflows after review."
+    />
+    <div class="mt-10 grid gap-5 md:grid-cols-3">
+      {
+        openResearchFeatures.map((feature) => (
+          <FeatureCard
+            title={feature.title}
+            description={feature.description}
+            href={feature.href}
+            linkText={feature.linkText}
+          />
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section
+    size="wide"
+    tone="surface"
+    class="border-y border-border"
+    aria-labelledby="research-output"
+  >
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div>
+        <p
+          class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
+        >
+          Publications
+        </p>
+        <h2
+          id="research-output"
+          class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
+        >
+          Research outputs
+        </h2>
+        <p class="mt-4 text-lg leading-relaxed text-muted">
+          Explore peer-reviewed publications and technical outputs produced by
+          EnviSAGE researchers and collaborators as the publication catalog is
+          developed.
+        </p>
+        <ButtonLink href="/publications/" variant="ghost" class="mt-6 px-0">
+          View publications
+        </ButtonLink>
+      </div>
+
+      <div>
+        <p
+          class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
+        >
+          People
+        </p>
+        <h2
+          class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
+        >
+          A research community
+        </h2>
+        <p class="mt-4 text-lg leading-relaxed text-muted">
+          EnviSAGE brings together faculty, researchers, graduate students, and
+          undergraduate researchers working across environmental and geospatial
+          questions.
+        </p>
+        <ButtonLink href="/people/" variant="ghost" class="mt-6 px-0">
+          Meet the team
+        </ButtonLink>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    size="wide"
+    class="contour-surface"
+    aria-labelledby="explore-envisage"
+  >
+    <div class="max-w-3xl">
+      <p
+        class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
+      >
+        Explore EnviSAGE
+      </p>
+      <h2
+        id="explore-envisage"
+        class="mt-3 text-4xl leading-tight font-semibold text-text sm:text-5xl"
+      >
+        Discover the laboratory’s research, projects, people, tools, and
+        environmental spatial data.
+      </h2>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <ButtonLink href="/research/">Explore research</ButtonLink>
+        <ButtonLink href="/projects/" variant="secondary">
+          View projects
+        </ButtonLink>
+      </div>
+    </div>
+  </Section>
 </BaseLayout>
