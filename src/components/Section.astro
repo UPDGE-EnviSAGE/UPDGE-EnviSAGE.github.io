@@ -5,12 +5,14 @@ interface Props {
   size?: "narrow" | "default" | "wide";
   tone?: "default" | "surface" | "muted" | "dark";
   class?: string;
+  "aria-labelledby"?: string;
 }
 
 const {
   size = "default",
   tone = "default",
   class: className = "",
+  ...attrs
 } = Astro.props;
 
 const toneClass = {
@@ -21,7 +23,10 @@ const toneClass = {
 }[tone];
 ---
 
-<section class:list={["py-14 sm:py-18 lg:py-24", toneClass, className]}>
+<section
+  {...attrs}
+  class:list={["py-14 sm:py-18 lg:py-24", toneClass, className]}
+>
   <Container size={size}>
     <slot />
   </Container>

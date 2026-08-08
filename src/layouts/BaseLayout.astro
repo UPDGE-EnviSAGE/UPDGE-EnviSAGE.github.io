@@ -6,14 +6,16 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  titleTemplate?: "default" | "plain";
 }
 
 const {
   title,
   description = "Environmental Systems Applications of Geomatics Engineering web platform foundation.",
+  titleTemplate = "default",
 } = Astro.props;
 
-const pageTitle = `${title} | EnviSAGE`;
+const pageTitle = titleTemplate === "plain" ? title : `${title} | EnviSAGE`;
 const pathname = Astro.url.pathname;
 ---
 

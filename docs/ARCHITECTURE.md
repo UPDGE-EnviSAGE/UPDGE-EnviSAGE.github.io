@@ -87,6 +87,12 @@ The Phase 1 repository structure includes:
 
 The current homepage is a minimal development placeholder using Phase 2 tokens and is not the final EnviSAGE homepage. The `/design-system` route is a development preview and is not emitted as production content by `npm run build`.
 
+## Homepage Architecture
+
+Phase 3B replaces the development homepage placeholder with the first production homepage. Reusable homepage presentation components live in `src/components/`, while temporary homepage section definitions live in `src/data/homepage.ts` so broad research themes, future project slots, and open research feature links can later be connected to validated content collections without rewriting the page structure.
+
+Homepage imagery remains static and image-ready. Where approved EnviSAGE research imagery is not yet available, the page uses labeled, non-data-bearing geospatial placeholders built from design-system motifs rather than fabricated maps or unsourced imagery.
+
 ## Global Site Shell
 
 Phase 3A adds the production global shell through `BaseLayout`, `SiteHeader`, and `SiteFooter`.

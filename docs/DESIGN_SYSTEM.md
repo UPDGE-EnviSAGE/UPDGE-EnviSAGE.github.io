@@ -95,6 +95,8 @@ Future imagery should prioritize authentic or scientifically meaningful EnviSAGE
 
 Phase 2 does not add copyrighted or unsourced external imagery. Use `ImageFrame` placeholders until approved imagery is available.
 
+The production homepage uses image-ready geospatial placeholder compositions where approved laboratory imagery is not yet available. Future maintainers may replace these placeholders with approved EnviSAGE imagery without changing section structure, provided the assets are optimized for the web, documented, licensed for public use, and do not fabricate maps, boundaries, or scientific results.
+
 ## Geospatial Visual Motifs
 
 Subtle motifs may reference coordinate grids, latitude/longitude lines, topographic or bathymetric contours, raster pixels, map geometry, spatial sampling patterns, spectral imagery, and environmental gradients.
@@ -102,6 +104,8 @@ Subtle motifs may reference coordinate grids, latitude/longitude lines, topograp
 Do not fabricate geographic boundaries or scientific data. Use motifs as low-intensity background and placeholder treatments, not as decorative clutter.
 
 Use coordinate-grid, contour, and raster motifs selectively. They are best suited for hero areas, section transitions, maps/data sections, and featured visual blocks. Avoid placing them behind long-form reading, dense publication lists, tables, forms, and other information-dense interfaces where they can reduce legibility.
+
+Homepage composition may combine these motifs with restrained borders, clear captions, and generous whitespace to create polished non-data-bearing placeholders. Such placeholders must be labeled clearly when they stand in for future approved imagery.
 
 ## Logo Usage Strategy
 
