@@ -34,7 +34,7 @@ The design system includes:
 - Radius, border, focus, and subtle shadow treatments
 - Typographic fallback brand lockups
 - Lightweight geospatial motif classes
-- A development-only `/design-system` preview route
+- A development-only `/design-system` preview route that is available in Astro dev and excluded from production static builds
 
 The historical EnviSAGE logo remains the temporary official logo, but no logo asset is fabricated in this repository. Approved future brand files should be placed in `public/brand/`.
 
@@ -75,7 +75,7 @@ The Phase 1 repository structure includes:
 - `public/` for static assets
 - `public/brand/` for approved EnviSAGE brand assets when provided
 
-The current homepage is a minimal development placeholder using Phase 2 tokens and is not the final EnviSAGE homepage. The `/design-system` route is a development preview and is not production content.
+The current homepage is a minimal development placeholder using Phase 2 tokens and is not the final EnviSAGE homepage. The `/design-system` route is a development preview and is not emitted as production content by `npm run build`.
 
 ## Data Architecture
 

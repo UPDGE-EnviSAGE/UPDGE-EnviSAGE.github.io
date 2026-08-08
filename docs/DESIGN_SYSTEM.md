@@ -101,11 +101,15 @@ Subtle motifs may reference coordinate grids, latitude/longitude lines, topograp
 
 Do not fabricate geographic boundaries or scientific data. Use motifs as low-intensity background and placeholder treatments, not as decorative clutter.
 
+Use coordinate-grid, contour, and raster motifs selectively. They are best suited for hero areas, section transitions, maps/data sections, and featured visual blocks. Avoid placing them behind long-form reading, dense publication lists, tables, forms, and other information-dense interfaces where they can reduce legibility.
+
 ## Logo Usage Strategy
 
-The historical EnviSAGE logo remains the temporary official logo. No logo file is currently committed, and Phase 2 does not create a replacement logo.
+The historical EnviSAGE logo remains the temporary official logo and is stored at `public/brand/envisage-logo-legacy.png`. It may be used until a future modernization process is completed.
 
-Approved assets should later live in `public/brand/`. Planned asset names are documented in `public/brand/README.md`.
+Do not redesign, redraw, trace, convert, recolor, crop, or otherwise modify the legacy logo. Future redesigned assets are deferred, and the design system must remain compatible with both the legacy logo and a future modernized identity.
+
+Approved assets should live in `public/brand/`. Planned asset names are documented in `public/brand/README.md`.
 
 Until approved assets are provided, use typographic fallback lockups:
 
@@ -137,7 +141,9 @@ Design primitives should work across small mobile, tablet, laptop, and wide desk
 
 `/design-system` is a development-only preview route. It is not linked from the public homepage and is not production content.
 
-Future production rendering should use reviewed content entries with `visibility: public`. If the design-system route should be excluded from production later, move it behind an environment-controlled route, remove it before release, or exclude it through Astro routing/build configuration as part of the release workflow.
+Run `npm run dev` and visit `/design-system` to access the preview locally. The route is implemented as a dynamic Astro route whose `getStaticPaths()` returns no paths for production builds, so `npm run build` does not emit a public `/design-system` page.
+
+Future production rendering should use reviewed content entries with `visibility: public`.
 
 ## Contributor Guidelines
 

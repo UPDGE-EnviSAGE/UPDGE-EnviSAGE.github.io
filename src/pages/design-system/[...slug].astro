@@ -12,6 +12,14 @@ import Section from "@components/Section.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
+export function getStaticPaths() {
+  if (import.meta.env.PROD) {
+    return [];
+  }
+
+  return [{ params: { slug: undefined } }];
+}
+
 const colors = [
   ["Brand blue", "#0b5fa5", "Geospatial, water, Earth observation"],
   ["Brand green", "#1f8a5b", "Ecosystems and environmental applications"],

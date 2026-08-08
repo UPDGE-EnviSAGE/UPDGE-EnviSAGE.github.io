@@ -27,6 +27,7 @@ This repository supports Environmental Systems Applications of Geomatics Enginee
 - Use semantic HTML, readable heading order, descriptive link text, keyboard-accessible controls, visible focus states, and sufficient color contrast.
 - Maps and dashboards must include non-map context where practical, including legends, metadata, and text alternatives or summaries for important spatial information.
 - Follow `docs/DESIGN_SYSTEM.md` for design tokens, typography, brand lockups, imagery rules, and geospatial motifs.
+- Use grid, contour, and raster motifs selectively for heroes, transitions, maps/data sections, and featured visuals; avoid them behind dense reading, tables, forms, and publication lists.
 
 ## Test and Build Expectations
 
