@@ -1,6 +1,6 @@
 # Architecture
 
-This document defines the architecture direction for the EnviSAGE web platform. Phase 1 has established the static-site development foundation while keeping the final website design and feature implementation deferred to later phases.
+This document defines the architecture direction for the EnviSAGE web platform. Phase 1 established the static-site development foundation, and Phase 2 established the visual identity and design-system foundation while keeping final public-page implementation deferred to later phases.
 
 ## Goals
 
@@ -8,7 +8,7 @@ The platform should become a public-first research laboratory website and catalo
 
 The architecture should stay simple enough for faculty, researchers, students, and future maintainers to understand and extend through GitHub pull requests.
 
-## Phase 1 Stack
+## Phase 1 And 2 Stack
 
 The Phase 1 implementation stack is:
 
@@ -21,6 +21,22 @@ The Phase 1 implementation stack is:
 - Node.js 24 LTS
 
 MapLibre GL JS, spatial explorer functionality, GitHub Pages deployment automation, and final branding are deferred to later phases.
+
+## Design System Architecture
+
+Phase 2 defines design tokens in `src/styles/global.css` using CSS custom properties and the Tailwind 4 CSS-first theme layer. Reusable Astro primitives live in `src/components/`.
+
+The design system includes:
+
+- Brand, neutral, and semantic color tokens
+- System typography stacks
+- Content width tokens
+- Radius, border, focus, and subtle shadow treatments
+- Typographic fallback brand lockups
+- Lightweight geospatial motif classes
+- A development-only `/design-system` preview route
+
+The historical EnviSAGE logo remains the temporary official logo, but no logo asset is fabricated in this repository. Approved future brand files should be placed in `public/brand/`.
 
 ## Hosting Model
 
@@ -57,8 +73,9 @@ The Phase 1 repository structure includes:
 - `src/components/` for future reusable components
 - `src/utils/` for future shared utilities
 - `public/` for static assets
+- `public/brand/` for approved EnviSAGE brand assets when provided
 
-The current homepage is a minimal development placeholder and is not the final EnviSAGE homepage.
+The current homepage is a minimal development placeholder using Phase 2 tokens and is not the final EnviSAGE homepage. The `/design-system` route is a development preview and is not production content.
 
 ## Data Architecture
 

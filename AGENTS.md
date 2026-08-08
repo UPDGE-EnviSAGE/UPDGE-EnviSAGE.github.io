@@ -26,6 +26,7 @@ This repository supports Environmental Systems Applications of Geomatics Enginee
 - All public pages must be usable on desktop, tablet, and mobile viewports.
 - Use semantic HTML, readable heading order, descriptive link text, keyboard-accessible controls, visible focus states, and sufficient color contrast.
 - Maps and dashboards must include non-map context where practical, including legends, metadata, and text alternatives or summaries for important spatial information.
+- Follow `docs/DESIGN_SYSTEM.md` for design tokens, typography, brand lockups, imagery rules, and geospatial motifs.
 
 ## Test and Build Expectations
 
@@ -40,6 +41,7 @@ This repository supports Environmental Systems Applications of Geomatics Enginee
 - Keep site content, metadata, and configuration in repository-managed Markdown/MDX or structured data files.
 - Maintain Astro content collection schema validation in `src/content.config.ts` for major content entities.
 - Keep large raster, scientific, raw, and derived research datasets outside this repository.
+- Do not add external imagery, UP marks, or EnviSAGE logo files unless approved assets and source/licensing context are provided.
 - Commit only lightweight sample data, prepared web data, metadata, thumbnails, and small demonstration assets when appropriate.
 - Document external data sources, licenses, update procedures, and processing assumptions.
 
