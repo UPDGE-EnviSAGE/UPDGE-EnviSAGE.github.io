@@ -52,6 +52,7 @@
 
   html {
     min-height: 100%;
+    overflow-x: clip;
   }
 
   body {
@@ -63,6 +64,7 @@
       "Source Sans 3", Aptos, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
     line-height: 1.6;
     text-rendering: optimizeLegibility;
+    overflow-x: clip;
   }
 
   :focus-visible {
@@ -77,6 +79,10 @@
 
   ::selection {
     background: color-mix(in srgb, var(--color-brand-green) 22%, transparent);
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
   }
 }
 

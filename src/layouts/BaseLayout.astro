@@ -1,4 +1,6 @@
 ---
+import SiteFooter from "@components/SiteFooter.astro";
+import SiteHeader from "@components/SiteHeader.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -12,6 +14,7 @@ const {
 } = Astro.props;
 
 const pageTitle = `${title} | EnviSAGE`;
+const pathname = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -22,15 +25,17 @@ const pageTitle = `${title} | EnviSAGE`;
     <meta name="description" content={description} />
     <title>{pageTitle}</title>
   </head>
-  <body class="geo-surface">
+  <body>
     <a
       href="#main-content"
       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-control focus:bg-surface focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-brand-blue-deep focus:shadow-subtle"
     >
       Skip to main content
     </a>
-    <main id="main-content">
+    <SiteHeader pathname={pathname} />
+    <main id="main-content" class="min-h-[60vh]">
       <slot />
     </main>
+    <SiteFooter />
   </body>
 </html>

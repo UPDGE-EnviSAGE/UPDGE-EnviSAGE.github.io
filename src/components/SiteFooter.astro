@@ -1,0 +1,56 @@
+---
+import { footerNavigation } from "@utils/navigation";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-border bg-text text-white">
+  <div
+    class="mx-auto grid w-full max-w-[var(--content-width-wide)] gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1.1fr_1.4fr] lg:px-8"
+  >
+    <div>
+      <p class="text-3xl leading-none font-semibold">EnviSAGE</p>
+      <p
+        class="mt-4 max-w-md text-base leading-tight font-semibold text-white/90"
+      >
+        Environmental Systems Applications of Geomatics Engineering
+      </p>
+      <p class="mt-5 text-sm leading-relaxed text-white/70">
+        Research Laboratory<br />
+        UP Department of Geodetic Engineering
+      </p>
+    </div>
+
+    <nav class="grid gap-8 sm:grid-cols-3" aria-label="Footer navigation">
+      {
+        footerNavigation.map((group) => (
+          <div>
+            <h2 class="text-sm font-semibold tracking-[0.16em] text-white/70 uppercase">
+              {group.label}
+            </h2>
+            <ul class="mt-4 space-y-2">
+              {group.items.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="text-sm text-white/82 no-underline hover:text-white"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </nav>
+  </div>
+  <div class="border-t border-white/10">
+    <div
+      class="mx-auto flex w-full max-w-[var(--content-width-wide)] flex-col gap-2 px-5 py-5 text-xs text-white/60 sm:px-6 lg:px-8"
+    >
+      <p>© {year} EnviSAGE Research Laboratory.</p>
+      <p>Public website foundation under active development.</p>
+    </div>
+  </div>
+</footer>
