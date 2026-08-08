@@ -56,6 +56,8 @@ Build the initial public-facing website structure.
 
 Status: Begun with Phase 3A global site shell. Phase 3A adds the production header, navigation, mobile menu, footer, shell layout, active states, and minimal placeholder routes. Final homepage and substantive section content remain deferred.
 
+Phase 3A.1 adds automatic GitHub Pages deployment for the organization Pages site at `https://updge-envisage.github.io/`. Deployment runs on pushes to `main` through the official GitHub Pages artifact workflow. The repository Pages source must be set to GitHub Actions.
+
 Likely remaining deliverables:
 
 - Homepage
