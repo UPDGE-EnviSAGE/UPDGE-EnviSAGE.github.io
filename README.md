@@ -37,17 +37,74 @@ EnviSAGE v1.0 is expected to include:
 - Automated deployment from GitHub
 - Documentation for future maintainers
 
-## Initial Technical Direction
+## Phase 1 Foundation
 
-The likely initial stack is:
+Phase 1 establishes the development foundation only. It is not the final visual implementation of the EnviSAGE website and does not include final branding, full navigation, research pages, catalogs, or the spatial dashboard.
+
+## Prerequisites
+
+- Node.js 24 LTS, declared in `.nvmrc`
+- npm 11 or newer
+
+Use npm for package management and commit `package-lock.json` with dependency changes.
+
+## Development
+
+Install dependencies:
+
+```sh
+npm ci
+```
+
+Start the local development server:
+
+```sh
+npm run dev
+```
+
+Preview a production build locally:
+
+```sh
+npm run preview
+```
+
+## Validation
+
+Run the core validation commands before committing implementation changes:
+
+```sh
+npm run format:check
+npm run check
+npm run lint
+npm run build
+```
+
+Use `npm run format` to apply Prettier formatting.
+
+## Project Structure
+
+- `.github/workflows/ci.yml` - CI workflow for pull requests and pushes to `main`
+- `astro.config.mjs` - Astro static-site configuration
+- `src/content.config.ts` - Astro content collection schemas and validation
+- `src/content/` - repository-managed structured content collections
+- `src/layouts/` - reusable page layouts
+- `src/pages/` - Astro routes
+- `src/styles/` - global styles and Tailwind entry point
+- `src/components/` - future reusable components
+- `src/utils/` - future shared utilities
+- `public/` - static public assets
+
+## Stack
+
+The Phase 1 stack is:
 
 - Astro
 - TypeScript
 - Tailwind CSS
-- Markdown/MDX or structured content
-- MapLibre GL JS
-- GitHub Pages
-- GitHub Actions
+- Markdown/MDX content collections with schema validation
+- GitHub Actions CI
+
+MapLibre GL JS, spatial explorer functionality, and GitHub Pages deployment automation are planned for later phases.
 
 Future technologies such as Cloud Optimized GeoTIFF, PMTiles, GeoParquet, PostGIS, APIs, object storage, Google Earth Engine, authentication, large-scale data infrastructure, and internal collaboration features are deferred until later phases unless explicitly approved.
 
