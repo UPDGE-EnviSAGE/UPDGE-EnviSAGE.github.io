@@ -40,7 +40,17 @@ The historical EnviSAGE logo remains the temporary official logo, but no logo as
 
 ## Hosting Model
 
-The site is configured as a statically generated Astro project suitable for GitHub Pages. Deployment automation is intentionally deferred beyond Phase 1. This keeps hosting cost low, reduces operational burden, and matches the repository name `UPDGE-EnviSAGE.github.io`.
+The site is configured as a statically generated Astro project deployed to the organization GitHub Pages URL:
+
+https://updge-envisage.github.io/
+
+This repository is `UPDGE-EnviSAGE/UPDGE-EnviSAGE.github.io`, so the site is hosted at the domain root. Astro uses `site: "https://updge-envisage.github.io"` and does not set a repository `base` path.
+
+Deployment automation runs through `.github/workflows/deploy-pages.yml` on pushes to `main`. The workflow builds the site, uploads `dist/` as a GitHub Pages artifact, and deploys it through the official GitHub Pages deployment action.
+
+The repository setting must be configured manually in GitHub: Settings → Pages → Build and deployment → Source: GitHub Actions.
+
+This keeps hosting cost low, reduces operational burden, and matches the repository name `UPDGE-EnviSAGE.github.io`.
 
 The initial platform should not require a server, database, authentication provider, or cloud processing runtime.
 

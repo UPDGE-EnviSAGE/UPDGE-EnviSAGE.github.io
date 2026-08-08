@@ -87,9 +87,26 @@ npm run build
 
 Use `npm run format` to apply Prettier formatting.
 
+## Deployment
+
+The production site is deployed automatically to GitHub Pages at:
+
+https://updge-envisage.github.io/
+
+This repository is the organization Pages repository `UPDGE-EnviSAGE/UPDGE-EnviSAGE.github.io`, so the site publishes at the domain root. Astro is configured with `site: "https://updge-envisage.github.io"` and does not use a repository subpath such as `/UPDGE-EnviSAGE.github.io/`.
+
+Deployment runs from `.github/workflows/deploy-pages.yml` on pushes to `main` and can also be started manually with `workflow_dispatch`.
+
+The repository must be configured in GitHub:
+
+Settings → Pages → Build and deployment → Source: GitHub Actions
+
+Do not commit `dist/`; GitHub Actions builds and uploads the static site artifact.
+
 ## Project Structure
 
 - `.github/workflows/ci.yml` - CI workflow for pull requests and pushes to `main`
+- `.github/workflows/deploy-pages.yml` - GitHub Pages deployment workflow for pushes to `main`
 - `astro.config.mjs` - Astro static-site configuration
 - `src/content.config.ts` - Astro content collection schemas and validation
 - `src/content/` - repository-managed structured content collections
