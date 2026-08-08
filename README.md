@@ -41,6 +41,12 @@ EnviSAGE v1.0 is expected to include:
 
 Phase 1 establishes the development foundation only. It is not the final visual implementation of the EnviSAGE website and does not include final branding, full navigation, research pages, catalogs, or the spatial dashboard.
 
+## Phase 2 Design System
+
+Phase 2 establishes the EnviSAGE visual identity and design-system foundation. It introduces design tokens, reusable visual primitives, brand asset expectations, and a development-only design-system preview route at `/design-system`.
+
+The Phase 2 work does not redesign the historical EnviSAGE logo, build the final homepage, create full navigation, or add production research content.
+
 ## Prerequisites
 
 - Node.js 24 LTS, declared in `.nvmrc`
@@ -113,6 +119,7 @@ Future technologies such as Cloud Optimized GeoTIFF, PMTiles, GeoParquet, PostGI
 - [Architecture](docs/ARCHITECTURE.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Content model](docs/CONTENT_MODEL.md)
+- [Design system](docs/DESIGN_SYSTEM.md)
 - [Contributing guide](docs/CONTRIBUTING.md)
 - [Agent instructions](AGENTS.md)
 

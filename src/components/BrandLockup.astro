@@ -1,0 +1,40 @@
+---
+interface Props {
+  variant?: "compact" | "standard" | "institutional";
+  eyebrow?: string;
+  class?: string;
+}
+
+const { variant = "standard", eyebrow, class: className = "" } = Astro.props;
+---
+
+<div class:list={["max-w-3xl", className]}>
+  {
+    eyebrow && (
+      <p class="mb-3 text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase">
+        {eyebrow}
+      </p>
+    )
+  }
+  <p
+    class="text-4xl leading-none font-semibold tracking-normal text-brand-blue-deep sm:text-5xl"
+  >
+    EnviSAGE
+  </p>
+  {
+    variant !== "compact" && (
+      <p class="mt-4 max-w-2xl text-xl leading-tight font-semibold text-text sm:text-2xl">
+        Environmental Systems Applications of Geomatics Engineering
+      </p>
+    )
+  }
+  {
+    variant === "institutional" && (
+      <p class="mt-4 text-base leading-relaxed text-muted sm:text-lg">
+        Research Laboratory
+        <br />
+        UP Department of Geodetic Engineering
+      </p>
+    )
+  }
+</div>

@@ -1,0 +1,184 @@
+---
+import Badge from "@components/Badge.astro";
+import BrandLockup from "@components/BrandLockup.astro";
+import ButtonLink from "@components/ButtonLink.astro";
+import Card from "@components/Card.astro";
+import Container from "@components/Container.astro";
+import Divider from "@components/Divider.astro";
+import ImageFrame from "@components/ImageFrame.astro";
+import Metric from "@components/Metric.astro";
+import ResearchTag from "@components/ResearchTag.astro";
+import Section from "@components/Section.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+export function getStaticPaths() {
+  if (import.meta.env.PROD) {
+    return [];
+  }
+
+  return [{ params: { slug: undefined } }];
+}
+
+const colors = [
+  ["Brand blue", "#0b5fa5", "Geospatial, water, Earth observation"],
+  ["Brand green", "#1f8a5b", "Ecosystems and environmental applications"],
+  ["Coastal", "#0e7c86", "Restrained supporting data tone"],
+  ["Bathymetry", "#2b6cb0", "Map and depth-adjacent support"],
+  ["Land", "#7a8f52", "Terrestrial/environmental support"],
+  ["Background", "#f7f9f8", "Light scientific interface"],
+  ["Surface", "#ffffff", "Cards and contained surfaces"],
+  ["Text", "#13201f", "Primary readable text"],
+  ["Muted", "#5d6b69", "Secondary text"],
+  ["Border", "#d7e2df", "Subtle structure"],
+];
+---
+
+<BaseLayout
+  title="Design System Preview"
+  description="Development-only EnviSAGE visual identity and design-system preview."
+>
+  <Section size="wide" class="pt-12">
+    <div
+      class="rounded-card border border-border bg-surface/90 p-5 shadow-subtle sm:p-8"
+    >
+      <Badge tone="green">Development preview</Badge>
+      <div class="mt-6 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+        <div>
+          <BrandLockup variant="institutional" />
+          <p class="mt-6 max-w-2xl text-lg text-muted">
+            This route demonstrates Phase 2 design tokens and visual primitives.
+            It is not production content and should remain unlinked from the
+            public homepage.
+          </p>
+        </div>
+        <ImageFrame
+          motif="grid"
+          label="Future approved EnviSAGE environmental/geospatial imagery"
+        />
+      </div>
+    </div>
+  </Section>
+
+  <Section size="wide">
+    <SectionHeading
+      eyebrow="Color"
+      title="Blue and green continuity, modernized for a light research interface"
+      text="Tokens keep brand, semantic, and supporting colors centralized instead of scattering one-off values through components."
+    />
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      {
+        colors.map(([name, value, description]) => (
+          <Card>
+            <div
+              class="h-16 rounded-control border border-border"
+              style={`background: ${value}`}
+              aria-label={`${name} color swatch ${value}`}
+            />
+            <h3 class="mt-4 text-base font-semibold text-text">{name}</h3>
+            <p class="font-mono text-sm text-muted">{value}</p>
+            <p class="mt-2 text-sm text-muted">{description}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section size="wide" tone="surface">
+    <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+      <SectionHeading
+        eyebrow="Typography"
+        title="Scientific, readable, interface-first type"
+        text="The system uses privacy-conscious system font stacks with clear hierarchy and strong numerals."
+      />
+      <div class="space-y-6">
+        <div>
+          <p
+            class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
+          >
+            Heading sample
+          </p>
+          <h2 class="mt-2 text-4xl leading-tight font-semibold text-text">
+            Earth observation for environmental systems
+          </h2>
+        </div>
+        <p class="text-lg text-muted">
+          Geomatics research content needs dense information to stay legible
+          across reports, maps, project summaries, and dashboards.
+        </p>
+        <p class="font-mono text-sm text-brand-blue-deep">
+          Grid reference · 10 m pixel · YYYY
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section size="wide">
+    <SectionHeading
+      eyebrow="Components"
+      title="Reusable primitives for future pages"
+      text="These primitives are intentionally small and content-agnostic."
+    />
+    <div class="mt-8 grid gap-6 lg:grid-cols-3">
+      <Card>
+        <Badge tone="blue">Research area</Badge>
+        <h3 class="mt-5 text-xl font-semibold text-text">
+          Coastal remote sensing
+        </h3>
+        <p class="mt-3 text-muted">
+          Example card structure for future catalogs without introducing real
+          project content.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <ResearchTag>Earth observation</ResearchTag>
+          <ResearchTag tone="green">Ecosystems</ResearchTag>
+        </div>
+      </Card>
+      <Card>
+        <h3 class="text-xl font-semibold text-text">Actions and links</h3>
+        <p class="mt-3 text-muted">
+          Buttons are reserved for clear commands and prominent links.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <ButtonLink href="#main-content">Primary link</ButtonLink>
+          <ButtonLink href="#main-content" variant="secondary">
+            Secondary link
+          </ButtonLink>
+          <ButtonLink href="#main-content" variant="ghost">
+            Ghost link
+          </ButtonLink>
+        </div>
+      </Card>
+      <div class="grid gap-4">
+        <Metric
+          value="08"
+          label="Content collections"
+          detail="Validated in Astro"
+        />
+        <Metric value="24" label="Node LTS major" detail="Current LTS policy" />
+      </div>
+    </div>
+  </Section>
+
+  <Section size="wide" tone="muted">
+    <SectionHeading
+      eyebrow="Geospatial motifs"
+      title="Subtle spatial cues without fake data"
+      text="Patterns suggest grids, contours, raster pixels, and map surfaces while avoiding fabricated boundaries or decorative clutter."
+    />
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      <ImageFrame motif="grid" label="Coordinate-grid motif placeholder" />
+      <ImageFrame motif="contour" label="Contour motif placeholder" />
+      <ImageFrame motif="raster" label="Raster-pixel motif placeholder" />
+    </div>
+  </Section>
+
+  <Container size="wide" class="py-12">
+    <Divider />
+    <p class="mt-6 text-sm text-muted">
+      Future production pages should use approved EnviSAGE imagery, verified
+      content, and entries with <code>visibility: public</code>. This preview is
+      a development route for maintainers.
+    </p>
+  </Container>
+</BaseLayout>

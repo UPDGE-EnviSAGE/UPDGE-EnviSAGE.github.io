@@ -36,15 +36,19 @@ Deliverables:
 
 Define the EnviSAGE visual identity for web use.
 
-Likely deliverables:
+Status: Implemented as the Phase 2 design-system foundation. The foundation intentionally does not include final homepage design, full navigation, production content pages, catalog interfaces, spatial dashboards, deployment automation, or logo redesign.
+
+Deliverables:
 
 - Color palette
 - Typography scale
 - Layout grid
-- Navigation patterns
 - UI components
 - Accessibility rules
 - Image and map styling direction
+- Brand lockup strategy
+- Brand asset location and documentation
+- Development-only design-system preview route
 
 ## Phase 3 - Core Public Website
 
