@@ -1,0 +1,230 @@
+---
+import BrandLockup from "./BrandLockup.astro";
+import { isActiveNavItem, mainNavigation } from "@utils/navigation";
+
+interface Props {
+  pathname: string;
+}
+
+const { pathname } = Astro.props;
+
+const linkClass = (active: boolean) => [
+  "rounded-control px-3 py-2 text-sm font-semibold no-underline transition-colors motion-reduce:transition-none",
+  active
+    ? "bg-brand-blue/10 text-brand-blue-deep"
+    : "text-muted hover:bg-surface-muted hover:text-text",
+];
+---
+
+<header class="border-b border-border bg-surface/95" data-site-header>
+  <div
+    class="mx-auto flex min-h-20 w-full max-w-[var(--content-width-wide)] items-center justify-between gap-4 px-5 sm:px-6 lg:px-8"
+  >
+    <a
+      href="/"
+      class="flex min-w-0 items-center gap-3 text-text no-underline"
+      aria-label="EnviSAGE homepage"
+    >
+      <img
+        src="/brand/envisage-logo-legacy.png"
+        alt="EnviSAGE"
+        class="hidden h-auto w-56 shrink-0 lg:block xl:w-64"
+        decoding="async"
+      />
+      <div class="block min-w-0 lg:hidden">
+        <BrandLockup variant="compact" />
+        <p class="mt-1 text-xs leading-tight font-semibold text-muted">
+          UP Department of Geodetic Engineering
+        </p>
+      </div>
+    </a>
+
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
+      {
+        mainNavigation.map((item) => {
+          const active = isActiveNavItem(pathname, item);
+
+          if (item.children) {
+            return (
+              <details class="group relative" data-resources-menu>
+                <summary
+                  class:list={[
+                    ...linkClass(active),
+                    "flex cursor-pointer list-none items-center gap-1",
+                  ]}
+                  aria-current={active ? "page" : undefined}
+                >
+                  {item.label}
+                  <span aria-hidden="true" class="text-xs">
+                    ▾
+                  </span>
+                </summary>
+                <div class="absolute right-0 z-40 mt-3 w-72 rounded-card border border-border bg-surface p-2 shadow-subtle">
+                  {item.children.map((child) => {
+                    const childActive = isActiveNavItem(pathname, child);
+
+                    return (
+                      <a
+                        href={child.href}
+                        class:list={[
+                          "block rounded-control px-3 py-2 text-sm no-underline transition-colors motion-reduce:transition-none",
+                          childActive
+                            ? "bg-brand-green/10 text-brand-green-deep"
+                            : "text-muted hover:bg-surface-muted hover:text-text",
+                        ]}
+                        aria-current={childActive ? "page" : undefined}
+                      >
+                        <span class="block font-semibold">{child.label}</span>
+                        {child.description && (
+                          <span class="mt-0.5 block text-xs leading-snug text-muted">
+                            {child.description}
+                          </span>
+                        )}
+                      </a>
+                    );
+                  })}
+                </div>
+              </details>
+            );
+          }
+
+          return (
+            <a
+              href={item.href}
+              class:list={linkClass(active)}
+              aria-current={active ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          );
+        })
+      }
+    </nav>
+
+    <button
+      type="button"
+      class="inline-flex min-h-11 items-center justify-center rounded-control border border-border bg-surface px-3 py-2 text-sm font-semibold text-text shadow-subtle lg:hidden"
+      aria-controls="mobile-navigation"
+      aria-expanded="false"
+      data-mobile-menu-button
+    >
+      Menu
+    </button>
+  </div>
+
+  <div
+    id="mobile-navigation"
+    class="hidden border-t border-border bg-surface lg:hidden"
+  >
+    <nav
+      class="mx-auto grid w-full max-w-[var(--content-width-wide)] gap-2 px-5 py-4 sm:px-6"
+      aria-label="Mobile primary"
+    >
+      {
+        mainNavigation.map((item) => {
+          const active = isActiveNavItem(pathname, item);
+
+          if (item.children) {
+            return (
+              <div class="rounded-card border border-border p-2">
+                <p
+                  class:list={[
+                    "px-2 py-1 text-xs font-semibold tracking-[0.16em] uppercase",
+                    active ? "text-brand-green-deep" : "text-muted",
+                  ]}
+                >
+                  {item.label}
+                </p>
+                <div class="mt-1 grid gap-1">
+                  {item.children.map((child) => {
+                    const childActive = isActiveNavItem(pathname, child);
+
+                    return (
+                      <a
+                        href={child.href}
+                        class:list={[
+                          "rounded-control px-3 py-2 text-sm font-semibold no-underline",
+                          childActive
+                            ? "bg-brand-green/10 text-brand-green-deep"
+                            : "text-muted hover:bg-surface-muted hover:text-text",
+                        ]}
+                        aria-current={childActive ? "page" : undefined}
+                        data-mobile-menu-link
+                      >
+                        {child.label}
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <a
+              href={item.href}
+              class:list={[
+                "rounded-control px-3 py-2 text-base font-semibold no-underline",
+                active
+                  ? "bg-brand-blue/10 text-brand-blue-deep"
+                  : "text-muted hover:bg-surface-muted hover:text-text",
+              ]}
+              aria-current={active ? "page" : undefined}
+              data-mobile-menu-link
+            >
+              {item.label}
+            </a>
+          );
+        })
+      }
+    </nav>
+  </div>
+</header>
+
+<script>
+  const button = document.querySelector("[data-mobile-menu-button]");
+  const menu = document.querySelector("#mobile-navigation");
+  const links = document.querySelectorAll("[data-mobile-menu-link]");
+  const resourcesMenu = document.querySelector("[data-resources-menu]");
+
+  function setMenuOpen(open: boolean) {
+    if (
+      !(button instanceof HTMLButtonElement) ||
+      !(menu instanceof HTMLElement)
+    ) {
+      return;
+    }
+
+    button.setAttribute("aria-expanded", String(open));
+    menu.classList.toggle("hidden", !open);
+  }
+
+  button?.addEventListener("click", () => {
+    const expanded = button.getAttribute("aria-expanded") === "true";
+    setMenuOpen(!expanded);
+  });
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => setMenuOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setMenuOpen(false);
+
+      if (resourcesMenu instanceof HTMLDetailsElement) {
+        resourcesMenu.open = false;
+      }
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (
+      resourcesMenu instanceof HTMLDetailsElement &&
+      event.target instanceof Node &&
+      !resourcesMenu.contains(event.target)
+    ) {
+      resourcesMenu.open = false;
+    }
+  });
+</script>

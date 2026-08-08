@@ -117,6 +117,25 @@ Until approved assets are provided, use typographic fallback lockups:
 2. Standard: `EnviSAGE` plus full laboratory name
 3. Institutional: standard lockup plus `Research Laboratory` and `UP Department of Geodetic Engineering`
 
+## Header And Navigation
+
+The production shell uses a restrained header with a subtle border, the EnviSAGE brand treatment, primary navigation, active states, and a Resources menu. Desktop layouts may use the legacy PNG when it remains legible. Narrower layouts should fall back to a text-based `EnviSAGE` lockup rather than forcing the wide logo into an unreadable space.
+
+Top-level navigation is:
+
+- Research
+- Projects
+- People
+- Publications
+- Resources
+- About
+
+Resources contains Student Research, Research Tools, Data, Spatial Explorer, and Training. Keep navigation data centralized in `src/utils/navigation.ts` so header, footer, active states, and future routes do not drift.
+
+## Footer
+
+The footer should remain restrained and institutional. It may include the EnviSAGE name, full laboratory name, UP Department of Geodetic Engineering affiliation, useful navigation groups, and a simple current-year copyright line. Do not invent addresses, phone numbers, social accounts, email addresses, partner logos, or unsupported legal claims.
+
 ## UP DGE Affiliation Hierarchy
 
 The hierarchy is:

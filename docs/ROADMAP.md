@@ -54,7 +54,9 @@ Deliverables:
 
 Build the initial public-facing website structure.
 
-Likely deliverables:
+Status: Begun with Phase 3A global site shell. Phase 3A adds the production header, navigation, mobile menu, footer, shell layout, active states, and minimal placeholder routes. Final homepage and substantive section content remain deferred.
+
+Likely remaining deliverables:
 
 - Homepage
 - About page

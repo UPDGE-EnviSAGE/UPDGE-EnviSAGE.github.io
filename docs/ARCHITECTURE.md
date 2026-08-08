@@ -77,6 +77,23 @@ The Phase 1 repository structure includes:
 
 The current homepage is a minimal development placeholder using Phase 2 tokens and is not the final EnviSAGE homepage. The `/design-system` route is a development preview and is not emitted as production content by `npm run build`.
 
+## Global Site Shell
+
+Phase 3A adds the production global shell through `BaseLayout`, `SiteHeader`, and `SiteFooter`.
+
+The shell provides:
+
+- Skip-to-content link
+- Responsive header
+- Legacy-logo-aware brand treatment
+- Desktop navigation with a keyboard-accessible Resources disclosure
+- Mobile menu with `aria-expanded` state
+- Centralized navigation configuration in `src/utils/navigation.ts`
+- Active/current-page navigation logic
+- Restrained institutional footer
+
+Phase 3A placeholder routes exist only to support navigation and shell testing. They should be replaced by substantive pages in later roadmap phases.
+
 ## Data Architecture
 
 The website should initially visualize selected prepared datasets rather than act as a large repository. Large raster and scientific datasets must remain outside the repository.

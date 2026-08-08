@@ -1,0 +1,38 @@
+---
+import BrandLockup from "./BrandLockup.astro";
+import Container from "./Container.astro";
+
+interface Props {
+  title: string;
+  status: string;
+}
+
+const { title, status } = Astro.props;
+---
+
+<section
+  class="bg-background py-16 sm:py-20 lg:py-24"
+  aria-labelledby="page-title"
+>
+  <Container>
+    <div class="max-w-3xl">
+      <p
+        class="mb-4 text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
+      >
+        Future section
+      </p>
+      <h1
+        id="page-title"
+        class="text-4xl leading-tight font-semibold text-text sm:text-5xl"
+      >
+        {title}
+      </h1>
+      <p class="mt-6 text-lg leading-relaxed text-muted">{status}</p>
+    </div>
+    <div
+      class="mt-12 rounded-card border border-border bg-surface p-5 shadow-subtle"
+    >
+      <BrandLockup variant="standard" />
+    </div>
+  </Container>
+</section>
