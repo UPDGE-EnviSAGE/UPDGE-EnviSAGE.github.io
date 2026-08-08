@@ -116,6 +116,7 @@ Do not commit `dist/`; GitHub Actions builds and uploads the static site artifac
 - `src/components/` - future reusable components
 - `src/utils/` - future shared utilities
 - `public/` - static public assets
+- `public/images/research/` - future optimized, public-approved research visual derivatives
 
 ## Stack
 
@@ -137,6 +138,7 @@ Future technologies such as Cloud Optimized GeoTIFF, PMTiles, GeoParquet, PostGI
 - [Roadmap](docs/ROADMAP.md)
 - [Content model](docs/CONTENT_MODEL.md)
 - [Design system](docs/DESIGN_SYSTEM.md)
+- [Research visual identity](docs/RESEARCH_VISUAL_IDENTITY.md)
 - [Contributing guide](docs/CONTRIBUTING.md)
 - [Agent instructions](AGENTS.md)
 

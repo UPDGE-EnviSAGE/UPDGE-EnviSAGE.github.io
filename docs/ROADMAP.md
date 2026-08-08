@@ -72,6 +72,8 @@ Likely remaining deliverables:
 
 Publish structured information about the laboratory community and research themes.
 
+Phase 4A establishes the research visual identity framework before full People and Research Areas pages. It adds a typed zero-entry visual registry, reusable research visual and motif components, public-approved-only usage rules, documented asset directories, and an approval workflow for future authentic EnviSAGE imagery.
+
 Likely deliverables:
 
 - People directory

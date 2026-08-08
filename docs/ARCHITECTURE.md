@@ -84,14 +84,17 @@ The Phase 1 repository structure includes:
 - `src/utils/` for future shared utilities
 - `public/` for static assets
 - `public/brand/` for approved EnviSAGE brand assets when provided
+- `public/images/research/` for future optimized, public-approved research visual derivatives
 
-The current homepage is a minimal development placeholder using Phase 2 tokens and is not the final EnviSAGE homepage. The `/design-system` route is a development preview and is not emitted as production content by `npm run build`.
+The `/design-system` route is a development preview and is not emitted as production content by `npm run build`.
 
 ## Homepage Architecture
 
 Phase 3B replaces the development homepage placeholder with the first production homepage. Reusable homepage presentation components live in `src/components/`, while temporary homepage section definitions live in `src/data/homepage.ts` so broad research themes, future project slots, and open research feature links can later be connected to validated content collections without rewriting the page structure.
 
-Homepage imagery remains static and image-ready. Where approved EnviSAGE research imagery is not yet available, the page uses labeled, non-data-bearing geospatial placeholders built from design-system motifs rather than fabricated maps or unsourced imagery.
+Homepage imagery remains static and image-ready. Where approved EnviSAGE research imagery is not yet available, the page uses non-data-bearing geospatial motifs rather than fabricated maps or unsourced imagery.
+
+Phase 4A adds the research visual identity framework through `src/data/research-visuals.ts`, `ResearchVisual`, and `ResearchVisualPlaceholder`. The registry supports zero entries, filters production use to `public-approved` visuals, and keeps decorative motifs separate from authentic research imagery with provenance.
 
 ## Global Site Shell
 

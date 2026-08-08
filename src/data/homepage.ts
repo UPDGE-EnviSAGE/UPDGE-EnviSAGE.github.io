@@ -37,27 +37,21 @@ export const researchThemes = [
   },
 ] as const;
 
-export const featuredProjectSlots = [
+export const researchHighlights = [
   {
-    title: "Featured project slot",
+    title: "Environmental observation",
     description:
-      "Reserved for a reviewed EnviSAGE project summary once the project catalog is populated.",
-    researchArea: "To be assigned from structured content",
-    status: "Awaiting approved project content",
+      "Linking field, satellite, and spatial datasets to characterize environmental conditions and change.",
   },
   {
-    title: "Featured project slot",
+    title: "Spatial analysis for decisions",
     description:
-      "Designed for concise project context, research area metadata, status, and an optional approved image.",
-    researchArea: "To be assigned from structured content",
-    status: "Future content integration",
+      "Preparing geospatial evidence that can support research, planning, monitoring, and environmental management.",
   },
   {
-    title: "Featured project slot",
+    title: "Reusable research workflows",
     description:
-      "Ready to connect to validated project entries without changing the homepage layout.",
-    researchArea: "To be assigned from structured content",
-    status: "Catalog phase pending",
+      "Building reproducible methods, code, and data products that selected projects can share after review.",
   },
 ] as const;
 
@@ -65,21 +59,21 @@ export const openResearchFeatures = [
   {
     title: "Student Research",
     description:
-      "A future catalog for selected thesis outputs, reviewed repositories, notebooks, maps, and reproducible workflows.",
+      "Selected thesis outputs, reviewed repositories, notebooks, maps, and reproducible workflows.",
     href: "/student-research/",
     linkText: "Open student research",
   },
   {
     title: "Research Tools",
     description:
-      "A future index of reusable research code, GitHub repositories, browser-accessible tools, and documentation.",
+      "Reusable research code, GitHub repositories, browser-accessible tools, and documentation.",
     href: "/tools/",
     linkText: "Browse research tools",
   },
   {
     title: "Data",
     description:
-      "A future entry point for selected dataset metadata, spatial products, access notes, licenses, and citations.",
+      "Selected dataset metadata, spatial products, access notes, licenses, and citations.",
     href: "/data/",
     linkText: "View data portal",
   },

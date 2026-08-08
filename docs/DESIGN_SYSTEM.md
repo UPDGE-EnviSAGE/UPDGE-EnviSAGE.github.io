@@ -93,9 +93,11 @@ Future imagery should prioritize authentic or scientifically meaningful EnviSAGE
 - Remote sensing outputs
 - Drone imagery and geospatial fieldwork
 
-Phase 2 does not add copyrighted or unsourced external imagery. Use `ImageFrame` placeholders until approved imagery is available.
+Phase 2 does not add copyrighted or unsourced external imagery. Use abstract geospatial motifs through `ResearchVisualPlaceholder` until approved imagery is available.
 
-The production homepage uses image-ready geospatial placeholder compositions where approved laboratory imagery is not yet available. Future maintainers may replace these placeholders with approved EnviSAGE imagery without changing section structure, provided the assets are optimized for the web, documented, licensed for public use, and do not fabricate maps, boundaries, or scientific results.
+The production homepage uses image-ready geospatial motif compositions where approved laboratory imagery is not yet available. Future maintainers may replace these motifs with approved EnviSAGE imagery without changing section structure, provided the assets are optimized for the web, documented, licensed for public use, and do not fabricate maps, boundaries, or scientific results.
+
+Research visual provenance, approval workflow, naming, optimization, and metadata rules are defined in `docs/RESEARCH_VISUAL_IDENTITY.md`.
 
 ## Geospatial Visual Motifs
 
@@ -105,7 +107,7 @@ Do not fabricate geographic boundaries or scientific data. Use motifs as low-int
 
 Use coordinate-grid, contour, and raster motifs selectively. They are best suited for hero areas, section transitions, maps/data sections, and featured visual blocks. Avoid placing them behind long-form reading, dense publication lists, tables, forms, and other information-dense interfaces where they can reduce legibility.
 
-Homepage composition may combine these motifs with restrained borders, clear captions, and generous whitespace to create polished non-data-bearing placeholders. Such placeholders must be labeled clearly when they stand in for future approved imagery.
+Homepage composition may combine these motifs with restrained borders and generous whitespace to create polished non-data-bearing visuals. Public production pages should not expose implementation labels such as "placeholder" or "approved image pending"; maintainers should rely on documentation and registry status for that distinction.
 
 ## Logo Usage Strategy
 
@@ -175,6 +177,7 @@ Future production rendering should use reviewed content entries with `visibility
 - Preserve a light scientific interface by default.
 - Use geospatial motifs subtly.
 - Do not add external imagery without approval and source documentation.
+- Use only `public-approved` research visuals with documented provenance in production.
 - Do not fabricate logos, maps, boundaries, or scientific data.
 - Keep components simple, accessible, responsive, and content-agnostic.
 - Update this document when design tokens or visual rules change.
