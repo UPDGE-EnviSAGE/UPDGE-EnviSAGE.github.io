@@ -1,0 +1,65 @@
+---
+import type { ResearchVisual as ResearchVisualData } from "../data/research-visuals";
+
+interface Props {
+  visual: ResearchVisualData;
+  aspectClass?: string;
+  class?: string;
+  imageClass?: string;
+  loading?: "lazy" | "eager";
+  fit?: "cover" | "contain";
+  showCaption?: boolean;
+  showMetadata?: boolean;
+  decorative?: boolean;
+}
+
+const {
+  visual,
+  aspectClass = "aspect-[16/9]",
+  class: className = "",
+  imageClass = "",
+  loading = "lazy",
+  fit = "cover",
+  showCaption = true,
+  showMetadata = false,
+  decorative = false,
+} = Astro.props;
+
+const objectFitClass = fit === "contain" ? "object-contain" : "object-cover";
+const hasCaption = showCaption && (visual.caption || visual.credit);
+const metadata = [
+  visual.location,
+  visual.year ? String(visual.year) : undefined,
+  visual.visualType,
+].filter(Boolean);
+---
+
+<figure
+  class:list={[
+    "overflow-hidden rounded-card border border-border bg-surface shadow-subtle",
+    className,
+  ]}
+>
+  <img
+    src={visual.src}
+    alt={decorative ? "" : visual.alt}
+    loading={loading}
+    decoding="async"
+    class:list={["w-full", aspectClass, objectFitClass, imageClass]}
+  />
+  {
+    (hasCaption || showMetadata) && (
+      <figcaption class="border-t border-border bg-surface px-4 py-3 text-sm leading-relaxed text-muted">
+        {visual.caption && <p>{visual.caption}</p>}
+        {visual.credit && (
+          <p class="mt-1 text-xs font-semibold text-muted">{visual.credit}</p>
+        )}
+        {showMetadata && metadata.length > 0 && (
+          <p class="mt-2 font-mono text-xs tracking-normal text-muted">
+            {metadata.join(" / ")}
+          </p>
+        )}
+      </figcaption>
+    )
+  }
+</figure>

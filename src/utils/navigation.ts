@@ -12,27 +12,27 @@ export const resourceItems: NavItem[] = [
   {
     label: "Student Research",
     href: "/student-research/",
-    description: "Future thesis and student research catalog.",
+    description: "Selected thesis and student research outputs.",
   },
   {
     label: "Research Tools",
     href: "/tools/",
-    description: "Future GitHub and browser-accessible tools catalog.",
+    description: "GitHub and browser-accessible research tools.",
   },
   {
     label: "Data",
     href: "/data/",
-    description: "Future selected dataset and metadata portal.",
+    description: "Selected dataset and spatial metadata.",
   },
   {
     label: "Spatial Explorer",
     href: "/explorer/",
-    description: "Future interactive geospatial dashboard.",
+    description: "Interactive environmental geospatial dashboard.",
   },
   {
     label: "Training",
     href: "/training/",
-    description: "Future teaching and training resources.",
+    description: "Teaching and training resources.",
   },
 ];
 

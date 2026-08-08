@@ -1,15 +1,15 @@
 ---
 import ButtonLink from "@components/ButtonLink.astro";
 import FeatureCard from "@components/FeatureCard.astro";
-import FeaturedProjectCard from "@components/FeaturedProjectCard.astro";
+import ResearchVisualPlaceholder from "@components/ResearchVisualPlaceholder.astro";
 import ResearchThemeCard from "@components/ResearchThemeCard.astro";
 import Section from "@components/Section.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import SpatialExplorerTeaser from "@components/SpatialExplorerTeaser.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import {
-  featuredProjectSlots,
   openResearchFeatures,
+  researchHighlights,
   researchThemes,
 } from "../data/homepage";
 ---
@@ -58,36 +58,28 @@ import {
         </a>
       </div>
 
-      <figure
-        class="overflow-hidden rounded-card border border-border bg-surface shadow-subtle"
+      <ResearchVisualPlaceholder
+        motif="raster"
+        aspectClass="aspect-[4/3] min-h-[22rem]"
+        surfaceClass="flex items-end p-5 sm:p-7"
+        label="Abstract geospatial motif representing EnviSAGE environmental research"
       >
         <div
-          class="raster-surface relative flex aspect-[4/3] min-h-[22rem] items-end p-5 sm:p-7"
-          role="img"
-          aria-label="Placeholder for future approved EnviSAGE environmental geospatial imagery"
+          class="absolute inset-6 rounded-[50%] border border-brand-blue/25"
+          aria-hidden="true"
         >
-          <div
-            class="absolute inset-6 rounded-[50%] border border-brand-blue/25"
-            aria-hidden="true"
-          >
-          </div>
-          <div
-            class="absolute top-12 right-8 h-24 w-28 rounded-control border border-brand-blue/25 bg-white/35"
-            aria-hidden="true"
-          >
-          </div>
-          <div
-            class="absolute bottom-20 left-10 h-20 w-32 rounded-control border border-brand-green/30 bg-white/45"
-            aria-hidden="true"
-          >
-          </div>
-          <figcaption
-            class="relative max-w-sm rounded-control bg-white/90 px-4 py-3 text-sm leading-relaxed text-muted shadow-subtle"
-          >
-            Approved EnviSAGE environmental or geospatial imagery pending.
-          </figcaption>
         </div>
-      </figure>
+        <div
+          class="absolute top-12 right-8 h-24 w-28 rounded-control border border-brand-blue/25 bg-white/35"
+          aria-hidden="true"
+        >
+        </div>
+        <div
+          class="absolute bottom-20 left-10 h-20 w-32 rounded-control border border-brand-green/30 bg-white/45"
+          aria-hidden="true"
+        >
+        </div>
+      </ResearchVisualPlaceholder>
     </div>
   </section>
 
@@ -130,7 +122,7 @@ import {
         id="research-themes"
         eyebrow="Research Themes"
         title="Geomatics for environmental systems"
-        text="The homepage introduces broad research directions. Formal research-area content will be published through the structured content system in a later phase."
+        text="EnviSAGE works across Earth observation, coastal and marine environments, environmental monitoring, spatial analytics, climate resilience, and geospatial decision support."
       />
       <ButtonLink href="/research/" variant="secondary">
         Explore all research
@@ -156,8 +148,8 @@ import {
       <SectionHeading
         id="featured-projects"
         eyebrow="Featured Research"
-        title="A project showcase ready for reviewed content"
-        text="The homepage includes the layout for future featured projects without inventing project names, metrics, or results."
+        title="Research designed for environmental insight"
+        text="EnviSAGE combines observation, spatial analysis, modeling, and reproducible tools to make environmental systems easier to understand and communicate."
       />
       <ButtonLink href="/projects/" variant="secondary">
         View all projects
@@ -165,12 +157,12 @@ import {
     </div>
     <div class="mt-10 grid gap-5 md:grid-cols-3">
       {
-        featuredProjectSlots.map((project) => (
-          <FeaturedProjectCard
-            title={project.title}
-            description={project.description}
-            researchArea={project.researchArea}
-            status={project.status}
+        researchHighlights.map((highlight) => (
+          <FeatureCard
+            title={highlight.title}
+            description={highlight.description}
+            href="/projects/"
+            linkText="View project areas"
           />
         ))
       }
@@ -184,7 +176,7 @@ import {
       id="open-research"
       eyebrow="Open Research Outputs"
       title="Reusable code, student outputs, tools, and data"
-      text="The platform will help preserve and share selected research code, student thesis outputs, notebooks, geospatial tools, and reproducible workflows after review."
+      text="The platform preserves and shares selected research code, student thesis outputs, notebooks, geospatial tools, and reproducible workflows after review."
     />
     <div class="mt-10 grid gap-5 md:grid-cols-3">
       {
@@ -221,8 +213,7 @@ import {
         </h2>
         <p class="mt-4 text-lg leading-relaxed text-muted">
           Explore peer-reviewed publications and technical outputs produced by
-          EnviSAGE researchers and collaborators as the publication catalog is
-          developed.
+          EnviSAGE researchers and collaborators.
         </p>
         <ButtonLink href="/publications/" variant="ghost" class="mt-6 px-0">
           View publications

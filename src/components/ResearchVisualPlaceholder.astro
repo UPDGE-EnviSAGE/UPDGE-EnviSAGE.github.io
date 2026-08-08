@@ -1,0 +1,38 @@
+---
+interface Props {
+  motif?: "grid" | "contour" | "raster";
+  aspectClass?: string;
+  class?: string;
+  surfaceClass?: string;
+  label?: string;
+}
+
+const {
+  motif = "raster",
+  aspectClass = "aspect-[16/9]",
+  class: className = "",
+  surfaceClass = "",
+  label = "Abstract geospatial visual motif",
+} = Astro.props;
+
+const motifClass = {
+  grid: "geo-surface",
+  contour: "contour-surface",
+  raster: "raster-surface",
+}[motif];
+---
+
+<figure
+  class:list={[
+    "overflow-hidden rounded-card border border-border bg-surface shadow-subtle",
+    className,
+  ]}
+>
+  <div
+    class:list={["relative", aspectClass, motifClass, surfaceClass]}
+    role="img"
+    aria-label={label}
+  >
+    <slot />
+  </div>
+</figure>

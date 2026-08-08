@@ -43,6 +43,7 @@ This repository supports Environmental Systems Applications of Geomatics Enginee
 - Maintain Astro content collection schema validation in `src/content.config.ts` for major content entities.
 - Keep large raster, scientific, raw, and derived research datasets outside this repository.
 - Do not add external imagery, UP marks, or EnviSAGE logo files unless approved assets and source/licensing context are provided.
+- Only public-approved research visuals with documented provenance may be used in production.
 - Commit only lightweight sample data, prepared web data, metadata, thumbnails, and small demonstration assets when appropriate.
 - Document external data sources, licenses, update procedures, and processing assumptions.
 
