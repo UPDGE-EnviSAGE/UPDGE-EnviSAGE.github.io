@@ -27,7 +27,7 @@ Use stable slugs and descriptive titles. Include related people, projects, publi
 
 Ongoing thesis repositories should normally remain private. Public student research entries should be added only after completion and appropriate review.
 
-Student research records should include the applicable fields from the student research content model, including thesis title, student, adviser, year, abstract, keywords, repository, code, notebooks, sample data, documentation, outputs, thesis PDF reference, related publication, dataset DOI, and software DOI where available.
+Student research records should include the applicable fields from the student research content model, including thesis title, thesis type, students, adviser, year, abstract, keywords, repository, code, notebooks, sample data, documentation, outputs, thesis PDF reference, related publication, dataset DOI, and software DOI where available.
 
 ## Data Contributions
 

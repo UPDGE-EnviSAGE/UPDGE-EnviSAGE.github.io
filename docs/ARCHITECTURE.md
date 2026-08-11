@@ -100,6 +100,14 @@ Phase 4A adds the research visual identity framework through `src/data/research-
 
 Phase 5A adds the Founding Charter as the highest-level identity document and replaces the `/about/` placeholder with a concise production page distilled from that charter.
 
+Phase 5B replaces the `/research/` placeholder with the public research architecture page. The page remains static-first and catalog-free in this phase. It introduces reusable research-area, topic, connection, and output presentation components backed by typed local data in `src/data/research-architecture.ts`.
+
+The research architecture organizes discovery as:
+
+Research Areas -> Projects -> Theses -> Outputs -> Publications, Datasets, Software, and Dashboards
+
+This model prepares future catalogs without requiring a database, CMS, authentication, backend APIs, or geospatial platform integration.
+
 ## Global Site Shell
 
 Phase 3A adds the production global shell through `BaseLayout`, `SiteHeader`, and `SiteFooter`.
@@ -128,6 +136,8 @@ Appropriate repository data includes:
 - Small prepared demonstration files
 - Thumbnails and optimized web images
 - References to external storage or repositories
+
+Student research metadata supports multiple undergraduate thesis authors through `students[]`. BS Geodetic Engineering thesis records must list 1 to 2 students, while MS thesis and PhD dissertation records must list exactly 1 student. Ongoing thesis repositories remain private by default until completion and review.
 
 Inappropriate repository data includes:
 

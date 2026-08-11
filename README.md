@@ -49,6 +49,14 @@ Phase 2 establishes the EnviSAGE visual identity and design-system foundation. I
 
 The Phase 2 work does not redesign the historical EnviSAGE logo, build the final homepage, create full navigation, or add production research content.
 
+## Research Architecture
+
+Phase 5B establishes `/research/` as the conceptual center of the public platform. The page explains EnviSAGE research philosophy, six research areas, representative research topics, and the discovery path from research areas to projects, theses, outputs, publications, datasets, software, and dashboards.
+
+This phase does not implement project, publication, student research, software, dataset, or dashboard catalogs. Those remain later roadmap work.
+
+Student research schema support now uses `students[]` for thesis authorship. BS Geodetic Engineering thesis records support 1 to 2 students, while MS thesis and PhD dissertation records require exactly 1 student.
+
 ## Prerequisites
 
 - Node.js 24 LTS, declared in `.nvmrc`

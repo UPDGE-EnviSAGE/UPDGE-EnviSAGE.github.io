@@ -87,6 +87,8 @@ Create the research project catalog.
 
 Phase 5A establishes the EnviSAGE Founding Charter and production About page before the project catalog. The charter becomes the canonical identity document for the laboratory, and the About page provides a concise public-facing expression of that charter.
 
+Phase 5B establishes the public research architecture before catalog implementation. It replaces the `/research/` placeholder with a conceptual research page covering research philosophy, six research areas, example topics, output types, and the discovery path from research areas to future projects, theses, and outputs.
+
 Likely deliverables:
 
 - Project listing page
