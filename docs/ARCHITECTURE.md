@@ -8,6 +8,8 @@ The platform should become a public-first research laboratory website and catalo
 
 The architecture should stay simple enough for faculty, researchers, students, and future maintainers to understand and extend through GitHub pull requests.
 
+`docs/FOUNDING_CHARTER.md` is the canonical identity document for EnviSAGE. Public site copy and future laboratory communication materials should derive their institutional framing from the charter rather than creating independent definitions of the laboratory.
+
 ## Phase 1 And 2 Stack
 
 The Phase 1 implementation stack is:
@@ -90,11 +92,13 @@ The `/design-system` route is a development preview and is not emitted as produc
 
 ## Homepage Architecture
 
-Phase 3B replaces the development homepage placeholder with the first production homepage. Reusable homepage presentation components live in `src/components/`, while temporary homepage section definitions live in `src/data/homepage.ts` so broad research themes, future project slots, and open research feature links can later be connected to validated content collections without rewriting the page structure.
+Phase 3B replaces the development homepage placeholder with the first production homepage. Reusable homepage presentation components live in `src/components/`, while temporary homepage section definitions live in `src/data/homepage.ts` so broad research themes, research highlights, and open research feature links can later be connected to validated content collections without rewriting the page structure.
 
 Homepage imagery remains static and image-ready. Where approved EnviSAGE research imagery is not yet available, the page uses non-data-bearing geospatial motifs rather than fabricated maps or unsourced imagery.
 
 Phase 4A adds the research visual identity framework through `src/data/research-visuals.ts`, `ResearchVisual`, and `ResearchVisualPlaceholder`. The registry supports zero entries, filters production use to `public-approved` visuals, and keeps decorative motifs separate from authentic research imagery with provenance.
+
+Phase 5A adds the Founding Charter as the highest-level identity document and replaces the `/about/` placeholder with a concise production page distilled from that charter.
 
 ## Global Site Shell
 
