@@ -142,6 +142,10 @@ Resources contains Student Research, Research Tools, Data, Spatial Explorer, and
 
 The footer should remain restrained and institutional. It may include the EnviSAGE name, full laboratory name, UP Department of Geodetic Engineering affiliation, useful navigation groups, and a simple current-year copyright line. Do not invent addresses, phone numbers, social accounts, email addresses, partner logos, or unsupported legal claims.
 
+## Public Content UX
+
+Public pages should prioritize concise, scannable research communication. Each page should have one primary communication purpose, avoid exposing implementation architecture, and use cards only when grouping content improves comprehension.
+
 ## UP DGE Affiliation Hierarchy
 
 The hierarchy is:

@@ -1,8 +1,6 @@
 ---
 import ButtonLink from "@components/ButtonLink.astro";
 import ResearchAreaCard from "@components/ResearchAreaCard.astro";
-import ResearchConnectionDiagram from "@components/ResearchConnectionDiagram.astro";
-import ResearchOutputCard from "@components/ResearchOutputCard.astro";
 import ResearchTopicBadge from "@components/ResearchTopicBadge.astro";
 import ResearchVisualPlaceholder from "@components/ResearchVisualPlaceholder.astro";
 import Section from "@components/Section.astro";
@@ -10,7 +8,6 @@ import SectionHeading from "@components/SectionHeading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import {
   researchAreas,
-  researchConnections,
   researchOutputs,
   researchTopics,
 } from "../../data/research-architecture";
@@ -22,7 +19,7 @@ import {
 >
   <section class="geo-surface" aria-labelledby="research-title">
     <div
-      class="mx-auto grid w-full max-w-[var(--content-width-wide)] gap-10 px-5 py-14 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8 lg:py-24"
+      class="mx-auto grid w-full max-w-[var(--content-width-wide)] gap-8 px-5 py-10 sm:px-6 md:grid-cols-[0.95fr_1.05fr] md:items-center lg:px-8 lg:py-18"
     >
       <div class="max-w-3xl">
         <p
@@ -45,12 +42,8 @@ import {
           EnviSAGE organizes research around environmental systems rather than
           individual technologies.
         </p>
-        <p class="mt-5 max-w-2xl text-base leading-relaxed text-muted">
-          Geomatics methods help the laboratory observe, connect, analyze, and
-          communicate environmental conditions across places, scales, and time.
-        </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <ButtonLink href="/projects/">View project pathway</ButtonLink>
+          <ButtonLink href="/projects/">View projects</ButtonLink>
           <ButtonLink href="/about/" variant="secondary">
             About the laboratory
           </ButtonLink>
@@ -59,9 +52,10 @@ import {
 
       <ResearchVisualPlaceholder
         motif="raster"
-        aspectClass="aspect-[4/3] min-h-[20rem]"
+        class="hidden sm:block"
+        aspectClass="aspect-[4/3] min-h-[12rem] sm:min-h-[16rem] lg:min-h-[17rem]"
         surfaceClass="p-5 sm:p-7"
-        label="Abstract raster and coordinate motif representing EnviSAGE research architecture"
+        label="Abstract raster and coordinate motif representing EnviSAGE research"
       >
         <div
           class="absolute inset-8 rounded-[50%] border border-brand-blue/25"
@@ -83,7 +77,7 @@ import {
   </section>
 
   <Section size="wide" aria-labelledby="research-philosophy">
-    <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+    <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
       <SectionHeading
         id="research-philosophy"
         eyebrow="Research Philosophy"
@@ -95,10 +89,8 @@ import {
           across land, water, atmosphere, ecosystems, and society.
         </p>
         <p class="mt-5 text-base leading-relaxed text-muted">
-          Geomatics Engineering provides the spatial measurements, reference
-          systems, analytical methods, maps, models, and data workflows needed
-          to connect those observations into evidence that can be inspected and
-          reused.
+          Geomatics provides the measurements, maps, models, and analysis that
+          connect those observations into spatial evidence.
         </p>
       </div>
     </div>
@@ -114,7 +106,7 @@ import {
       id="research-areas"
       eyebrow="Research Areas"
       title="Six themes organize the laboratory's work"
-      text="These areas describe the broad environmental and geospatial directions that future projects, theses, tools, datasets, and publications can connect to."
+      text="Each area combines representative geomatics methods with environmental applications."
     />
     <div class="mt-10 grid gap-5 lg:grid-cols-2">
       {
@@ -136,8 +128,8 @@ import {
       <SectionHeading
         id="research-topics"
         eyebrow="Research Topics"
-        title="Topics make broad areas easier to discover"
-        text="Research topics are more specific than research areas. They act as keywords and discovery signals, not as separate pages or statistics in this phase."
+        title="Specific topics connect work across areas"
+        text="Environmental and geospatial topics often cut across more than one research area."
       />
       <div class="flex flex-wrap gap-3">
         {researchTopics.map((topic) => <ResearchTopicBadge topic={topic} />)}
@@ -149,42 +141,27 @@ import {
     size="wide"
     tone="surface"
     class="border-y border-border"
-    aria-labelledby="research-connections"
+    aria-labelledby="research-outputs"
   >
-    <SectionHeading
-      id="research-connections"
-      eyebrow="How Research Connects"
-      title="A simple path from themes to reusable outputs"
-      text="The public platform should help visitors move from broad research areas into concrete projects, theses, and reviewed outputs as future catalogs are introduced."
-    />
-    <div class="mt-10">
-      <ResearchConnectionDiagram items={researchConnections} />
-    </div>
-  </Section>
-
-  <Section size="wide" aria-labelledby="research-outputs">
-    <div
-      class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
-    >
+    <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
       <SectionHeading
         id="research-outputs"
-        eyebrow="Future Research Outputs"
+        eyebrow="Research Outputs"
         title="Research should be traceable and reusable"
-        text="EnviSAGE research may produce publications, datasets, software, interactive dashboards, maps, technical reports, and GitHub repositories."
+        text="EnviSAGE research connects areas and topics to projects, theses, publications, data, tools, and maps."
       />
-      <ButtonLink href="/publications/" variant="secondary">
-        Browse publication pathway
-      </ButtonLink>
-    </div>
-    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        researchOutputs.map((output) => (
-          <ResearchOutputCard
-            title={output.title}
-            description={output.description}
-          />
-        ))
-      }
+      <ul class="grid gap-3 sm:grid-cols-2">
+        {
+          researchOutputs.map((output) => (
+            <li class="rounded-control border border-border bg-white p-4">
+              <h3 class="text-base font-semibold text-text">{output.title}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-muted">
+                {output.description}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </Section>
 
@@ -197,19 +174,17 @@ import {
       </p>
       <h2
         id="research-next"
-        class="mt-3 text-4xl leading-tight font-semibold text-text sm:text-5xl"
+        class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
       >
-        Follow the research architecture into projects, people, tools, student
-        work, spatial data, and publications.
+        Explore projects, people, tools, student work, spatial data, and
+        publications.
       </h2>
       <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
         <ButtonLink href="/projects/">View projects</ButtonLink>
         <ButtonLink href="/people/" variant="secondary">
           Meet the laboratory
         </ButtonLink>
-        <ButtonLink href="/tools/" variant="ghost">
-          Browse tools pathway
-        </ButtonLink>
+        <ButtonLink href="/tools/" variant="ghost"> Explore tools </ButtonLink>
       </div>
     </div>
   </Section>

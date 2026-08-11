@@ -17,7 +17,7 @@ export const researchAreas: readonly ResearchArea[] = [
   {
     title: "Earth Observation & Remote Sensing",
     description:
-      "Observing environmental change through satellite, aerial, and field-linked geospatial measurements.",
+      "Satellite, aerial, and field-linked observation of environmental change.",
     methods: [
       "Multispectral and thermal image analysis",
       "SAR and optical remote sensing",
@@ -33,7 +33,7 @@ export const researchAreas: readonly ResearchArea[] = [
   {
     title: "Coastal & Marine Environments",
     description:
-      "Studying nearshore systems where water, land, ecosystems, communities, and climate pressures meet.",
+      "Spatial study of nearshore water, habitats, ecosystems, and coastal pressures.",
     methods: [
       "Coastal and shoreline mapping",
       "Bathymetric mapping",
@@ -49,7 +49,7 @@ export const researchAreas: readonly ResearchArea[] = [
   {
     title: "Environmental Monitoring & Modeling",
     description:
-      "Connecting observations, indicators, and models to understand environmental conditions over time.",
+      "Indicators and models for tracking environmental conditions over time.",
     methods: [
       "Environmental indicator design",
       "Spatiotemporal analysis",
@@ -65,7 +65,7 @@ export const researchAreas: readonly ResearchArea[] = [
   {
     title: "Geospatial AI & Spatial Analytics",
     description:
-      "Applying spatial statistics, machine learning, and reproducible workflows to environmental data.",
+      "Machine learning, spatial statistics, and reproducible environmental analysis.",
     methods: [
       "Geospatial machine learning",
       "Feature extraction",
@@ -81,7 +81,7 @@ export const researchAreas: readonly ResearchArea[] = [
   {
     title: "Climate, Hazards & Resilience",
     description:
-      "Mapping exposure, risk, and environmental change to support climate and hazard resilience.",
+      "Mapping exposure, risk, and change for climate and hazard resilience.",
     methods: [
       "Hazard and exposure mapping",
       "Landscape change analysis",
@@ -97,7 +97,7 @@ export const researchAreas: readonly ResearchArea[] = [
   {
     title: "Geospatial Data & Decision Support",
     description:
-      "Preparing maps, metadata, tools, and interfaces that help research evidence become usable.",
+      "Maps, metadata, tools, and interfaces for usable spatial evidence.",
     methods: [
       "Cartographic design",
       "Metadata and data product design",
@@ -130,68 +130,29 @@ export const researchTopics = [
   "Land Cover",
 ] as const;
 
-export const researchConnections = [
-  {
-    title: "Research Areas & Topics",
-    description:
-      "Broad themes and flexible topic tags organize environmental and geomatics questions.",
-  },
-  {
-    title: "Research Work",
-    description:
-      "Formal projects and student theses apply methods to specific questions. A thesis may also stand independently from a funded project.",
-  },
-  {
-    title: "Projects & Theses",
-    description:
-      "Projects and theses may connect to each other, but neither is required to contain the other.",
-  },
-  {
-    title: "Outputs",
-    description:
-      "Research work can produce maps, code, datasets, dashboards, reports, repositories, and scholarly records.",
-  },
-  {
-    title: "Publications, Datasets, Software & Dashboards",
-    description:
-      "Discoverable public records that help users trace evidence and reuse reviewed work.",
-  },
-] as const;
-
 export const researchOutputs: readonly ResearchOutput[] = [
   {
     title: "Publications",
-    description:
-      "Peer-reviewed papers, conference outputs, theses, reports, and other citable research records.",
+    description: "Papers, theses, reports, and citable scholarly records.",
   },
   {
     title: "Datasets",
-    description:
-      "Documented metadata and selected prepared data products, with large source data kept outside the website repository.",
+    description: "Documented metadata and selected prepared data products.",
   },
   {
     title: "Software",
-    description:
-      "Reviewed code, scripts, notebooks, packages, and reproducible workflows hosted through appropriate repositories.",
+    description: "Reviewed code, notebooks, packages, and workflows.",
   },
   {
-    title: "Interactive dashboards",
-    description:
-      "Browser-based interfaces that communicate selected spatial layers, indicators, and research results.",
+    title: "Maps & Dashboards",
+    description: "Spatial views of selected layers, indicators, and results.",
   },
   {
-    title: "Maps",
-    description:
-      "Static and web-ready maps that communicate environmental patterns, monitoring results, and decision context.",
+    title: "Technical Reports",
+    description: "Applied documentation for partners and collaborators.",
   },
   {
-    title: "Technical reports",
-    description:
-      "Applied documentation prepared for partners, agencies, communities, and research collaborators.",
-  },
-  {
-    title: "GitHub repositories",
-    description:
-      "Reviewed public repositories for tools, thesis outputs, examples, and supporting documentation.",
+    title: "GitHub Repositories",
+    description: "Public code, examples, thesis outputs, and documentation.",
   },
 ] as const;

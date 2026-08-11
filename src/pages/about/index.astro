@@ -59,7 +59,7 @@ const philosophyCards = [
 >
   <section class="geo-surface" aria-labelledby="about-title">
     <div
-      class="mx-auto grid w-full max-w-[var(--content-width-wide)] gap-10 px-5 py-14 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8 lg:py-24"
+      class="mx-auto grid w-full max-w-[var(--content-width-wide)] gap-8 px-5 py-10 sm:px-6 md:grid-cols-[0.95fr_1.05fr] md:items-center lg:px-8 lg:py-18"
     >
       <div class="max-w-3xl">
         <p
@@ -69,19 +69,13 @@ const philosophyCards = [
         </p>
         <h1
           id="about-title"
-          class="mt-5 text-4xl leading-tight font-semibold text-text sm:text-5xl lg:text-6xl"
+          class="mt-5 text-4xl leading-tight font-semibold text-text sm:text-5xl"
         >
           Spatial Understanding for Environmental Sustainability
         </h1>
         <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
           EnviSAGE is the research laboratory of the UP Department of Geodetic
-          Engineering focused on using Geomatics and geospatial technologies to
-          address environmental issues.
-        </p>
-        <p class="mt-5 max-w-2xl text-base leading-relaxed text-muted">
-          This page is a public summary of the EnviSAGE Founding Charter, which
-          defines the laboratory's purpose, vision, mission, philosophy, and
-          values.
+          Engineering using Geomatics to understand environmental systems.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <ButtonLink href="/research/">Explore research</ButtonLink>
@@ -93,7 +87,8 @@ const philosophyCards = [
 
       <ResearchVisualPlaceholder
         motif="contour"
-        aspectClass="aspect-[4/3] min-h-[20rem]"
+        class="hidden sm:block"
+        aspectClass="aspect-[4/3] min-h-[12rem] sm:min-h-[16rem] lg:min-h-[17rem]"
         label="Abstract geospatial motif representing environmental systems"
       >
         <div
@@ -120,19 +115,13 @@ const philosophyCards = [
       <SectionHeading
         id="mission"
         eyebrow="Mission"
-        title="Research, education, innovation, and collaboration for environmental sustainability."
+        title="Research and training for environmental sustainability."
       />
       <div class="max-w-3xl">
         <p class="text-xl leading-relaxed text-text">
-          EnviSAGE advances environmental sustainability by integrating
-          Geomatics Engineering, Earth observation, spatial analysis,
-          environmental science, and emerging geospatial technologies.
-        </p>
-        <p class="mt-5 text-base leading-relaxed text-muted">
-          The laboratory develops scientific understanding and evidence-based
-          decision support while training students and researchers who are
-          technically competent, ethical, collaborative, and socially
-          responsible.
+          EnviSAGE integrates Geomatics Engineering, Earth observation, spatial
+          analysis, and environmental science to build spatial evidence for
+          public value.
         </p>
       </div>
     </div>
@@ -148,7 +137,7 @@ const philosophyCards = [
       id="what-we-do"
       eyebrow="What We Do"
       title="Geomatics in service of environmental understanding"
-      text="The laboratory treats remote sensing, GIS, geospatial AI, field observations, spatial modeling, and quantitative methods as tools for understanding environmental systems."
+      text="The laboratory observes environmental change, analyzes spatial relationships, and shares reviewed outputs."
     />
     <div class="mt-10 grid gap-5 md:grid-cols-3">
       {
@@ -165,7 +154,7 @@ const philosophyCards = [
   </Section>
 
   <Section size="wide" aria-labelledby="why-geomatics">
-    <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+    <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
       <div>
         <p
           class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
@@ -180,13 +169,8 @@ const philosophyCards = [
         </h2>
         <p class="mt-5 text-lg leading-relaxed text-muted">
           Environmental change unfolds across places, scales, and time.
-          Geomatics Engineering helps observe, measure, analyze, and communicate
-          those relationships through spatial evidence.
-        </p>
-        <p class="mt-5 text-base leading-relaxed text-muted">
-          EnviSAGE studies environmental systems through a spatial lens rather
-          than defining itself by any single software, dataset, platform, or
-          technique.
+          Geomatics Engineering helps measure and communicate those
+          relationships through spatial evidence.
         </p>
       </div>
 
@@ -237,7 +221,7 @@ const philosophyCards = [
         >
           Working across institutions and communities
         </h2>
-        <p class="mt-5 text-lg leading-relaxed text-muted">
+        <p class="mt-5 text-base leading-relaxed text-muted">
           EnviSAGE welcomes collaboration with universities, government,
           industry, communities, and international partners where shared work
           can advance environmental understanding and public value.
@@ -255,7 +239,7 @@ const philosophyCards = [
         >
           Training responsible geospatial researchers
         </h2>
-        <p class="mt-5 text-lg leading-relaxed text-muted">
+        <p class="mt-5 text-base leading-relaxed text-muted">
           The laboratory supports students in developing technical competence,
           scientific rigor, environmental responsibility, ethical judgment, and
           collaborative practice.
@@ -273,10 +257,10 @@ const philosophyCards = [
       </p>
       <h2
         id="about-cta"
-        class="mt-3 text-4xl leading-tight font-semibold text-text sm:text-5xl"
+        class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
       >
-        Discover the research, people, outputs, and spatial data shaped by the
-        EnviSAGE Founding Charter.
+        Discover the research, people, and outputs shaped by the EnviSAGE
+        mission.
       </h2>
       <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
         <ButtonLink href="/research/">Explore research</ButtonLink>
