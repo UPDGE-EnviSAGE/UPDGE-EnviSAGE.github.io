@@ -25,6 +25,12 @@ const relationList = z.array(slug).default([]);
 
 const visibility = z.enum(["draft", "public", "private", "archived"]);
 
+const thesisType = z.enum([
+  "bs-geodetic-engineering-thesis",
+  "ms-thesis",
+  "phd-dissertation",
+]);
+
 const people = defineCollection({
   loader: collectionLoader("people"),
   schema: z.object({
@@ -112,29 +118,57 @@ const publications = defineCollection({
 
 const studentResearch = defineCollection({
   loader: collectionLoader("student-research"),
-  schema: z.object({
-    thesisTitle: z.string().min(1),
-    slug,
-    student: z.string().min(1),
-    adviser: z.string().min(1),
-    year: year.optional(),
-    abstract: z.string().optional(),
-    keywords: z.array(z.string()).default([]),
-    repository: url.optional(),
-    sourceCode: url.optional(),
-    notebooks: z.array(url).default([]),
-    sampleData: z.array(url).default([]),
-    documentation: url.optional(),
-    installationInstructions: z.string().optional(),
-    exampleOutputs: z.array(url).default([]),
-    mapsOrFigures: z.array(url).default([]),
-    thesisPdfReference: url.optional(),
-    relatedPublication: slug.optional(),
-    datasetDoi: doi,
-    softwareDoi: doi,
-    reviewStatus: z.enum(["ongoing-private", "under-review", "public"]),
-    visibility: visibility.default("private"),
-  }),
+  schema: z
+    .object({
+      thesisTitle: z.string().min(1),
+      slug,
+      thesisType,
+      students: z.array(z.string().min(1)).min(1),
+      adviser: z.string().min(1),
+      year: year.optional(),
+      abstract: z.string().optional(),
+      keywords: z.array(z.string()).default([]),
+      repository: url.optional(),
+      sourceCode: url.optional(),
+      notebooks: z.array(url).default([]),
+      sampleData: z.array(url).default([]),
+      documentation: url.optional(),
+      installationInstructions: z.string().optional(),
+      exampleOutputs: z.array(url).default([]),
+      mapsOrFigures: z.array(url).default([]),
+      thesisPdfReference: url.optional(),
+      relatedPublication: slug.optional(),
+      datasetDoi: doi,
+      softwareDoi: doi,
+      reviewStatus: z.enum(["ongoing-private", "under-review", "public"]),
+      visibility: visibility.default("private"),
+    })
+    .superRefine((record, context) => {
+      if (
+        record.thesisType === "bs-geodetic-engineering-thesis" &&
+        record.students.length > 2
+      ) {
+        context.addIssue({
+          code: "custom",
+          path: ["students"],
+          message:
+            "BS Geodetic Engineering thesis records must list 1 to 2 students.",
+        });
+      }
+
+      if (
+        (record.thesisType === "ms-thesis" ||
+          record.thesisType === "phd-dissertation") &&
+        record.students.length !== 1
+      ) {
+        context.addIssue({
+          code: "custom",
+          path: ["students"],
+          message:
+            "MS thesis and PhD dissertation records must list 1 student.",
+        });
+      }
+    }),
 });
 
 const researchTools = defineCollection({

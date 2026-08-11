@@ -1,7 +1,9 @@
 ---
 thesisTitle: Development Fixture Thesis
 slug: development-fixture
-student: Development Fixture Student
+thesisType: bs-geodetic-engineering-thesis
+students:
+  - Development Fixture Student
 adviser: Development Fixture Adviser
 year: 2026
 keywords: []

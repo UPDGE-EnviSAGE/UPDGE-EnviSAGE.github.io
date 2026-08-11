@@ -4,6 +4,8 @@ This document defines the initial repository-managed content model for the EnviS
 
 EnviSAGE is Environmental Systems Applications of Geomatics Engineering, the research laboratory of the UP Department of Geodetic Engineering focusing on the use of Geomatics and geospatial technologies in addressing environmental issues.
 
+`docs/RESEARCH_MODEL.md` is the canonical conceptual model for EnviSAGE research entities and relationships. This content model describes how those concepts can be represented as website-managed content.
+
 ## Content Principles
 
 - Store public content as Markdown/MDX and structured data files.
@@ -91,7 +93,8 @@ Suggested fields:
 
 - thesis title
 - slug
-- student
+- thesis type
+- students
 - adviser
 - year
 - abstract
@@ -111,6 +114,8 @@ Suggested fields:
 - review/publication status
 
 Ongoing thesis repositories should normally remain private. After completion and appropriate review, repositories may become public under the EnviSAGE GitHub organization.
+
+The implemented student research schema uses `students[]` rather than a singular `student` field. BS Geodetic Engineering thesis records must list 1 to 2 students. MS thesis and PhD dissertation records must list exactly 1 student.
 
 ### Research Tools
 

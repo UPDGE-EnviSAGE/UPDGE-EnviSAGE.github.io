@@ -1,11 +1,216 @@
 ---
-import PlaceholderPage from "@components/PlaceholderPage.astro";
+import ButtonLink from "@components/ButtonLink.astro";
+import ResearchAreaCard from "@components/ResearchAreaCard.astro";
+import ResearchConnectionDiagram from "@components/ResearchConnectionDiagram.astro";
+import ResearchOutputCard from "@components/ResearchOutputCard.astro";
+import ResearchTopicBadge from "@components/ResearchTopicBadge.astro";
+import ResearchVisualPlaceholder from "@components/ResearchVisualPlaceholder.astro";
+import Section from "@components/Section.astro";
+import SectionHeading from "@components/SectionHeading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import {
+  researchAreas,
+  researchConnections,
+  researchOutputs,
+  researchTopics,
+} from "../../data/research-architecture";
 ---
 
-<BaseLayout title="Research" description="Future EnviSAGE research section.">
-  <PlaceholderPage
-    title="Research"
-    status="This section will present EnviSAGE research areas and thematic programs in a later phase."
-  />
+<BaseLayout
+  title="Research"
+  description="Explore how EnviSAGE organizes environmental research through Geomatics Engineering, Earth observation, spatial analysis, research topics, and outputs."
+>
+  <section class="geo-surface" aria-labelledby="research-title">
+    <div
+      class="mx-auto grid w-full max-w-[var(--content-width-wide)] gap-10 px-5 py-14 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8 lg:py-24"
+    >
+      <div class="max-w-3xl">
+        <p
+          class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
+        >
+          EnviSAGE Research
+        </p>
+        <h1
+          id="research-title"
+          class="mt-5 text-4xl leading-tight font-semibold text-text sm:text-5xl lg:text-6xl"
+        >
+          Research
+        </h1>
+        <p
+          class="mt-5 max-w-2xl text-2xl leading-tight font-semibold text-brand-blue-deep sm:text-3xl"
+        >
+          Understanding Environmental Systems Through Geomatics Engineering
+        </p>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
+          EnviSAGE organizes research around environmental systems rather than
+          individual technologies.
+        </p>
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-muted">
+          Geomatics methods help the laboratory observe, connect, analyze, and
+          communicate environmental conditions across places, scales, and time.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <ButtonLink href="/projects/">View project pathway</ButtonLink>
+          <ButtonLink href="/about/" variant="secondary">
+            About the laboratory
+          </ButtonLink>
+        </div>
+      </div>
+
+      <ResearchVisualPlaceholder
+        motif="raster"
+        aspectClass="aspect-[4/3] min-h-[20rem]"
+        surfaceClass="p-5 sm:p-7"
+        label="Abstract raster and coordinate motif representing EnviSAGE research architecture"
+      >
+        <div
+          class="absolute inset-8 rounded-[50%] border border-brand-blue/25"
+          aria-hidden="true"
+        >
+        </div>
+        <div
+          class="absolute top-10 right-10 h-24 w-32 rounded-control border border-brand-green/30 bg-white/35"
+          aria-hidden="true"
+        >
+        </div>
+        <div
+          class="absolute bottom-12 left-10 h-20 w-28 rounded-control border border-brand-blue/25 bg-white/45"
+          aria-hidden="true"
+        >
+        </div>
+      </ResearchVisualPlaceholder>
+    </div>
+  </section>
+
+  <Section size="wide" aria-labelledby="research-philosophy">
+    <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <SectionHeading
+        id="research-philosophy"
+        eyebrow="Research Philosophy"
+        title="Environmental systems are interconnected."
+      />
+      <div class="max-w-3xl">
+        <p class="text-xl leading-relaxed text-text">
+          EnviSAGE studies environmental systems by integrating observations
+          across land, water, atmosphere, ecosystems, and society.
+        </p>
+        <p class="mt-5 text-base leading-relaxed text-muted">
+          Geomatics Engineering provides the spatial measurements, reference
+          systems, analytical methods, maps, models, and data workflows needed
+          to connect those observations into evidence that can be inspected and
+          reused.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    size="wide"
+    tone="muted"
+    class="border-y border-border"
+    aria-labelledby="research-areas"
+  >
+    <SectionHeading
+      id="research-areas"
+      eyebrow="Research Areas"
+      title="Six themes organize the laboratory's work"
+      text="These areas describe the broad environmental and geospatial directions that future projects, theses, tools, datasets, and publications can connect to."
+    />
+    <div class="mt-10 grid gap-5 lg:grid-cols-2">
+      {
+        researchAreas.map((area) => (
+          <ResearchAreaCard
+            title={area.title}
+            description={area.description}
+            methods={area.methods}
+            applications={area.applications}
+            motif={area.motif}
+          />
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section size="wide" aria-labelledby="research-topics">
+    <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <SectionHeading
+        id="research-topics"
+        eyebrow="Research Topics"
+        title="Topics make broad areas easier to discover"
+        text="Research topics are more specific than research areas. They act as keywords and discovery signals, not as separate pages or statistics in this phase."
+      />
+      <div class="flex flex-wrap gap-3">
+        {researchTopics.map((topic) => <ResearchTopicBadge topic={topic} />)}
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    size="wide"
+    tone="surface"
+    class="border-y border-border"
+    aria-labelledby="research-connections"
+  >
+    <SectionHeading
+      id="research-connections"
+      eyebrow="How Research Connects"
+      title="A simple path from themes to reusable outputs"
+      text="The public platform should help visitors move from broad research areas into concrete projects, theses, and reviewed outputs as future catalogs are introduced."
+    />
+    <div class="mt-10">
+      <ResearchConnectionDiagram items={researchConnections} />
+    </div>
+  </Section>
+
+  <Section size="wide" aria-labelledby="research-outputs">
+    <div
+      class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
+    >
+      <SectionHeading
+        id="research-outputs"
+        eyebrow="Future Research Outputs"
+        title="Research should be traceable and reusable"
+        text="EnviSAGE research may produce publications, datasets, software, interactive dashboards, maps, technical reports, and GitHub repositories."
+      />
+      <ButtonLink href="/publications/" variant="secondary">
+        Browse publication pathway
+      </ButtonLink>
+    </div>
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        researchOutputs.map((output) => (
+          <ResearchOutputCard
+            title={output.title}
+            description={output.description}
+          />
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section size="wide" class="contour-surface" aria-labelledby="research-next">
+    <div class="max-w-3xl">
+      <p
+        class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
+      >
+        Explore EnviSAGE
+      </p>
+      <h2
+        id="research-next"
+        class="mt-3 text-4xl leading-tight font-semibold text-text sm:text-5xl"
+      >
+        Follow the research architecture into projects, people, tools, student
+        work, spatial data, and publications.
+      </h2>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <ButtonLink href="/projects/">View projects</ButtonLink>
+        <ButtonLink href="/people/" variant="secondary">
+          Meet the laboratory
+        </ButtonLink>
+        <ButtonLink href="/tools/" variant="ghost">
+          Browse tools pathway
+        </ButtonLink>
+      </div>
+    </div>
+  </Section>
 </BaseLayout>

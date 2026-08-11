@@ -8,6 +8,8 @@ The platform is public-first. Future internal collaboration features should be d
 
 The canonical identity document for EnviSAGE is the [Founding Charter](docs/FOUNDING_CHARTER.md). Public-facing copy, proposals, presentations, and laboratory materials should trace their institutional framing back to the charter.
 
+The canonical research ecosystem document is the [Research Model](docs/RESEARCH_MODEL.md). It defines how EnviSAGE research areas, topics, people, projects, theses, outputs, and supporting entities relate conceptually.
+
 ## Platform Priorities
 
 The EnviSAGE platform will be developed in this order:
@@ -48,6 +50,14 @@ Phase 1 establishes the development foundation only. It is not the final visual 
 Phase 2 establishes the EnviSAGE visual identity and design-system foundation. It introduces design tokens, reusable visual primitives, brand asset expectations, and a development-only design-system preview route at `/design-system`.
 
 The Phase 2 work does not redesign the historical EnviSAGE logo, build the final homepage, create full navigation, or add production research content.
+
+## Research Architecture
+
+Phase 5B establishes `/research/` as the conceptual center of the public platform. The page explains EnviSAGE research philosophy, six research areas, representative research topics, and the discovery path from research areas and topics into research work, projects, theses, outputs, publications, datasets, software, and dashboards.
+
+This phase does not implement project, publication, student research, software, dataset, or dashboard catalogs. Those remain later roadmap work.
+
+Student research schema support now uses `students[]` for thesis authorship. BS Geodetic Engineering thesis records support 1 to 2 students, while MS thesis and PhD dissertation records require exactly 1 student.
 
 ## Prerequisites
 
@@ -140,6 +150,7 @@ Future technologies such as Cloud Optimized GeoTIFF, PMTiles, GeoParquet, PostGI
 - [Roadmap](docs/ROADMAP.md)
 - [Content model](docs/CONTENT_MODEL.md)
 - [Founding Charter](docs/FOUNDING_CHARTER.md)
+- [Research Model](docs/RESEARCH_MODEL.md)
 - [Design system](docs/DESIGN_SYSTEM.md)
 - [Research visual identity](docs/RESEARCH_VISUAL_IDENTITY.md)
 - [Contributing guide](docs/CONTRIBUTING.md)
