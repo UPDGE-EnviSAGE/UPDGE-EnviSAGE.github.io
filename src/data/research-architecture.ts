@@ -132,24 +132,24 @@ export const researchTopics = [
 
 export const researchConnections = [
   {
-    title: "Research Areas",
+    title: "Research Areas & Topics",
     description:
-      "Broad environmental systems and geomatics capabilities that organize EnviSAGE work.",
+      "Broad themes and flexible topic tags organize environmental and geomatics questions.",
   },
   {
-    title: "Projects",
+    title: "Research Work",
     description:
-      "Time-bound research efforts that apply methods to specific environmental questions.",
+      "Formal projects and student theses apply methods to specific questions. A thesis may also stand independently from a funded project.",
   },
   {
-    title: "Theses",
+    title: "Projects & Theses",
     description:
-      "Reviewed student research connected to advisers, topics, tools, and outputs.",
+      "Projects and theses may connect to each other, but neither is required to contain the other.",
   },
   {
     title: "Outputs",
     description:
-      "Research products such as maps, code, datasets, dashboards, reports, and repositories.",
+      "Research work can produce maps, code, datasets, dashboards, reports, repositories, and scholarly records.",
   },
   {
     title: "Publications, Datasets, Software & Dashboards",

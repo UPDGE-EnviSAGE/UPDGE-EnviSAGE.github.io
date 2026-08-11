@@ -4,6 +4,8 @@ This document defines the initial repository-managed content model for the EnviS
 
 EnviSAGE is Environmental Systems Applications of Geomatics Engineering, the research laboratory of the UP Department of Geodetic Engineering focusing on the use of Geomatics and geospatial technologies in addressing environmental issues.
 
+`docs/RESEARCH_MODEL.md` is the canonical conceptual model for EnviSAGE research entities and relationships. This content model describes how those concepts can be represented as website-managed content.
+
 ## Content Principles
 
 - Store public content as Markdown/MDX and structured data files.

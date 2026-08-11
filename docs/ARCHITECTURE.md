@@ -10,6 +10,8 @@ The architecture should stay simple enough for faculty, researchers, students, a
 
 `docs/FOUNDING_CHARTER.md` is the canonical identity document for EnviSAGE. Public site copy and future laboratory communication materials should derive their institutional framing from the charter rather than creating independent definitions of the laboratory.
 
+`docs/RESEARCH_MODEL.md` is the canonical research ecosystem model. It defines how research areas, topics, people, projects, theses, outputs, and supporting entities relate conceptually before those concepts are represented in website content schemas or catalog pages.
+
 ## Phase 1 And 2 Stack
 
 The Phase 1 implementation stack is:
@@ -71,6 +73,8 @@ Content should be stored in the repository as Markdown/MDX and structured data. 
 
 Content should be reviewable through GitHub pull requests.
 
+The content model should translate the canonical research ecosystem from `docs/RESEARCH_MODEL.md` into website-managed records without requiring a database-backed CMS.
+
 ## Repository Structure
 
 The Phase 1 repository structure includes:
@@ -104,9 +108,9 @@ Phase 5B replaces the `/research/` placeholder with the public research architec
 
 The research architecture organizes discovery as:
 
-Research Areas -> Projects -> Theses -> Outputs -> Publications, Datasets, Software, and Dashboards
+Research Areas and Topics -> Research Work -> Projects and Theses -> Outputs -> Publications, Datasets, Software, and Dashboards
 
-This model prepares future catalogs without requiring a database, CMS, authentication, backend APIs, or geospatial platform integration.
+Projects and Theses are related forms of research work. A Thesis may belong to a Project, or it may exist independently under EnviSAGE. This model prepares future catalogs without requiring a database, CMS, authentication, backend APIs, or geospatial platform integration.
 
 ## Global Site Shell
 
