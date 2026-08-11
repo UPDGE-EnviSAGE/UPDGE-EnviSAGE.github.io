@@ -91,6 +91,8 @@ Phase 5B establishes the public research architecture before catalog implementat
 
 Phase 5B also adds `docs/RESEARCH_MODEL.md` as the canonical conceptual model for research entities and relationships. The Founding Charter explains why EnviSAGE exists, the Research Model explains how EnviSAGE research knowledge is organized, the Content Model translates those concepts into website content, and Architecture explains the technical implementation.
 
+Phase 5C refines public content and UX across the homepage, About page, Research page, site footer, and public placeholder pages. It reduces developer-facing language, tightens hero spacing, lowers card density where appropriate, and keeps each public page focused on a distinct visitor question.
+
 Likely deliverables:
 
 - Project listing page

@@ -2,37 +2,36 @@ export const researchThemes = [
   {
     title: "Earth Observation & Remote Sensing",
     description:
-      "Using satellite, aerial, and field-linked observations to monitor environmental change across land and coastal systems.",
+      "Satellite, aerial, and field-linked observations of environmental change.",
     motif: "grid",
   },
   {
     title: "Coastal & Marine Environments",
     description:
-      "Studying water, reef, seagrass, mangrove, and nearshore systems through spatially explicit environmental analysis.",
+      "Spatial analysis of water, reefs, seagrass, mangroves, and nearshore systems.",
     motif: "contour",
   },
   {
     title: "Environmental Monitoring & Modeling",
-    description:
-      "Connecting observations, models, and environmental indicators to support evidence-based assessment and management.",
+    description: "Environmental indicators, models, and monitoring workflows.",
     motif: "raster",
   },
   {
     title: "Geospatial AI & Spatial Analytics",
     description:
-      "Applying spatial statistics, machine learning, and reproducible workflows to environmental data and imagery.",
+      "Spatial statistics, machine learning, and reproducible analysis.",
     motif: "grid",
   },
   {
     title: "Climate, Hazards & Resilience",
     description:
-      "Mapping exposure, environmental risk, and landscape change to inform climate and hazard resilience work.",
+      "Exposure, risk, and landscape change for climate and hazard resilience.",
     motif: "contour",
   },
   {
     title: "Geospatial Data & Decision Support",
     description:
-      "Preparing maps, data products, and decision-support interfaces for researchers, communities, and partner agencies.",
+      "Maps, data products, and decision support for research and partners.",
     motif: "raster",
   },
 ] as const;
@@ -41,40 +40,38 @@ export const researchHighlights = [
   {
     title: "Environmental observation",
     description:
-      "Linking field, satellite, and spatial datasets to characterize environmental conditions and change.",
+      "Field, satellite, and spatial datasets for environmental change.",
   },
   {
     title: "Spatial analysis for decisions",
-    description:
-      "Preparing geospatial evidence that can support research, planning, monitoring, and environmental management.",
+    description: "Geospatial evidence for research, planning, and monitoring.",
   },
   {
     title: "Reusable research workflows",
     description:
-      "Building reproducible methods, code, and data products that selected projects can share after review.",
+      "Reproducible methods, code, and data products for reviewed work.",
   },
 ] as const;
 
 export const openResearchFeatures = [
   {
     title: "Student Research",
-    description:
-      "Selected thesis outputs, reviewed repositories, notebooks, maps, and reproducible workflows.",
+    description: "Reviewed thesis outputs, repositories, notebooks, and maps.",
     href: "/student-research/",
-    linkText: "Open student research",
+    linkText: "Explore student research",
   },
   {
     title: "Research Tools",
     description:
-      "Reusable research code, GitHub repositories, browser-accessible tools, and documentation.",
+      "Reusable code, GitHub repositories, tools, and documentation.",
     href: "/tools/",
-    linkText: "Browse research tools",
+    linkText: "Explore tools",
   },
   {
     title: "Data",
     description:
-      "Selected dataset metadata, spatial products, access notes, licenses, and citations.",
+      "Dataset metadata, spatial products, access notes, and citations.",
     href: "/data/",
-    linkText: "View data portal",
+    linkText: "Explore data",
   },
 ] as const;
