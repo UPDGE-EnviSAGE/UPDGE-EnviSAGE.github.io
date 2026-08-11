@@ -58,7 +58,7 @@ Status: Begun with Phase 3A global site shell. Phase 3A adds the production head
 
 Phase 3A.1 adds automatic GitHub Pages deployment for the organization Pages site at `https://updge-envisage.github.io/`. Deployment runs on pushes to `main` through the official GitHub Pages artifact workflow. The repository Pages source must be set to GitHub Actions.
 
-Phase 3B adds the first production homepage. The homepage introduces EnviSAGE, broad research themes, future project showcase slots, the future Spatial Explorer, open research outputs, publications, people, and final calls to action while keeping destination pages as placeholders for later phases.
+Phase 3B adds the first production homepage. The homepage introduces EnviSAGE, broad research themes, research highlights, the Spatial Explorer, open research outputs, publications, people, and final calls to action while keeping destination pages as placeholders for later phases.
 
 Likely remaining deliverables:
 
@@ -84,6 +84,8 @@ Likely deliverables:
 ## Phase 5 - Projects
 
 Create the research project catalog.
+
+Phase 5A establishes the EnviSAGE Founding Charter and production About page before the project catalog. The charter becomes the canonical identity document for the laboratory, and the About page provides a concise public-facing expression of that charter.
 
 Likely deliverables:
 

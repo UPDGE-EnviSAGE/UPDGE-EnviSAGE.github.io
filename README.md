@@ -6,6 +6,8 @@ This repository is the GitHub Pages organization repository for the EnviSAGE web
 
 The platform is public-first. Future internal collaboration features should be deferred until later phases unless explicitly approved.
 
+The canonical identity document for EnviSAGE is the [Founding Charter](docs/FOUNDING_CHARTER.md). Public-facing copy, proposals, presentations, and laboratory materials should trace their institutional framing back to the charter.
+
 ## Platform Priorities
 
 The EnviSAGE platform will be developed in this order:
@@ -128,7 +130,7 @@ The Phase 1 stack is:
 - Markdown/MDX content collections with schema validation
 - GitHub Actions CI
 
-MapLibre GL JS, spatial explorer functionality, and GitHub Pages deployment automation are planned for later phases.
+MapLibre GL JS and spatial explorer functionality are planned for later phases.
 
 Future technologies such as Cloud Optimized GeoTIFF, PMTiles, GeoParquet, PostGIS, APIs, object storage, Google Earth Engine, authentication, large-scale data infrastructure, and internal collaboration features are deferred until later phases unless explicitly approved.
 
@@ -137,6 +139,7 @@ Future technologies such as Cloud Optimized GeoTIFF, PMTiles, GeoParquet, PostGI
 - [Architecture](docs/ARCHITECTURE.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Content model](docs/CONTENT_MODEL.md)
+- [Founding Charter](docs/FOUNDING_CHARTER.md)
 - [Design system](docs/DESIGN_SYSTEM.md)
 - [Research visual identity](docs/RESEARCH_VISUAL_IDENTITY.md)
 - [Contributing guide](docs/CONTRIBUTING.md)
