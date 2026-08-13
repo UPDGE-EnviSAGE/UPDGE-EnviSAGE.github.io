@@ -1,14 +1,121 @@
 ---
-import PlaceholderPage from "@components/PlaceholderPage.astro";
+import { getCollection } from "astro:content";
+import ButtonLink from "@components/ButtonLink.astro";
+import PersonCard from "@components/PersonCard.astro";
+import Section from "@components/Section.astro";
+import SectionHeading from "@components/SectionHeading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { peopleCategorySections } from "../../data/people-directory";
+
+const publicPeople = await getCollection(
+  "people",
+  ({ data }) => data.visibility === "public",
+);
+
+const sortedPeople = publicPeople.sort(
+  (first, second) =>
+    (first.data.displayOrder ?? Number.MAX_SAFE_INTEGER) -
+      (second.data.displayOrder ?? Number.MAX_SAFE_INTEGER) ||
+    first.data.name.localeCompare(second.data.name),
+);
+
+const peopleByCategory = peopleCategorySections
+  .map((section) => {
+    const people = sortedPeople.filter((person) => {
+      if (section.id === "faculty-affiliate") {
+        return (
+          person.data.categories.includes("faculty-affiliate") &&
+          !person.data.categories.includes("leadership")
+        );
+      }
+
+      return person.data.categories.includes(section.id);
+    });
+
+    return { ...section, people };
+  })
+  .filter((section) => section.people.length > 0);
 ---
 
 <BaseLayout
   title="People"
-  description="The EnviSAGE community includes faculty, researchers, students, staff, collaborators, and alumni."
+  description="Meet the EnviSAGE research community working across environmental systems, Geomatics Engineering, and geospatial science."
 >
-  <PlaceholderPage
-    title="People"
-    status="The EnviSAGE community includes faculty, researchers, students, staff, collaborators, and alumni."
-  />
+  <section class="geo-surface" aria-labelledby="people-title">
+    <div
+      class="mx-auto w-full max-w-[var(--content-width-wide)] px-5 py-10 sm:px-6 lg:px-8 lg:py-16"
+    >
+      <div class="max-w-3xl">
+        <p
+          class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
+        >
+          EnviSAGE People
+        </p>
+        <h1
+          id="people-title"
+          class="mt-5 text-4xl leading-tight font-semibold text-text sm:text-5xl"
+        >
+          People
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
+          Researchers, faculty, and students working across environmental
+          systems and geospatial science.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {
+    peopleByCategory.map((section, index) => (
+      <Section
+        size="wide"
+        tone={index % 2 === 0 ? "default" : "muted"}
+        class={index % 2 === 0 ? "" : "border-y border-border"}
+        aria-labelledby={`people-${section.id}`}
+      >
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <SectionHeading
+            id={`people-${section.id}`}
+            eyebrow="People"
+            title={section.label}
+            text={section.description}
+          />
+        </div>
+        <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {section.people.map((person) => (
+            <PersonCard
+              name={person.data.name}
+              roles={person.data.envisageRoles}
+              institutionalPosition={person.data.institutionalPosition}
+              shortBio={person.data.shortBio}
+              photo={person.data.photo}
+            />
+          ))}
+        </div>
+      </Section>
+    ))
+  }
+
+  <Section size="wide" class="contour-surface" aria-labelledby="people-next">
+    <div class="max-w-3xl">
+      <p
+        class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
+      >
+        Work With EnviSAGE
+      </p>
+      <h2
+        id="people-next"
+        class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
+      >
+        Explore the research areas, projects, and outputs shaped by the EnviSAGE
+        community.
+      </h2>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <ButtonLink href="/research/">Explore research</ButtonLink>
+        <ButtonLink href="/projects/" variant="secondary">
+          View projects
+        </ButtonLink>
+      </div>
+    </div>
+  </Section>
 </BaseLayout>

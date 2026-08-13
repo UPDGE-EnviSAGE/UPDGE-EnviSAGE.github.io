@@ -6,6 +6,8 @@ EnviSAGE is Environmental Systems Applications of Geomatics Engineering, the res
 
 `docs/RESEARCH_MODEL.md` is the canonical conceptual model for EnviSAGE research entities and relationships. This content model describes how those concepts can be represented as website-managed content.
 
+`docs/PEOPLE_MODEL.md` specializes the Person entity for EnviSAGE membership categories, roles, visibility, and future profile enrichment.
+
 ## Content Principles
 
 - Store public content as Markdown/MDX and structured data files.
@@ -23,16 +25,29 @@ Suggested fields:
 
 - name
 - slug
-- role
-- affiliation
-- email or contact URL when public
-- profile image
-- biography
+- EnviSAGE roles
+- categories
+- membership status
+- visibility
+- display order
+- institution
+- institutional position
+- academic program when relevant
+- photo
+- short biography
+- email or contact URL when public and approved
+- ORCID, Google Scholar, personal website, or GitHub when reviewed
 - research areas
+- research topics
 - projects
+- theses
 - publications
+- datasets
 - tools
+- grants
 - student research records
+
+Only public Person records should appear in the public People directory. Private and internal records, including development fixtures, must remain excluded.
 
 ### Research Areas
 

@@ -12,6 +12,8 @@ The architecture should stay simple enough for faculty, researchers, students, a
 
 `docs/RESEARCH_MODEL.md` is the canonical research ecosystem model. It defines how research areas, topics, people, projects, theses, outputs, and supporting entities relate conceptually before those concepts are represented in website content schemas or catalog pages.
 
+`docs/PEOPLE_MODEL.md` is the canonical Person architecture for EnviSAGE membership, roles, visibility, and future profile enrichment.
+
 ## Phase 1 And 2 Stack
 
 The Phase 1 implementation stack is:
@@ -75,6 +77,8 @@ Content should be reviewable through GitHub pull requests.
 
 The content model should translate the canonical research ecosystem from `docs/RESEARCH_MODEL.md` into website-managed records without requiring a database-backed CMS.
 
+People records should follow `docs/PEOPLE_MODEL.md`: one canonical Person per person, public rendering only for `visibility: public`, and empty public categories omitted from directory pages.
+
 ## Repository Structure
 
 The Phase 1 repository structure includes:
@@ -111,6 +115,8 @@ The research architecture organizes discovery as:
 Research Areas and Topics -> Research Work -> Projects and Theses -> Outputs -> Publications, Datasets, Software, and Dashboards
 
 Projects and Theses are related forms of research work. A Thesis may belong to a Project, or it may exist independently under EnviSAGE. This model prepares future catalogs without requiring a database, CMS, authentication, backend APIs, or geospatial platform integration.
+
+Phase 6A replaces the `/people/` placeholder with a production People directory backed by the Astro `people` content collection. It creates current public leadership and faculty-affiliate records, omits empty categories, and defers individual profile pages to a later phase.
 
 ## Global Site Shell
 

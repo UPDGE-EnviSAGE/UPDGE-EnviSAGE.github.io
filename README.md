@@ -10,6 +10,8 @@ The canonical identity document for EnviSAGE is the [Founding Charter](docs/FOUN
 
 The canonical research ecosystem document is the [Research Model](docs/RESEARCH_MODEL.md). It defines how EnviSAGE research areas, topics, people, projects, theses, outputs, and supporting entities relate conceptually.
 
+The canonical people architecture document is the [People Model](docs/PEOPLE_MODEL.md). It defines Person records, EnviSAGE membership categories, roles, visibility, and profile-enrichment rules.
+
 ## Platform Priorities
 
 The EnviSAGE platform will be developed in this order:
@@ -151,6 +153,7 @@ Future technologies such as Cloud Optimized GeoTIFF, PMTiles, GeoParquet, PostGI
 - [Content model](docs/CONTENT_MODEL.md)
 - [Founding Charter](docs/FOUNDING_CHARTER.md)
 - [Research Model](docs/RESEARCH_MODEL.md)
+- [People Model](docs/PEOPLE_MODEL.md)
 - [Design system](docs/DESIGN_SYSTEM.md)
 - [Research visual identity](docs/RESEARCH_VISUAL_IDENTITY.md)
 - [Contributing guide](docs/CONTRIBUTING.md)

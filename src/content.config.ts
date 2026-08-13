@@ -25,6 +25,31 @@ const relationList = z.array(slug).default([]);
 
 const visibility = z.enum(["draft", "public", "private", "archived"]);
 
+const publicVisibility = z.enum(["private", "internal", "public"]);
+
+const personRole = z.enum([
+  "head",
+  "co-head",
+  "faculty-affiliate",
+  "researcher",
+  "research-staff",
+  "graduate-researcher",
+  "undergraduate-researcher",
+  "alumni",
+]);
+
+const personCategory = z.enum([
+  "leadership",
+  "faculty-affiliate",
+  "researcher",
+  "research-staff",
+  "graduate-researcher",
+  "undergraduate-researcher",
+  "alumni",
+]);
+
+const membershipStatus = z.enum(["active", "alumni", "inactive"]);
+
 const thesisType = z.enum([
   "bs-geodetic-engineering-thesis",
   "ms-thesis",
@@ -36,18 +61,31 @@ const people = defineCollection({
   schema: z.object({
     name: z.string().min(1),
     slug,
-    role: z.string().min(1),
-    affiliation: z.string().optional(),
+    envisageRoles: z.array(personRole).min(1),
+    categories: z.array(personCategory).min(1),
+    membershipStatus,
+    displayOrder: z.number().int().optional(),
+    institution: z.string().optional(),
+    institutionalPosition: z.string().optional(),
+    academicProgram: z.string().optional(),
+    shortBio: z.string().optional(),
     email: z.email().optional(),
     contactUrl: url.optional(),
-    profileImage: z.string().optional(),
-    biography: z.string().optional(),
+    photo: z.string().optional(),
     researchAreas: relationList,
+    researchTopics: z.array(slug).default([]),
     projects: relationList,
+    theses: relationList,
     publications: relationList,
+    datasets: relationList,
     tools: relationList,
+    grants: relationList,
     studentResearch: relationList,
-    visibility: visibility.default("draft"),
+    orcid: z.string().optional(),
+    googleScholar: url.optional(),
+    personalWebsite: url.optional(),
+    github: url.optional(),
+    visibility: publicVisibility.default("private"),
   }),
 });
 
