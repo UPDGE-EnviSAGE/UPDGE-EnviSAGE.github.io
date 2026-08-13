@@ -12,6 +12,8 @@ The canonical research ecosystem document is the [Research Model](docs/RESEARCH_
 
 The canonical people architecture document is the [People Model](docs/PEOPLE_MODEL.md). It defines Person records, EnviSAGE membership categories, roles, visibility, and profile-enrichment rules.
 
+The faculty profile maintainer guide is the [Faculty Profile Guide](docs/FACULTY_PROFILE_GUIDE.md). It defines source, biography, photo, Google Scholar, ORCID, and future relationship rules for public faculty pages.
+
 ## Platform Priorities
 
 The EnviSAGE platform will be developed in this order:
@@ -131,6 +133,7 @@ Do not commit `dist/`; GitHub Actions builds and uploads the static site artifac
 - `src/utils/` - future shared utilities
 - `public/` - static public assets
 - `public/images/research/` - future optimized, public-approved research visual derivatives
+- `docs/FACULTY_PROFILE_GUIDE.md` - maintainer rules for public faculty profile enrichment
 
 ## Stack
 
@@ -154,6 +157,7 @@ Future technologies such as Cloud Optimized GeoTIFF, PMTiles, GeoParquet, PostGI
 - [Founding Charter](docs/FOUNDING_CHARTER.md)
 - [Research Model](docs/RESEARCH_MODEL.md)
 - [People Model](docs/PEOPLE_MODEL.md)
+- [Faculty Profile Guide](docs/FACULTY_PROFILE_GUIDE.md)
 - [Design system](docs/DESIGN_SYSTEM.md)
 - [Research visual identity](docs/RESEARCH_VISUAL_IDENTITY.md)
 - [Contributing guide](docs/CONTRIBUTING.md)

@@ -9,6 +9,15 @@ export const peopleRoleLabels = {
   alumni: "Alumni",
 } as const;
 
+export const researchAreaLabels = {
+  "earth-observation-remote-sensing": "Earth Observation & Remote Sensing",
+  "coastal-marine-environments": "Coastal & Marine Environments",
+  "environmental-monitoring-modeling": "Environmental Monitoring & Modeling",
+  "geospatial-ai-spatial-analytics": "Geospatial AI & Spatial Analytics",
+  "climate-hazards-resilience": "Climate, Hazards & Resilience",
+  "geospatial-data-decision-support": "Geospatial Data & Decision Support",
+} as const;
+
 export const peopleCategorySections = [
   {
     id: "leadership",

@@ -119,15 +119,15 @@ Do not require long biographies, Google Scholar, ORCID, personal email, CV, or p
 
 ## Profile Lifecycle
 
-Phase 6A implements the directory only. Full individual profile pages are deferred.
+Phase 6A implements the public directory. Phase 6B implements individual profile pages for the current reviewed EnviSAGE faculty records only.
 
-Future profile lifecycle:
+Profile lifecycle:
 
 1. Create private or internal Person record.
 2. Review name, role, category, membership status, and visibility.
 3. Publish only approved public fields.
 4. Add profile enrichment such as biographies, photos, research interests, ORCID, Google Scholar, publications, datasets, software, and project relationships after review.
-5. Enable individual profile pages when Phase 6B implements them.
+5. Enable individual profile pages only for reviewed public profiles.
 
 Person cards should be able to support future profile links without rendering links to nonexistent pages.
 
@@ -173,7 +173,7 @@ The public People directory should omit categories with zero public records.
 
 Do not show empty sections such as "No researchers yet" or "Alumni coming soon." This rule keeps the public directory concise while allowing future categories to appear automatically when public records exist.
 
-## Future Profile Enrichment
+## Faculty Profile Enrichment
 
 The official institutional verification source for future faculty position review is:
 
@@ -188,7 +188,9 @@ Maintainer-supplied Google Scholar references for future Phase 6B profile enrich
 - Margaux Angelica A. Cruz: https://scholar.google.com/citations?hl=en&user=qc7H3KEAAAAJ
 - John Emmanuel D. Escoto: https://scholar.google.com/citations?hl=en&user=i_J4w8cAAAAJ
 
-Do not automatically query Google Scholar for publication counts, citation counts, h-index, or other metrics. These values are dynamic and are not part of Phase 6A.
+Do not automatically query Google Scholar for publication counts, citation counts, h-index, or other metrics. These values are dynamic and are not part of the faculty profile system.
+
+Use `docs/FACULTY_PROFILE_GUIDE.md` for the current faculty biography, research-interest, photo, Google Scholar, ORCID, and future relationship rules.
 
 ## Public and Privacy Principles
 

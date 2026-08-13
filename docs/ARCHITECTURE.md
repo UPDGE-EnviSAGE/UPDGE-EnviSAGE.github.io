@@ -116,7 +116,9 @@ Research Areas and Topics -> Research Work -> Projects and Theses -> Outputs -> 
 
 Projects and Theses are related forms of research work. A Thesis may belong to a Project, or it may exist independently under EnviSAGE. This model prepares future catalogs without requiring a database, CMS, authentication, backend APIs, or geospatial platform integration.
 
-Phase 6A replaces the `/people/` placeholder with a production People directory backed by the Astro `people` content collection. It creates current public leadership and faculty-affiliate records, omits empty categories, and defers individual profile pages to a later phase.
+Phase 6A replaces the `/people/` placeholder with a production People directory backed by the Astro `people` content collection. It creates current public leadership and faculty-affiliate records and omits empty categories.
+
+Phase 6B enriches the six current EnviSAGE faculty records and adds static individual faculty profile pages at `/people/{slug}/`. Profiles use reviewed public fields, keep photos optional through a built-in fallback, store Google Scholar URLs without metrics, and render future contribution sections only when reviewed related records exist. The profile curation rules live in `docs/FACULTY_PROFILE_GUIDE.md`.
 
 ## Global Site Shell
 
