@@ -103,7 +103,13 @@ Likely deliverables:
 
 ## Phase 6A - People Directory Architecture
 
-Phase 6A establishes `docs/PEOPLE_MODEL.md`, upgrades the Person content model, creates current public EnviSAGE leadership and faculty-affiliate records, and replaces the `/people/` placeholder with a production directory. Full individual profile pages remain deferred.
+Phase 6A establishes `docs/PEOPLE_MODEL.md`, upgrades the Person content model, creates current public EnviSAGE leadership and faculty-affiliate records, and replaces the `/people/` placeholder with a production directory.
+
+## Phase 6B - Faculty Profile System
+
+Phase 6B enriches the six current EnviSAGE faculty records, creates individual static faculty profile pages, links leadership and faculty cards to those pages, and adds `docs/FACULTY_PROFILE_GUIDE.md` for source, biography, photo, professional-link, and future relationship rules.
+
+This phase does not implement student profile pages, project relationships, publication lists, thesis-advising relationships, dataset links, software links, search, analytics, authentication, a CMS, or a database.
 
 ## Phase 6 - Publications
 

@@ -35,6 +35,13 @@ const peopleByCategory = peopleCategorySections
     return { ...section, people };
   })
   .filter((section) => section.people.length > 0);
+
+const getFacultyProfileHref = (person: (typeof sortedPeople)[number]) =>
+  person.data.shortBio &&
+  (person.data.categories.includes("leadership") ||
+    person.data.categories.includes("faculty-affiliate"))
+    ? `/people/${person.data.slug}/`
+    : undefined;
 ---
 
 <BaseLayout
@@ -87,8 +94,9 @@ const peopleByCategory = peopleCategorySections
               name={person.data.name}
               roles={person.data.envisageRoles}
               institutionalPosition={person.data.institutionalPosition}
-              shortBio={person.data.shortBio}
               photo={person.data.photo}
+              researchAreas={person.data.researchAreas}
+              profileHref={getFacultyProfileHref(person)}
             />
           ))}
         </div>

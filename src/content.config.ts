@@ -73,6 +73,7 @@ const people = defineCollection({
     contactUrl: url.optional(),
     photo: z.string().optional(),
     researchAreas: relationList,
+    researchInterests: z.array(z.string().min(1)).default([]),
     researchTopics: z.array(slug).default([]),
     projects: relationList,
     theses: relationList,
