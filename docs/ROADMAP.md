@@ -101,6 +101,10 @@ Likely deliverables:
 - Featured project support
 - Related people, publications, tools, and datasets
 
+## Phase 6A - People Directory Architecture
+
+Phase 6A establishes `docs/PEOPLE_MODEL.md`, upgrades the Person content model, creates current public EnviSAGE leadership and faculty-affiliate records, and replaces the `/people/` placeholder with a production directory. Full individual profile pages remain deferred.
+
 ## Phase 6 - Publications
 
 Create the publications database.

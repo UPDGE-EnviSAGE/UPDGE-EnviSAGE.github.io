@@ -140,6 +140,8 @@ Do not require a separate permanent student profile for every thesis author.
 
 ## People Model
 
+The Person entity is specialized in `docs/PEOPLE_MODEL.md`.
+
 People may include:
 
 - Laboratory Heads / Lead Faculty

@@ -1,0 +1,78 @@
+---
+import { peopleRoleLabels } from "../data/people-directory";
+
+interface Props {
+  name: string;
+  roles: readonly (keyof typeof peopleRoleLabels)[];
+  institutionalPosition?: string;
+  shortBio?: string;
+  photo?: string;
+  profileHref?: string;
+}
+
+const { name, roles, institutionalPosition, shortBio, photo, profileHref } =
+  Astro.props;
+
+const initials = name
+  .replace(/^(Dr\.|Asst\. Prof\.|Engr\.)\s+/u, "")
+  .split(/\s+/u)
+  .filter((part) => /^[A-Z]/u.test(part))
+  .slice(0, 2)
+  .map((part) => part[0])
+  .join("");
+---
+
+<article
+  class="grid h-full grid-cols-[4rem_1fr] gap-4 rounded-card border border-border bg-surface p-4 shadow-subtle"
+>
+  {
+    photo ? (
+      <img
+        src={photo}
+        alt=""
+        class="h-16 w-16 rounded-control object-cover"
+        loading="lazy"
+        decoding="async"
+      />
+    ) : (
+      <div
+        class="geo-surface flex h-16 w-16 items-center justify-center rounded-control border border-border text-lg font-semibold text-brand-blue-deep"
+        aria-hidden="true"
+      >
+        {initials}
+      </div>
+    )
+  }
+
+  <div class="min-w-0">
+    <h3 class="text-xl leading-tight font-semibold text-text">
+      {
+        profileHref ? (
+          <a
+            href={profileHref}
+            class="text-text no-underline hover:text-brand-blue-deep"
+          >
+            {name}
+          </a>
+        ) : (
+          name
+        )
+      }
+    </h3>
+    <p class="mt-2 text-sm font-semibold text-brand-green-deep">
+      {roles.map((role) => peopleRoleLabels[role]).join(", ")}
+    </p>
+    {
+      institutionalPosition && (
+        <p class="mt-2 text-sm leading-relaxed text-muted">
+          {institutionalPosition}
+        </p>
+      )
+    }
+    {
+      shortBio && (
+        <p class="mt-3 text-sm leading-relaxed text-muted">{shortBio}</p>
+      )
+    }
+  </div>
+</article>
