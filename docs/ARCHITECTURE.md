@@ -14,6 +14,8 @@ The architecture should stay simple enough for faculty, researchers, students, a
 
 `docs/PEOPLE_MODEL.md` is the canonical Person architecture for EnviSAGE membership, roles, visibility, and future profile enrichment.
 
+`docs/STUDENT_RESEARCH_MODEL.md` is the canonical thesis and student research architecture for authorship, adviser roles, visibility, imports, GitHub relationships, and future student research catalogs.
+
 ## Phase 1 And 2 Stack
 
 The Phase 1 implementation stack is:
@@ -79,6 +81,8 @@ The content model should translate the canonical research ecosystem from `docs/R
 
 People records should follow `docs/PEOPLE_MODEL.md`: one canonical Person per person, public rendering only for `visibility: public`, and empty public categories omitted from directory pages.
 
+Student research records should follow `docs/STUDENT_RESEARCH_MODEL.md`: Thesis records are canonical scholarly records, student Person records are separate identity records, and internal thesis imports must not generate public routes or directory entries until reviewed.
+
 ## Repository Structure
 
 The Phase 1 repository structure includes:
@@ -119,6 +123,8 @@ Projects and Theses are related forms of research work. A Thesis may belong to a
 Phase 6A replaces the `/people/` placeholder with a production People directory backed by the Astro `people` content collection. It creates current public leadership and faculty-affiliate records and omits empty categories.
 
 Phase 6B enriches the six current EnviSAGE faculty records and adds static individual faculty profile pages at `/people/{slug}/`. Profiles use reviewed public fields, keep photos optional through a built-in fallback, store Google Scholar URLs without metrics, and render future contribution sections only when reviewed related records exist. The profile curation rules live in `docs/FACULTY_PROFILE_GUIDE.md`.
+
+Phase 6C imports historical BS Geodetic Engineering thesis records associated with EnviSAGE faculty as internal content only. It adds a reproducible workbook importer, internal canonical student Person records, internal Student Research records, explicit main/co-adviser relationships, and an import audit without changing the public site surface.
 
 ## Global Site Shell
 

@@ -6,7 +6,7 @@ Status: Canonical design document
 
 This document defines the conceptual model for organizing EnviSAGE research knowledge. It is not yet a database schema, content schema, CMS model, or required implementation plan for every website feature.
 
-`docs/FOUNDING_CHARTER.md` remains authoritative for why EnviSAGE exists. This document is authoritative for how EnviSAGE research entities and relationships are organized. `docs/CONTENT_MODEL.md` describes how these concepts are represented as website content, and `docs/ARCHITECTURE.md` describes how the platform implements them technically.
+`docs/FOUNDING_CHARTER.md` remains authoritative for why EnviSAGE exists. This document is authoritative for how EnviSAGE research entities and relationships are organized. `docs/PEOPLE_MODEL.md` specializes Person records, `docs/STUDENT_RESEARCH_MODEL.md` specializes Thesis and student research records, `docs/CONTENT_MODEL.md` describes how these concepts are represented as website content, and `docs/ARCHITECTURE.md` describes how the platform implements them technically.
 
 ## Research Principle
 
@@ -109,6 +109,8 @@ A Project and a Grant are not the same entity. A Project may receive support fro
 A Thesis represents student research. A Thesis may belong to a funded Project, or it may exist independently under EnviSAGE.
 
 The Thesis is the canonical public scholarly record for student research. Student profile pages are optional and are not required for v1.
+
+`docs/STUDENT_RESEARCH_MODEL.md` defines the detailed thesis architecture, including undergraduate pair-thesis rules, adviser role separation, EnviSAGE-associated thesis rules, EnviSAGE-affiliated student rules, and review-gated publication workflow.
 
 Each Thesis may connect to:
 

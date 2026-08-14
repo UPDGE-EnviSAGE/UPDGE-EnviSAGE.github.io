@@ -111,6 +111,12 @@ Phase 6B enriches the six current EnviSAGE faculty records, creates individual s
 
 This phase does not implement student profile pages, project relationships, publication lists, thesis-advising relationships, dataset links, software links, search, analytics, authentication, a CMS, or a database.
 
+## Phase 6C - Undergraduate Researchers and Thesis Records
+
+Phase 6C imports the historical BS Geodetic Engineering thesis database associated with EnviSAGE faculty into internal canonical Person and Student Research records. It establishes `docs/STUDENT_RESEARCH_MODEL.md`, explicit main/co-adviser relationships, a reproducible workbook importer, and a maintainer audit while keeping all imported students and theses internal.
+
+This phase does not publish student records, create public thesis pages, create public Student Research catalogs, infer project/publication/dataset/software relationships, or begin maintainer review/promotion.
+
 ## Phase 6 - Publications
 
 Create the publications database.

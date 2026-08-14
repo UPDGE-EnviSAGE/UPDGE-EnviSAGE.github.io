@@ -30,6 +30,8 @@ Supported categories:
 6. Undergraduate Researchers
 7. Alumni
 
+The internal neutral `thesis-author` category may be used only for associated but non-affiliated thesis authors who need canonical identity records for thesis authorship. It is not a public-facing EnviSAGE membership category.
+
 A Person may have multiple categories where appropriate. Leadership records may also be classified as faculty-affiliated without duplicating the Person.
 
 ## EnviSAGE Roles
@@ -44,6 +46,8 @@ Supported EnviSAGE roles:
 - Graduate Researcher
 - Undergraduate Researcher
 - Alumni
+
+The internal neutral `thesis-author` role may be used only for associated but non-affiliated thesis authors. It must not be used to imply EnviSAGE membership.
 
 Roles describe the public-facing EnviSAGE relationship. They should be concise and should not be used to invent institutional titles.
 
@@ -160,6 +164,8 @@ Thesis / Dissertation
 ```
 
 Do not implement thesis relationships in Phase 6A.
+
+`docs/STUDENT_RESEARCH_MODEL.md` is authoritative for student research and thesis authorship rules, including the distinction between EnviSAGE-associated theses and EnviSAGE-affiliated students.
 
 ## Alumni Behavior
 

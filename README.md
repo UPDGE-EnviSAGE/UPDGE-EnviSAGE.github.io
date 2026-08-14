@@ -14,6 +14,8 @@ The canonical people architecture document is the [People Model](docs/PEOPLE_MOD
 
 The faculty profile maintainer guide is the [Faculty Profile Guide](docs/FACULTY_PROFILE_GUIDE.md). It defines source, biography, photo, Google Scholar, ORCID, and future relationship rules for public faculty pages.
 
+The canonical student research architecture document is the [Student Research Model](docs/STUDENT_RESEARCH_MODEL.md). It defines thesis records, student authorship, adviser relationships, visibility, and import/review rules.
+
 ## Platform Priorities
 
 The EnviSAGE platform will be developed in this order:
@@ -134,6 +136,8 @@ Do not commit `dist/`; GitHub Actions builds and uploads the static site artifac
 - `public/` - static public assets
 - `public/images/research/` - future optimized, public-approved research visual derivatives
 - `docs/FACULTY_PROFILE_GUIDE.md` - maintainer rules for public faculty profile enrichment
+- `docs/STUDENT_RESEARCH_MODEL.md` - canonical student research and thesis model
+- `scripts/import-undergraduate-theses.py` - reproducible internal import tool for the Phase 6C undergraduate thesis source workbook
 
 ## Stack
 
@@ -158,6 +162,7 @@ Future technologies such as Cloud Optimized GeoTIFF, PMTiles, GeoParquet, PostGI
 - [Research Model](docs/RESEARCH_MODEL.md)
 - [People Model](docs/PEOPLE_MODEL.md)
 - [Faculty Profile Guide](docs/FACULTY_PROFILE_GUIDE.md)
+- [Student Research Model](docs/STUDENT_RESEARCH_MODEL.md)
 - [Design system](docs/DESIGN_SYSTEM.md)
 - [Research visual identity](docs/RESEARCH_VISUAL_IDENTITY.md)
 - [Contributing guide](docs/CONTRIBUTING.md)

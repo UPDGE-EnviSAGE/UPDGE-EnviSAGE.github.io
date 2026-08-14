@@ -6,6 +6,7 @@ export const peopleRoleLabels = {
   "research-staff": "Research Staff",
   "graduate-researcher": "Graduate Researcher",
   "undergraduate-researcher": "Undergraduate Researcher",
+  "thesis-author": "Thesis Author",
   alumni: "Alumni",
 } as const;
 
