@@ -1,0 +1,196 @@
+---
+import { getCollection } from "astro:content";
+import ButtonLink from "@components/ButtonLink.astro";
+import Section from "@components/Section.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { topicLabel } from "../../data/student-research";
+
+export async function getStaticPaths() {
+  const theses = await getCollection(
+    "student-research",
+    ({ data }) => data.visibility === "public",
+  );
+
+  return theses.map((thesis) => ({
+    params: { slug: thesis.data.slug },
+    props: { thesis },
+  }));
+}
+
+const { thesis } = Astro.props;
+const record = thesis.data;
+
+const description = `${record.thesisTitle}, a ${record.program} thesis connected to EnviSAGE student research.`;
+const relatedLinks = [
+  record.repository && { label: "Repository", href: record.repository },
+  record.sourceCode && { label: "Source code", href: record.sourceCode },
+  record.documentation && {
+    label: "Documentation",
+    href: record.documentation,
+  },
+].filter(Boolean) as { label: string; href: string }[];
+---
+
+<BaseLayout title={record.thesisTitle} description={description}>
+  <section class="geo-surface" aria-labelledby="thesis-title">
+    <div
+      class="mx-auto w-full max-w-[var(--content-width-wide)] px-5 py-10 sm:px-6 lg:px-8 lg:py-16"
+    >
+      <div class="max-w-4xl">
+        <p
+          class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
+        >
+          Student Research
+        </p>
+        <h1
+          id="thesis-title"
+          class="mt-5 text-4xl leading-tight font-semibold text-text sm:text-5xl"
+        >
+          {record.thesisTitle}
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+          {record.year} · {record.program}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Section size="wide" aria-labelledby="thesis-summary">
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem]">
+      <div>
+        <SectionHeading
+          id="thesis-summary"
+          eyebrow="Thesis"
+          title="Abstract"
+          text="A reviewed student research record connected to EnviSAGE."
+        />
+        {
+          record.abstract && (
+            <div class="mt-8 max-w-3xl space-y-4 text-base leading-relaxed text-muted">
+              {record.abstract
+                .split(/\n\s*\n/u)
+                .filter(Boolean)
+                .map((paragraph: string) => (
+                  <p>{paragraph}</p>
+                ))}
+            </div>
+          )
+        }
+
+        {
+          record.keywords.length > 0 && (
+            <div class="mt-10">
+              <h2 class="text-xl font-semibold text-text">Keywords</h2>
+              <ul class="mt-4 flex flex-wrap gap-2">
+                {record.keywords.map((keyword: string) => (
+                  <li class="rounded-control border border-border bg-surface px-3 py-2 text-sm font-semibold text-text shadow-subtle">
+                    {keyword}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+
+        {
+          record.researchTopics.length > 0 && (
+            <div class="mt-10">
+              <h2 class="text-xl font-semibold text-text">Research Topics</h2>
+              <ul class="mt-4 flex flex-wrap gap-2">
+                {record.researchTopics.map((topic: string) => (
+                  <li class="rounded-control border border-brand-blue/15 bg-white px-3 py-2 text-sm font-semibold text-brand-blue-deep shadow-subtle">
+                    {topicLabel(topic)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+      </div>
+
+      <aside
+        class="rounded-card border border-border bg-surface p-5 shadow-subtle"
+        aria-labelledby="thesis-details"
+      >
+        <h2 id="thesis-details" class="text-xl font-semibold text-text">
+          Thesis Details
+        </h2>
+        <dl class="mt-5 space-y-5 text-sm leading-relaxed">
+          <div>
+            <dt class="font-semibold text-brand-green-deep">Students</dt>
+            <dd class="mt-1 text-text">{record.students.join("; ")}</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-brand-green-deep">Main adviser</dt>
+            <dd class="mt-1 text-text">{record.adviser}</dd>
+          </div>
+          {
+            record.coAdvisers.length > 0 && (
+              <div>
+                <dt class="font-semibold text-brand-green-deep">Co-advisers</dt>
+                <dd class="mt-1 text-text">{record.coAdvisers.join("; ")}</dd>
+              </div>
+            )
+          }
+          <div>
+            <dt class="font-semibold text-brand-green-deep">Association</dt>
+            <dd class="mt-1 text-text">
+              {
+                record.envisageAssociationBasis === "main-adviser"
+                  ? "EnviSAGE faculty served as main adviser."
+                  : "EnviSAGE faculty served as co-adviser."
+              }
+            </dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </Section>
+
+  {
+    relatedLinks.length > 0 && (
+      <Section
+        size="wide"
+        tone="muted"
+        class="border-y border-border"
+        aria-labelledby="thesis-links"
+      >
+        <SectionHeading
+          id="thesis-links"
+          eyebrow="Related Outputs"
+          title="Reviewed research links"
+          text="Links are shown only when reviewed records are available."
+        />
+        <ul class="mt-8 flex flex-wrap gap-3">
+          {relatedLinks.map((link) => (
+            <li>
+              <ButtonLink href={link.href}>{link.label}</ButtonLink>
+            </li>
+          ))}
+        </ul>
+      </Section>
+    )
+  }
+
+  <Section size="wide" class="contour-surface" aria-labelledby="thesis-back">
+    <div class="max-w-3xl">
+      <p
+        class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
+      >
+        Student Research Catalog
+      </p>
+      <h2
+        id="thesis-back"
+        class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
+      >
+        Continue browsing reviewed student research.
+      </h2>
+      <div class="mt-8">
+        <ButtonLink href="/student-research/"
+          >Back to student research</ButtonLink
+        >
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

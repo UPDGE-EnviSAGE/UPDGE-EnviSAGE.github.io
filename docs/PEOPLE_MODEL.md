@@ -175,11 +175,15 @@ When someone becomes alumni, update membership status and category rather than c
 
 For undergraduate thesis maintenance, alumni status is derived from the thesis status only when the main adviser is EnviSAGE faculty. A co-adviser-only relationship does not make student authors EnviSAGE undergraduate researchers or alumni by itself.
 
+For student research publication, approved thesis pages may display all thesis authors. Public alumni Person records remain limited to EnviSAGE-affiliated students whose main adviser was EnviSAGE faculty and whose student visibility has not been blocked during review.
+
 ## Empty-Category Behavior
 
 The public People directory should omit categories with zero public records.
 
 Do not show empty sections such as "No researchers yet" or "Alumni coming soon." This rule keeps the public directory concise while allowing future categories to appear automatically when public records exist.
+
+When public alumni grow large, render alumni with a compact list/grid rather than oversized faculty-style cards.
 
 ## Faculty Profile Enrichment
 

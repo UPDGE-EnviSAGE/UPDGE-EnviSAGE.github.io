@@ -85,6 +85,8 @@ Imported thesis and student records should begin as `visibility: internal`.
 
 Only reviewed `visibility: public` thesis records may generate public Student Research pages or appear in public catalogs. Internal records must not be exposed on the public website.
 
+Publication is controlled through `data-maintenance/student-research-publication-review.csv`. A thesis becomes eligible for public catalog and page generation only when its `publication_decision` is explicitly set to `approve` and the publication sync applies the change.
+
 ## Abstract and Keyword Handling
 
 Import abstracts as supplied, preserving meaning. Normalize only accidental whitespace and line-break problems.
@@ -157,6 +159,32 @@ The sync:
 - reports canonical records missing from the CSV instead of deleting them.
 
 See `docs/UNDERGRADUATE_THESIS_MAINTENANCE.md` for maintainer-facing instructions.
+
+## Publication Review Workflow
+
+Use `scripts/review-student-research.py` to generate and summarize the publication review CSV:
+
+```sh
+python3 scripts/review-student-research.py --summary
+```
+
+Use `scripts/publish-student-research.py` for dry-run publication review:
+
+```sh
+python3 scripts/publish-student-research.py
+```
+
+Apply only reviewed decisions with:
+
+```sh
+python3 scripts/publish-student-research.py --write
+```
+
+Only rows with `publication_decision: approve` may transition a thesis to `visibility: public`. Pending, held, or needs-fix rows remain internal.
+
+Public thesis pages may show all authors, including co-advised-only authors, because authorship is part of the scholarly record. Public Person promotion remains stricter: only EnviSAGE-affiliated students derived from the main-adviser rule may become public alumni records, and student-level privacy overrides may keep affiliated Person records internal.
+
+See `docs/STUDENT_RESEARCH_PUBLICATION_GUIDE.md` for maintainer-facing publication instructions.
 
 ## Duplicate Handling
 
