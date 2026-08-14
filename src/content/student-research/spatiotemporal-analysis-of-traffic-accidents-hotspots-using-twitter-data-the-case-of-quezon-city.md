@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Spatiotemporal Analysis of Traffic Accidents Hotspots using Twitter Data: The Case of Quezon City"
 slug: spatiotemporal-analysis-of-traffic-accidents-hotspots-using-twitter-data-the-case-of-quezon-city
+recordId: bsge-2023-089
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 90
 thesisType: bs-geodetic-engineering-thesis

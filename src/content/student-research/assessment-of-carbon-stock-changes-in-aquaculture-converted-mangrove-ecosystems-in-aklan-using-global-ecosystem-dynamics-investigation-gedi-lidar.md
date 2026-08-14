@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Assessment of Carbon Stock Changes in Aquaculture-Converted Mangrove Ecosystems in Aklan Using Global Ecosystem Dynamics Investigation (GEDI) LiDAR"
 slug: assessment-of-carbon-stock-changes-in-aquaculture-converted-mangrove-ecosystems-in-aklan-using-global-ecosystem-dynamics-investigation-gedi-lidar
+recordId: bsge-2026-124
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 125
 thesisType: bs-geodetic-engineering-thesis

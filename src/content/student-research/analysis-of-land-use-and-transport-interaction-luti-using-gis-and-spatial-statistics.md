@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Analysis of Land Use and Transport Interaction (LUTI) using GIS and Spatial Statistics"
 slug: analysis-of-land-use-and-transport-interaction-luti-using-gis-and-spatial-statistics
+recordId: bsge-2018-030
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 31
 thesisType: bs-geodetic-engineering-thesis

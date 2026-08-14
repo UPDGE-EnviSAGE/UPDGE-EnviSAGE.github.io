@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Post-Disaster Remote Reconnaissance of the 2020 Taal Volcano Eruption Using Diwata-2 Satellite Images and Social Media Data"
 slug: post-disaster-remote-reconnaissance-of-the-2020-taal-volcano-eruption-using-diwata-2-satellite-images-and-social-media-data
+recordId: bsge-2021-070
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 71
 thesisType: bs-geodetic-engineering-thesis

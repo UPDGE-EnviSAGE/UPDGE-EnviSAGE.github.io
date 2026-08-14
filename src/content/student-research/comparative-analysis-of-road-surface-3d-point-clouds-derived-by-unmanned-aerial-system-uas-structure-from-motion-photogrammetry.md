@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Comparative Analysis of Road Surface 3D Point Clouds Derived by Unmanned Aerial System (UAS) Structure-from-Motion Photogrammetry"
 slug: comparative-analysis-of-road-surface-3d-point-clouds-derived-by-unmanned-aerial-system-uas-structure-from-motion-photogrammetry
+recordId: bsge-2017-018
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 19
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Mapping of Seagrass Cover in Santiago Island, Bolinao Using Sentinel-2 Imagery"
 slug: mapping-of-seagrass-cover-in-santiago-island-bolinao-using-sentinel-2-imagery
+recordId: bsge-2022-072
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 73
 thesisType: bs-geodetic-engineering-thesis

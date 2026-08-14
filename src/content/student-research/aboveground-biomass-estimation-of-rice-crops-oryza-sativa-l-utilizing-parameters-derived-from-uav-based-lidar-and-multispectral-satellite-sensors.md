@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Aboveground Biomass Estimation of Rice Crops (Oryza sativa L.) Utilizing Parameters Derived From UAV-Based LiDAR And Multispectral Satellite Sensors"
 slug: aboveground-biomass-estimation-of-rice-crops-oryza-sativa-l-utilizing-parameters-derived-from-uav-based-lidar-and-multispectral-satellite-sensors
+recordId: bsge-2025-118
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 119
 thesisType: bs-geodetic-engineering-thesis

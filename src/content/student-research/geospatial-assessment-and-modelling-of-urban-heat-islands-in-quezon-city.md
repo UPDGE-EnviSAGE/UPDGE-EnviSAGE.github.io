@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Geospatial Assessment and Modelling of Urban Heat Islands in Quezon City"
 slug: geospatial-assessment-and-modelling-of-urban-heat-islands-in-quezon-city
+recordId: bsge-2019-049
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 50
 thesisType: bs-geodetic-engineering-thesis

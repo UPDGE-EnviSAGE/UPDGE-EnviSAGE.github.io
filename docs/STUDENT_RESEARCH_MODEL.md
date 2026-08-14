@@ -16,6 +16,8 @@ A Thesis is the canonical scholarly record for student research. The thesis reco
 
 Student profile pages are optional. Do not require one public student profile for every thesis author.
 
+Undergraduate thesis records also carry a stable `recordId` for maintenance synchronization. Do not use a thesis title as the identity key because ongoing titles may change.
+
 ## Person vs Thesis
 
 A Person record represents an individual. A Thesis record represents a scholarly work.
@@ -127,6 +129,34 @@ The importer:
 - writes an internal audit document at `docs/imports/UNDERGRAD_THESIS_IMPORT_2026.md`.
 
 The source workbook must remain outside the repository and must not be committed.
+
+## Maintenance Workflow
+
+Use `data-maintenance/undergraduate-theses.csv` as the human-editable layer for routine undergraduate thesis updates.
+
+Use the dry-run sync first:
+
+```sh
+python3 scripts/sync-undergraduate-theses.py data-maintenance/undergraduate-theses.csv
+```
+
+Apply reviewed changes explicitly:
+
+```sh
+python3 scripts/sync-undergraduate-theses.py data-maintenance/undergraduate-theses.csv --write
+```
+
+The sync:
+
+- matches records by stable `record_id`;
+- preserves stable thesis and Person slugs where practical;
+- supports one-student and two-student BS Geodetic Engineering theses;
+- derives active/alumni student membership only from the EnviSAGE main-adviser rule;
+- treats co-adviser-only authors as non-affiliated internal thesis authors;
+- defaults visibility to internal and never promotes records to public;
+- reports canonical records missing from the CSV instead of deleting them.
+
+See `docs/UNDERGRADUATE_THESIS_MAINTENANCE.md` for maintainer-facing instructions.
 
 ## Duplicate Handling
 

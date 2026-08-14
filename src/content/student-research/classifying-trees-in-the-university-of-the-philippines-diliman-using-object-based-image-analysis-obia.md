@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Classifying Trees in the University of the Philippines-Diliman using Object-based Image Analysis (OBIA)"
 slug: classifying-trees-in-the-university-of-the-philippines-diliman-using-object-based-image-analysis-obia
+recordId: bsge-2018-036
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 37
 thesisType: bs-geodetic-engineering-thesis

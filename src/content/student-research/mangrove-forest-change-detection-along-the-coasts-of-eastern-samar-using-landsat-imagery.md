@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Mangrove Forest Change Detection along the Coasts of Eastern Samar using Landsat Imagery"
 slug: mangrove-forest-change-detection-along-the-coasts-of-eastern-samar-using-landsat-imagery
+recordId: bsge-2015-003
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 4
 thesisType: bs-geodetic-engineering-thesis

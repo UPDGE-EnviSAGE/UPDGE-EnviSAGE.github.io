@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Deriving Hard Coral Cover in Lian, Batangas using Planetscope Imagery by Mixture Tuned Matched Filtering Technique"
 slug: deriving-hard-coral-cover-in-lian-batangas-using-planetscope-imagery-by-mixture-tuned-matched-filtering-technique
+recordId: bsge-2019-063
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 64
 thesisType: bs-geodetic-engineering-thesis

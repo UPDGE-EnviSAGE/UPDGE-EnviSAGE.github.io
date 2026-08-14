@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Spatial and Socioeconomic Drivers of Land Use Change in High-Density Residential Areas (R-3) in Quezon City: A Predictive Simulation Using the Cellular Automata-Markov Chain Model"
 slug: spatial-and-socioeconomic-drivers-of-land-use-change-in-high-density-residential-areas-r-3-in-quezon-city-a-predictive-simulation-using-the-cellular-automata-markov-chain-model
+recordId: bsge-2025-114
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 115
 thesisType: bs-geodetic-engineering-thesis

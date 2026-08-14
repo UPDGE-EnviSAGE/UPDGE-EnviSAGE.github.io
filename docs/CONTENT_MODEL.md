@@ -111,6 +111,7 @@ Suggested fields:
 
 - thesis title
 - slug
+- stable record ID for maintainer synchronization
 - thesis type
 - program
 - status
@@ -151,6 +152,8 @@ Ongoing thesis repositories should normally remain private. After completion and
 The implemented student research schema uses `students[]` rather than a singular `student` field. BS Geodetic Engineering thesis records must list 1 to 2 students. MS thesis and PhD dissertation records must list exactly 1 student.
 
 Imported historical thesis records may remain `visibility: internal` while awaiting review. Internal student research records must not generate public pages or appear in public catalogs.
+
+Undergraduate thesis maintenance uses `data-maintenance/undergraduate-theses.csv` as a non-public editing layer. The canonical records remain the Person and Student Research content files; the CSV should be synchronized into those files through the documented dry-run-first workflow rather than treated as an independent database.
 
 ### Research Tools
 

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Investigating the Relationship between Water Quality and Crown-of-Thorns Starfish Abundance in Puerto Galera, Philippines using Remote Sensing and GIS"
 slug: investigating-the-relationship-between-water-quality-and-crown-of-thorns-starfish-abundance-in-puerto-galera-philippines-using-remote-sensing-and-gis
+recordId: bsge-2023-081
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 82
 thesisType: bs-geodetic-engineering-thesis

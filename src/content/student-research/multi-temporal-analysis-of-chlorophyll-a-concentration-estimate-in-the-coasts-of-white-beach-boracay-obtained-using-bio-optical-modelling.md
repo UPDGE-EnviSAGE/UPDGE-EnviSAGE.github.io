@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Multi-temporal Analysis of Chlorophyll-a Concentration Estimate in the Coasts of White Beach, Boracay obtained using Bio-optical Modelling"
 slug: multi-temporal-analysis-of-chlorophyll-a-concentration-estimate-in-the-coasts-of-white-beach-boracay-obtained-using-bio-optical-modelling
+recordId: bsge-2019-057
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 58
 thesisType: bs-geodetic-engineering-thesis

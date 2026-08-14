@@ -1,6 +1,7 @@
 ---
 thesisTitle: "VEGETATION COVER CHANGE DETECTION IN MASUNGI GEOPARK PROJECT, RIZAL, PHILIPPINES FROM 1995 TO 2024 USING LANDTRENDR WITH MULTISPECTRAL IMAGERY IN GOOGLE EARTH ENGINE"
 slug: vegetation-cover-change-detection-in-masungi-geopark-project-rizal-philippines-from-1995-to-2024-using-landtrendr-with-multispectral-imagery-in-google-earth-engine
+recordId: bsge-2025-120
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 121
 thesisType: bs-geodetic-engineering-thesis

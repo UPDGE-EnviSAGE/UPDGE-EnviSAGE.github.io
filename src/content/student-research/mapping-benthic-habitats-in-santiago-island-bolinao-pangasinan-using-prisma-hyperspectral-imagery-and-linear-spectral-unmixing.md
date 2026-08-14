@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Mapping Benthic Habitats in Santiago Island, Bolinao, Pangasinan using PRISMA Hyperspectral Imagery and Linear Spectral Unmixing"
 slug: mapping-benthic-habitats-in-santiago-island-bolinao-pangasinan-using-prisma-hyperspectral-imagery-and-linear-spectral-unmixing
+recordId: bsge-2023-073
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 74
 thesisType: bs-geodetic-engineering-thesis

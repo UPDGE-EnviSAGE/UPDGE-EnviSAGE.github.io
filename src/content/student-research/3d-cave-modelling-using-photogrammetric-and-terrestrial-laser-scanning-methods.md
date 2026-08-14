@@ -1,6 +1,7 @@
 ---
 thesisTitle: "3D Cave Modelling Using Photogrammetric and Terrestrial Laser Scanning Methods"
 slug: 3d-cave-modelling-using-photogrammetric-and-terrestrial-laser-scanning-methods
+recordId: bsge-2018-042
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 43
 thesisType: bs-geodetic-engineering-thesis

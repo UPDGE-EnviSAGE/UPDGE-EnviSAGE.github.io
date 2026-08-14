@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Estimation of PM 2.5 Vertical Distribution using Customized UAV and Mobile Sensors in Brgy. UP Campus, Diliman, Quezon City"
 slug: estimation-of-pm-2-5-vertical-distribution-using-customized-uav-and-mobile-sensors-in-brgy-up-campus-diliman-quezon-city
+recordId: bsge-2018-043
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 44
 thesisType: bs-geodetic-engineering-thesis

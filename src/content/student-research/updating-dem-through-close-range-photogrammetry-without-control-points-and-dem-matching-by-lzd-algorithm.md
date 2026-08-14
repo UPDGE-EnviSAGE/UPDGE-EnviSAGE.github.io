@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Updating DEM through Close-Range Photogrammetry without Control Points and DEM Matching by LZD Algorithm"
 slug: updating-dem-through-close-range-photogrammetry-without-control-points-and-dem-matching-by-lzd-algorithm
+recordId: bsge-2016-011
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 12
 thesisType: bs-geodetic-engineering-thesis

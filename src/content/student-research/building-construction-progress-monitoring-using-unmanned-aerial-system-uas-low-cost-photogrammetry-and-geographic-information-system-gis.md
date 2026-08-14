@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Building Construction Progress Monitoring using Unmanned Aerial System (UAS), Low-Cost photogrammetry, and Geographic Information System (GIS)"
 slug: building-construction-progress-monitoring-using-unmanned-aerial-system-uas-low-cost-photogrammetry-and-geographic-information-system-gis
+recordId: bsge-2017-016
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 17
 thesisType: bs-geodetic-engineering-thesis

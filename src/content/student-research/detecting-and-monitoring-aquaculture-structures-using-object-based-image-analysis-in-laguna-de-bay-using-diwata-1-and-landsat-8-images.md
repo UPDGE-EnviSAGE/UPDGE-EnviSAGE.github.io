@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Detecting and Monitoring Aquaculture Structures using Object-based Image Analysis in Laguna de Bay using DIWATA-1 and Landsat 8 Images"
 slug: detecting-and-monitoring-aquaculture-structures-using-object-based-image-analysis-in-laguna-de-bay-using-diwata-1-and-landsat-8-images
+recordId: bsge-2018-046
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 47
 thesisType: bs-geodetic-engineering-thesis

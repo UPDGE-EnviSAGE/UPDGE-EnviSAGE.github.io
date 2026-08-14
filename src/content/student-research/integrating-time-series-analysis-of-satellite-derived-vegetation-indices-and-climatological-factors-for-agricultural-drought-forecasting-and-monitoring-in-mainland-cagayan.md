@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Integrating Time Series Analysis of Satellite-derived Vegetation Indices and Climatological Factors for Agricultural Drought Forecasting and Monitoring in Mainland Cagayan"
 slug: integrating-time-series-analysis-of-satellite-derived-vegetation-indices-and-climatological-factors-for-agricultural-drought-forecasting-and-monitoring-in-mainland-cagayan
+recordId: bsge-2023-087
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 88
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Estimation and Mapping of Mangrove Aboveground Biomass in Zambales Province using Sentinel-2, Sentinel-1, and ALOS-2/PALSAR-2"
 slug: estimation-and-mapping-of-mangrove-aboveground-biomass-in-zambales-province-using-sentinel-2-sentinel-1-and-alos-2-palsar-2
+recordId: bsge-2023-074
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 75
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Estimation of Chlorophyll-a and Turbidity in Bolinao, Pangasinan using Landsat-8 OLI Image"
 slug: estimation-of-chlorophyll-a-and-turbidity-in-bolinao-pangasinan-using-landsat-8-oli-image
+recordId: bsge-2015-004
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 5
 thesisType: bs-geodetic-engineering-thesis

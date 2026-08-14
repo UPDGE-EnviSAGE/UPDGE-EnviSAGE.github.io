@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Application of Fuzzy Association Rule Mining for the Generation of Dengue Fever Prediction Model in Luzon using Remotely Sensed Environmental Variables"
 slug: application-of-fuzzy-association-rule-mining-for-the-generation-of-dengue-fever-prediction-model-in-luzon-using-remotely-sensed-environmental-variables
+recordId: bsge-2017-019
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 20
 thesisType: bs-geodetic-engineering-thesis

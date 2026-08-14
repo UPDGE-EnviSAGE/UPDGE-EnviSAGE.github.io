@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Modeling and Impact Assessment of Solar Farm Expansion Using Machine Learning, Remote Sensing, and GIS Techniques"
 slug: modeling-and-impact-assessment-of-solar-farm-expansion-using-machine-learning-remote-sensing-and-gis-techniques
+recordId: bsge-2024-108
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 109
 thesisType: bs-geodetic-engineering-thesis

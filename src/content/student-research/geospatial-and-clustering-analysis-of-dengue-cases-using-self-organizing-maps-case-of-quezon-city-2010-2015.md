@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Geospatial and Clustering Analysis of Dengue Cases using Self-Organizing Maps: Case of Quezon City, 2010-2015"
 slug: geospatial-and-clustering-analysis-of-dengue-cases-using-self-organizing-maps-case-of-quezon-city-2010-2015
+recordId: bsge-2019-048
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 49
 thesisType: bs-geodetic-engineering-thesis

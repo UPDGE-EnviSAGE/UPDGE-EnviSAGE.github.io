@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Road Surface Modelling using Terrestrial Vehicle-Mounted Action Camera"
 slug: road-surface-modelling-using-terrestrial-vehicle-mounted-action-camera
+recordId: bsge-2017-017
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 18
 thesisType: bs-geodetic-engineering-thesis

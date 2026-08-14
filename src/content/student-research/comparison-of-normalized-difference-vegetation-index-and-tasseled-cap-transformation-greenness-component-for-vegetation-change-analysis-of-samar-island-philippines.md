@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Comparison of Normalized Difference Vegetation Index and Tasseled Cap Transformation Greenness Component for Vegetation Change Analysis of Samar Island, Philippines"
 slug: comparison-of-normalized-difference-vegetation-index-and-tasseled-cap-transformation-greenness-component-for-vegetation-change-analysis-of-samar-island-philippines
+recordId: bsge-2016-007
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 8
 thesisType: bs-geodetic-engineering-thesis

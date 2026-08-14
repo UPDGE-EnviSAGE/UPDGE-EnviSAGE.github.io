@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Performance Assessment of Linear and Nonlinear Regression Models for Bathymetric Estimation using Worldview-2 Imagery"
 slug: performance-assessment-of-linear-and-nonlinear-regression-models-for-bathymetric-estimation-using-worldview-2-imagery
+recordId: bsge-2015-005
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 6
 thesisType: bs-geodetic-engineering-thesis

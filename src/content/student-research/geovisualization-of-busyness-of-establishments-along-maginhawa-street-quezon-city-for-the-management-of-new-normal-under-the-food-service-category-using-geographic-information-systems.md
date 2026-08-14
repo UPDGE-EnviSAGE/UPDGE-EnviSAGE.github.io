@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Geovisualization of “Busyness” of Establishments Along Maginhawa Street, Quezon City for the Management of “New Normal” Under the Food Service Category Using Geographic Information Systems."
 slug: geovisualization-of-busyness-of-establishments-along-maginhawa-street-quezon-city-for-the-management-of-new-normal-under-the-food-service-category-using-geographic-information-systems
+recordId: bsge-2021-069
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 70
 thesisType: bs-geodetic-engineering-thesis

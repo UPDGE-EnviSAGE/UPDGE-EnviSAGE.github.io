@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Assessment of Seagrass Percent Cover and Water Quality using UAV Images and Field Measurements in Bolinao, Pangasinan"
 slug: assessment-of-seagrass-percent-cover-and-water-quality-using-uav-images-and-field-measurements-in-bolinao-pangasinan
+recordId: bsge-2019-065
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 66
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Correlation of Land Surface Temperature and PM10 in Metro Manila using Satellite Imaging"
 slug: correlation-of-land-surface-temperature-and-pm10-in-metro-manila-using-satellite-imaging
+recordId: bsge-2017-020
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 21
 thesisType: bs-geodetic-engineering-thesis

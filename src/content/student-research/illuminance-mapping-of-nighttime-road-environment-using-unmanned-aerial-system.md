@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Illuminance Mapping of Nighttime Road Environment using Unmanned Aerial System"
 slug: illuminance-mapping-of-nighttime-road-environment-using-unmanned-aerial-system
+recordId: bsge-2019-056
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 57
 thesisType: bs-geodetic-engineering-thesis

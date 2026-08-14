@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Assessment and Modelling of Prevalence of Selected Diseases and Influencing Environmental Factors using GIS"
 slug: assessment-and-modelling-of-prevalence-of-selected-diseases-and-influencing-environmental-factors-using-gis
+recordId: bsge-2017-014
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 15
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "FLOATING PHOTOVOLTAIC POTENTIAL ASSESSMENT OF ANGAT RESERVOIR, PHILIPPINES USING REMOTE SENSING AND GEOGRAPHIC INFORMATION SYSTEM"
 slug: floating-photovoltaic-potential-assessment-of-angat-reservoir-philippines-using-remote-sensing-and-geographic-information-system
+recordId: bsge-2025-121
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 122
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Mapping of Mahogany (Swietenia Macrophylla) using Mixture Tuned Matched Filtering"
 slug: mapping-of-mahogany-swietenia-macrophylla-using-mixture-tuned-matched-filtering
+recordId: bsge-2018-037
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 38
 thesisType: bs-geodetic-engineering-thesis

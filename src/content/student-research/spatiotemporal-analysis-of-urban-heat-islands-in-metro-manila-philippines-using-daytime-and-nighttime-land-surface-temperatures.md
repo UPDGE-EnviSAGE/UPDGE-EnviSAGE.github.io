@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Spatiotemporal Analysis of Urban Heat Islands in Metro Manila, Philippines using Daytime and Nighttime Land Surface Temperatures"
 slug: spatiotemporal-analysis-of-urban-heat-islands-in-metro-manila-philippines-using-daytime-and-nighttime-land-surface-temperatures
+recordId: bsge-2023-078
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 79
 thesisType: bs-geodetic-engineering-thesis

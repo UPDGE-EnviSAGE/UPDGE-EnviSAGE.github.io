@@ -9,6 +9,7 @@ administrative source.
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import re
@@ -28,6 +29,10 @@ ROOT = Path(__file__).resolve().parents[1]
 PEOPLE_DIR = ROOT / "src/content/people"
 THESIS_DIR = ROOT / "src/content/student-research"
 AUDIT_PATH = ROOT / "docs/imports/UNDERGRAD_THESIS_IMPORT_2026.md"
+REVIEW_DIR = ROOT / "docs/imports/review"
+IMPORT_REVIEW_CSV = REVIEW_DIR / "UNDERGRAD_THESIS_IMPORT_REVIEW_2026.csv"
+IMPORT_EXCEPTIONS_CSV = REVIEW_DIR / "UNDERGRAD_THESIS_IMPORT_EXCEPTIONS_2026.csv"
+MAINTENANCE_CSV = ROOT / "data-maintenance/undergraduate-theses.csv"
 
 NS = {
     "a": "http://schemas.openxmlformats.org/spreadsheetml/2006/main",
@@ -99,6 +104,7 @@ class Student:
 
 @dataclass
 class Thesis:
+    record_id: str
     source_row: int
     year: int | None
     title: str
@@ -288,6 +294,35 @@ def split_people(value: str) -> list[str]:
     return [normalize_space(piece) for piece in pieces if normalize_space(piece)]
 
 
+def co_adviser_delimiters(value: str) -> list[str]:
+    delimiters: list[str] = []
+    checks = [
+        ("semicolon", ";"),
+        ("newline", "\n"),
+        ("slash", "/"),
+        ("ampersand", "&"),
+    ]
+    for label, marker in checks:
+        if marker in value:
+            delimiters.append(label)
+    if re.search(r"\band\b", value, flags=re.IGNORECASE):
+        delimiters.append("and")
+    return delimiters
+
+
+def likely_combined_adviser_cell(value: str, parsed: list[str]) -> bool:
+    if not value or len(parsed) != 1:
+        return False
+    normalized = normalize_text(value)
+    if re.search(r"\b(dr|prof|engr|ms|mr|mrs)\.?\b", value, flags=re.IGNORECASE):
+        return True
+    comma_count = value.count(",")
+    if comma_count >= 2:
+        return True
+    tokens = normalized.split()
+    return len(tokens) >= 7
+
+
 def split_keywords(value: str) -> list[str]:
     value = normalize_space(value)
     if not value:
@@ -390,6 +425,7 @@ def build_import(rows: list[dict[str, str]]) -> tuple[list[Thesis], dict[str, St
         "ambiguousFacultyMatches": [],
         "facultyMatches": [],
         "unmappedKeywords": Counter(),
+        "coAdviserParsing": [],
         "blankTitles": 0,
         "blankYears": 0,
         "blankMainAdvisers": 0,
@@ -406,6 +442,17 @@ def build_import(rows: list[dict[str, str]]) -> tuple[list[Thesis], dict[str, St
         author_names = [name for name in author_names if not is_blankish(name)]
         adviser = normalize_space(row.get("Main Adviser"))
         co_advisers = split_people(row.get("Co-advisers", ""))
+        raw_co_advisers = normalize_space(row.get("Co-advisers", ""))
+        if raw_co_advisers:
+            audit["coAdviserParsing"].append(
+                {
+                    "row": source_row,
+                    "raw": raw_co_advisers,
+                    "parsed": co_advisers,
+                    "delimiters": co_adviser_delimiters(row.get("Co-advisers", "")),
+                    "suspicious": likely_combined_adviser_cell(raw_co_advisers, co_advisers),
+                }
+            )
         abstract = normalize_space(row.get("Abstract")) or None
         keywords = split_keywords(row.get("Key Words", ""))
         topics, unmapped = map_topics(keywords)
@@ -506,6 +553,7 @@ def build_import(rows: list[dict[str, str]]) -> tuple[list[Thesis], dict[str, St
 
         theses.append(
             Thesis(
+                record_id=f"bsge-{year or 'no-year'}-{source_row - 1:03d}",
                 source_row=source_row,
                 year=year,
                 title=title,
@@ -566,6 +614,7 @@ def thesis_markdown(thesis: Thesis) -> str:
         "---",
         f"thesisTitle: {yaml_scalar(thesis.title)}",
         f"slug: {thesis.slug}",
+        f"recordId: {thesis.record_id}",
         f"importBatch: {IMPORT_BATCH}",
         f"sourceRow: {thesis.source_row}",
         "thesisType: bs-geodetic-engineering-thesis",
@@ -710,6 +759,282 @@ def audit_markdown(source: Path, sheet_name: str, theses: list[Thesis], students
     return "\n".join(lines) + "\n"
 
 
+def classification_for_unmatched(name: str) -> str:
+    normalized = normalize_text(name)
+    if any(key in normalized for key in ("tamondong", "blanco", "medina", "elazegui", "cruz", "escoto")):
+        return "possible EnviSAGE name variant"
+    if likely_combined_adviser_cell(name, [name]):
+        return "ambiguous/manual review required"
+    return "expected non-EnviSAGE adviser"
+
+
+def student_classification(thesis: Thesis, index: int) -> str:
+    if index >= len(thesis.students):
+        return ""
+    if thesis.association_basis == "main-adviser":
+        return "EnviSAGE-affiliated undergraduate researcher; alumni"
+    return "associated thesis author; not EnviSAGE-affiliated by co-advising alone"
+
+
+def write_review_csv(theses: list[Thesis]) -> None:
+    REVIEW_DIR.mkdir(parents=True, exist_ok=True)
+    headers = [
+        "thesis_id",
+        "year",
+        "thesis_title",
+        "student_1",
+        "student_2",
+        "main_adviser",
+        "co_advisers",
+        "matched_envisage_faculty",
+        "envisage_faculty_adviser_role",
+        "association_basis",
+        "student_1_envisage_affiliated",
+        "student_2_envisage_affiliated",
+        "student_membership_classification",
+        "thesis_status",
+        "abstract_present",
+        "keywords_present",
+        "thesis_slug",
+        "visibility",
+        "review_status",
+        "review_notes",
+    ]
+    with IMPORT_REVIEW_CSV.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=headers)
+        writer.writeheader()
+        for thesis in theses:
+            matched = []
+            if thesis.envisage_main_adviser:
+                matched.append(thesis.envisage_main_adviser)
+            matched.extend(thesis.envisage_co_advisers)
+            writer.writerow(
+                {
+                    "thesis_id": thesis.record_id,
+                    "year": thesis.year or "",
+                    "thesis_title": thesis.title,
+                    "student_1": thesis.students[0] if thesis.students else "",
+                    "student_2": thesis.students[1] if len(thesis.students) > 1 else "",
+                    "main_adviser": thesis.adviser,
+                    "co_advisers": "; ".join(thesis.co_advisers),
+                    "matched_envisage_faculty": "; ".join(dict.fromkeys(matched)),
+                    "envisage_faculty_adviser_role": "; ".join(thesis.adviser_roles),
+                    "association_basis": thesis.association_basis,
+                    "student_1_envisage_affiliated": "yes" if thesis.association_basis == "main-adviser" else "no",
+                    "student_2_envisage_affiliated": (
+                        "yes" if len(thesis.students) > 1 and thesis.association_basis == "main-adviser" else "no" if len(thesis.students) > 1 else ""
+                    ),
+                    "student_membership_classification": student_classification(thesis, 0),
+                    "thesis_status": "completed",
+                    "abstract_present": "yes" if thesis.abstract else "no",
+                    "keywords_present": "yes" if thesis.keywords else "no",
+                    "thesis_slug": thesis.slug,
+                    "visibility": "internal",
+                    "review_status": "pending-review",
+                    "review_notes": "",
+                }
+            )
+
+
+def write_exceptions_csv(theses: list[Thesis], audit: dict[str, Any]) -> None:
+    REVIEW_DIR.mkdir(parents=True, exist_ok=True)
+    headers = [
+        "exception_type",
+        "classification",
+        "source_row",
+        "thesis_id",
+        "year",
+        "thesis_title",
+        "details",
+        "review_status",
+        "review_notes",
+    ]
+    rows: list[dict[str, str]] = []
+    by_row = {thesis.source_row: thesis for thesis in theses}
+    for thesis in theses:
+        if thesis.association_basis == "co-adviser-only":
+            rows.append(
+                {
+                    "exception_type": "co-advised-only association",
+                    "classification": "expected non-EnviSAGE adviser",
+                    "source_row": str(thesis.source_row),
+                    "thesis_id": thesis.record_id,
+                    "year": str(thesis.year or ""),
+                    "thesis_title": thesis.title,
+                    "details": f"Main adviser '{thesis.adviser}' is not matched to EnviSAGE faculty; EnviSAGE match is in co-advisers.",
+                    "review_status": "pending-review",
+                    "review_notes": "",
+                }
+            )
+        if not thesis.abstract:
+            rows.append(
+                {
+                    "exception_type": "missing abstract",
+                    "classification": "manual review required",
+                    "source_row": str(thesis.source_row),
+                    "thesis_id": thesis.record_id,
+                    "year": str(thesis.year or ""),
+                    "thesis_title": thesis.title,
+                    "details": "Source abstract is blank; do not fabricate.",
+                    "review_status": "pending-review",
+                    "review_notes": "",
+                }
+            )
+        if not thesis.keywords:
+            rows.append(
+                {
+                    "exception_type": "missing keywords",
+                    "classification": "manual review required",
+                    "source_row": str(thesis.source_row),
+                    "thesis_id": thesis.record_id,
+                    "year": str(thesis.year or ""),
+                    "thesis_title": thesis.title,
+                    "details": "Source keywords are blank; do not fabricate.",
+                    "review_status": "pending-review",
+                    "review_notes": "",
+                }
+            )
+    for item in audit["coAdviserParsing"]:
+        if not item["suspicious"]:
+            continue
+        thesis = by_row.get(item["row"])
+        rows.append(
+            {
+                "exception_type": "suspicious/combined co-adviser cell",
+                "classification": "ambiguous/manual review required",
+                "source_row": str(item["row"]),
+                "thesis_id": thesis.record_id if thesis else "",
+                "year": str(thesis.year or "") if thesis else "",
+                "thesis_title": thesis.title if thesis else "",
+                "details": f"Raw co-adviser cell parsed as {item['parsed']}; delimiters={item['delimiters'] or ['none']}",
+                "review_status": "pending-review",
+                "review_notes": "",
+            }
+        )
+    for item in audit["slugCollisions"]:
+        thesis = by_row.get(item["row"])
+        rows.append(
+            {
+                "exception_type": "slug collision",
+                "classification": "resolved deterministic suffix",
+                "source_row": str(item["row"]),
+                "thesis_id": thesis.record_id if thesis else "",
+                "year": str(thesis.year or "") if thesis else "",
+                "thesis_title": thesis.title if thesis else "",
+                "details": f"Base slug '{item['base']}' resolved as '{item['resolved']}' using an 8-character SHA-1 suffix from year, authors, and title.",
+                "review_status": "pending-review",
+                "review_notes": "",
+            }
+        )
+    for name, count in audit["unmatchedAdviserNames"].items():
+        rows.append(
+            {
+                "exception_type": "unmatched adviser-name variant",
+                "classification": classification_for_unmatched(name),
+                "source_row": "",
+                "thesis_id": "",
+                "year": "",
+                "thesis_title": "",
+                "details": f"{name}: {count} occurrence(s)",
+                "review_status": "pending-review",
+                "review_notes": "",
+            }
+        )
+    for item in audit["duplicateNameIssues"]:
+        rows.append(
+            {
+                "exception_type": "duplicate or uncertain identity",
+                "classification": "ambiguous/manual review required",
+                "source_row": str(item["row"]),
+                "thesis_id": "",
+                "year": "",
+                "thesis_title": "",
+                "details": json.dumps(item, ensure_ascii=False),
+                "review_status": "pending-review",
+                "review_notes": "",
+            }
+        )
+    for item in audit["ambiguousFacultyMatches"]:
+        rows.append(
+            {
+                "exception_type": "ambiguous adviser matching",
+                "classification": "genuinely ambiguous record",
+                "source_row": str(item["row"]),
+                "thesis_id": "",
+                "year": "",
+                "thesis_title": "",
+                "details": json.dumps(item, ensure_ascii=False),
+                "review_status": "pending-review",
+                "review_notes": "",
+            }
+        )
+    with IMPORT_EXCEPTIONS_CSV.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=headers)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def write_maintenance_csv(theses: list[Thesis]) -> None:
+    MAINTENANCE_CSV.parent.mkdir(parents=True, exist_ok=True)
+    headers = [
+        "record_id",
+        "academic_year",
+        "thesis_status",
+        "thesis_title",
+        "student_1",
+        "student_2",
+        "student_1_program",
+        "student_2_program",
+        "student_1_membership_status",
+        "student_2_membership_status",
+        "main_adviser",
+        "co_advisers",
+        "abstract",
+        "keywords",
+        "visibility",
+        "review_status",
+        "review_notes",
+        "github_url",
+        "related_project_slug",
+        "publication_notes",
+        "dataset_notes",
+        "software_notes",
+        "sync_action",
+    ]
+    with MAINTENANCE_CSV.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=headers)
+        writer.writeheader()
+        for thesis in theses:
+            main_advised = thesis.association_basis == "main-adviser"
+            writer.writerow(
+                {
+                    "record_id": thesis.record_id,
+                    "academic_year": thesis.year or "",
+                    "thesis_status": "completed",
+                    "thesis_title": thesis.title,
+                    "student_1": thesis.students[0] if thesis.students else "",
+                    "student_2": thesis.students[1] if len(thesis.students) > 1 else "",
+                    "student_1_program": "BS Geodetic Engineering",
+                    "student_2_program": "BS Geodetic Engineering" if len(thesis.students) > 1 else "",
+                    "student_1_membership_status": "alumni" if main_advised else "inactive",
+                    "student_2_membership_status": "alumni" if len(thesis.students) > 1 and main_advised else "inactive" if len(thesis.students) > 1 else "",
+                    "main_adviser": thesis.adviser,
+                    "co_advisers": "; ".join(thesis.co_advisers),
+                    "abstract": thesis.abstract or "",
+                    "keywords": "; ".join(thesis.keywords),
+                    "visibility": "internal",
+                    "review_status": "pending-review",
+                    "review_notes": "",
+                    "github_url": "",
+                    "related_project_slug": "",
+                    "publication_notes": "",
+                    "dataset_notes": "",
+                    "software_notes": "",
+                    "sync_action": "",
+                }
+            )
+
+
 def validate(theses: list[Thesis], students: dict[str, Student]) -> list[str]:
     errors: list[str] = []
     thesis_slugs = [thesis.slug for thesis in theses]
@@ -753,6 +1078,9 @@ def write_outputs(source: Path, sheet_name: str, theses: list[Thesis], students:
         (THESIS_DIR / f"{thesis.slug}.md").write_text(thesis_markdown(thesis), encoding="utf-8")
     AUDIT_PATH.parent.mkdir(parents=True, exist_ok=True)
     AUDIT_PATH.write_text(audit_markdown(source, sheet_name, theses, students, audit), encoding="utf-8")
+    write_review_csv(theses)
+    write_exceptions_csv(theses, audit)
+    write_maintenance_csv(theses)
 
 
 def main() -> int:

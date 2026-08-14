@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Using GIS in Planning a Post-Earthquake Evacuation Scheme: Routing and Shelter Assignments in Barangay Batasan Hills, Quezon City"
 slug: using-gis-in-planning-a-post-earthquake-evacuation-scheme-routing-and-shelter-assignments-in-barangay-batasan-hills-quezon-city
+recordId: bsge-2018-035
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 36
 thesisType: bs-geodetic-engineering-thesis

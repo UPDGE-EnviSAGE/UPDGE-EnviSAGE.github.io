@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Development and Application of Coconut Vegetation Indices (CVIs) for Rapid and Accurate Coconut Mapping using Sentinel-2 Images: A Case Study of Quezon Province"
 slug: development-and-application-of-coconut-vegetation-indices-cvis-for-rapid-and-accurate-coconut-mapping-using-sentinel-2-images-a-case-study-of-quezon-province
+recordId: bsge-2024-095
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 96
 thesisType: bs-geodetic-engineering-thesis

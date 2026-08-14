@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Investigating the Relationship of Water Quality on Land Cover Change in Boracay Island"
 slug: investigating-the-relationship-of-water-quality-on-land-cover-change-in-boracay-island
+recordId: bsge-2023-079
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 80
 thesisType: bs-geodetic-engineering-thesis

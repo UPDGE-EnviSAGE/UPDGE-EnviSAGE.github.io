@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Analyzing the Presence and Behavior of Vessels in the Fisheries Management Area 4 (FMA-4) of the Philippines using Sentinel-1 Synthetic Aperture Radar (SAR) and Visible Infrared Imaging Radiometer Suite (VIIRS)"
 slug: analyzing-the-presence-and-behavior-of-vessels-in-the-fisheries-management-area-4-fma-4-of-the-philippines-using-sentinel-1-synthetic-aperture-radar-sar-and-visible-infrared-imaging-radiometer-suite-viirs
+recordId: bsge-2024-093
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 94
 thesisType: bs-geodetic-engineering-thesis

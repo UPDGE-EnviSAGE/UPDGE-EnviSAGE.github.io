@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Spatiotemporal Analysis of the Potential Impact of the Masinloc Power Plant on the Thermal Pollution in Oyon Bay, Zambales, and its Correlation to the Seagrass Cover"
 slug: spatiotemporal-analysis-of-the-potential-impact-of-the-masinloc-power-plant-on-the-thermal-pollution-in-oyon-bay-zambales-and-its-correlation-to-the-seagrass-cover
+recordId: bsge-2025-122
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 123
 thesisType: bs-geodetic-engineering-thesis

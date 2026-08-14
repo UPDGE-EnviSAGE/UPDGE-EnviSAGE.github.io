@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Assessment of RapidEye and PlanetScope Images for Seagrass Change Mapping in Calauit Island, Busuanga, Palawan, Philippines from 2014-2018"
 slug: assessment-of-rapideye-and-planetscope-images-for-seagrass-change-mapping-in-calauit-island-busuanga-palawan-philippines-from-2014-2018
+recordId: bsge-2018-040
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 41
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Assessment of General NOAA Operational Modeling Environment (GNOME) and Sentinel-1 Synthetic Aperture Radar (SAR) for Oil Spill Detection in Verde Island Passage"
 slug: assessment-of-general-noaa-operational-modeling-environment-gnome-and-sentinel-1-synthetic-aperture-radar-sar-for-oil-spill-detection-in-verde-island-passage
+recordId: bsge-2024-100
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 101
 thesisType: bs-geodetic-engineering-thesis

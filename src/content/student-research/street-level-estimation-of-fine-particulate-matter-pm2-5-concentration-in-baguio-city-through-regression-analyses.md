@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Street-Level Estimation of Fine Particulate Matter (PM2.5) Concentration in Baguio City through Regression Analyses"
 slug: street-level-estimation-of-fine-particulate-matter-pm2-5-concentration-in-baguio-city-through-regression-analyses
+recordId: bsge-2018-038
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 39
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Coral Bleaching Detection using PRISMA Hyperspectral Satellite Imagery in Calatagan, Batangas"
 slug: coral-bleaching-detection-using-prisma-hyperspectral-satellite-imagery-in-calatagan-batangas
+recordId: bsge-2023-085
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 86
 thesisType: bs-geodetic-engineering-thesis

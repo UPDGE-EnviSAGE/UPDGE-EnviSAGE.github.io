@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Determination of Drainage Pipe Conditions using Ground Penetrating Radar (GPR)"
 slug: determination-of-drainage-pipe-conditions-using-ground-penetrating-radar-gpr
+recordId: bsge-2019-064
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 65
 thesisType: bs-geodetic-engineering-thesis

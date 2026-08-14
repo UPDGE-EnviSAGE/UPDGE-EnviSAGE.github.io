@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Hashtags to Hotspots: Spatial Analysis of the Diffusion of Various Topics on X (Twitter) in Metro Manila"
 slug: hashtags-to-hotspots-spatial-analysis-of-the-diffusion-of-various-topics-on-x-twitter-in-metro-manila
+recordId: bsge-2025-112
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 113
 thesisType: bs-geodetic-engineering-thesis

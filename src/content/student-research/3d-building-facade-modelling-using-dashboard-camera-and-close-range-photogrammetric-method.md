@@ -1,6 +1,7 @@
 ---
 thesisTitle: "3D Building Facade Modelling using Dashboard Camera and Close-Range Photogrammetric Method"
 slug: 3d-building-facade-modelling-using-dashboard-camera-and-close-range-photogrammetric-method
+recordId: bsge-2018-041
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 42
 thesisType: bs-geodetic-engineering-thesis

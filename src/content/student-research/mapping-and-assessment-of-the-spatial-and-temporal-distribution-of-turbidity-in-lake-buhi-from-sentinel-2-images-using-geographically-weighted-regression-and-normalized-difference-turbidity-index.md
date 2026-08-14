@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Mapping and Assessment of the Spatial and Temporal Distribution of Turbidity in Lake Buhi from Sentinel-2 Images using Geographically Weighted Regression and Normalized Difference Turbidity Index"
 slug: mapping-and-assessment-of-the-spatial-and-temporal-distribution-of-turbidity-in-lake-buhi-from-sentinel-2-images-using-geographically-weighted-regression-and-normalized-difference-turbidity-index
+recordId: bsge-2023-077
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 78
 thesisType: bs-geodetic-engineering-thesis

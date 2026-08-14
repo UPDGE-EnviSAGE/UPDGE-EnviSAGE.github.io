@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Prediction of Red Tide Events in the Philippines using MODIS-derived Oceanographic Parameters and XGBoost"
 slug: prediction-of-red-tide-events-in-the-philippines-using-modis-derived-oceanographic-parameters-and-xgboost
+recordId: bsge-2025-116
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 117
 thesisType: bs-geodetic-engineering-thesis

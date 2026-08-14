@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Parking Pattern Assessment and Optimal Parking Space Analysis using GIS: The Case Study of Quezon City Central Business District"
 slug: parking-pattern-assessment-and-optimal-parking-space-analysis-using-gis-the-case-study-of-quezon-city-central-business-district
+recordId: bsge-2018-033
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 34
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Coconut Fractional Cover Estimation using Mixture Tuned Matched Filtering (MTMF) Landsat Images"
 slug: coconut-fractional-cover-estimation-using-mixture-tuned-matched-filtering-mtmf-landsat-images
+recordId: bsge-2017-015
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 16
 thesisType: bs-geodetic-engineering-thesis

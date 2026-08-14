@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Site Suitability Analysis of Salt Farms in Pangasinan using Geospatial Data and Analytic Hierarchy Process"
 slug: site-suitability-analysis-of-salt-farms-in-pangasinan-using-geospatial-data-and-analytic-hierarchy-process
+recordId: bsge-2023-090
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 91
 thesisType: bs-geodetic-engineering-thesis

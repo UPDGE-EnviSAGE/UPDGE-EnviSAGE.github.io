@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Spatiotemporal Analysis of Satellite-based Trace Gases Concentrations in Port Areas in the Philippines"
 slug: spatiotemporal-analysis-of-satellite-based-trace-gases-concentrations-in-port-areas-in-the-philippines
+recordId: bsge-2023-092
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 93
 thesisType: bs-geodetic-engineering-thesis

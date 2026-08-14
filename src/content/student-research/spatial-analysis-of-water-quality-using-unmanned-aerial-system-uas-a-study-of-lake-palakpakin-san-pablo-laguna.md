@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Spatial Analysis of Water Quality using Unmanned Aerial System (UAS): A Study of Lake Palakpakin, San Pablo, Laguna"
 slug: spatial-analysis-of-water-quality-using-unmanned-aerial-system-uas-a-study-of-lake-palakpakin-san-pablo-laguna
+recordId: bsge-2016-008
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 9
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "GIS-based Comparative Analysis of Solid Waste Collection Systems in Barangays Central and Pinyahan, Quezon City"
 slug: gis-based-comparative-analysis-of-solid-waste-collection-systems-in-barangays-central-and-pinyahan-quezon-city
+recordId: bsge-2018-047
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 48
 thesisType: bs-geodetic-engineering-thesis

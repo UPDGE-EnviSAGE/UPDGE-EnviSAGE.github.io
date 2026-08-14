@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Seagrass Aboveground Biomass–Based Carbon Stock Estimation in Bongao, Tawi-Tawi and Mansalay, Oriental Mindoro, through Remote Sensing"
 slug: seagrass-aboveground-biomass-based-carbon-stock-estimation-in-bongao-tawi-tawi-and-mansalay-oriental-mindoro-through-remote-sensing
+recordId: bsge-2026-123
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 124
 thesisType: bs-geodetic-engineering-thesis

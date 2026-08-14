@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Benthic Habitat Mapping using Sentinel-2A and Landsat 8 Satellite Image in Santiago Island, Bolinao, Pangasinan"
 slug: benthic-habitat-mapping-using-sentinel-2a-and-landsat-8-satellite-image-in-santiago-island-bolinao-pangasinan
+recordId: bsge-2017-022
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 23
 thesisType: bs-geodetic-engineering-thesis

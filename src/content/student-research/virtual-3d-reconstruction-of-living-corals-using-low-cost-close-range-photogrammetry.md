@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Virtual 3D Reconstruction of Living Corals using Low Cost Close Range Photogrammetry"
 slug: virtual-3d-reconstruction-of-living-corals-using-low-cost-close-range-photogrammetry
+recordId: bsge-2016-012
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 13
 thesisType: bs-geodetic-engineering-thesis

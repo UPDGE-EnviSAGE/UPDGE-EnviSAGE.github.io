@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Simulation of Land Use Change in Santa Rosa, Laguna: A Comparative Study of FLUS and MOLUSCE Models"
 slug: simulation-of-land-use-change-in-santa-rosa-laguna-a-comparative-study-of-flus-and-molusce-models
+recordId: bsge-2019-051
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 52
 thesisType: bs-geodetic-engineering-thesis

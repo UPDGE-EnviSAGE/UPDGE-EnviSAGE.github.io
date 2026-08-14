@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Onshore Wind Farms Suitability Analysis Using GIS-based AHP-PROMETHEE II"
 slug: onshore-wind-farms-suitability-analysis-using-gis-based-ahp-promethee-ii
+recordId: bsge-2024-103
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 104
 thesisType: bs-geodetic-engineering-thesis

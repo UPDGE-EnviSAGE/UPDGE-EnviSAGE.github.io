@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Mapping of Brown Macroalgae (Sargassum spp.) using Sentinel-2A Satellite Data and DJI Phantom 3 UAV Image in Northwestern Tantangon Island, Busuanga, Palawan, Philippines"
 slug: mapping-of-brown-macroalgae-sargassum-spp-using-sentinel-2a-satellite-data-and-dji-phantom-3-uav-image-in-northwestern-tantangon-island-busuanga-palawan-philippines
+recordId: bsge-2017-023
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 24
 thesisType: bs-geodetic-engineering-thesis

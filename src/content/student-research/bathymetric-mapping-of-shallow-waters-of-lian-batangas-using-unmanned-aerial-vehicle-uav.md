@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Bathymetric Mapping of Shallow Waters of Lian, Batangas using Unmanned Aerial Vehicle (UAV)"
 slug: bathymetric-mapping-of-shallow-waters-of-lian-batangas-using-unmanned-aerial-vehicle-uav
+recordId: bsge-2019-060
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 61
 thesisType: bs-geodetic-engineering-thesis

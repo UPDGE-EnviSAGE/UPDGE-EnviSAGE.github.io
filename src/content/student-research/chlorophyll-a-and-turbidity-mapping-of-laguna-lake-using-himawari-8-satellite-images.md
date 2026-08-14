@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Chlorophyll-a and Turbidity Mapping of Laguna Lake using Himawari-8 Satellite Images"
 slug: chlorophyll-a-and-turbidity-mapping-of-laguna-lake-using-himawari-8-satellite-images
+recordId: bsge-2019-055
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 56
 thesisType: bs-geodetic-engineering-thesis

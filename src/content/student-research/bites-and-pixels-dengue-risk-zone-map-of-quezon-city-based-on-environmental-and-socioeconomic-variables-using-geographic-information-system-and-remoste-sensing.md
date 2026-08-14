@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Bites and Pixels: Dengue Risk Zone Map of Quezon City Based on Environmental and Socioeconomic Variables using Geographic Information System and Remoste Sensing"
 slug: bites-and-pixels-dengue-risk-zone-map-of-quezon-city-based-on-environmental-and-socioeconomic-variables-using-geographic-information-system-and-remoste-sensing
+recordId: bsge-2023-088
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 89
 thesisType: bs-geodetic-engineering-thesis

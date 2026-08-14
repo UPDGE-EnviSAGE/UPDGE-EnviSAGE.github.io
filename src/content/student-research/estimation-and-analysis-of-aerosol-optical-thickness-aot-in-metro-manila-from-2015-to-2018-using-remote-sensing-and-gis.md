@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Estimation and Analysis of Aerosol Optical Thickness (AOT) in Metro Manila from 2015 to 2018 using Remote Sensing and GIS"
 slug: estimation-and-analysis-of-aerosol-optical-thickness-aot-in-metro-manila-from-2015-to-2018-using-remote-sensing-and-gis
+recordId: bsge-2019-062
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 63
 thesisType: bs-geodetic-engineering-thesis

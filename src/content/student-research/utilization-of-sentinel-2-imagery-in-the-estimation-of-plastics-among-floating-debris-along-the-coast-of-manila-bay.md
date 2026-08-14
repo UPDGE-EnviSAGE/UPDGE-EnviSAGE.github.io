@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Utilization of Sentinel-2 Imagery in the Estimation of Plastics Among Floating Debris Along the Coast of Manila Bay"
 slug: utilization-of-sentinel-2-imagery-in-the-estimation-of-plastics-among-floating-debris-along-the-coast-of-manila-bay
+recordId: bsge-2021-071
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 72
 thesisType: bs-geodetic-engineering-thesis

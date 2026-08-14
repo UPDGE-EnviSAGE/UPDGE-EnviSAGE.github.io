@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Modeling Land SurfaceTemperature (LST) and Urban Heat Islands (UHI) in Taguig City (Philippines) using Linear Spectral Unmixing of Hyperspectral Data"
 slug: modeling-land-surfacetemperature-lst-and-urban-heat-islands-uhi-in-taguig-city-philippines-using-linear-spectral-unmixing-of-hyperspectral-data
+recordId: bsge-2023-075
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 76
 thesisType: bs-geodetic-engineering-thesis

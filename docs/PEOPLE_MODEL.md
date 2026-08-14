@@ -173,6 +173,8 @@ Alumni records may be public when reviewed and approved. Alumni status should no
 
 When someone becomes alumni, update membership status and category rather than creating a second Person record.
 
+For undergraduate thesis maintenance, alumni status is derived from the thesis status only when the main adviser is EnviSAGE faculty. A co-adviser-only relationship does not make student authors EnviSAGE undergraduate researchers or alumni by itself.
+
 ## Empty-Category Behavior
 
 The public People directory should omit categories with zero public records.

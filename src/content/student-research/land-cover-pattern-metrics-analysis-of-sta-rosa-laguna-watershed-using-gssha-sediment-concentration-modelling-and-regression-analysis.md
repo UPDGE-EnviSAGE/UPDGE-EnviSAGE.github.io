@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Land Cover Pattern Metrics Analysis of Sta. Rosa Laguna Watershed using GSSHA Sediment Concentration Modelling and Regression Analysis"
 slug: land-cover-pattern-metrics-analysis-of-sta-rosa-laguna-watershed-using-gssha-sediment-concentration-modelling-and-regression-analysis
+recordId: bsge-2019-050
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 51
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "3D Modelling and Depth Estimation of Shallow Water Environments using a Customized Unmanned Surface Vehicle"
 slug: 3d-modelling-and-depth-estimation-of-shallow-water-environments-using-a-customized-unmanned-surface-vehicle
+recordId: bsge-2018-044
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 45
 thesisType: bs-geodetic-engineering-thesis

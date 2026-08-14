@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Effect of Temperature Anomaly in Coral Bleaching on Honda Bay, Palawan using Satellite Imageries"
 slug: effect-of-temperature-anomaly-in-coral-bleaching-on-honda-bay-palawan-using-satellite-imageries
+recordId: bsge-2018-039
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 40
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "SOCIO-SPATIAL JUSTICE IN REBUILDING COMMUNITIES: A SOCIO-SPATIAL INEQUALITY ANALYSIS OF ORIGINAL SETTLEMENT AREA AND RELOCATION AREA"
 slug: socio-spatial-justice-in-rebuilding-communities-a-socio-spatial-inequality-analysis-of-original-settlement-area-and-relocation-area
+recordId: bsge-2025-111
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 112
 thesisType: bs-geodetic-engineering-thesis

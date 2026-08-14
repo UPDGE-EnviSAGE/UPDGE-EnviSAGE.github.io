@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Analyzing Urban Agglomeration Patterns and Economic Development Using Spatial Econometrics and Social Networks: The Case of Metro Manila"
 slug: analyzing-urban-agglomeration-patterns-and-economic-development-using-spatial-econometrics-and-social-networks-the-case-of-metro-manila
+recordId: bsge-2025-113
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 114
 thesisType: bs-geodetic-engineering-thesis

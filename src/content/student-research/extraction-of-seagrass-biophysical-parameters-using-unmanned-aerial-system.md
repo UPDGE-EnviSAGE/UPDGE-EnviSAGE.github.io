@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Extraction of Seagrass Biophysical Parameters using Unmanned Aerial System"
 slug: extraction-of-seagrass-biophysical-parameters-using-unmanned-aerial-system
+recordId: bsge-2017-024
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 25
 thesisType: bs-geodetic-engineering-thesis

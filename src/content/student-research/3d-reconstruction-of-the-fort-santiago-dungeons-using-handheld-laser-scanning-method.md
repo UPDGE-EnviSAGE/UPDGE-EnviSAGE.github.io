@@ -1,6 +1,7 @@
 ---
 thesisTitle: "3D Reconstruction of the Fort Santiago Dungeons using Handheld Laser Scanning Method"
 slug: 3d-reconstruction-of-the-fort-santiago-dungeons-using-handheld-laser-scanning-method
+recordId: bsge-2023-083
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 84
 thesisType: bs-geodetic-engineering-thesis

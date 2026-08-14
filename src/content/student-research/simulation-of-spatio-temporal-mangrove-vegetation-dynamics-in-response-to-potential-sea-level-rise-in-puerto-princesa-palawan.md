@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Simulation of Spatio-Temporal Mangrove Vegetation Dynamics in Response to Potential Sea Level Rise in Puerto Princesa Palawan"
 slug: simulation-of-spatio-temporal-mangrove-vegetation-dynamics-in-response-to-potential-sea-level-rise-in-puerto-princesa-palawan
+recordId: bsge-2024-096
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 97
 thesisType: bs-geodetic-engineering-thesis

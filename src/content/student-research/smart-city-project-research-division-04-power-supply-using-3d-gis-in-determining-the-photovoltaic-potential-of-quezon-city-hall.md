@@ -1,6 +1,7 @@
 ---
 thesisTitle: "[Smart City Project Research Division 04: Power Supply] Using 3D GIS in Determining the Photovoltaic Potential of Quezon City Hall"
 slug: smart-city-project-research-division-04-power-supply-using-3d-gis-in-determining-the-photovoltaic-potential-of-quezon-city-hall
+recordId: bsge-2018-031
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 32
 thesisType: bs-geodetic-engineering-thesis

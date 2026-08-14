@@ -180,6 +180,7 @@ const studentResearch = defineCollection({
     .object({
       thesisTitle: z.string().min(1),
       slug,
+      recordId: slug.optional(),
       importBatch: z.string().optional(),
       sourceRow: z.number().int().optional(),
       thesisType,

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Using Remote Sensing and ARIMA Modelling in Assessing the Effectiveness of Implemented Forest Laws by Forest Change Monitoring"
 slug: using-remote-sensing-and-arima-modelling-in-assessing-the-effectiveness-of-implemented-forest-laws-by-forest-change-monitoring
+recordId: bsge-2018-045
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 46
 thesisType: bs-geodetic-engineering-thesis

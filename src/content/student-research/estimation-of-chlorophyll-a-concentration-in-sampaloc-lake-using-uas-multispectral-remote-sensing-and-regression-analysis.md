@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Estimation of Chlorophyll-a Concentration in Sampaloc Lake using UAS Multispectral Remote Sensing and Regression Analysis"
 slug: estimation-of-chlorophyll-a-concentration-in-sampaloc-lake-using-uas-multispectral-remote-sensing-and-regression-analysis
+recordId: bsge-2019-052
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 53
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Estimation of Chlorophyll-a Concentration in Laguna de Bay using Sentinel-3 Satellite Data"
 slug: estimation-of-chlorophyll-a-concentration-in-laguna-de-bay-using-sentinel-3-satellite-data
+recordId: bsge-2019-054
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 55
 thesisType: bs-geodetic-engineering-thesis

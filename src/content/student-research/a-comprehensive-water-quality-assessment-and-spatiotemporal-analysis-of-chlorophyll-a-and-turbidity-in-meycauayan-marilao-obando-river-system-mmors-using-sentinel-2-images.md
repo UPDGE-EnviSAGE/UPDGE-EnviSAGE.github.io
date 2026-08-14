@@ -1,6 +1,7 @@
 ---
 thesisTitle: "A Comprehensive Water Quality Assessment and Spatiotemporal Analysis of Chlorophyll-a and Turbidity in Meycauayan-Marilao-Obando River System (MMORS) Using Sentinel-2 Images"
 slug: a-comprehensive-water-quality-assessment-and-spatiotemporal-analysis-of-chlorophyll-a-and-turbidity-in-meycauayan-marilao-obando-river-system-mmors-using-sentinel-2-images
+recordId: bsge-2024-101
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 102
 thesisType: bs-geodetic-engineering-thesis

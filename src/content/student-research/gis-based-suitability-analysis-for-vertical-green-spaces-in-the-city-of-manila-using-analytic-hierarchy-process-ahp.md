@@ -1,6 +1,7 @@
 ---
 thesisTitle: "GIS-based Suitability Analysis for Vertical Green Spaces in the City of Manila using Analytic Hierarchy Process (AHP)"
 slug: gis-based-suitability-analysis-for-vertical-green-spaces-in-the-city-of-manila-using-analytic-hierarchy-process-ahp
+recordId: bsge-2023-091
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 92
 thesisType: bs-geodetic-engineering-thesis

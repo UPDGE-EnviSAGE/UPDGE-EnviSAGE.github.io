@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Analysis and Classification of Dominant Algal Bloom Phytoplankton Groups Using XGBoost with GCOM-C/SGLI Products and In Situ Data in Bolinao and Anda, Pangasinan"
 slug: analysis-and-classification-of-dominant-algal-bloom-phytoplankton-groups-using-xgboost-with-gcom-c-sgli-products-and-in-situ-data-in-bolinao-and-anda-pangasinan
+recordId: bsge-2026-125
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 126
 thesisType: bs-geodetic-engineering-thesis

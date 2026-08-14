@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Development of Spectral Disease Indices for Mapping and Monitoring of Red-Striped Soft Scale Pest (Pulvinaria tenuivalvata) Infestation in Sugarcane in Pampanga using Multispectral Drone and Sentinel-2 Images"
 slug: development-of-spectral-disease-indices-for-mapping-and-monitoring-of-red-striped-soft-scale-pest-pulvinaria-tenuivalvata-infestation-in-sugarcane-in-pampanga-using-multispectral-drone-and-sentinel-2-images
+recordId: bsge-2024-104
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 105
 thesisType: bs-geodetic-engineering-thesis

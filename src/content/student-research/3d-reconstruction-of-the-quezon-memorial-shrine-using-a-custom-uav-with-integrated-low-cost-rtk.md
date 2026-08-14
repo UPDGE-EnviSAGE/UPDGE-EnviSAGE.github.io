@@ -1,6 +1,7 @@
 ---
 thesisTitle: "3D Reconstruction of the Quezon Memorial Shrine using a Custom UAV with Integrated Low-Cost RTK"
 slug: 3d-reconstruction-of-the-quezon-memorial-shrine-using-a-custom-uav-with-integrated-low-cost-rtk
+recordId: bsge-2017-026
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 27
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "A GIS-Based Analysis of Green Space Accessibility in Quezon City"
 slug: a-gis-based-analysis-of-green-space-accessibility-in-quezon-city
+recordId: bsge-2024-105
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 106
 thesisType: bs-geodetic-engineering-thesis

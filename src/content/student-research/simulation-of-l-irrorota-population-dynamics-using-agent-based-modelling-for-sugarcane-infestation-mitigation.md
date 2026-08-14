@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Simulation of L. Irrorota Population Dynamics using Agent-based Modelling for Sugarcane Infestation Mitigation"
 slug: simulation-of-l-irrorota-population-dynamics-using-agent-based-modelling-for-sugarcane-infestation-mitigation
+recordId: bsge-2018-028
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 29
 thesisType: bs-geodetic-engineering-thesis

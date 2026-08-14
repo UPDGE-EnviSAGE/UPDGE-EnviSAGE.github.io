@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Determination of Optimal Fishing Grounds for Round Scad (Galunggong) in the Philippine Waters Through Spatio-Temporal Analysis of Oceanographic Parameters"
 slug: determination-of-optimal-fishing-grounds-for-round-scad-galunggong-in-the-philippine-waters-through-spatio-temporal-analysis-of-oceanographic-parameters
+recordId: bsge-2024-098
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 99
 thesisType: bs-geodetic-engineering-thesis

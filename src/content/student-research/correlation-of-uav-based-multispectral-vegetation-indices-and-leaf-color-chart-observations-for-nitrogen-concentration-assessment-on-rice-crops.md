@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Correlation of UAV-based Multispectral Vegetation Indices and Leaf Color Chart Observations for Nitrogen Concentration Assessment on Rice Crops"
 slug: correlation-of-uav-based-multispectral-vegetation-indices-and-leaf-color-chart-observations-for-nitrogen-concentration-assessment-on-rice-crops
+recordId: bsge-2019-058
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 59
 thesisType: bs-geodetic-engineering-thesis

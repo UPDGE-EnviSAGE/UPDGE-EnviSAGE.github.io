@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Assessing Fecal Coliform Presence in the Municipal Waters of Dapa, Surigao Del Norte: A Comparative Study of Empirical and Machine Learning Approaches Using Landsat 8 and 9"
 slug: assessing-fecal-coliform-presence-in-the-municipal-waters-of-dapa-surigao-del-norte-a-comparative-study-of-empirical-and-machine-learning-approaches-using-landsat-8-and-9
+recordId: bsge-2024-106
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 107
 thesisType: bs-geodetic-engineering-thesis

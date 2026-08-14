@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Site Suitability Analysis for Establishment of Materials Recovery Facilities in Quezon City, Philippines"
 slug: site-suitability-analysis-for-establishment-of-materials-recovery-facilities-in-quezon-city-philippines
+recordId: bsge-2018-029
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 30
 thesisType: bs-geodetic-engineering-thesis

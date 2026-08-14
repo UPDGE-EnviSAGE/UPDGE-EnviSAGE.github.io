@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Optimized P2P Bus Route Selection Analysis using GIS and Statistical Methods"
 slug: optimized-p2p-bus-route-selection-analysis-using-gis-and-statistical-methods
+recordId: bsge-2017-021
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 22
 thesisType: bs-geodetic-engineering-thesis

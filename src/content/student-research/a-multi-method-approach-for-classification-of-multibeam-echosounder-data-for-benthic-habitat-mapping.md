@@ -1,6 +1,7 @@
 ---
 thesisTitle: "A Multi-Method Approach for Classification of Multibeam Echosounder Data for Benthic Habitat Mapping"
 slug: a-multi-method-approach-for-classification-of-multibeam-echosounder-data-for-benthic-habitat-mapping
+recordId: bsge-2014-002
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 3
 thesisType: bs-geodetic-engineering-thesis

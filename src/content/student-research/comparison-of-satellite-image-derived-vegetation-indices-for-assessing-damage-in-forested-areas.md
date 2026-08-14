@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Comparison of Satellite Image-Derived Vegetation Indices for Assessing Damage in Forested Areas"
 slug: comparison-of-satellite-image-derived-vegetation-indices-for-assessing-damage-in-forested-areas
+recordId: bsge-2016-006
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 7
 thesisType: bs-geodetic-engineering-thesis

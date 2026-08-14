@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Examination of Planetscope, Sentinel-2, Landsat-9, Spot 6-7, And Kompsat, Satellite Imagery for Benthic Habitat Mapping and Assessment"
 slug: examination-of-planetscope-sentinel-2-landsat-9-spot-6-7-and-kompsat-satellite-imagery-for-benthic-habitat-mapping-and-assessment
+recordId: bsge-2024-107
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 108
 thesisType: bs-geodetic-engineering-thesis

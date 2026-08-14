@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Assessment of Land Cover Change Effects on River Discharge and Chlorophyll-a Concentrations in Agno River Basin using RS, GIS, and SWAT Model"
 slug: assessment-of-land-cover-change-effects-on-river-discharge-and-chlorophyll-a-concentrations-in-agno-river-basin-using-rs-gis-and-swat-model
+recordId: bsge-2023-086
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 87
 thesisType: bs-geodetic-engineering-thesis

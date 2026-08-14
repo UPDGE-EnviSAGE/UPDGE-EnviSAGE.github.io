@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Chlorophyll-a Estimation in San Pablo Bay, Leyte using RS Based Models"
 slug: chlorophyll-a-estimation-in-san-pablo-bay-leyte-using-rs-based-models
+recordId: bsge-2017-027
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 28
 thesisType: bs-geodetic-engineering-thesis

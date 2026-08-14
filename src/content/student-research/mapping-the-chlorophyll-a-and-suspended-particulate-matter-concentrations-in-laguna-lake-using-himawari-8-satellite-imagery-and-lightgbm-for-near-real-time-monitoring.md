@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Mapping the Chlorophyll-a and Suspended Particulate Matter Concentrations in Laguna Lake Using Himawari-8 Satellite Imagery and LightGBM for Near Real-Time Monitoring"
 slug: mapping-the-chlorophyll-a-and-suspended-particulate-matter-concentrations-in-laguna-lake-using-himawari-8-satellite-imagery-and-lightgbm-for-near-real-time-monitoring
+recordId: bsge-2024-099
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 100
 thesisType: bs-geodetic-engineering-thesis

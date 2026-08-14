@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Mapping Laguna Lake Water Quality using Spatial Regression of Satellite Image Reflectance and Bio-Optical Water Quality Estimates"
 slug: mapping-laguna-lake-water-quality-using-spatial-regression-of-satellite-image-reflectance-and-bio-optical-water-quality-estimates
+recordId: bsge-2016-009
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 10
 thesisType: bs-geodetic-engineering-thesis

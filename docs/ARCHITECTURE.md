@@ -126,6 +126,8 @@ Phase 6B enriches the six current EnviSAGE faculty records and adds static indiv
 
 Phase 6C imports historical BS Geodetic Engineering thesis records associated with EnviSAGE faculty as internal content only. It adds a reproducible workbook importer, internal canonical student Person records, internal Student Research records, explicit main/co-adviser relationships, and an import audit without changing the public site surface.
 
+Phase 6C.1 adds internal QA and a maintainer editing workflow for those undergraduate thesis records. The workflow keeps canonical Person and Student Research files as the website source of truth while using `data-maintenance/undergraduate-theses.csv` as a non-public human editing layer. `scripts/sync-undergraduate-theses.py` is dry-run-first, matches by stable `recordId`, preserves existing slugs where practical, never deletes missing canonical records automatically, and never promotes records to public visibility.
+
 ## Global Site Shell
 
 Phase 3A adds the production global shell through `BaseLayout`, `SiteHeader`, and `SiteFooter`.
@@ -156,6 +158,8 @@ Appropriate repository data includes:
 - References to external storage or repositories
 
 Student research metadata supports multiple undergraduate thesis authors through `students[]`. BS Geodetic Engineering thesis records must list 1 to 2 students, while MS thesis and PhD dissertation records must list exactly 1 student. Ongoing thesis repositories remain private by default until completion and review.
+
+Undergraduate thesis maintenance uses stable `recordId` values rather than titles as identity keys because ongoing titles can change. The maintainer CSV must remain outside `public/` and is not emitted into the production build.
 
 Inappropriate repository data includes:
 

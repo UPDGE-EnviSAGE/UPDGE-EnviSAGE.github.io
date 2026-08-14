@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Informal Settlement Detection Within Quezon City Through Various Convolutional Neural Network Models"
 slug: informal-settlement-detection-within-quezon-city-through-various-convolutional-neural-network-models
+recordId: bsge-2025-115
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 116
 thesisType: bs-geodetic-engineering-thesis

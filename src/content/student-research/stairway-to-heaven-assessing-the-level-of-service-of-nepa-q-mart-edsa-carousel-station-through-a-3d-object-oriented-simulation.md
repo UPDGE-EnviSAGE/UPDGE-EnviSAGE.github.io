@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Stairway To Heaven: Assessing The Level Of Service Of Nepa Q-Mart Edsa Carousel Station Through A 3d Object-Oriented Simulation"
 slug: stairway-to-heaven-assessing-the-level-of-service-of-nepa-q-mart-edsa-carousel-station-through-a-3d-object-oriented-simulation
+recordId: bsge-2024-094
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 95
 thesisType: bs-geodetic-engineering-thesis

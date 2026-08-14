@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Coconut Tree (Cocos Nucifera) Detection and Counting from Worldview-3 Imagery Using Object-Based Image Analysis, Local Peak Detection, and Template Matching"
 slug: coconut-tree-cocos-nucifera-detection-and-counting-from-worldview-3-imagery-using-object-based-image-analysis-local-peak-detection-and-template-matching
+recordId: bsge-2021-066
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 67
 thesisType: bs-geodetic-engineering-thesis

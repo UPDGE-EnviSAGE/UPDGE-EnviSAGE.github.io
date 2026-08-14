@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Seagrass Habitat Suitability Modeling for Bolinao - Anda, Pangasinan using Maximum Entropy and Random Forest"
 slug: seagrass-habitat-suitability-modeling-for-bolinao-anda-pangasinan-using-maximum-entropy-and-random-forest
+recordId: bsge-2023-080
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 81
 thesisType: bs-geodetic-engineering-thesis

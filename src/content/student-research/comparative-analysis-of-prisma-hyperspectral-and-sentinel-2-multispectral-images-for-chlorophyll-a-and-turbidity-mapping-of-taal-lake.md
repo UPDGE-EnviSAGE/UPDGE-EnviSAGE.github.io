@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Comparative Analysis of PRISMA Hyperspectral and Sentinel-2 Multispectral Images for Chlorophyll-a and Turbidity Mapping of Taal Lake"
 slug: comparative-analysis-of-prisma-hyperspectral-and-sentinel-2-multispectral-images-for-chlorophyll-a-and-turbidity-mapping-of-taal-lake
+recordId: bsge-2023-076
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 77
 thesisType: bs-geodetic-engineering-thesis

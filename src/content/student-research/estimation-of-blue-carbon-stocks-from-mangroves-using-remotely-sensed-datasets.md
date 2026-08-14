@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Estimation of Blue Carbon Stocks from Mangroves using Remotely-sensed Datasets"
 slug: estimation-of-blue-carbon-stocks-from-mangroves-using-remotely-sensed-datasets
+recordId: bsge-2017-013
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 14
 thesisType: bs-geodetic-engineering-thesis

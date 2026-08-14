@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Early Detection and Projection of Dengue Outbreak using Geospatial Tools: The Case of Quezon City"
 slug: early-detection-and-projection-of-dengue-outbreak-using-geospatial-tools-the-case-of-quezon-city
+recordId: bsge-2016-010
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 11
 thesisType: bs-geodetic-engineering-thesis

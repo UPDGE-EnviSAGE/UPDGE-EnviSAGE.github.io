@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Potential Assessment of Agrivoltaic Systems in The Philippines Using RS and GIS: Case of Pangasinan Province"
 slug: potential-assessment-of-agrivoltaic-systems-in-the-philippines-using-rs-and-gis-case-of-pangasinan-province
+recordId: bsge-2024-102
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 103
 thesisType: bs-geodetic-engineering-thesis

@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Correlation Analysis of Winter Monsoon-Induced Coastal Upwelling on Fishing Boat Nightlight Off the Southern Palawan Coast using Visible Infrared Imaging Radiometer Suite (VIIRS) and Moderate Resolution Imaging Spectroradiometer (MODIS) Data"
 slug: correlation-analysis-of-winter-monsoon-induced-coastal-upwelling-on-fishing-boat-nightlight-off-the-southern-palawan-coast-using-visible-infrared-imaging-radiometer-suite-viirs-and-moderate-resolution-imaging-spectroradiometer-modis-data
+recordId: bsge-2024-097
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 98
 thesisType: bs-geodetic-engineering-thesis

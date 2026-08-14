@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Assessment of Metro Manila Urban Parks’ Cooling Effect Based on Landscape Metrics Using Threshold Value of Efficiency (TVoE) Approach"
 slug: assessment-of-metro-manila-urban-parks-cooling-effect-based-on-landscape-metrics-using-threshold-value-of-efficiency-tvoe-approach
+recordId: bsge-2025-110
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 111
 thesisType: bs-geodetic-engineering-thesis

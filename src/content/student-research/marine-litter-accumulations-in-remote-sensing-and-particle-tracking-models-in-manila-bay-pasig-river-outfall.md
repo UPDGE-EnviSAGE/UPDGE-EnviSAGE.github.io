@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Marine Litter Accumulations in Remote Sensing and Particle Tracking Models in Manila Bay Pasig River Outfall"
 slug: marine-litter-accumulations-in-remote-sensing-and-particle-tracking-models-in-manila-bay-pasig-river-outfall
+recordId: bsge-2025-117
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 118
 thesisType: bs-geodetic-engineering-thesis

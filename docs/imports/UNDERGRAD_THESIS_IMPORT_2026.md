@@ -578,3 +578,37 @@ This audit summarizes the Phase 6C staging import. It intentionally does not rep
 - All imported student Person records are `visibility: internal`.
 - All imported Student Research records are `visibility: internal`.
 - Imported records are a staging import and are not approved for publication.
+
+## Phase 6C.1 QA Review
+
+- Review CSV: `docs/imports/review/UNDERGRAD_THESIS_IMPORT_REVIEW_2026.csv`
+- Exceptions CSV: `docs/imports/review/UNDERGRAD_THESIS_IMPORT_EXCEPTIONS_2026.csv`
+- Review rows: 125
+- Exception rows: 97
+- Main-adviser affiliation violations: 0
+- Co-adviser-only affiliation violations: 0
+- Multi-adviser co-adviser cells parsed with explicit delimiters: 7
+- Suspicious or combined co-adviser cells requiring manual review: 6
+- Unmatched adviser-name variants classified as expected non-EnviSAGE adviser: 29
+- Unmatched adviser-name variants classified as ambiguous/manual review required: 9
+- Unmatched adviser-name variants classified as possible EnviSAGE faculty variants: 0
+- Missing abstracts remain explicitly missing: 8
+- Missing keyword sets remain explicitly missing: 13
+
+The single thesis slug collision remains resolved deterministically by appending an 8-character SHA-1 suffix derived from year, authors, and title:
+
+- Base slug: `potential-assessment-of-agrivoltaic-systems-in-the-philippines-using-rs-and-gis-case-of-pangasinan-province`
+- Resolved slug: `potential-assessment-of-agrivoltaic-systems-in-the-philippines-using-rs-and-gis-case-of-pangasinan-province-a5de984b`
+
+Keyword curation remains deferred. The import contains 579 keyword assignments, 446 case-insensitive raw keyword values, 17 controlled Research Topic assignments, and 467 unmapped raw keyword variants.
+
+## Phase 6C.1 Maintenance Workflow
+
+The normalized maintainer CSV is `data-maintenance/undergraduate-theses.csv`. It contains 125 internal rows bootstrapped from the canonical imported records.
+
+The canonical website source of truth remains:
+
+- `src/content/people/`
+- `src/content/student-research/`
+
+The maintainer CSV is a controlled editing layer. Changes should flow from CSV to validated sync to canonical records to website. It is not a second database and must not be placed in `public/`.

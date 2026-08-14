@@ -117,6 +117,8 @@ Phase 6C imports the historical BS Geodetic Engineering thesis database associat
 
 This phase does not publish student records, create public thesis pages, create public Student Research catalogs, infer project/publication/dataset/software relationships, or begin maintainer review/promotion.
 
+Phase 6C.1 completes import QA and adds the undergraduate thesis maintenance workflow. It generates review and exception CSVs, bootstraps `data-maintenance/undergraduate-theses.csv`, adds a dry-run-first sync script, and documents maintainer editing without publishing student or thesis records.
+
 ## Phase 6 - Publications
 
 Create the publications database.

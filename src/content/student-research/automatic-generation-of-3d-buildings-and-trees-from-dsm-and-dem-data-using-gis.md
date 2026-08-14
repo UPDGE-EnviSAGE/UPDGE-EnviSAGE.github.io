@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Automatic Generation of 3D Buildings and Trees from DSM and DEM Data using GIS"
 slug: automatic-generation-of-3d-buildings-and-trees-from-dsm-and-dem-data-using-gis
+recordId: bsge-2013-001
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 2
 thesisType: bs-geodetic-engineering-thesis

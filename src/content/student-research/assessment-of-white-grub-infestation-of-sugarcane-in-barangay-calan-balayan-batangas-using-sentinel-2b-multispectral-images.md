@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Assessment of White Grub Infestation of Sugarcane in Barangay Calan, Balayan, Batangas using Sentinel-2B Multispectral Images"
 slug: assessment-of-white-grub-infestation-of-sugarcane-in-barangay-calan-balayan-batangas-using-sentinel-2b-multispectral-images
+recordId: bsge-2019-061
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 62
 thesisType: bs-geodetic-engineering-thesis

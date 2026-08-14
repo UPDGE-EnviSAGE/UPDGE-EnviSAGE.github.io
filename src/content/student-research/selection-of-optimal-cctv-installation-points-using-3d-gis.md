@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Selection of Optimal CCTV Installation Points using 3D GIS"
 slug: selection-of-optimal-cctv-installation-points-using-3d-gis
+recordId: bsge-2018-032
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 33
 thesisType: bs-geodetic-engineering-thesis

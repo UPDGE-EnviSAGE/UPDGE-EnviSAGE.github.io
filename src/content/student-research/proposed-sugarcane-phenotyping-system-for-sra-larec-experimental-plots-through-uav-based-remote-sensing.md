@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Proposed Sugarcane Phenotyping System for SRA-LAREC Experimental Plots through UAV-based Remote Sensing"
 slug: proposed-sugarcane-phenotyping-system-for-sra-larec-experimental-plots-through-uav-based-remote-sensing
+recordId: bsge-2019-059
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 60
 thesisType: bs-geodetic-engineering-thesis

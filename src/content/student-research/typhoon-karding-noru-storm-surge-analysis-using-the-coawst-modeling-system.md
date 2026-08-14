@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Typhoon Karding (Noru) Storm Surge Analysis using the COAWST Modeling System"
 slug: typhoon-karding-noru-storm-surge-analysis-using-the-coawst-modeling-system
+recordId: bsge-2023-082
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 83
 thesisType: bs-geodetic-engineering-thesis

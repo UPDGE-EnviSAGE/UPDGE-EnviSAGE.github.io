@@ -1,6 +1,7 @@
 ---
 thesisTitle: "Automated Planar Feature Detection from Dense Point Cloud: Comparison of RANSAC, MSAC, and Region Growing Algorithms"
 slug: automated-planar-feature-detection-from-dense-point-cloud-comparison-of-ransac-msac-and-region-growing-algorithms
+recordId: bsge-2019-053
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 54
 thesisType: bs-geodetic-engineering-thesis

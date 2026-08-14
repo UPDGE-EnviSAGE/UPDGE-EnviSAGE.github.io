@@ -1,6 +1,7 @@
 ---
 thesisTitle: "A Model for Urban Thermal Comfort: A Case Study of UP Engineering Complex"
 slug: a-model-for-urban-thermal-comfort-a-case-study-of-up-engineering-complex
+recordId: bsge-2018-034
 importBatch: undergrad-thesis-selected-advisers-2026
 sourceRow: 35
 thesisType: bs-geodetic-engineering-thesis

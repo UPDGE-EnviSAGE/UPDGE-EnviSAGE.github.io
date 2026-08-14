@@ -16,6 +16,8 @@ The faculty profile maintainer guide is the [Faculty Profile Guide](docs/FACULTY
 
 The canonical student research architecture document is the [Student Research Model](docs/STUDENT_RESEARCH_MODEL.md). It defines thesis records, student authorship, adviser relationships, visibility, and import/review rules.
 
+The undergraduate thesis maintainer workflow is documented in the [Undergraduate Thesis Maintenance Guide](docs/UNDERGRADUATE_THESIS_MAINTENANCE.md). Maintainers edit `data-maintenance/undergraduate-theses.csv`, run the dry-run sync, review warnings, and then apply changes to canonical Person and Student Research records.
+
 ## Platform Priorities
 
 The EnviSAGE platform will be developed in this order:
@@ -137,7 +139,10 @@ Do not commit `dist/`; GitHub Actions builds and uploads the static site artifac
 - `public/images/research/` - future optimized, public-approved research visual derivatives
 - `docs/FACULTY_PROFILE_GUIDE.md` - maintainer rules for public faculty profile enrichment
 - `docs/STUDENT_RESEARCH_MODEL.md` - canonical student research and thesis model
+- `docs/UNDERGRADUATE_THESIS_MAINTENANCE.md` - maintainer workflow for internal undergraduate thesis updates
 - `scripts/import-undergraduate-theses.py` - reproducible internal import tool for the Phase 6C undergraduate thesis source workbook
+- `scripts/sync-undergraduate-theses.py` - dry-run-first sync tool for the undergraduate thesis maintenance CSV
+- `data-maintenance/undergraduate-theses.csv` - non-public maintainer editing layer for undergraduate thesis records
 
 ## Stack
 
@@ -163,6 +168,7 @@ Future technologies such as Cloud Optimized GeoTIFF, PMTiles, GeoParquet, PostGI
 - [People Model](docs/PEOPLE_MODEL.md)
 - [Faculty Profile Guide](docs/FACULTY_PROFILE_GUIDE.md)
 - [Student Research Model](docs/STUDENT_RESEARCH_MODEL.md)
+- [Undergraduate Thesis Maintenance Guide](docs/UNDERGRADUATE_THESIS_MAINTENANCE.md)
 - [Design system](docs/DESIGN_SYSTEM.md)
 - [Research visual identity](docs/RESEARCH_VISUAL_IDENTITY.md)
 - [Contributing guide](docs/CONTRIBUTING.md)
