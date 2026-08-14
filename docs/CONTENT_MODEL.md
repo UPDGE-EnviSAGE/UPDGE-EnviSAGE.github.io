@@ -8,6 +8,8 @@ EnviSAGE is Environmental Systems Applications of Geomatics Engineering, the res
 
 `docs/PEOPLE_MODEL.md` specializes the Person entity for EnviSAGE membership categories, roles, visibility, and future profile enrichment.
 
+`docs/STUDENT_RESEARCH_MODEL.md` specializes thesis and student research records, including authorship, adviser relationships, visibility, import rules, and future publication review.
+
 ## Content Principles
 
 - Store public content as Markdown/MDX and structured data files.
@@ -46,6 +48,7 @@ Suggested fields:
 - tools
 - grants
 - student research records
+- import batch identifier when records are generated from an internal source
 
 Only public Person records should appear in the public People directory. Private and internal records, including development fixtures, must remain excluded.
 
@@ -108,12 +111,27 @@ Suggested fields:
 
 - thesis title
 - slug
+- stable record ID for maintainer synchronization
 - thesis type
+- program
+- status
 - students
-- adviser
+- canonical student Person references
+- main adviser
+- canonical main adviser Person reference when applicable
+- co-advisers
+- canonical co-adviser Person references when applicable
 - year
 - abstract
 - keywords
+- research topics
+- research areas
+- EnviSAGE association status and basis
+- EnviSAGE adviser roles
+- projects
+- publications
+- datasets
+- tools
 - repository
 - source code
 - notebooks
@@ -127,10 +145,15 @@ Suggested fields:
 - dataset DOI
 - software DOI
 - review/publication status
+- visibility
 
 Ongoing thesis repositories should normally remain private. After completion and appropriate review, repositories may become public under the EnviSAGE GitHub organization.
 
 The implemented student research schema uses `students[]` rather than a singular `student` field. BS Geodetic Engineering thesis records must list 1 to 2 students. MS thesis and PhD dissertation records must list exactly 1 student.
+
+Imported historical thesis records may remain `visibility: internal` while awaiting review. Internal student research records must not generate public pages or appear in public catalogs.
+
+Undergraduate thesis maintenance uses `data-maintenance/undergraduate-theses.csv` as a non-public editing layer. The canonical records remain the Person and Student Research content files; the CSV should be synchronized into those files through the documented dry-run-first workflow rather than treated as an independent database.
 
 ### Research Tools
 

@@ -23,7 +23,13 @@ const doi = z
 
 const relationList = z.array(slug).default([]);
 
-const visibility = z.enum(["draft", "public", "private", "archived"]);
+const visibility = z.enum([
+  "draft",
+  "internal",
+  "public",
+  "private",
+  "archived",
+]);
 
 const publicVisibility = z.enum(["private", "internal", "public"]);
 
@@ -35,6 +41,7 @@ const personRole = z.enum([
   "research-staff",
   "graduate-researcher",
   "undergraduate-researcher",
+  "thesis-author",
   "alumni",
 ]);
 
@@ -45,6 +52,7 @@ const personCategory = z.enum([
   "research-staff",
   "graduate-researcher",
   "undergraduate-researcher",
+  "thesis-author",
   "alumni",
 ]);
 
@@ -54,6 +62,16 @@ const thesisType = z.enum([
   "bs-geodetic-engineering-thesis",
   "ms-thesis",
   "phd-dissertation",
+]);
+
+const thesisStatus = z.enum(["ongoing", "completed", "archived"]);
+
+const adviserRole = z.enum(["main-adviser", "co-adviser"]);
+
+const envisageAssociationBasis = z.enum([
+  "main-adviser",
+  "co-adviser-only",
+  "none",
 ]);
 
 const people = defineCollection({
@@ -86,6 +104,7 @@ const people = defineCollection({
     googleScholar: url.optional(),
     personalWebsite: url.optional(),
     github: url.optional(),
+    importBatch: z.string().optional(),
     visibility: publicVisibility.default("private"),
   }),
 });
@@ -161,12 +180,32 @@ const studentResearch = defineCollection({
     .object({
       thesisTitle: z.string().min(1),
       slug,
+      recordId: slug.optional(),
+      importBatch: z.string().optional(),
+      sourceRow: z.number().int().optional(),
       thesisType,
+      program: z.string().optional(),
+      status: thesisStatus.default("ongoing"),
       students: z.array(z.string().min(1)).min(1),
+      studentPeople: relationList,
       adviser: z.string().min(1),
+      mainAdviserPerson: slug.optional(),
+      coAdvisers: z.array(z.string().min(1)).default([]),
+      coAdviserPeople: relationList,
       year: year.optional(),
       abstract: z.string().optional(),
       keywords: z.array(z.string()).default([]),
+      researchTopics: z.array(slug).default([]),
+      researchAreas: relationList,
+      envisageAssociated: z.boolean().default(false),
+      envisageAssociationBasis: envisageAssociationBasis.default("none"),
+      envisageMainAdviser: slug.optional(),
+      envisageCoAdvisers: relationList,
+      envisageAdviserRoles: z.array(adviserRole).default([]),
+      projects: relationList,
+      publications: relationList,
+      datasets: relationList,
+      tools: relationList,
       repository: url.optional(),
       sourceCode: url.optional(),
       notebooks: z.array(url).default([]),

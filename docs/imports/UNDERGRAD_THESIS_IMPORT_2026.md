@@ -1,0 +1,614 @@
+# Undergraduate Thesis Import Audit 2026
+
+Status: Internal maintainer audit
+
+This audit summarizes the Phase 6C staging import. It intentionally does not reproduce the raw spreadsheet, full abstracts, or all row contents.
+
+## Source
+
+- Source filename: `DGE_Undergraduate_Thesis_Selected_Advisers.xlsx`
+- Source path: `/Users/amtamondong/Projects/EnviSAGE/imports/DGE_Undergraduate_Thesis_Selected_Advisers.xlsx`
+- Worksheet: `Selected Advisers`
+- Import date: 2026-08-14
+- Source workbook copied into repository: No
+- Source workbook modified: No
+
+## Summary Counts
+
+- Source thesis rows examined: 125
+- EnviSAGE-associated theses imported: 125
+- EnviSAGE Faculty as main adviser: 94
+- EnviSAGE Faculty as co-adviser only: 31
+- Total unique student authors: 238
+- EnviSAGE-affiliated alumni: 181
+- Associated but non-affiliated student authors: 57
+- One-author theses: 10
+- Two-author theses: 115
+
+## Faculty Match Audit
+
+- BLANCO, Ariel C. -> ariel-c-blanco (`blanco ariel c`)
+- CRUZ, Margaux Angelica A. -> margaux-angelica-a-cruz (`cruz margaux angelica a`)
+- ELAZEGUI, Erica Erin E. -> erica-erin-e-elazegui (`elazegui erica erin e`)
+- ESCOTO, John Emmanuel D. -> john-emmanuel-d-escoto (`escoto john emmanuel d`)
+- MEDINA, Jommer M. -> jommer-m-medina (`medina jommer m`)
+- TAMONDONG, Ayin M. -> ayin-m-tamondong (`tamondong ayin m`)
+
+## QA Findings
+
+- Blank titles: 0
+- Blank years: 0
+- Blank main advisers: 0
+- Missing abstracts: 8
+- Missing keywords: 13
+
+### Duplicate-Name Issues
+
+- None
+
+### Thesis Slug Collisions
+
+- `{"row": 110, "base": "potential-assessment-of-agrivoltaic-systems-in-the-philippines-using-rs-and-gis-case-of-pangasinan-province", "resolved": "potential-assessment-of-agrivoltaic-systems-in-the-philippines-using-rs-and-gis-case-of-pangasinan-province-a5de984b"}`
+
+### Student Slug Collisions
+
+- None
+
+### Unmatched Adviser Names
+
+- Roseanne V. Ramos: 13
+- SARMIENTO, Czar Jakiri S.: 6
+- PRINCIPE, Jeark A.: 5
+- Bienvenido G. Carcellar III: 2
+- Mark Edwin A. Tupas: 2
+- Czar Jakiri S. Sarmiento: 2
+- Jeark A. Principe: 2
+- Claridades, Alexis Richard C.: 2
+- Sheryl Rose Reyes: 1
+- Anjillyn Mae C. Perez: 1
+- Jose Rene Y. Montelibano: 1
+- Edgardo G. Macatulad: 1
+- Florence A. Galeon: 1
+- Patrick Ostrea: 1
+- Ransie Joy A. Apura: 1
+- Maricor N. Soriano: 1
+- Louie P. Balicanta: 1
+- Severino G. Salmo III Rosalie B. Reyes: 1
+- Amihan Y. Manuel: 1
+- Charissa M. Ferrera: 1
+- Ma. Rosario Concepcion O. Ang Dominic M. Bautista: 1
+- Ma. Rosario Concepcion O. Ang: 1
+- Dr. Charina Lyn A. Repollo: 1
+- Karl Adrian P. Vergara: 1
+- Rafaela Jane P. Delfino: 1
+- TORRES, Rodyvito Angelo B.: 1
+- AMEDO-REPOLLO, Charina Lyn: 1
+- ANG, Ma. Rosario Concepcion O.: 1
+- Babaan, Jennieveive B.: 1
+- Vergara, Karl Adrian P.: 1
+- Carcellar, Bienvenido, G: 1
+- Herrera, Eugene, C: 1
+- Bahia, Roel, T: 1
+- Quiros, Angela, L: 1
+- Ang, Ma. Rosario Concepcion O.: 1
+- Salmo, Severino: 1
+- Alvin Baloloy, Dr. Rempei Suwa: 1
+- Dr. Aletta T. Yñiguez: 1
+
+### Ambiguous Faculty Matches
+
+- None
+
+### Unmapped Keywords
+
+- GIS: 12
+- remote sensing: 10
+- Remote Sensing: 7
+- NDVI: 5
+- geographic information system: 4
+- turbidity: 4
+- Sentinel-2: 4
+- suitability analysis: 4
+- chlorophyll-a: 3
+- Laguna Lake: 3
+- Photogrammetry: 3
+- UAS: 3
+- Maximum Likelihood Classification: 3
+- Support Vector Machine: 3
+- Unmanned Aerial Vehicle: 3
+- Chlorophyll-a: 3
+- Turbidity: 3
+- machine learning: 3
+- Remote sensing: 2
+- Landsat: 2
+- Maximum Likelihood: 2
+- vegetation indices: 2
+- Dengue: 2
+- Quezon City: 2
+- Regression: 2
+- land surface temperature: 2
+- Sentinel-2A: 2
+- Supervised Classification: 2
+- Classification: 2
+- photogrammetry: 2
+- UAV: 2
+- Sugarcane: 2
+- GWR: 2
+- Urban Heat Island: 2
+- Linear Regression: 2
+- PlanetScope: 2
+- MOLUSCE: 2
+- Metro Manila: 2
+- Random Forest: 2
+- NDTI: 2
+- regression: 2
+- sea surface temperature: 2
+- Spectral unmixing: 2
+- SST: 2
+- analytic hierarchy process: 2
+- AHP: 2
+- hotspot analysis: 2
+- agrivoltaics: 2
+- solar PV: 2
+- suitability: 2
+- cost-benefit analysis: 2
+- normalized digital surface model: 1
+- topographic modelling: 1
+- feature extraction: 1
+- simplification: 1
+- Change Detection: 1
+- SRTM: 1
+- Bolinao: 1
+- Pangasinan: 1
+- Landsat 8 OLI: 1
+- bathymetric estimation: 1
+- linear and nonlinear regression models: 1
+- change detection difference map: 1
+- EVI: 1
+- NDMI: 1
+- NBR: 1
+- Vegetation cover: 1
+- change detection: 1
+- TCT: 1
+- Unmanned Aerial Systems: 1
+- environment: 1
+- spatial regression: 1
+- surface reflectance: 1
+- Public Health: 1
+- Linear Regression Modelling: 1
+- Vector-Borne Diseases: 1
+- Close-Range Photogrammetry: 1
+- Digital Elevation Model: 1
+- LZD Algorithm: 1
+- Smartphones: 1
+- No Control Points: 1
+- Underwater: 1
+- Coral: 1
+- Close-Range: 1
+- Aboveground Biomass: 1
+- Blue Carbon: 1
+- Diseases: 1
+- Environmental Risks: 1
+- Mixture Tuned Matched Filtering (MTMF): 1
+- Regression Model: 1
+- Fractional Cover: 1
+- Coconut: 1
+- Progress Monitoring: 1
+- Project Management: 1
+- GoPro Hero4 Black: 1
+- Close Range Photogrammetry: 1
+- Road Surface Modelling: 1
+- Scale and Orientation Constraints: 1
+- Unmanned Aerial System (UAS): 1
+- Structure-from-Motion (SfM): 1
+- road surface condition: 1
+- dengue: 1
+- Fuzzy Association Rule Mining: 1
+- temperature: 1
+- precipitation: 1
+- pollution: 1
+- PM10: 1
+- MODIS: 1
+- Transportation: 1
+- Z-score: 1
+- Gravity Model: 1
+- Friction Factor: 1
+- Trip Distribution: 1
+- Landsat 8: 1
+- Lyzenga's water column correction: 1
+- Support Vector Machine Classification: 1
+- Accuracy Assessment: 1
+- Sargassum spp.: 1
+- DJI Phantom 3: 1
+- Unmanned Aerial Vehicle (UAV): 1
+- Palawan: 1
+- Seagrass Mapping: 1
+- Biophysical Parameters: 1
+- Density: 1
+- benthic habitat mapping: 1
+- object-based image analysis: 1
+- mesophotic zone: 1
+- multibeam echosounder system: 1
+- Apo Reef: 1
+- 3D reconstruction: 1
+- RTK: 1
+- Chlorophyll-A Estimation: 1
+- Data Fusion: 1
+- ESTARFM: 1
+- Simulation: 1
+- Agent-based Modelling: 1
+- RapidEye: 1
+- Infestation: 1
+- White Grub: 1
+- L. irrorata: 1
+- Materials Recovery Facility: 1
+- Analytic Hierarchy Process: 1
+- Geographic Information System: 1
+- Suitability Map: 1
+- Land Use: 1
+- Transport: 1
+- OLS: 1
+- SLR: 1
+- Three-Dimensional Geographic Information Systems (3D GIS): 1
+- Photovoltaics: 1
+- Solar Energy: 1
+- Renewable Energy: 1
+- CCTV: 1
+- 3D GIS: 1
+- viewshed: 1
+- camera coverage: 1
+- line of sight: 1
+- Albedo: 1
+- Urban Comfort: 1
+- Microclimate: 1
+- ENVI-met: 1
+- Evapotransportation: 1
+- Mitigation Strategies: 1
+- Earthquake evacuation plan: 1
+- Multi-criteria Decision Analysis (MCDA): 1
+- Closest Facility: 1
+- Object based image analysis: 1
+- Support Vector Machine (SVM): 1
+- tree species classification: 1
+- unmanned aerial system (UAS) imagery: 1
+- Light Detection and Ranging (LiDAR): 1
+- Mixture Tuned Matched Filtering: 1
+- Mahogany: 1
+- Swietenia Macrophylla: 1
+- Baguio City: 1
+- PM2.5: 1
+- Low-cost Sensor: 1
+- Exploratory Regression: 1
+- Coral Bleaching: 1
+- Temperature Anomaly: 1
+- Kolmogorov-Smirnov: 1
+- Nash-Sutcliffe: 1
+- IsoData Classification: 1
+- Sun Glint Correction: 1
+- RapidEye-3: 1
+- RapidEye-4: 1
+- Water Column Correction: 1
+- Spectral Signature: 1
+- Close-range Photogrammetry: 1
+- 3D Modelling: 1
+- Visualization: 1
+- Dashboard Camera: 1
+- Building Facade: 1
+- Cave: 1
+- Terrestrial Laser Scanning: 1
+- Monitoring: 1
+- Particuate matter (PM) Concentration: 1
+- PM₂.₅: 1
+- Meteorological Parameters: 1
+- Unmanned Surface Vehicle: 1
+- Echo Sounder: 1
+- Global Navigation Satellite System: 1
+- Bathymetric Survey: 1
+- Object Based Image Analysis: 1
+- Diwata-1: 1
+- Spaceborne Multispectral Imager: 1
+- Self-Organizing Map: 1
+- Clustering: 1
+- OLS Regression: 1
+- Urban Heat Island (UHI): 1
+- Land Surface Temperature (LST): 1
+- Urban Thermal Field Variance Index (UTFVI): 1
+- Normalized Difference Built-up Index (NDBI): 1
+- Normalized Difference Vegetation Index (NDVI): 1
+- Sediment Concentration: 1
+- GSSHA: 1
+- Land Cover Pattern: 1
+- Class Metrics Analysis: 1
+- Land Use Change Simulation: 1
+- FLUS: 1
+- Cellular Automata: 1
+- Artificial Neural Network (ANN): 1
+- Planar feature detection: 1
+- RANSAC: 1
+- MSAC: 1
+- Region Growing: 1
+- Sentinel 3: 1
+- OLCI: 1
+- Water quality analysis: 1
+- Himawari-8: 1
+- Illuminance: 1
+- 3D Model: 1
+- Unmanned Aerial System: 1
+- Road Lighting: 1
+- Bio-optical Modelling: 1
+- Boracay Island: 1
+- Chlorophyll-a Concentration: 1
+- Temporal Analysis: 1
+- Water Colour Simulator (WASI): 1
+- Leaf Color Chart: 1
+- Nitrogen Monitoring: 1
+- Fertilizer Application: 1
+- Rice Crops: 1
+- Vegetation Index: 1
+- Phenotyping: 1
+- Multispectral Sensor: 1
+- Thermal Sensor: 1
+- Precision Agriculture: 1
+- SRA-LAREC: 1
+- Bathymetric Mapping: 1
+- Refraction Correction: 1
+- Corrector Surface: 1
+- Root Mean Square Error: 1
+- White grub infestation: 1
+- Sentinel-2B: 1
+- NDRE: 1
+- Aerosol Optical Thickness: 1
+- Path Radiance Equation: 1
+- AERONET: 1
+- hard coral cover: 1
+- principal component analysis: 1
+- depth-invariant index: 1
+- mixture tuned matched filtering: 1
+- Batangas: 1
+- Drainage pipes: 1
+- GPR: 1
+- experimental tests: 1
+- hyperbolic responses: 1
+- k-values: 1
+- Seagrass Cover: 1
+- UAV images: 1
+- Geostatistical techniques: 1
+- Simple Kriging: 1
+- Moran's I: 1
+- Ordinary Least Squares: 1
+- plastic: 1
+- MTMF: 1
+- Naive-Bayes: 1
+- Lyzenga’s Optical Model: 1
+- Stumpf’s Ratio Model: 1
+- Spectral Indices: 1
+- Principal Component Analysis: 1
+- Benthic habitats: 1
+- PRISMA satellite imagery: 1
+- Simple Radiative Transfer Model: 1
+- Linear Spectral Unmixing: 1
+- Percent cover mapping: 1
+- Aboveground biomass: 1
+- Modeling: 1
+- Google Earth Engine (GEE): 1
+- urban heat islands: 1
+- surface material percentage: 1
+- hyperspectral: 1
+- WASI: 1
+- Indices: 1
+- Chlorophyll: 1
+- Lake Buhi: 1
+- Urbanization: 1
+- Land Surface Temperature: 1
+- Surface Urban Heat Island Intensity: 1
+- LC: 1
+- Boracay: 1
+- C2RCC: 1
+- Sentinel-2 MSI: 1
+- seagrasses: 1
+- habitat suitability model: 1
+- maximum entropy: 1
+- random forest: 1
+- COTS: 1
+- typhoon: 1
+- storm surge: 1
+- ocean modeling: 1
+- COAWST: 1
+- 3D Reconstruction: 1
+- SLAM: 1
+- ZEB Revo RT: 1
+- Indoor Mapping: 1
+- Fort Santiago Dungeons: 1
+- Benthic habitat mapping: 1
+- Spectral signature: 1
+- Coastal marine research: 1
+- coral bleaching: 1
+- PRISMA: 1
+- hyperspectral satellite image: 1
+- SAM: 1
+- Chlorophyll-a concentrations: 1
+- Hydrological modeling: 1
+- Land use/land cover: 1
+- River discharge: 1
+- SWAT model: 1
+- LST: 1
+- Soil Moisture: 1
+- Precipitation: 1
+- Agricultural Drought: 1
+- Time-Lag Effects: 1
+- Drought Forecasting: 1
+- Multivariate Regression: 1
+- Holt-Winters: 1
+- dengue risk modeling: 1
+- big data: 1
+- geospatial intelligence: 1
+- traffic accidents hotspots: 1
+- social media data: 1
+- natural language processing: 1
+- salt production: 1
+- salt farms: 1
+- solar evaporation: 1
+- MCDM: 1
+- RS: 1
+- physical land variables: 1
+- meteorological factors: 1
+- urban green spaces: 1
+- vertical green spaces: 1
+- vertical gardens: 1
+- urban planning: 1
+- Ports: 1
+- Emerging Hotspot Analysis: 1
+- Time Series Analysis: 1
+- vessel detection: 1
+- VIIRS boat detection: 1
+- SAR: 1
+- AIS: 1
+- OOS: 1
+- pedestrian congestion: 1
+- footbridge: 1
+- BRT: 1
+- SIMIO: 1
+- accessibility: 1
+- coconut: 1
+- vegetation index: 1
+- mapping: 1
+- sentinel 2: 1
+- SLAMM: 1
+- Landward Migration: 1
+- Coastal Squeeze: 1
+- SLR impact: 1
+- MVI: 1
+- Accretion: 1
+- upwelling: 1
+- upwelling index: 1
+- winter monsoon: 1
+- nightlight: 1
+- Pearson coefficient: 1
+- Satellite Remote Sensing: 1
+- Chlorophyll-A Concentration: 1
+- Sea Surface Temperature: 1
+- Sea Surface Salinity: 1
+- Fish catch: 1
+- Fisheries Management Areas: 1
+- water quality monitoring: 1
+- feature importance: 1
+- optimized models: 1
+- MT Princess Empress: 1
+- evaluation metrics: 1
+- centroid skill score: 1
+- field validation: 1
+- kernel density: 1
+- WQI: 1
+- Hot spots: 1
+- Seasonality: 1
+- Trend: 1
+- NDCI: 1
+- PROMETHEE II: 1
+- wind energy resource assessment: 1
+- severity map: 1
+- spectral signature analysis: 1
+- crop disease monitoring: 1
+- Accessible Natural Greenspace Standard: 1
+- environmental inequity: 1
+- land classification: 1
+- network analysis: 1
+- tree cover: 1
+- non-optically active: 1
+- empirical: 1
+- fecal coliform: 1
+- Benthic Habitat Mapping: 1
+- Classification and Regression Trees: 1
+- Hyperparameter Tuning: 1
+- solar farm expansion: 1
+- LULC analysis and simulation: 1
+- transition potential modeling: 1
+- impact assessment: 1
+- UHI: 1
+- park cooling effect indices: 1
+- piecewise linear regression: 1
+- TVoE: 1
+- informal settlements: 1
+- relocation: 1
+- living conditions: 1
+- indicators: 1
+- social media: 1
+- spatial modeling: 1
+- twitter: 1
+- information diffusion: 1
+- urban agglomeration: 1
+- social network analysis: 1
+- economic development: 1
+- Binary Logistic Regression (BLR): 1
+- Markov Chain (MC): 1
+- Cellular Automata (CA): 1
+- CA-Markov: 1
+- Land Use Change: 1
+- Residential Areas: 1
+- Informal settlement detection and mapping: 1
+- Convolutional Neural Networks (CNNs): 1
+- hybrid CNN-RF approach: 1
+- Matthews Correlation Coefficient (MCC): 1
+- Seasonal and Trend decomposition using LOESS (STL): 1
+- Fisheries Management Areas (FMA): 1
+- prediction model: 1
+- Marine litter: 1
+- Particle tracking model: 1
+- Manila Bay: 1
+- Pasig River: 1
+- aboveground biomass: 1
+- canopy height: 1
+- canopy cover: 1
+- shoreline: 1
+- LandTrendr: 1
+- vegetation change monitoring: 1
+- Masungi: 1
+- Harmonized Landsat and Sentinel-2 (HLS): 1
+- floating photovoltaic: 1
+- potential: 1
+- space-time cube: 1
+- time lag: 1
+- single-channel algorithm: 1
+
+### Records Skipped
+
+- None
+
+## Visibility Confirmation
+
+- All imported student Person records are `visibility: internal`.
+- All imported Student Research records are `visibility: internal`.
+- Imported records are a staging import and are not approved for publication.
+
+## Phase 6C.1 QA Review
+
+- Review CSV: `docs/imports/review/UNDERGRAD_THESIS_IMPORT_REVIEW_2026.csv`
+- Exceptions CSV: `docs/imports/review/UNDERGRAD_THESIS_IMPORT_EXCEPTIONS_2026.csv`
+- Review rows: 125
+- Exception rows: 97
+- Main-adviser affiliation violations: 0
+- Co-adviser-only affiliation violations: 0
+- Multi-adviser co-adviser cells parsed with explicit delimiters: 7
+- Suspicious or combined co-adviser cells requiring manual review: 6
+- Unmatched adviser-name variants classified as expected non-EnviSAGE adviser: 29
+- Unmatched adviser-name variants classified as ambiguous/manual review required: 9
+- Unmatched adviser-name variants classified as possible EnviSAGE faculty variants: 0
+- Missing abstracts remain explicitly missing: 8
+- Missing keyword sets remain explicitly missing: 13
+
+The single thesis slug collision remains resolved deterministically by appending an 8-character SHA-1 suffix derived from year, authors, and title:
+
+- Base slug: `potential-assessment-of-agrivoltaic-systems-in-the-philippines-using-rs-and-gis-case-of-pangasinan-province`
+- Resolved slug: `potential-assessment-of-agrivoltaic-systems-in-the-philippines-using-rs-and-gis-case-of-pangasinan-province-a5de984b`
+
+Keyword curation remains deferred. The import contains 579 keyword assignments, 446 case-insensitive raw keyword values, 17 controlled Research Topic assignments, and 467 unmapped raw keyword variants.
+
+## Phase 6C.1 Maintenance Workflow
+
+The normalized maintainer CSV is `data-maintenance/undergraduate-theses.csv`. It contains 125 internal rows bootstrapped from the canonical imported records.
+
+The canonical website source of truth remains:
+
+- `src/content/people/`
+- `src/content/student-research/`
+
+The maintainer CSV is a controlled editing layer. Changes should flow from CSV to validated sync to canonical records to website. It is not a second database and must not be placed in `public/`.

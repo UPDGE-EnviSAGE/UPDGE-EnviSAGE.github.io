@@ -14,6 +14,8 @@ The architecture should stay simple enough for faculty, researchers, students, a
 
 `docs/PEOPLE_MODEL.md` is the canonical Person architecture for EnviSAGE membership, roles, visibility, and future profile enrichment.
 
+`docs/STUDENT_RESEARCH_MODEL.md` is the canonical thesis and student research architecture for authorship, adviser roles, visibility, imports, GitHub relationships, and future student research catalogs.
+
 ## Phase 1 And 2 Stack
 
 The Phase 1 implementation stack is:
@@ -79,6 +81,8 @@ The content model should translate the canonical research ecosystem from `docs/R
 
 People records should follow `docs/PEOPLE_MODEL.md`: one canonical Person per person, public rendering only for `visibility: public`, and empty public categories omitted from directory pages.
 
+Student research records should follow `docs/STUDENT_RESEARCH_MODEL.md`: Thesis records are canonical scholarly records, student Person records are separate identity records, and internal thesis imports must not generate public routes or directory entries until reviewed.
+
 ## Repository Structure
 
 The Phase 1 repository structure includes:
@@ -120,6 +124,10 @@ Phase 6A replaces the `/people/` placeholder with a production People directory 
 
 Phase 6B enriches the six current EnviSAGE faculty records and adds static individual faculty profile pages at `/people/{slug}/`. Profiles use reviewed public fields, keep photos optional through a built-in fallback, store Google Scholar URLs without metrics, and render future contribution sections only when reviewed related records exist. The profile curation rules live in `docs/FACULTY_PROFILE_GUIDE.md`.
 
+Phase 6C imports historical BS Geodetic Engineering thesis records associated with EnviSAGE faculty as internal content only. It adds a reproducible workbook importer, internal canonical student Person records, internal Student Research records, explicit main/co-adviser relationships, and an import audit without changing the public site surface.
+
+Phase 6C.1 adds internal QA and a maintainer editing workflow for those undergraduate thesis records. The workflow keeps canonical Person and Student Research files as the website source of truth while using `data-maintenance/undergraduate-theses.csv` as a non-public human editing layer. `scripts/sync-undergraduate-theses.py` is dry-run-first, matches by stable `recordId`, preserves existing slugs where practical, never deletes missing canonical records automatically, and never promotes records to public visibility.
+
 ## Global Site Shell
 
 Phase 3A adds the production global shell through `BaseLayout`, `SiteHeader`, and `SiteFooter`.
@@ -150,6 +158,8 @@ Appropriate repository data includes:
 - References to external storage or repositories
 
 Student research metadata supports multiple undergraduate thesis authors through `students[]`. BS Geodetic Engineering thesis records must list 1 to 2 students, while MS thesis and PhD dissertation records must list exactly 1 student. Ongoing thesis repositories remain private by default until completion and review.
+
+Undergraduate thesis maintenance uses stable `recordId` values rather than titles as identity keys because ongoing titles can change. The maintainer CSV must remain outside `public/` and is not emitted into the production build.
 
 Inappropriate repository data includes:
 
