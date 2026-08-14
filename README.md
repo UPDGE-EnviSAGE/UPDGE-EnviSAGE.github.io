@@ -18,6 +18,8 @@ The canonical student research architecture document is the [Student Research Mo
 
 The undergraduate thesis maintainer workflow is documented in the [Undergraduate Thesis Maintenance Guide](docs/UNDERGRADUATE_THESIS_MAINTENANCE.md). Maintainers edit `data-maintenance/undergraduate-theses.csv`, run the dry-run sync, review warnings, and then apply changes to canonical Person and Student Research records.
 
+The student research publication workflow is documented in the [Student Research Publication Guide](docs/STUDENT_RESEARCH_PUBLICATION_GUIDE.md). Maintainers review `data-maintenance/student-research-publication-review.csv`; only rows explicitly marked `approve` may become public.
+
 ## Platform Priorities
 
 The EnviSAGE platform will be developed in this order:
@@ -140,9 +142,13 @@ Do not commit `dist/`; GitHub Actions builds and uploads the static site artifac
 - `docs/FACULTY_PROFILE_GUIDE.md` - maintainer rules for public faculty profile enrichment
 - `docs/STUDENT_RESEARCH_MODEL.md` - canonical student research and thesis model
 - `docs/UNDERGRADUATE_THESIS_MAINTENANCE.md` - maintainer workflow for internal undergraduate thesis updates
+- `docs/STUDENT_RESEARCH_PUBLICATION_GUIDE.md` - maintainer workflow for reviewed student research publication
 - `scripts/import-undergraduate-theses.py` - reproducible internal import tool for the Phase 6C undergraduate thesis source workbook
 - `scripts/sync-undergraduate-theses.py` - dry-run-first sync tool for the undergraduate thesis maintenance CSV
+- `scripts/review-student-research.py` - review CSV generator for student research publication decisions
+- `scripts/publish-student-research.py` - dry-run-first publisher for approved student research records
 - `data-maintenance/undergraduate-theses.csv` - non-public maintainer editing layer for undergraduate thesis records
+- `data-maintenance/student-research-publication-review.csv` - non-public publication review layer for student research records
 
 ## Stack
 
@@ -169,6 +175,7 @@ Future technologies such as Cloud Optimized GeoTIFF, PMTiles, GeoParquet, PostGI
 - [Faculty Profile Guide](docs/FACULTY_PROFILE_GUIDE.md)
 - [Student Research Model](docs/STUDENT_RESEARCH_MODEL.md)
 - [Undergraduate Thesis Maintenance Guide](docs/UNDERGRADUATE_THESIS_MAINTENANCE.md)
+- [Student Research Publication Guide](docs/STUDENT_RESEARCH_PUBLICATION_GUIDE.md)
 - [Design system](docs/DESIGN_SYSTEM.md)
 - [Research visual identity](docs/RESEARCH_VISUAL_IDENTITY.md)
 - [Contributing guide](docs/CONTRIBUTING.md)

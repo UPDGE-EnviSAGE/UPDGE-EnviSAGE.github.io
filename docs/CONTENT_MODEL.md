@@ -155,6 +155,8 @@ Imported historical thesis records may remain `visibility: internal` while await
 
 Undergraduate thesis maintenance uses `data-maintenance/undergraduate-theses.csv` as a non-public editing layer. The canonical records remain the Person and Student Research content files; the CSV should be synchronized into those files through the documented dry-run-first workflow rather than treated as an independent database.
 
+Student research publication uses `data-maintenance/student-research-publication-review.csv` as a non-public approval layer. Review decisions must be synchronized into canonical visibility fields before the public website renders thesis catalog cards, thesis pages, or public alumni records.
+
 ### Research Tools
 
 Suggested fields:

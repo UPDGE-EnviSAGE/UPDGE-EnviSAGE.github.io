@@ -11,6 +11,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Python caches
+__pycache__/
+*.pyc
+
 # environment files
 .env
 .env.*
@@ -20,4 +24,3 @@ pnpm-debug.log*
 .DS_Store
 .vscode/
 .idea/
-

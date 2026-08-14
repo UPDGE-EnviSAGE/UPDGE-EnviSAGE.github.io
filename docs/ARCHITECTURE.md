@@ -128,6 +128,8 @@ Phase 6C imports historical BS Geodetic Engineering thesis records associated wi
 
 Phase 6C.1 adds internal QA and a maintainer editing workflow for those undergraduate thesis records. The workflow keeps canonical Person and Student Research files as the website source of truth while using `data-maintenance/undergraduate-theses.csv` as a non-public human editing layer. `scripts/sync-undergraduate-theses.py` is dry-run-first, matches by stable `recordId`, preserves existing slugs where practical, never deletes missing canonical records automatically, and never promotes records to public visibility.
 
+Phase 6D adds the review-gated publication workflow and public Student Research surface. `data-maintenance/student-research-publication-review.csv` is the non-public maintainer approval layer, `scripts/review-student-research.py` regenerates it while preserving decisions, and `scripts/publish-student-research.py` dry-runs by default before applying approved visibility changes. Public `/student-research/` and `/student-research/{slug}/` routes render only `visibility: public` theses.
+
 ## Global Site Shell
 
 Phase 3A adds the production global shell through `BaseLayout`, `SiteHeader`, and `SiteFooter`.
@@ -160,6 +162,8 @@ Appropriate repository data includes:
 Student research metadata supports multiple undergraduate thesis authors through `students[]`. BS Geodetic Engineering thesis records must list 1 to 2 students, while MS thesis and PhD dissertation records must list exactly 1 student. Ongoing thesis repositories remain private by default until completion and review.
 
 Undergraduate thesis maintenance uses stable `recordId` values rather than titles as identity keys because ongoing titles can change. The maintainer CSV must remain outside `public/` and is not emitted into the production build.
+
+Student research publication requires explicit review approval. Co-advised-only authors may appear as authors on public thesis pages, but they must not become EnviSAGE alumni or public EnviSAGE member records solely from co-advising.
 
 Inappropriate repository data includes:
 

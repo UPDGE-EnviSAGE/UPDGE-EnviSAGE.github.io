@@ -119,6 +119,8 @@ This phase does not publish student records, create public thesis pages, create 
 
 Phase 6C.1 completes import QA and adds the undergraduate thesis maintenance workflow. It generates review and exception CSVs, bootstraps `data-maintenance/undergraduate-theses.csv`, adds a dry-run-first sync script, and documents maintainer editing without publishing student or thesis records.
 
+Phase 6D adds the student research review and publication workflow. It creates a consolidated publication review CSV, dry-run-first review and publish scripts, a public-only Student Research catalog, public thesis pages for approved records, and compact alumni rendering for approved EnviSAGE-affiliated students.
+
 ## Phase 6 - Publications
 
 Create the publications database.
