@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - building-construction-progress-monitoring-using-unmanned-aerial-system-uas-low-cost-photogrammetry-and-geographic-information-system-gis
-visibility: internal
+visibility: public
 ---

@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - mapping-laguna-lake-water-quality-using-spatial-regression-of-satellite-image-reflectance-and-bio-optical-water-quality-estimates
-visibility: internal
+visibility: public
 ---

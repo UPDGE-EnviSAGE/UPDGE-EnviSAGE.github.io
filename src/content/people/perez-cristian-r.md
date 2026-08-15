@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - geospatial-and-clustering-analysis-of-dengue-cases-using-self-organizing-maps-case-of-quezon-city-2010-2015
-visibility: internal
+visibility: public
 ---

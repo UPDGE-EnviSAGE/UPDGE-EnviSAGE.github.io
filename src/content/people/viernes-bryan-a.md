@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - a-comprehensive-water-quality-assessment-and-spatiotemporal-analysis-of-chlorophyll-a-and-turbidity-in-meycauayan-marilao-obando-river-system-mmors-using-sentinel-2-images
-visibility: internal
+visibility: public
 ---

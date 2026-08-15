@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - parking-pattern-assessment-and-optimal-parking-space-analysis-using-gis-the-case-study-of-quezon-city-central-business-district
-visibility: internal
+visibility: public
 ---

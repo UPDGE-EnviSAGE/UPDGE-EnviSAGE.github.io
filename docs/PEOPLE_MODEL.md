@@ -6,7 +6,7 @@ This document defines the EnviSAGE Person model for the public website and futur
 
 The People model establishes canonical Person records, EnviSAGE membership categories, role labels, visibility rules, and lightweight profile expectations for current and future members.
 
-The public People directory answers: Who does the research?
+The public People directory answers: Who is part of EnviSAGE now?
 
 ## Canonical Person Principle
 
@@ -177,6 +177,12 @@ For undergraduate thesis maintenance, alumni status is derived from the thesis s
 
 For student research publication, approved thesis pages may display all thesis authors. Public alumni Person records remain limited to EnviSAGE-affiliated students whose main adviser was EnviSAGE faculty and whose student visibility has not been blocked during review.
 
+The main `/people/` page should remain a concise current-community directory. It may show a compact alumni teaser and link to `/people/alumni/`, but it must not render a long historical wall of undergraduate alumni.
+
+The `/people/alumni/` page is the canonical public directory for historical EnviSAGE-affiliated undergraduate researchers. It excludes co-advised-only thesis authors, internal students, active students, and unrelated thesis authors. Alumni are grouped by thesis or completion year and should link to a reviewed public thesis when one resolves.
+
+Do not generate standalone undergraduate alumni profile routes. The Thesis remains the canonical public scholarly record for undergraduate research.
+
 ## Empty-Category Behavior
 
 The public People directory should omit categories with zero public records.
@@ -184,6 +190,19 @@ The public People directory should omit categories with zero public records.
 Do not show empty sections such as "No researchers yet" or "Alumni coming soon." This rule keeps the public directory concise while allowing future categories to appear automatically when public records exist.
 
 When public alumni grow large, render alumni with a compact list/grid rather than oversized faculty-style cards.
+
+## Faculty Undergraduate Advising
+
+Faculty profile pages may show an Undergraduate Research Advising section derived from reviewed public Student Research records.
+
+Advising relationships must be derived from thesis records, not hardcoded into faculty records. Preserve the role distinction:
+
+- Main Adviser
+- Co-Adviser
+
+Faculty advising counts should count unique public undergraduate thesis records where the faculty member is main adviser or co-adviser. Student counts should count unique public student authors across those thesis records without double-counting the same canonical student identity.
+
+Faculty names may link to `/people/<faculty-slug>/` only when the adviser resolves to a reviewed public EnviSAGE faculty Person record. Do not create or link to external adviser profiles in this model.
 
 ## Faculty Profile Enrichment
 

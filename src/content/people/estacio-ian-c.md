@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - updating-dem-through-close-range-photogrammetry-without-control-points-and-dem-matching-by-lzd-algorithm
-visibility: internal
+visibility: public
 ---

@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - optimized-p2p-bus-route-selection-analysis-using-gis-and-statistical-methods
-visibility: internal
+visibility: public
 ---

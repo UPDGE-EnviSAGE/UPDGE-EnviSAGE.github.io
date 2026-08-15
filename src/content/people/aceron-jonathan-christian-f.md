@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - land-cover-pattern-metrics-analysis-of-sta-rosa-laguna-watershed-using-gssha-sediment-concentration-modelling-and-regression-analysis
-visibility: internal
+visibility: public
 ---

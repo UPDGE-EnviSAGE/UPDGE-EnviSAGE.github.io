@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - assessing-the-relationship-between-coastal-reclamation-and-seagrass-ecosystems-in-coron-palawan-using-multitemporal-remote-sensing-shoreline-change-analysis-and-turbidity-mapping
-visibility: internal
+visibility: public
 ---

@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - a-model-for-urban-thermal-comfort-a-case-study-of-up-engineering-complex
-visibility: internal
+visibility: public
 ---

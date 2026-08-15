@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - virtual-3d-reconstruction-of-living-corals-using-low-cost-close-range-photogrammetry
-visibility: internal
+visibility: public
 ---

@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - extraction-of-seagrass-biophysical-parameters-using-unmanned-aerial-system
-visibility: internal
+visibility: public
 ---

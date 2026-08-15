@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - 3d-reconstruction-of-the-fort-santiago-dungeons-using-handheld-laser-scanning-method
-visibility: internal
+visibility: public
 ---

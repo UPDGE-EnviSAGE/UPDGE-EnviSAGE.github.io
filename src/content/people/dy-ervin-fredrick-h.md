@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - automatic-generation-of-3d-buildings-and-trees-from-dsm-and-dem-data-using-gis
-visibility: internal
+visibility: public
 ---

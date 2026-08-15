@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - vegetation-cover-change-detection-in-masungi-geopark-project-rizal-philippines-from-1995-to-2024-using-landtrendr-with-multispectral-imagery-in-google-earth-engine
-visibility: internal
+visibility: public
 ---

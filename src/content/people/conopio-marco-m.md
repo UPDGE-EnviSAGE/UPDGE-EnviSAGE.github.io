@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - estimation-of-chlorophyll-a-concentration-in-laguna-de-bay-using-sentinel-3-satellite-data
-visibility: internal
+visibility: public
 ---

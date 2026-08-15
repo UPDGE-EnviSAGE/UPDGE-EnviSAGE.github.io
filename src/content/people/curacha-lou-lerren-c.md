@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - assessment-and-modelling-of-prevalence-of-selected-diseases-and-influencing-environmental-factors-using-gis
-visibility: internal
+visibility: public
 ---

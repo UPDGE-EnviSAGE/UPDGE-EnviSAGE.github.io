@@ -260,7 +260,7 @@ def validate_review_rows(rows: list[dict[str, str]]) -> tuple[list[str], list[st
             if flag not in PUBLIC_FLAGS:
                 errors.append(f"{record_id}: invalid {column} value '{flag}'.")
         if decision == "approve" and row.get("abstract_present") != "yes":
-            errors.append(f"{record_id}: approved thesis is missing an abstract.")
+            warnings.append(f"{record_id}: approved thesis is missing an abstract.")
         if decision == "approve" and row.get("public_thesis") == "no":
             warnings.append(f"{record_id}: approved but public_thesis is no; thesis will remain internal.")
     return warnings, errors

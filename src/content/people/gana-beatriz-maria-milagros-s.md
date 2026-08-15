@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - performance-assessment-of-linear-and-nonlinear-regression-models-for-bathymetric-estimation-using-worldview-2-imagery
-visibility: internal
+visibility: public
 ---

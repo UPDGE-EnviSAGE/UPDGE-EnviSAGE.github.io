@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - analysis-and-classification-of-dominant-algal-bloom-phytoplankton-groups-using-xgboost-with-gcom-c-sgli-products-and-in-situ-data-in-bolinao-and-anda-pangasinan
-visibility: internal
+visibility: public
 ---

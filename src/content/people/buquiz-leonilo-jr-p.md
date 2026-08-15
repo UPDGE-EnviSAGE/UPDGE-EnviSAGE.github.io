@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - comparison-of-satellite-image-derived-vegetation-indices-for-assessing-damage-in-forested-areas
-visibility: internal
+visibility: public
 ---

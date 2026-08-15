@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - site-suitability-analysis-for-establishment-of-materials-recovery-facilities-in-quezon-city-philippines
-visibility: internal
+visibility: public
 ---

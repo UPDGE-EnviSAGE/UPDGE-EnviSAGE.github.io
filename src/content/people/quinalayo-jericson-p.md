@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - estimation-of-chlorophyll-a-concentration-in-sampaloc-lake-using-uas-multispectral-remote-sensing-and-regression-analysis
-visibility: internal
+visibility: public
 ---

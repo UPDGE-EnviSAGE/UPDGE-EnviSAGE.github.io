@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - coconut-fractional-cover-estimation-using-mixture-tuned-matched-filtering-mtmf-landsat-images
-visibility: internal
+visibility: public
 ---

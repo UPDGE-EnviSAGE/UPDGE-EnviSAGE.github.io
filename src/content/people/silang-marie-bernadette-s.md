@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - application-of-fuzzy-association-rule-mining-for-the-generation-of-dengue-fever-prediction-model-in-luzon-using-remotely-sensed-environmental-variables
-visibility: internal
+visibility: public
 ---

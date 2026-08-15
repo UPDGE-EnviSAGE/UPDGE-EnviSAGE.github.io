@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - 3d-cave-modelling-using-photogrammetric-and-terrestrial-laser-scanning-methods
-visibility: internal
+visibility: public
 ---

@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - comparative-analysis-of-road-surface-3d-point-clouds-derived-by-unmanned-aerial-system-uas-structure-from-motion-photogrammetry
-visibility: internal
+visibility: public
 ---

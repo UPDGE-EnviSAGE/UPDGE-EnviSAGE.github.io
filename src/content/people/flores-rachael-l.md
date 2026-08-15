@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - estimation-of-percent-cover-change-in-the-benthic-habitats-of-calatagan-batangas-using-sentinel-2-satellite-imagery-and-linear-spectral-unmixing
-visibility: internal
+visibility: public
 ---

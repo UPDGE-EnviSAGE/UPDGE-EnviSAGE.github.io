@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - typhoon-karding-noru-storm-surge-analysis-using-the-coawst-modeling-system
-visibility: internal
+visibility: public
 ---

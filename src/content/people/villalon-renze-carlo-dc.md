@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - automated-planar-feature-detection-from-dense-point-cloud-comparison-of-ransac-msac-and-region-growing-algorithms
-visibility: internal
+visibility: public
 ---

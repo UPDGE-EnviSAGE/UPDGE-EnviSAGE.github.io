@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - a-multi-method-approach-for-classification-of-multibeam-echosounder-data-for-benthic-habitat-mapping
-visibility: internal
+visibility: public
 ---

@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - stairway-to-heaven-assessing-the-level-of-service-of-nepa-q-mart-edsa-carousel-station-through-a-3d-object-oriented-simulation
-visibility: internal
+visibility: public
 ---

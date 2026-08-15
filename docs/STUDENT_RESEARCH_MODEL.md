@@ -47,6 +47,10 @@ Thesis records preserve adviser roles explicitly:
 
 Do not collapse main adviser and co-advisers into an undifferentiated adviser list.
 
+Public thesis pages and the Student Research catalog may link adviser names to faculty profile pages only when the adviser resolves to a canonical public EnviSAGE faculty Person record. Non-EnviSAGE advisers remain plain text until a future external-person model exists.
+
+Faculty undergraduate advising lists are derived from reviewed public thesis records using `mainAdviserPerson` and `envisageCoAdvisers`. Do not manually duplicate thesis titles or advising counts in faculty Person records.
+
 ## EnviSAGE-Associated Thesis
 
 A thesis is EnviSAGE-associated when at least one of these is true:
@@ -183,6 +187,10 @@ python3 scripts/publish-student-research.py --write
 Only rows with `publication_decision: approve` may transition a thesis to `visibility: public`. Pending, held, or needs-fix rows remain internal.
 
 Public thesis pages may show all authors, including co-advised-only authors, because authorship is part of the scholarly record. Public Person promotion remains stricter: only EnviSAGE-affiliated students derived from the main-adviser rule may become public alumni records, and student-level privacy overrides may keep affiliated Person records internal.
+
+Public display normalizes student and adviser names through a shared display helper. The helper converts unambiguous `LAST, First Middle` values to `First Middle Last`, applies conservative title casing, and preserves common lowercase particles such as `de`, `del`, `dela`, `de la`, `van`, `von`, and `y` where safely recognizable. Stable Person IDs and slugs remain authoritative and must not be regenerated solely because display capitalization changes.
+
+Use `data-maintenance/student-name-normalization-review.csv` to review display-name changes where the normalized public form differs from the stored source name.
 
 See `docs/STUDENT_RESEARCH_PUBLICATION_GUIDE.md` for maintainer-facing publication instructions.
 

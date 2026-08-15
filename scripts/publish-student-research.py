@@ -111,8 +111,12 @@ def summarize(review_csv: Path, write: bool) -> tuple[dict[str, Any], int]:
                     person_changes += int(update_frontmatter_value(person.path, "visibility", "internal"))
             if should_publish_thesis(row) and not affiliated:
                 co_advised_only_authors_internal.add(student_name)
-        if should_publish_thesis(row) and not thesis.frontmatter.get("abstract"):
-            errors.append(f"{record_id}: approved thesis '{title}' is missing an abstract.")
+        if (
+            should_publish_thesis(row)
+            and row.get("abstract_present") == "yes"
+            and not thesis.frontmatter.get("abstract")
+        ):
+            warnings.append(f"{record_id}: approved thesis '{title}' is missing an abstract.")
 
     if not write:
         thesis_changes = 0

@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - estimation-and-mapping-of-mangrove-aboveground-biomass-in-zambales-province-using-sentinel-2-sentinel-1-and-alos-2-palsar-2
-visibility: internal
+visibility: public
 ---

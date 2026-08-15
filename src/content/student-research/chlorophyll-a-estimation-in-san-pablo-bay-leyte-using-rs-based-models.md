@@ -39,6 +39,6 @@ notebooks: []
 sampleData: []
 exampleOutputs: []
 mapsOrFigures: []
-reviewStatus: under-review
-visibility: internal
+reviewStatus: public
+visibility: public
 ---

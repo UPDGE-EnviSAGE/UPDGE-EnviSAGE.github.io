@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - correlation-of-land-surface-temperature-and-pm10-in-metro-manila-using-satellite-imaging
-visibility: internal
+visibility: public
 ---

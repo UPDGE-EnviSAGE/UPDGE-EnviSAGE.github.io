@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - estimation-of-chlorophyll-a-and-turbidity-in-bolinao-pangasinan-using-landsat-8-oli-image
-visibility: internal
+visibility: public
 ---

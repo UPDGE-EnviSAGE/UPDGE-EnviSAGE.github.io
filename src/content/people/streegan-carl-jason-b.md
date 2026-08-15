@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - a-gis-based-analysis-of-green-space-accessibility-in-quezon-city
-visibility: internal
+visibility: public
 ---

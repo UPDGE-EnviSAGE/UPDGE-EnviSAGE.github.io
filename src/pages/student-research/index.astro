@@ -4,12 +4,27 @@ import ButtonLink from "@components/ButtonLink.astro";
 import Section from "@components/Section.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import {
+  createFacultyDirectory,
+  getAdviserHref,
+} from "../../data/student-research-relationships";
 import { topicLabel } from "../../data/student-research";
+import {
+  formatPersonDisplayName,
+  joinDisplayNames,
+} from "../../utils/display-names";
 
 const publicTheses = await getCollection(
   "student-research",
   ({ data }) => data.visibility === "public",
 );
+
+const publicPeople = await getCollection(
+  "people",
+  ({ data }) => data.visibility === "public",
+);
+
+const facultyDirectory = createFacultyDirectory(publicPeople);
 
 const sortedTheses = publicTheses.sort(
   (first, second) =>
@@ -28,8 +43,15 @@ const thesesByYear = Array.from(
 );
 
 const advisers = Array.from(
-  new Set(sortedTheses.map((thesis) => thesis.data.adviser).filter(Boolean)),
-).sort((first, second) => first.localeCompare(second));
+  new Map(
+    sortedTheses
+      .map((thesis): [string, string | undefined] => [
+        formatPersonDisplayName(thesis.data.adviser),
+        thesis.data.mainAdviserPerson,
+      ])
+      .filter(([name]) => Boolean(name)),
+  ),
+).sort(([first], [second]) => first.localeCompare(second));
 
 const thesisCount = sortedTheses.length;
 ---
@@ -115,13 +137,34 @@ const thesisCount = sortedTheses.length;
                                 <dt class="font-semibold text-text">
                                   Students
                                 </dt>
-                                <dd>{thesis.data.students.join("; ")}</dd>
+                                <dd>
+                                  {joinDisplayNames(thesis.data.students)}
+                                </dd>
                               </div>
                               <div>
                                 <dt class="font-semibold text-text">
                                   Main adviser
                                 </dt>
-                                <dd>{thesis.data.adviser}</dd>
+                                <dd>
+                                  {getAdviserHref(
+                                    thesis.data.mainAdviserPerson,
+                                    facultyDirectory,
+                                  ) ? (
+                                    <a
+                                      href={getAdviserHref(
+                                        thesis.data.mainAdviserPerson,
+                                        facultyDirectory,
+                                      )}
+                                      class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
+                                    >
+                                      {formatPersonDisplayName(
+                                        thesis.data.adviser,
+                                      )}
+                                    </a>
+                                  ) : (
+                                    formatPersonDisplayName(thesis.data.adviser)
+                                  )}
+                                </dd>
                               </div>
                             </dl>
                             {thesis.data.researchTopics.length > 0 && (
@@ -180,8 +223,22 @@ const thesisCount = sortedTheses.length;
                   </dt>
                   <dd class="mt-2">
                     <ul class="space-y-2 text-sm text-muted">
-                      {advisers.map((adviser) => (
-                        <li>{adviser}</li>
+                      {advisers.map(([adviser, adviserSlug]) => (
+                        <li>
+                          {getAdviserHref(adviserSlug, facultyDirectory) ? (
+                            <a
+                              href={getAdviserHref(
+                                adviserSlug,
+                                facultyDirectory,
+                              )}
+                              class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
+                            >
+                              {adviser}
+                            </a>
+                          ) : (
+                            adviser
+                          )}
+                        </li>
                       ))}
                     </ul>
                   </dd>

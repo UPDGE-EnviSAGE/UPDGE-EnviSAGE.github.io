@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - effect-of-temperature-anomaly-in-coral-bleaching-on-honda-bay-palawan-using-satellite-imageries
-visibility: internal
+visibility: public
 ---

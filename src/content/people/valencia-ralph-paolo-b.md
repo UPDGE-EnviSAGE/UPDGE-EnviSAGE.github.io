@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - 3d-reconstruction-of-the-quezon-memorial-shrine-using-a-custom-uav-with-integrated-low-cost-rtk
-visibility: internal
+visibility: public
 ---

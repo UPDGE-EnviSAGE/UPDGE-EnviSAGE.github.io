@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - mapping-of-mahogany-swietenia-macrophylla-using-mixture-tuned-matched-filtering
-visibility: internal
+visibility: public
 ---

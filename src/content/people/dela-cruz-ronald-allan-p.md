@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - mapping-of-brown-macroalgae-sargassum-spp-using-sentinel-2a-satellite-data-and-dji-phantom-3-uav-image-in-northwestern-tantangon-island-busuanga-palawan-philippines
-visibility: internal
+visibility: public
 ---

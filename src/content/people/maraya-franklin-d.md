@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - simulation-of-l-irrorota-population-dynamics-using-agent-based-modelling-for-sugarcane-infestation-mitigation
-visibility: internal
+visibility: public
 ---

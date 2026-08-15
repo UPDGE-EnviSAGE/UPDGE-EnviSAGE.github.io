@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - assessment-of-metro-manila-urban-parks-cooling-effect-based-on-landscape-metrics-using-threshold-value-of-efficiency-tvoe-approach
-visibility: internal
+visibility: public
 ---

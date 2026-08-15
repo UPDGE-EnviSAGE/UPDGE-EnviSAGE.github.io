@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - simulation-of-spatio-temporal-mangrove-vegetation-dynamics-in-response-to-potential-sea-level-rise-in-puerto-princesa-palawan
-visibility: internal
+visibility: public
 ---

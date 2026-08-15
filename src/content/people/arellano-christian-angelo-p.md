@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - prediction-of-red-tide-events-in-the-philippines-using-modis-derived-oceanographic-parameters-and-xgboost
-visibility: internal
+visibility: public
 ---

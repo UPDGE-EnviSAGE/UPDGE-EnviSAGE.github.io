@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - examination-of-planetscope-sentinel-2-landsat-9-spot-6-7-and-kompsat-satellite-imagery-for-benthic-habitat-mapping-and-assessment
-visibility: internal
+visibility: public
 ---

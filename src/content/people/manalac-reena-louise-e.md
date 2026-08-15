@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - 3d-modelling-and-depth-estimation-of-shallow-water-environments-using-a-customized-unmanned-surface-vehicle
-visibility: internal
+visibility: public
 ---

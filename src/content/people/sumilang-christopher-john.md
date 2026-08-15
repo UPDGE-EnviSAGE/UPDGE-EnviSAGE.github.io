@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - seagrass-aboveground-biomass-based-carbon-stock-estimation-in-bongao-tawi-tawi-and-mansalay-oriental-mindoro-through-remote-sensing
-visibility: internal
+visibility: public
 ---

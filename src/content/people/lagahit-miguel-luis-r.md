@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - smart-city-project-research-division-04-power-supply-using-3d-gis-in-determining-the-photovoltaic-potential-of-quezon-city-hall
-visibility: internal
+visibility: public
 ---

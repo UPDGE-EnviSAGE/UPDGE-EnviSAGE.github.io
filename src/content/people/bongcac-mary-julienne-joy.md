@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - spatial-analysis-of-water-quality-using-unmanned-aerial-system-uas-a-study-of-lake-palakpakin-san-pablo-laguna
-visibility: internal
+visibility: public
 ---

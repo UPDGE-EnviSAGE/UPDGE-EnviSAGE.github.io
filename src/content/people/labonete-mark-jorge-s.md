@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - analysis-of-land-use-and-transport-interaction-luti-using-gis-and-spatial-statistics
-visibility: internal
+visibility: public
 ---
