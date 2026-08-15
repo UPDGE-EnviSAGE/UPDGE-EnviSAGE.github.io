@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - marine-litter-accumulations-in-remote-sensing-and-particle-tracking-models-in-manila-bay-pasig-river-outfall
-visibility: internal
+visibility: public
 ---

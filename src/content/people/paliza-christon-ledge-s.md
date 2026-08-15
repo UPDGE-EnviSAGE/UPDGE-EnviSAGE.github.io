@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - analyzing-urban-agglomeration-patterns-and-economic-development-using-spatial-econometrics-and-social-networks-the-case-of-metro-manila
-visibility: internal
+visibility: public
 ---

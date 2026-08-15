@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - simulation-of-land-use-change-in-santa-rosa-laguna-a-comparative-study-of-flus-and-molusce-models
-visibility: internal
+visibility: public
 ---

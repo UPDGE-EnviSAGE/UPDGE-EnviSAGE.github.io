@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - benthic-habitat-mapping-using-sentinel-2a-and-landsat-8-satellite-image-in-santiago-island-bolinao-pangasinan
-visibility: internal
+visibility: public
 ---

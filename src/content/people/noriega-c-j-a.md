@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - coconut-tree-cocos-nucifera-detection-and-counting-from-worldview-3-imagery-using-object-based-image-analysis-local-peak-detection-and-template-matching
-visibility: internal
+visibility: public
 ---

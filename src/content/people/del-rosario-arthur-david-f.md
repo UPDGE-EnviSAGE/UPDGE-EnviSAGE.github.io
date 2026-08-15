@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - hashtags-to-hotspots-spatial-analysis-of-the-diffusion-of-various-topics-on-x-twitter-in-metro-manila
-visibility: internal
+visibility: public
 ---

@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - selection-of-optimal-cctv-installation-points-using-3d-gis
-visibility: internal
+visibility: public
 ---

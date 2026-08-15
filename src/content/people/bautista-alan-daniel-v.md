@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - classifying-trees-in-the-university-of-the-philippines-diliman-using-object-based-image-analysis-obia
-visibility: internal
+visibility: public
 ---

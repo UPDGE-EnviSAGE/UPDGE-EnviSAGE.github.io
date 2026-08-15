@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - chlorophyll-a-and-turbidity-mapping-of-laguna-lake-using-himawari-8-satellite-images
-visibility: internal
+visibility: public
 ---

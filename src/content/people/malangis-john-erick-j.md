@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - development-and-application-of-coconut-vegetation-indices-cvis-for-rapid-and-accurate-coconut-mapping-using-sentinel-2-images-a-case-study-of-quezon-province
-visibility: internal
+visibility: public
 ---

@@ -4,7 +4,15 @@ import ButtonLink from "@components/ButtonLink.astro";
 import Section from "@components/Section.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import {
+  createFacultyDirectory,
+  getAdviserHref,
+} from "../../data/student-research-relationships";
 import { topicLabel } from "../../data/student-research";
+import {
+  formatPersonDisplayName,
+  joinDisplayNames,
+} from "../../utils/display-names";
 
 export async function getStaticPaths() {
   const theses = await getCollection(
@@ -20,6 +28,15 @@ export async function getStaticPaths() {
 
 const { thesis } = Astro.props;
 const record = thesis.data;
+const publicPeople = await getCollection(
+  "people",
+  ({ data }) => data.visibility === "public",
+);
+const facultyDirectory = createFacultyDirectory(publicPeople);
+const mainAdviserHref = getAdviserHref(
+  record.mainAdviserPerson,
+  facultyDirectory,
+);
 
 const description = `${record.thesisTitle}, a ${record.program} thesis connected to EnviSAGE student research.`;
 const relatedLinks = [
@@ -119,17 +136,54 @@ const relatedLinks = [
         <dl class="mt-5 space-y-5 text-sm leading-relaxed">
           <div>
             <dt class="font-semibold text-brand-green-deep">Students</dt>
-            <dd class="mt-1 text-text">{record.students.join("; ")}</dd>
+            <dd class="mt-1 text-text">{joinDisplayNames(record.students)}</dd>
           </div>
           <div>
             <dt class="font-semibold text-brand-green-deep">Main adviser</dt>
-            <dd class="mt-1 text-text">{record.adviser}</dd>
+            <dd class="mt-1 text-text">
+              {
+                mainAdviserHref ? (
+                  <a
+                    href={mainAdviserHref}
+                    class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
+                  >
+                    {formatPersonDisplayName(record.adviser)}
+                  </a>
+                ) : (
+                  formatPersonDisplayName(record.adviser)
+                )
+              }
+            </dd>
           </div>
           {
             record.coAdvisers.length > 0 && (
               <div>
                 <dt class="font-semibold text-brand-green-deep">Co-advisers</dt>
-                <dd class="mt-1 text-text">{record.coAdvisers.join("; ")}</dd>
+                <dd class="mt-1 text-text">
+                  <ul class="space-y-1">
+                    {record.coAdvisers.map((adviser: string, index: number) => {
+                      const adviserHref = getAdviserHref(
+                        record.coAdviserPeople[index],
+                        facultyDirectory,
+                      );
+
+                      return (
+                        <li>
+                          {adviserHref ? (
+                            <a
+                              href={adviserHref}
+                              class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
+                            >
+                              {formatPersonDisplayName(adviser)}
+                            </a>
+                          ) : (
+                            formatPersonDisplayName(adviser)
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </dd>
               </div>
             )
           }

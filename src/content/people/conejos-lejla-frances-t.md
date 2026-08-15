@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - mapping-benthic-habitats-in-santiago-island-bolinao-pangasinan-using-prisma-hyperspectral-imagery-and-linear-spectral-unmixing
-visibility: internal
+visibility: public
 ---

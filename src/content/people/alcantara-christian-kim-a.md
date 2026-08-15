@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - geospatial-assessment-and-modelling-of-urban-heat-islands-in-quezon-city
-visibility: internal
+visibility: public
 ---

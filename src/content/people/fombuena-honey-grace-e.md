@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - using-gis-in-planning-a-post-earthquake-evacuation-scheme-routing-and-shelter-assignments-in-barangay-batasan-hills-quezon-city
-visibility: internal
+visibility: public
 ---

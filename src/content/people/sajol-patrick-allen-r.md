@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - assessment-of-rapideye-and-planetscope-images-for-seagrass-change-mapping-in-calauit-island-busuanga-palawan-philippines-from-2014-2018
-visibility: internal
+visibility: public
 ---

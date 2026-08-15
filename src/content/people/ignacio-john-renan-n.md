@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - seagrass-habitat-suitability-modeling-for-bolinao-anda-pangasinan-using-maximum-entropy-and-random-forest
-visibility: internal
+visibility: public
 ---

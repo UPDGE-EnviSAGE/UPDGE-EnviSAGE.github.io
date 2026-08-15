@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - multi-temporal-analysis-of-chlorophyll-a-concentration-estimate-in-the-coasts-of-white-beach-boracay-obtained-using-bio-optical-modelling
-visibility: internal
+visibility: public
 ---

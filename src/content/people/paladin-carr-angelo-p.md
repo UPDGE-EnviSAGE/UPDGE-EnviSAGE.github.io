@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - investigating-the-relationship-of-water-quality-on-land-cover-change-in-boracay-island
-visibility: internal
+visibility: public
 ---

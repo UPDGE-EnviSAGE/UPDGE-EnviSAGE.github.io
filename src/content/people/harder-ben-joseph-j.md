@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - early-detection-and-projection-of-dengue-outbreak-using-geospatial-tools-the-case-of-quezon-city
-visibility: internal
+visibility: public
 ---

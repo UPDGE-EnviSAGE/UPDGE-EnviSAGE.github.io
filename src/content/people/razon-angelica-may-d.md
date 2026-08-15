@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - assessment-of-general-noaa-operational-modeling-environment-gnome-and-sentinel-1-synthetic-aperture-radar-sar-for-oil-spill-detection-in-verde-island-passage
-visibility: internal
+visibility: public
 ---

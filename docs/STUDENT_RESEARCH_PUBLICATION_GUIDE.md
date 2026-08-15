@@ -163,6 +163,14 @@ Approved public theses appear in:
 /student-research/<slug>/
 ```
 
-Approved public EnviSAGE-affiliated alumni may appear in the People directory under Alumni.
+Approved public EnviSAGE-affiliated alumni appear in:
+
+```text
+/people/alumni/
+```
+
+The main `/people/` page shows only the current EnviSAGE community plus a compact alumni teaser. It does not list all historical undergraduate alumni.
+
+Faculty profile pages derive Undergraduate Research Advising sections from approved public thesis records. The section preserves Main Adviser and Co-Adviser roles and updates automatically as thesis visibility changes.
 
 Review notes, publication decisions, internal visibility states, and administrative metadata are never rendered publicly.

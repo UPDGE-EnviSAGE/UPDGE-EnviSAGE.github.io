@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - comparison-of-normalized-difference-vegetation-index-and-tasseled-cap-transformation-greenness-component-for-vegetation-change-analysis-of-samar-island-philippines
-visibility: internal
+visibility: public
 ---

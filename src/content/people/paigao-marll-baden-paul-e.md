@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - investigating-the-relationship-between-water-quality-and-crown-of-thorns-starfish-abundance-in-puerto-galera-philippines-using-remote-sensing-and-gis
-visibility: internal
+visibility: public
 ---

@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - determination-of-optimal-fishing-grounds-for-round-scad-galunggong-in-the-philippine-waters-through-spatio-temporal-analysis-of-oceanographic-parameters
-visibility: internal
+visibility: public
 ---

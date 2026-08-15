@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - development-of-spectral-disease-indices-for-mapping-and-monitoring-of-red-striped-soft-scale-pest-pulvinaria-tenuivalvata-infestation-in-sugarcane-in-pampanga-using-multispectral-drone-and-sentinel-2-images
-visibility: internal
+visibility: public
 ---

@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - utilization-of-sentinel-2-imagery-in-the-estimation-of-plastics-among-floating-debris-along-the-coast-of-manila-bay
-visibility: internal
+visibility: public
 ---

@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - integrating-time-series-analysis-of-satellite-derived-vegetation-indices-and-climatological-factors-for-agricultural-drought-forecasting-and-monitoring-in-mainland-cagayan
-visibility: internal
+visibility: public
 ---

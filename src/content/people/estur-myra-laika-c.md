@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - illuminance-mapping-of-nighttime-road-environment-using-unmanned-aerial-system
-visibility: internal
+visibility: public
 ---

@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - spatiotemporal-analysis-of-urban-heat-islands-in-metro-manila-philippines-using-daytime-and-nighttime-land-surface-temperatures
-visibility: internal
+visibility: public
 ---

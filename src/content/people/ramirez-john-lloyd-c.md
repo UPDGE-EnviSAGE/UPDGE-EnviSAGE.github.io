@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - assessment-of-carbon-stock-changes-in-aquaculture-converted-mangrove-ecosystems-in-aklan-using-global-ecosystem-dynamics-investigation-gedi-lidar
-visibility: internal
+visibility: public
 ---

@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - aboveground-biomass-estimation-of-rice-crops-oryza-sativa-l-utilizing-parameters-derived-from-uav-based-lidar-and-multispectral-satellite-sensors
-visibility: internal
+visibility: public
 ---

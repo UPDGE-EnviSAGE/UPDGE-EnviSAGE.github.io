@@ -5,10 +5,12 @@ import PersonCard from "@components/PersonCard.astro";
 import Section from "@components/Section.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { peopleCategorySections } from "../../data/people-directory";
 import {
-  peopleCategorySections,
-  peopleRoleLabels,
-} from "../../data/people-directory";
+  getPublicUndergraduateAlumni,
+  isPublicFacultyPerson,
+} from "../../data/student-research-relationships";
+import { formatPersonDisplayName } from "../../utils/display-names";
 
 const publicPeople = await getCollection(
   "people",
@@ -20,20 +22,26 @@ const publicTheses = await getCollection(
   ({ data }) => data.visibility === "public",
 );
 
-const publicThesesBySlug = new Map(
-  publicTheses.map((thesis) => [thesis.data.slug, thesis]),
-);
+const alumni = getPublicUndergraduateAlumni(publicPeople, publicTheses);
+const recentAlumni = alumni.slice(0, 6);
 
 const sortedPeople = publicPeople.sort(
   (first, second) =>
     (first.data.displayOrder ?? Number.MAX_SAFE_INTEGER) -
       (second.data.displayOrder ?? Number.MAX_SAFE_INTEGER) ||
-    first.data.name.localeCompare(second.data.name),
+    formatPersonDisplayName(first.data.name).localeCompare(
+      formatPersonDisplayName(second.data.name),
+    ),
 );
 
 const peopleByCategory = peopleCategorySections
+  .filter((section) => section.id !== "alumni")
   .map((section) => {
     const people = sortedPeople.filter((person) => {
+      if (person.data.membershipStatus !== "active") {
+        return false;
+      }
+
       if (section.id === "faculty-affiliate") {
         return (
           person.data.categories.includes("faculty-affiliate") &&
@@ -49,23 +57,7 @@ const peopleByCategory = peopleCategorySections
   .filter((section) => section.people.length > 0);
 
 const getFacultyProfileHref = (person: (typeof sortedPeople)[number]) =>
-  person.data.shortBio &&
-  (person.data.categories.includes("leadership") ||
-    person.data.categories.includes("faculty-affiliate"))
-    ? `/people/${person.data.slug}/`
-    : undefined;
-
-const getPrimaryPublicThesis = (person: (typeof sortedPeople)[number]) =>
-  person.data.studentResearch
-    .map((slug) => publicThesesBySlug.get(slug))
-    .filter(Boolean)
-    .sort(
-      (first, second) =>
-        (second?.data.year ?? 0) - (first?.data.year ?? 0) ||
-        (first?.data.thesisTitle ?? "").localeCompare(
-          second?.data.thesisTitle ?? "",
-        ),
-    )[0];
+  isPublicFacultyPerson(person) ? `/people/${person.data.slug}/` : undefined;
 ---
 
 <BaseLayout
@@ -112,59 +104,70 @@ const getPrimaryPublicThesis = (person: (typeof sortedPeople)[number]) =>
             text={section.description}
           />
         </div>
-        {section.id === "alumni" ? (
-          <div class="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-            {section.people.map((person) => {
-              const thesis = getPrimaryPublicThesis(person);
-              return (
-                <article class="rounded-card border border-border bg-surface p-4 shadow-subtle">
-                  <h3 class="text-base font-semibold text-text">
-                    {person.data.name}
-                  </h3>
-                  <p class="mt-1 text-sm font-semibold text-brand-green-deep">
-                    {person.data.envisageRoles
-                      .map(
-                        (role: keyof typeof peopleRoleLabels) =>
-                          peopleRoleLabels[role],
-                      )
-                      .join(", ")}
-                  </p>
-                  {person.data.academicProgram && (
-                    <p class="mt-2 text-sm text-muted">
-                      {person.data.academicProgram}
-                    </p>
-                  )}
-                  {thesis && (
-                    <p class="mt-3 text-sm leading-relaxed text-muted">
-                      {thesis.data.year}:{" "}
-                      <a
-                        href={`/student-research/${thesis.data.slug}/`}
-                        class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
-                      >
-                        {thesis.data.thesisTitle}
-                      </a>
-                    </p>
-                  )}
-                </article>
-              );
-            })}
-          </div>
-        ) : (
-          <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {section.people.map((person) => (
-              <PersonCard
-                name={person.data.name}
-                roles={person.data.envisageRoles}
-                institutionalPosition={person.data.institutionalPosition}
-                photo={person.data.photo}
-                researchAreas={person.data.researchAreas}
-                profileHref={getFacultyProfileHref(person)}
-              />
-            ))}
-          </div>
-        )}
+        <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {section.people.map((person) => (
+            <PersonCard
+              name={formatPersonDisplayName(person.data.name)}
+              roles={person.data.envisageRoles}
+              institutionalPosition={person.data.institutionalPosition}
+              photo={person.data.photo}
+              researchAreas={person.data.researchAreas}
+              profileHref={getFacultyProfileHref(person)}
+            />
+          ))}
+        </div>
       </Section>
     ))
+  }
+
+  {
+    alumni.length > 0 && (
+      <Section
+        size="wide"
+        tone="muted"
+        class="border-y border-border"
+        aria-labelledby="people-alumni"
+      >
+        <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start">
+          <div>
+            <SectionHeading
+              id="people-alumni"
+              eyebrow="Alumni"
+              title="Undergraduate research alumni"
+              text="Historical EnviSAGE-affiliated undergraduate researchers are maintained in a separate alumni directory so the People page stays focused on the current community."
+            />
+            {recentAlumni.length > 0 && (
+              <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+                {recentAlumni.map(({ person, thesis }) => (
+                  <li class="rounded-card border border-border bg-surface p-4 shadow-subtle">
+                    <p class="text-base font-semibold text-text">
+                      {formatPersonDisplayName(person.data.name)}
+                    </p>
+                    <p class="mt-1 text-sm text-muted">
+                      {thesis?.data.year ?? "Reviewed"} · Undergraduate
+                      Researcher
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <aside class="rounded-card border border-border bg-surface p-5 shadow-subtle">
+            <p class="text-sm font-semibold text-brand-green-deep">
+              Public alumni
+            </p>
+            <p class="mt-2 text-4xl font-semibold text-text">{alumni.length}</p>
+            <p class="mt-3 text-sm leading-relaxed text-muted">
+              Alumni entries are grouped by thesis year with links to reviewed
+              public thesis records.
+            </p>
+            <div class="mt-5">
+              <ButtonLink href="/people/alumni/">View alumni</ButtonLink>
+            </div>
+          </aside>
+        </div>
+      </Section>
+    )
   }
 
   <Section size="wide" class="contour-surface" aria-labelledby="people-next">

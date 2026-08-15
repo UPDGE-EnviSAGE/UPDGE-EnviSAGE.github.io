@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - object-based-classification-of-multibeam-bathymetry-data-for-mesophotic-benthic-habitat-mapping-a-case-study-on-apo-island-reef-in-occidental-mindoro
-visibility: internal
+visibility: public
 ---

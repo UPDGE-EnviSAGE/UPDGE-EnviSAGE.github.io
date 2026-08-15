@@ -121,6 +121,8 @@ Phase 6C.1 completes import QA and adds the undergraduate thesis maintenance wor
 
 Phase 6D adds the student research review and publication workflow. It creates a consolidated publication review CSV, dry-run-first review and publish scripts, a public-only Student Research catalog, public thesis pages for approved records, and compact alumni rendering for approved EnviSAGE-affiliated students.
 
+Phase 6D.1 refines the public People and Student Research experience after reviewed undergraduate theses are published. It keeps `/people/` focused on the current EnviSAGE community, adds `/people/alumni/` for historical EnviSAGE-affiliated undergraduate alumni, normalizes student display names, links canonical faculty advisers, and derives faculty Undergraduate Research Advising sections from public thesis records.
+
 ## Phase 6 - Publications
 
 Create the publications database.

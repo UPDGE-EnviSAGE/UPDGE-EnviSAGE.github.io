@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - modeling-land-surfacetemperature-lst-and-urban-heat-islands-uhi-in-taguig-city-philippines-using-linear-spectral-unmixing-of-hyperspectral-data
-visibility: internal
+visibility: public
 ---

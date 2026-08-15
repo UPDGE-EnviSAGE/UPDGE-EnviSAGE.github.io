@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - coral-bleaching-detection-using-prisma-hyperspectral-satellite-imagery-in-calatagan-batangas
-visibility: internal
+visibility: public
 ---

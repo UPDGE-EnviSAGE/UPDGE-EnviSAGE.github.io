@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - spatiotemporal-analysis-of-the-potential-impact-of-the-masinloc-power-plant-on-the-thermal-pollution-in-oyon-bay-zambales-and-its-correlation-to-the-seagrass-cover
-visibility: internal
+visibility: public
 ---

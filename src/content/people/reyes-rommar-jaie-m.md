@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - street-level-estimation-of-fine-particulate-matter-pm2-5-concentration-in-baguio-city-through-regression-analyses
-visibility: internal
+visibility: public
 ---

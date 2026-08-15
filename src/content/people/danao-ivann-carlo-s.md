@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - correlation-analysis-of-winter-monsoon-induced-coastal-upwelling-on-fishing-boat-nightlight-off-the-southern-palawan-coast-using-visible-infrared-imaging-radiometer-suite-viirs-and-moderate-resolution-imaging-spectroradiometer-modis-data
-visibility: internal
+visibility: public
 ---

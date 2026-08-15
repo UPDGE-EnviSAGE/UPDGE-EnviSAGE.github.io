@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - road-surface-modelling-using-terrestrial-vehicle-mounted-action-camera
-visibility: internal
+visibility: public
 ---

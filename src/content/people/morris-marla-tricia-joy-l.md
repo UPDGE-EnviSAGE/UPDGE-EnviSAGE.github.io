@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - mangrove-forest-change-detection-along-the-coasts-of-eastern-samar-using-landsat-imagery
-visibility: internal
+visibility: public
 ---

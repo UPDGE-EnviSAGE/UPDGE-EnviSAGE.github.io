@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - mapping-of-seagrass-cover-in-santiago-island-bolinao-using-sentinel-2-imagery
-visibility: internal
+visibility: public
 ---

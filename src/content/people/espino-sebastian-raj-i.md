@@ -21,5 +21,5 @@ tools: []
 grants: []
 studentResearch:
   - 3d-building-facade-modelling-using-dashboard-camera-and-close-range-photogrammetric-method
-visibility: internal
+visibility: public
 ---
