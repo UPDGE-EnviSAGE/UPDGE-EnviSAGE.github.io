@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import ButtonLink from "@components/ButtonLink.astro";
 import Section from "@components/Section.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
@@ -20,7 +19,7 @@ const alumni = getPublicUndergraduateAlumni(publicPeople, publicTheses);
 
 const alumniByYear = Array.from(
   alumni.reduce((groups, alumnus) => {
-    const year = String(alumnus.thesis?.data.year ?? "Reviewed");
+    const year = String(alumnus.thesis?.data.year ?? "Undated");
     const current = groups.get(year) ?? [];
     current.push(alumnus);
     groups.set(year, current);
@@ -31,7 +30,7 @@ const alumniByYear = Array.from(
 
 <BaseLayout
   title="Alumni"
-  description="Public EnviSAGE-affiliated undergraduate research alumni grouped by thesis year."
+  description="Former undergraduate researchers advised by EnviSAGE faculty."
 >
   <section class="geo-surface" aria-labelledby="alumni-title">
     <div
@@ -50,24 +49,24 @@ const alumniByYear = Array.from(
           Alumni
         </h1>
         <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-          Public EnviSAGE-affiliated undergraduate research alumni, derived from
-          reviewed thesis records where EnviSAGE faculty served as main adviser.
+          Former undergraduate researchers advised by EnviSAGE faculty, grouped
+          by thesis year.
         </p>
       </div>
     </div>
   </section>
 
   <Section size="wide" aria-labelledby="alumni-directory">
-    <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_18rem]">
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_16rem]">
       <div>
         <SectionHeading
           id="alumni-directory"
           eyebrow="Directory"
           title="Undergraduate research alumni"
-          text="Alumni are grouped by completion year and sorted alphabetically by display name within each year."
+          text="Grouped by completion year and sorted alphabetically within each year."
         />
 
-        <div class="mt-10 space-y-12">
+        <div class="mt-8 space-y-10">
           {
             alumniByYear.map(([year, entries]) => (
               <section aria-labelledby={`alumni-${year}`}>
@@ -83,32 +82,22 @@ const alumniByYear = Array.from(
                     {entries.length === 1 ? "us" : "i"}
                   </p>
                 </div>
-                <ol class="mt-5 grid gap-3">
+                <ol class="mt-4 divide-y divide-border">
                   {entries.map(({ displayName, thesis }) => (
-                    <li class="rounded-card border border-border bg-surface p-4 shadow-subtle">
-                      <div class="grid gap-3 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
-                        <div class="min-w-0">
-                          <p class="text-base font-semibold text-text">
-                            {displayName}
-                          </p>
-                          <p class="mt-1 text-sm text-muted">
-                            BS Geodetic Engineering · Undergraduate Researcher
-                          </p>
-                          {thesis && (
-                            <p class="mt-3 text-sm leading-relaxed text-muted">
-                              {thesis.data.thesisTitle}
-                            </p>
-                          )}
-                        </div>
-                        {thesis && (
+                    <li class="py-4">
+                      <p class="text-base font-semibold text-text">
+                        {displayName}
+                      </p>
+                      {thesis && (
+                        <p class="mt-1 text-sm leading-relaxed text-muted">
                           <a
                             href={`/student-research/${thesis.data.slug}/`}
-                            class="inline-flex min-h-10 items-center justify-center rounded-control border border-brand-blue px-3 py-2 text-sm font-semibold text-brand-blue-deep underline-offset-4 hover:bg-brand-blue/10 hover:underline"
+                            class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
                           >
-                            View thesis
+                            {thesis.data.thesisTitle} →
                           </a>
-                        )}
-                      </div>
+                        </p>
+                      )}
                     </li>
                   ))}
                 </ol>
@@ -119,16 +108,14 @@ const alumniByYear = Array.from(
       </div>
 
       <aside class="lg:pt-24" aria-labelledby="alumni-summary">
-        <div
-          class="rounded-card border border-border bg-surface p-5 shadow-subtle"
-        >
+        <div class="border-l border-border pl-5">
           <h2 id="alumni-summary" class="text-lg font-semibold text-text">
-            Directory Summary
+            At a glance
           </h2>
           <dl class="mt-5 space-y-4">
             <div>
               <dt class="text-sm font-semibold text-brand-green-deep">
-                Public alumni
+                Alumni
               </dt>
               <dd class="mt-1 text-2xl font-semibold text-text">
                 {alumni.length}
@@ -136,19 +123,19 @@ const alumniByYear = Array.from(
             </div>
             <div>
               <dt class="text-sm font-semibold text-brand-green-deep">
-                Source records
+                Thesis years
               </dt>
-              <dd class="mt-1 text-sm leading-relaxed text-muted">
-                Reviewed public undergraduate theses with EnviSAGE main-adviser
-                affiliation.
+              <dd class="mt-1 text-2xl font-semibold text-text">
+                {alumniByYear.length}
               </dd>
             </div>
           </dl>
-          <div class="mt-6">
-            <ButtonLink href="/people/" variant="secondary">
-              Back to people
-            </ButtonLink>
-          </div>
+          <a
+            href="/people/"
+            class="mt-6 inline-flex min-h-10 items-center text-sm font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
+          >
+            Back to people
+          </a>
         </div>
       </aside>
     </div>

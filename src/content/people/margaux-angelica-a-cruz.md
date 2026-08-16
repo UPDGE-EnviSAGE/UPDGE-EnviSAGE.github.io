@@ -12,7 +12,7 @@ institutionalPosition: Asst. Professor 2, UP Department of Geodetic Engineering
 shortBio: |-
   Asst. Prof. Margaux Angelica A. Cruz is Assistant Professor 2 at the UP Department of Geodetic Engineering and a Faculty Affiliate of EnviSAGE. Her research interests center on remote sensing and geographic information systems for environmental monitoring, biodiversity conservation, coastal management, and smart cities.
 
-  Her EnviSAGE profile situates those interests within the laboratory's public-first environmental systems platform. It supports future connections to coastal and urban research outputs, including projects, student theses, datasets, software, and publications, while keeping the current page limited to verified faculty information and the supplied professional research profile link.
+  Her work contributes to EnviSAGE's coastal, urban, and environmental monitoring directions through applied remote sensing and GIS.
 researchAreas:
   - earth-observation-remote-sensing
   - coastal-marine-environments

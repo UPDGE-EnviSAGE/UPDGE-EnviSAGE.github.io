@@ -146,6 +146,17 @@ The footer should remain restrained and institutional. It may include the EnviSA
 
 Public pages should prioritize concise, scannable research communication. Each page should have one primary communication purpose, avoid exposing implementation architecture, and use cards only when grouping content improves comprehension.
 
+Public surfaces must not expose internal content-model terminology. Avoid public-facing labels such as canonical record, visibility, schema, source record, review status, publication decision, maintainer, internal model, or similar administrative language. Documentation may use technical terminology where it helps maintainers; public pages should communicate people, research, expertise, outputs, and relationships in natural language.
+
+The Phase 6E public UX direction is minimalist, but with substance:
+
+- Use strong editorial hierarchy, short section copy, and generous but not excessive whitespace.
+- Use progressive disclosure for large collections such as faculty advising lists and alumni directories.
+- Reserve cards for meaningful grouped objects; prefer typography, dividers, and compact lists for large catalogs.
+- Use badges sparingly for genuine categories, not as decoration for every short phrase.
+- Avoid repeating buttons where linked titles or ordinary text links are clearer.
+- Keep public communication distinct from internal architecture and maintainer workflows.
+
 ## UP DGE Affiliation Hierarchy
 
 The hierarchy is:
