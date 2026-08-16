@@ -12,7 +12,7 @@ institutionalPosition: Asst. Professor 6, UP Department of Geodetic Engineering
 shortBio: |-
   Asst. Prof. Jommer M. Medina is Assistant Professor 6 at the UP Department of Geodetic Engineering and a Faculty Affiliate of EnviSAGE. His research interests focus on environmental applications of remote sensing and GIS, including water quality remote sensing, land cover analysis, and environmental decision analysis and support systems.
 
-  His EnviSAGE profile connects the laboratory's environmental monitoring direction with public-facing spatial evidence. It highlights work areas that are especially relevant to satellite-derived water quality, land-cover interpretation, and decision-ready geospatial products. Future project, publication, student thesis, dataset, and software links are intentionally withheld until those records are represented as reviewed public content.
+  His work connects environmental monitoring with spatial evidence, especially satellite-derived water quality, land-cover interpretation, and decision-ready geospatial products.
 researchAreas:
   - earth-observation-remote-sensing
   - environmental-monitoring-modeling

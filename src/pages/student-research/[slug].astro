@@ -79,8 +79,10 @@ const relatedLinks = [
         <SectionHeading
           id="thesis-summary"
           eyebrow="Thesis"
-          title="Abstract"
-          text="A reviewed student research record connected to EnviSAGE."
+          title={record.abstract ? "Abstract" : "Thesis overview"}
+          text={record.abstract
+            ? "Student research connected to EnviSAGE faculty."
+            : "Student research details and keywords."}
         />
         {
           record.abstract && (
@@ -101,9 +103,7 @@ const relatedLinks = [
               <h2 class="text-xl font-semibold text-text">Keywords</h2>
               <ul class="mt-4 flex flex-wrap gap-2">
                 {record.keywords.map((keyword: string) => (
-                  <li class="rounded-control border border-border bg-surface px-3 py-2 text-sm font-semibold text-text shadow-subtle">
-                    {keyword}
-                  </li>
+                  <li class="text-sm font-semibold text-text">{keyword}</li>
                 ))}
               </ul>
             </div>
@@ -116,7 +116,7 @@ const relatedLinks = [
               <h2 class="text-xl font-semibold text-text">Research Topics</h2>
               <ul class="mt-4 flex flex-wrap gap-2">
                 {record.researchTopics.map((topic: string) => (
-                  <li class="rounded-control border border-brand-blue/15 bg-white px-3 py-2 text-sm font-semibold text-brand-blue-deep shadow-subtle">
+                  <li class="text-sm font-semibold text-brand-blue-deep">
                     {topicLabel(topic)}
                   </li>
                 ))}
@@ -188,7 +188,9 @@ const relatedLinks = [
             )
           }
           <div>
-            <dt class="font-semibold text-brand-green-deep">Association</dt>
+            <dt class="font-semibold text-brand-green-deep">
+              EnviSAGE connection
+            </dt>
             <dd class="mt-1 text-text">
               {
                 record.envisageAssociationBasis === "main-adviser"
@@ -213,8 +215,8 @@ const relatedLinks = [
         <SectionHeading
           id="thesis-links"
           eyebrow="Related Outputs"
-          title="Reviewed research links"
-          text="Links are shown only when reviewed records are available."
+          title="Research links"
+          text="Related repositories, documentation, or outputs."
         />
         <ul class="mt-8 flex flex-wrap gap-3">
           {relatedLinks.map((link) => (
@@ -238,7 +240,7 @@ const relatedLinks = [
         id="thesis-back"
         class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
       >
-        Continue browsing reviewed student research.
+        Continue browsing student research.
       </h2>
       <div class="mt-8">
         <ButtonLink href="/student-research/"

@@ -23,7 +23,9 @@ const publicTheses = await getCollection(
 );
 
 const alumni = getPublicUndergraduateAlumni(publicPeople, publicTheses);
-const recentAlumni = alumni.slice(0, 6);
+const alumniThesisCount = new Set(
+  alumni.map(({ thesis }) => thesis?.data.slug).filter(Boolean),
+).size;
 
 const sortedPeople = publicPeople.sort(
   (first, second) =>
@@ -81,8 +83,8 @@ const getFacultyProfileHref = (person: (typeof sortedPeople)[number]) =>
           People
         </h1>
         <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-          Researchers, faculty, and students working across environmental
-          systems and geospatial science.
+          Faculty and researchers working across environmental and geospatial
+          science.
         </p>
       </div>
     </div>
@@ -111,7 +113,6 @@ const getFacultyProfileHref = (person: (typeof sortedPeople)[number]) =>
               roles={person.data.envisageRoles}
               institutionalPosition={person.data.institutionalPosition}
               photo={person.data.photo}
-              researchAreas={person.data.researchAreas}
               profileHref={getFacultyProfileHref(person)}
             />
           ))}
@@ -134,36 +135,20 @@ const getFacultyProfileHref = (person: (typeof sortedPeople)[number]) =>
               id="people-alumni"
               eyebrow="Alumni"
               title="Undergraduate research alumni"
-              text="Historical EnviSAGE-affiliated undergraduate researchers are maintained in a separate alumni directory so the People page stays focused on the current community."
+              text={`${alumni.length} alumni across ${alumniThesisCount} undergraduate research ${alumniThesisCount === 1 ? "record" : "records"}.`}
             />
-            {recentAlumni.length > 0 && (
-              <ul class="mt-6 grid gap-3 sm:grid-cols-2">
-                {recentAlumni.map(({ person, thesis }) => (
-                  <li class="rounded-card border border-border bg-surface p-4 shadow-subtle">
-                    <p class="text-base font-semibold text-text">
-                      {formatPersonDisplayName(person.data.name)}
-                    </p>
-                    <p class="mt-1 text-sm text-muted">
-                      {thesis?.data.year ?? "Reviewed"} · Undergraduate
-                      Researcher
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <a
+              href="/people/alumni/"
+              class="mt-6 inline-flex min-h-10 items-center text-base font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
+            >
+              Browse alumni →
+            </a>
           </div>
-          <aside class="rounded-card border border-border bg-surface p-5 shadow-subtle">
-            <p class="text-sm font-semibold text-brand-green-deep">
-              Public alumni
+          <aside class="border-l border-border pl-6">
+            <p class="text-4xl font-semibold text-text">{alumni.length}</p>
+            <p class="mt-2 text-sm leading-relaxed text-muted">
+              Former undergraduate researchers advised by EnviSAGE faculty.
             </p>
-            <p class="mt-2 text-4xl font-semibold text-text">{alumni.length}</p>
-            <p class="mt-3 text-sm leading-relaxed text-muted">
-              Alumni entries are grouped by thesis year with links to reviewed
-              public thesis records.
-            </p>
-            <div class="mt-5">
-              <ButtonLink href="/people/alumni/">View alumni</ButtonLink>
-            </div>
           </aside>
         </div>
       </Section>

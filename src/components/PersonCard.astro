@@ -1,5 +1,5 @@
 ---
-import { peopleRoleLabels, researchAreaLabels } from "../data/people-directory";
+import { peopleRoleLabels } from "../data/people-directory";
 
 interface Props {
   name: string;
@@ -7,19 +7,11 @@ interface Props {
   institutionalPosition?: string;
   shortBio?: string;
   photo?: string;
-  researchAreas?: readonly string[];
   profileHref?: string;
 }
 
-const {
-  name,
-  roles,
-  institutionalPosition,
-  shortBio,
-  photo,
-  researchAreas = [],
-  profileHref,
-} = Astro.props;
+const { name, roles, institutionalPosition, shortBio, photo, profileHref } =
+  Astro.props;
 
 const initials = name
   .replace(/^(Dr\.|Asst\. Prof\.|Engr\.)\s+/u, "")
@@ -28,10 +20,6 @@ const initials = name
   .slice(0, 2)
   .map((part) => part[0])
   .join("");
-
-const readableResearchAreas = researchAreas
-  .map((area) => researchAreaLabels[area as keyof typeof researchAreaLabels])
-  .filter(Boolean);
 ---
 
 <article
@@ -87,21 +75,10 @@ const readableResearchAreas = researchAreas
       )
     }
     {
-      readableResearchAreas.length > 0 && (
-        <ul class="mt-4 flex flex-wrap gap-2" aria-label="Research areas">
-          {readableResearchAreas.map((area) => (
-            <li class="rounded-control border border-brand-blue/15 bg-brand-blue/10 px-2.5 py-1 text-xs font-semibold text-brand-blue-deep">
-              {area}
-            </li>
-          ))}
-        </ul>
-      )
-    }
-    {
       profileHref && (
         <a
           href={profileHref}
-          class="mt-5 inline-flex min-h-10 items-center justify-center rounded-control border border-brand-blue bg-brand-blue px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-blue-deep motion-reduce:transition-none"
+          class="mt-4 inline-flex min-h-10 items-center text-sm font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
         >
           View profile
         </a>

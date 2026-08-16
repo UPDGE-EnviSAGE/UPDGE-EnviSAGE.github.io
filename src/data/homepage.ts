@@ -49,14 +49,14 @@ export const researchHighlights = [
   {
     title: "Reusable research workflows",
     description:
-      "Reproducible methods, code, and data products for reviewed work.",
+      "Reproducible methods, code, and data products for environmental research.",
   },
 ] as const;
 
 export const openResearchFeatures = [
   {
     title: "Student Research",
-    description: "Reviewed thesis outputs, repositories, notebooks, and maps.",
+    description: "Thesis outputs, repositories, notebooks, and maps.",
     href: "/student-research/",
     linkText: "Explore student research",
   },

@@ -141,6 +141,14 @@ Person cards should be able to support future profile links without rendering li
 
 The People model requires compatibility with those relationships but does not implement every relationship in Phase 6A.
 
+## Faculty Specializations vs EnviSAGE Research Themes
+
+Faculty specializations are faculty-specific areas of expertise. They may describe a person's methods, domains, or applied research strengths after review.
+
+EnviSAGE Research Themes are lab-wide domains that represent the collective research portfolio. The current six Research Areas remain provisional until later evidence-based taxonomy review. Do not substitute provisional Research Areas for faculty specializations, and do not infer specialization values from thesis titles, abstracts, or broad theme assignments.
+
+Public faculty directory cards may show specialization keywords only when approved specialization data exists. If no approved specialization data exists, omit the keywords rather than inventing them.
+
 ## Student and Thesis Distinction
 
 Students and Theses are separate entities.
@@ -179,7 +187,7 @@ For student research publication, approved thesis pages may display all thesis a
 
 The main `/people/` page should remain a concise current-community directory. It may show a compact alumni teaser and link to `/people/alumni/`, but it must not render a long historical wall of undergraduate alumni.
 
-The `/people/alumni/` page is the canonical public directory for historical EnviSAGE-affiliated undergraduate researchers. It excludes co-advised-only thesis authors, internal students, active students, and unrelated thesis authors. Alumni are grouped by thesis or completion year and should link to a reviewed public thesis when one resolves.
+The `/people/alumni/` page is the public directory for historical EnviSAGE-affiliated undergraduate researchers. It excludes co-advised-only thesis authors, internal students, active students, and unrelated thesis authors. Alumni are grouped by thesis or completion year and should link to a public thesis when one resolves.
 
 Do not generate standalone undergraduate alumni profile routes. The Thesis remains the canonical public scholarly record for undergraduate research.
 
@@ -203,6 +211,8 @@ Advising relationships must be derived from thesis records, not hardcoded into f
 Faculty advising counts should count unique public undergraduate thesis records where the faculty member is main adviser or co-adviser. Student counts should count unique public student authors across those thesis records without double-counting the same canonical student identity.
 
 Faculty names may link to `/people/<faculty-slug>/` only when the adviser resolves to a reviewed public EnviSAGE faculty Person record. Do not create or link to external adviser profiles in this model.
+
+Public advising display should be compact and progressively disclosed. Faculty profiles may show thesis and student totals, optional main/co-adviser counts, and year-grouped thesis lists. Avoid large dashboard-style metric cards or one large card per thesis.
 
 ## Faculty Profile Enrichment
 

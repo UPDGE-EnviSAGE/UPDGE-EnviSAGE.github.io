@@ -123,6 +123,8 @@ Phase 6D adds the student research review and publication workflow. It creates a
 
 Phase 6D.1 refines the public People and Student Research experience after reviewed undergraduate theses are published. It keeps `/people/` focused on the current EnviSAGE community, adds `/people/alumni/` for historical EnviSAGE-affiliated undergraduate alumni, normalizes student display names, links canonical faculty advisers, and derives faculty Undergraduate Research Advising sections from public thesis records.
 
+Phase 6E simplifies the public People, Alumni, faculty profile, and Student Research UX. It removes internal content-model language from public surfaces, reduces cards, badges, and repeated buttons, keeps the People page focused on current members, makes alumni and advising lists more compact, and documents the distinction between faculty-specific specializations and future evidence-based EnviSAGE Research Themes.
+
 ## Phase 6 - Publications
 
 Create the publications database.

@@ -13,7 +13,7 @@ institutionalPosition: Assoc. Professor 5, UP Department of Geodetic Engineering
 shortBio: |-
   Dr. Ayin M. Tamondong is Associate Professor 5 at the UP Department of Geodetic Engineering and Co-Head of EnviSAGE. Her research interests connect coastal remote sensing, ecosystem monitoring and modeling, land cover and land use change analysis, urban remote sensing, climate applications, LiDAR, air quality, UAS applications, and geospatial visualization.
 
-  For EnviSAGE, Dr. Tamondong helps shape a research direction that treats environmental systems as spatial, multi-scale, and decision-relevant. Her profile emphasizes coastal and ecosystem monitoring, satellite and aerial observation, and reproducible geospatial workflows while leaving publication, project, dataset, and student-research relationships to be populated later from verified records rather than manually inferred.
+  For EnviSAGE, Dr. Tamondong helps shape a research direction that treats environmental systems as spatial, multi-scale, and decision-relevant, with emphasis on coastal and ecosystem monitoring, satellite and aerial observation, and reproducible geospatial workflows.
 researchAreas:
   - earth-observation-remote-sensing
   - coastal-marine-environments

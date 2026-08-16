@@ -192,6 +192,8 @@ Public display normalizes student and adviser names through a shared display hel
 
 Use `data-maintenance/student-name-normalization-review.csv` to review display-name changes where the normalized public form differs from the stored source name.
 
+Public student research pages should read like a research catalog, not an administrative review system. Show thesis titles, years, students, adviser roles, abstracts, keywords, and relevant links in concise public language. Do not expose review decisions, import metadata, record IDs, visibility values, source workbook details, or maintainer notes on public pages.
+
 See `docs/STUDENT_RESEARCH_PUBLICATION_GUIDE.md` for maintainer-facing publication instructions.
 
 ## Duplicate Handling
