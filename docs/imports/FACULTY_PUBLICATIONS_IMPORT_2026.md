@@ -1,6 +1,6 @@
 # Faculty Publications Import 2026
 
-Status: Phase 6F import audit
+Status: Phase 6F.1 import and QA audit
 
 The verified source register supplied by the maintainer is the authoritative source for this import. The workflow does not use web lookup and does not infer missing bibliographic metadata.
 
@@ -15,4 +15,16 @@ The verified source register supplied by the maintainer is the authoritative sou
 - DOI values marked user-supplied-SUKAT: 43
 - Canonical records held from public review because at least one source row is REVIEW/HOLD: 6
 
-All imported records default to `visibility: internal`. Maintainers must update `data-maintenance/faculty-publications-review.csv` and run the publish script before any record can become public.
+Phase 6F.1 adds controlled QA files around the 299 canonical records:
+
+- Clean-for-review records: 289
+- Exception records: 10
+- Multi-faculty canonical records: 48
+- Conservative duplicate candidates: 2
+- Taxonomy review rows: 134
+
+The six non-ready source records remain held. They must not be corrected, completed, or made public without maintainer review of the source register.
+
+All imported records default to `visibility: internal`. Maintainers must update `data-maintenance/faculty-publications-review.csv` with `publication_decision: approve` and run the publish script before any record can become public.
+
+See `docs/FACULTY_PUBLICATION_REVIEW_GUIDE.md` for the controlled review workflow.
