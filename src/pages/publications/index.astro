@@ -74,9 +74,9 @@ const publicationsByYear = Array.from(
               >
                 {year}
               </h2>
-              <ol class="mt-4 divide-y divide-border rounded-card border border-border bg-surface">
+              <ol class="mt-4 divide-y divide-border">
                 {records.map((publication) => (
-                  <li class="p-5">
+                  <li class="py-5">
                     <h3 class="text-lg leading-snug font-semibold text-text">
                       {publication.data.url ? (
                         <a
@@ -94,9 +94,21 @@ const publicationsByYear = Array.from(
                         {publication.data.authors.join("; ")}
                       </p>
                     )}
-                    {publication.data.sourceOrVenue && (
+                    {(publication.data.sourceOrVenue ||
+                      publication.data.doi) && (
                       <p class="mt-2 text-sm leading-relaxed text-muted">
                         {publication.data.sourceOrVenue}
+                        {publication.data.sourceOrVenue &&
+                          publication.data.doi &&
+                          " · "}
+                        {publication.data.doi && (
+                          <a
+                            href={`https://doi.org/${publication.data.doi}`}
+                            class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
+                          >
+                            DOI
+                          </a>
+                        )}
                       </p>
                     )}
                   </li>
@@ -106,7 +118,7 @@ const publicationsByYear = Array.from(
           ))}
         </div>
       ) : (
-        <div class="mt-8 max-w-3xl rounded-card border border-border bg-surface p-6 shadow-subtle">
+        <div class="mt-8 max-w-3xl border-t border-border pt-6">
           <h2 class="text-xl font-semibold text-text">
             Publication records are being reviewed.
           </h2>

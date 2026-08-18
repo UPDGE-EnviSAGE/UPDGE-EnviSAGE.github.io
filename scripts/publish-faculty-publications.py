@@ -31,12 +31,14 @@ def main() -> int:
     with REVIEW_CSV.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.DictReader(handle))
 
-    approved = [
-        row
-        for row in rows
-        if (row.get("reviewDecision") or "").strip() == "approve-public"
-        and (row.get("visibilityAfterPublish") or "").strip() == "public"
-    ]
+    approved = []
+    for row in rows:
+        decision = (row.get("publication_decision") or row.get("reviewDecision") or "").strip()
+        visibility_after_publish = (row.get("visibilityAfterPublish") or "").strip()
+        if decision == "approve" or (
+            decision == "approve-public" and visibility_after_publish == "public"
+        ):
+            approved.append(row)
     print(f"review_rows={len(rows)}")
     print(f"approved_public={len(approved)}")
     if not args.write:
@@ -45,7 +47,10 @@ def main() -> int:
 
     changed = 0
     for row in approved:
-        path = PUBLICATION_DIR / f"{row['publicationId']}.md"
+        publication_id = row.get("publication_id") or row.get("publicationId")
+        if not publication_id:
+            continue
+        path = PUBLICATION_DIR / f"{publication_id}.md"
         if path.exists() and update_visibility(path, "public"):
             changed += 1
     print(f"changed_files={changed}")

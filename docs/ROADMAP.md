@@ -127,6 +127,8 @@ Phase 6E simplifies the public People, Alumni, faculty profile, and Student Rese
 
 Phase 6F establishes the approved five Research Themes and six Geomatics Approaches, adds approved faculty specializations, imports the verified faculty publication source register as internal canonical records, creates the faculty publication review workflow, and replaces `/publications/` with a public-only catalog that remains intentionally empty until maintainers approve records.
 
+Phase 6F.1 completes faculty publication QA and controlled publication safeguards. It adds clean review, exceptions, duplicate, multi-faculty, faculty summary, deduplication reconciliation, and taxonomy audit files; updates dry-run-first review tooling; and keeps all newly imported faculty publications internal until explicit maintainer approval.
+
 ## Phase 6 - Publications
 
 Create the publications database.

@@ -221,9 +221,13 @@ const publicationsByYear = Array.from(
         <SectionHeading
           id="profile-publications"
           eyebrow="Publications"
-          title="Selected publications"
+          title="Publications"
           text="Maintainer-approved publication records connected to this faculty profile."
         />
+        <p class="mt-5 text-base font-semibold text-text">
+          {publicPublications.length}{" "}
+          {publicPublications.length === 1 ? "publication" : "publications"}
+        </p>
         <div class="mt-6 space-y-3">
           {publicationsByYear.map(([year, publications], index) => (
             <details
@@ -258,6 +262,31 @@ const publicationsByYear = Array.from(
                     {publication.data.sourceOrVenue && (
                       <p class="mt-2 text-sm leading-relaxed text-muted">
                         {publication.data.sourceOrVenue}
+                        {publication.data.doi && " · "}
+                        {publication.data.doi && (
+                          <a
+                            href={`https://doi.org/${publication.data.doi}`}
+                            class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
+                          >
+                            DOI
+                          </a>
+                        )}
+                      </p>
+                    )}
+                    {!publication.data.sourceOrVenue &&
+                      publication.data.doi && (
+                        <p class="mt-2 text-sm leading-relaxed text-muted">
+                          <a
+                            href={`https://doi.org/${publication.data.doi}`}
+                            class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
+                          >
+                            DOI
+                          </a>
+                        </p>
+                      )}
+                    {publication.data.authors.length > 0 && (
+                      <p class="mt-2 text-sm leading-relaxed text-muted">
+                        {publication.data.authors.join("; ")}
                       </p>
                     )}
                   </li>

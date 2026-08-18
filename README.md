@@ -22,7 +22,7 @@ The undergraduate thesis maintainer workflow is documented in the [Undergraduate
 
 The student research publication workflow is documented in the [Student Research Publication Guide](docs/STUDENT_RESEARCH_PUBLICATION_GUIDE.md). Maintainers review `data-maintenance/student-research-publication-review.csv`; only rows explicitly marked `approve` may become public.
 
-The faculty publication workflow is documented in the [Publication Model](docs/PUBLICATION_MODEL.md). Imported faculty publications default to internal visibility and require maintainer approval before appearing on `/publications/` or faculty profiles.
+The faculty publication workflow is documented in the [Publication Model](docs/PUBLICATION_MODEL.md) and [Faculty Publication Review Guide](docs/FACULTY_PUBLICATION_REVIEW_GUIDE.md). Imported faculty publications default to internal visibility and require maintainer approval before appearing on `/publications/` or faculty profiles.
 
 ## Platform Priorities
 

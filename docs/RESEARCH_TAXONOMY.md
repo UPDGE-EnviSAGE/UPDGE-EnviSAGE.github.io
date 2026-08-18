@@ -33,6 +33,8 @@ Faculty specializations are person-specific expertise statements. They are not t
 
 The approved taxonomy is represented in `src/data/research-taxonomy.ts`. Public pages should import from that file or from compatibility wrappers that draw from it.
 
+Faculty publication taxonomy assignments are repository-reviewed through `data-maintenance/faculty-publications-taxonomy-audit.csv`. The audit reports invalid or unmapped terms, records without a Research Theme, and records with multiple Research Themes for maintainer review. Do not force complete taxonomy coverage or infer missing assignments without source-supported review.
+
 The public vocabulary is:
 
 - Research Themes

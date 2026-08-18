@@ -1,6 +1,6 @@
 # Publication Model
 
-Status: Canonical Phase 6F publication workflow
+Status: Canonical Phase 6F.1 publication workflow
 
 Publications are independent scholarly records. A publication may be related to multiple EnviSAGE faculty members, Research Themes, Geomatics Approaches, projects, theses, datasets, or tools.
 
@@ -24,14 +24,33 @@ Imported faculty publication records default to `visibility: internal`.
 
 Public pages and faculty profiles must render only `visibility: public` publication records. Internal fields such as `bibliographicStatus`, `sourceProvenance`, and `internalNotes` are maintainer fields and must not appear on public pages.
 
+At Phase 6F.1 completion, all newly imported faculty publication records remain internal. Public display requires an explicit maintainer review decision followed by the publication script.
+
 ## Maintainer Workflow
 
 1. Run `python3 scripts/sync-faculty-publications.py` to audit the source register without writing.
-2. Run `python3 scripts/sync-faculty-publications.py --write` only when the audit is expected.
-3. Review `data-maintenance/faculty-publications-review.csv`.
-4. Mark records for publication only with `reviewDecision: approve-public` and `visibilityAfterPublish: public`.
-5. Run `python3 scripts/review-faculty-publications.py` to summarize decisions.
-6. Run `python3 scripts/publish-faculty-publications.py` to dry-run publication.
-7. Run `python3 scripts/publish-faculty-publications.py --write` only after review.
+2. Run `python3 scripts/sync-faculty-publications.py --write` only when the import audit is expected.
+3. Run `python3 scripts/audit-faculty-publications.py --write` to regenerate review, exceptions, duplicate, multi-faculty, taxonomy, and faculty-summary QA files.
+4. Review `data-maintenance/faculty-publications-review.csv` and `data-maintenance/faculty-publications-exceptions.csv`.
+5. Mark records for publication only with `publication_decision: approve`. Leave exceptions as `hold`, `needs-fix`, or `pending-review` until corrected.
+6. Run `python3 scripts/review-faculty-publications.py --approve-clean` to dry-run bulk approval of clean records.
+7. Run `python3 scripts/review-faculty-publications.py --approve-clean --write` only when the maintainer has approved the clean set.
+8. Run `python3 scripts/publish-faculty-publications.py` to dry-run publication.
+9. Run `python3 scripts/publish-faculty-publications.py --write` only after review.
 
-At Phase 6F completion, all imported records remain internal. The public `/publications/` route is production-capable but intentionally empty until maintainers approve records.
+The public `/publications/` route is production-capable but intentionally empty until maintainers approve records.
+
+## Review Fields
+
+The primary review CSV starts with these fields:
+
+`publication_decision`, `year`, `title`, `faculty`, `authors_preview`, `source_or_venue`, `doi`, `research_themes`, `geomatics_approaches`, `duplicate_status`, `bibliographic_status`, `review_notes`, `publication_id`
+
+The supported decisions are:
+
+- `pending-review` - default for clean records awaiting maintainer review.
+- `approve` - explicit maintainer approval for public publication.
+- `hold` - keep out of public workflows.
+- `needs-fix` - requires source or content correction before reconsideration.
+
+The bulk approval helper never approves records listed in the exceptions CSV and preserves existing `approve`, `hold`, and `needs-fix` decisions.
