@@ -21,7 +21,7 @@ The platform is public-first. Authentication, internal collaboration features, P
 
 Content contributions should be clear, public-ready, and structured according to `docs/CONTENT_MODEL.md`.
 
-Use stable slugs and descriptive titles. Include related people, projects, publications, datasets, tools, and research areas where known.
+Use stable slugs and descriptive titles. Include related people, projects, publications, datasets, tools, Research Themes, and Geomatics Approaches where known.
 
 ## Student Research Contributions
 

@@ -12,7 +12,7 @@ The public People directory answers: Who is part of EnviSAGE now?
 
 A person exists once in the EnviSAGE system.
 
-A Person may have multiple relationships, including EnviSAGE role, institutional position, Projects, Theses, Publications, Research Areas, Research Topics, Grants, Datasets, and Software. Do not create duplicate Person records for different roles.
+A Person may have multiple relationships, including EnviSAGE role, institutional position, Projects, Theses, Publications, Research Themes, Geomatics Approaches, Research Topics, Grants, Datasets, and Software. Do not create duplicate Person records for different roles.
 
 For example, a faculty member who is a Laboratory Head, Project PI, Thesis Adviser, and Publication Author should still have one canonical Person record.
 
@@ -98,7 +98,8 @@ Faculty profile architecture may support:
 - photo
 - short biography
 - research interests
-- Research Areas
+- Research Themes
+- Geomatics Approaches
 - Research Topics
 - ORCID
 - Google Scholar
@@ -115,7 +116,8 @@ Recommended public fields:
 - category
 - academic program or course
 - current research or thesis topic
-- optional Research Areas
+- optional Research Themes
+- optional Geomatics Approaches
 - optional Research Topics
 - optional photo
 
@@ -137,7 +139,7 @@ Person cards should be able to support future profile links without rendering li
 
 ## Research Relationships
 
-`docs/RESEARCH_MODEL.md` remains authoritative for how People connect to Projects, Theses, Publications, Datasets, Software, Grants, Research Areas, and Research Topics.
+`docs/RESEARCH_MODEL.md` remains authoritative for how People connect to Projects, Theses, Publications, Datasets, Software, Grants, Research Themes, Geomatics Approaches, and Research Topics.
 
 The People model requires compatibility with those relationships but does not implement every relationship in Phase 6A.
 
@@ -145,7 +147,7 @@ The People model requires compatibility with those relationships but does not im
 
 Faculty specializations are faculty-specific areas of expertise. They may describe a person's methods, domains, or applied research strengths after review.
 
-EnviSAGE Research Themes are lab-wide domains that represent the collective research portfolio. The current six Research Areas remain provisional until later evidence-based taxonomy review. Do not substitute provisional Research Areas for faculty specializations, and do not infer specialization values from thesis titles, abstracts, or broad theme assignments.
+EnviSAGE Research Themes are lab-wide domains that represent the collective research portfolio. The approved Phase 6F taxonomy is defined in `docs/RESEARCH_TAXONOMY.md`. Do not substitute broad Research Themes for faculty specializations, and do not infer specialization values from thesis titles, abstracts, publication titles, or broad theme assignments.
 
 Public faculty directory cards may show specialization keywords only when approved specialization data exists. If no approved specialization data exists, omit the keywords rather than inventing them.
 

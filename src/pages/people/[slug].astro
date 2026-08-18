@@ -36,6 +36,18 @@ const publicTheses = await getCollection(
 );
 const advisingRecords = getFacultyAdvisingRecords(publicTheses, profile.slug);
 const advisingSummary = getFacultyAdvisingSummary(advisingRecords);
+const publicPublications = (
+  await getCollection(
+    "publications",
+    ({ data }) =>
+      data.visibility === "public" &&
+      data.facultyRelationships.includes(profile.slug),
+  )
+).sort(
+  (first, second) =>
+    (second.data.year ?? 0) - (first.data.year ?? 0) ||
+    first.data.title.localeCompare(second.data.title),
+);
 
 const initials = profile.name
   .replace(/^(Dr\.|Asst\. Prof\.|Engr\.)\s+/u, "")
@@ -51,7 +63,6 @@ const bioParagraphs = profile.shortBio
 
 const contributionGroups = [
   { label: "Projects", items: profile.projects },
-  { label: "Publications", items: profile.publications },
   { label: "Student Research", items: profile.studentResearch },
   { label: "Datasets", items: profile.datasets },
   { label: "Software", items: profile.tools },
@@ -90,6 +101,16 @@ const advisingRecordsByYear = Array.from(
     groups.set(year, current);
     return groups;
   }, new Map<string, typeof advisingRecords>()),
+);
+
+const publicationsByYear = Array.from(
+  publicPublications.reduce((groups, publication) => {
+    const year = String(publication.data.year ?? "Undated");
+    const current = groups.get(year) ?? [];
+    current.push(publication);
+    groups.set(year, current);
+    return groups;
+  }, new Map<string, typeof publicPublications>()),
 );
 ---
 
@@ -177,8 +198,77 @@ const advisingRecordsByYear = Array.from(
       <p class="mt-6 text-base leading-relaxed text-muted">
         {profile.researchInterests.join(", ")}.
       </p>
+      {
+        profile.specializations.length > 0 && (
+          <div class="mt-8">
+            <h3 class="text-lg font-semibold text-text">Specializations</h3>
+            <ul class="mt-4 flex flex-wrap gap-2">
+              {profile.specializations.map((specialization: string) => (
+                <li class="rounded-control border border-border bg-surface px-3 py-1.5 text-sm font-semibold text-muted">
+                  {specialization}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
     </div>
   </Section>
+
+  {
+    publicPublications.length > 0 && (
+      <Section size="wide" aria-labelledby="profile-publications">
+        <SectionHeading
+          id="profile-publications"
+          eyebrow="Publications"
+          title="Selected publications"
+          text="Maintainer-approved publication records connected to this faculty profile."
+        />
+        <div class="mt-6 space-y-3">
+          {publicationsByYear.map(([year, publications], index) => (
+            <details
+              class="group border-b border-border pb-3"
+              open={index === 0}
+            >
+              <summary
+                class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 rounded-control px-1 text-left text-lg font-semibold text-text marker:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"
+                aria-label={`${year}, ${publications.length} ${publications.length === 1 ? "publication" : "publications"}`}
+              >
+                <span>{year}</span>
+                <span class="text-sm font-semibold text-muted">
+                  {publications.length}{" "}
+                  {publications.length === 1 ? "publication" : "publications"}
+                </span>
+              </summary>
+              <ol class="mt-2 divide-y divide-border">
+                {publications.map((publication) => (
+                  <li class="py-4">
+                    <h3 class="text-base leading-snug font-semibold text-text">
+                      {publication.data.url ? (
+                        <a
+                          href={publication.data.url}
+                          class="text-text underline-offset-4 hover:text-brand-blue-deep hover:underline"
+                        >
+                          {publication.data.title}
+                        </a>
+                      ) : (
+                        publication.data.title
+                      )}
+                    </h3>
+                    {publication.data.sourceOrVenue && (
+                      <p class="mt-2 text-sm leading-relaxed text-muted">
+                        {publication.data.sourceOrVenue}
+                      </p>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </details>
+          ))}
+        </div>
+      </Section>
+    )
+  }
 
   {
     advisingRecords.length > 0 && (
@@ -319,7 +409,7 @@ const advisingRecordsByYear = Array.from(
         id="profile-cta"
         class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
       >
-        Explore the people and research areas connected to EnviSAGE.
+        Explore the people and research themes connected to EnviSAGE.
       </h2>
       <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
         <ButtonLink href="/people/">Back to people</ButtonLink>

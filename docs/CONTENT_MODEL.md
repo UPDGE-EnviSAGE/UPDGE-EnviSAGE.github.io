@@ -17,7 +17,7 @@ EnviSAGE is Environmental Systems Applications of Geomatics Engineering, the res
 - Make content reviewable through GitHub pull requests.
 - Use stable slugs and identifiers.
 - Keep large datasets outside the repository.
-- Link related records across people, research areas, projects, publications, student research, tools, and datasets.
+- Link related records across people, Research Themes, Geomatics Approaches, projects, publications, student research, tools, and datasets.
 
 ## Core Content Types
 
@@ -39,7 +39,8 @@ Suggested fields:
 - short biography
 - email or contact URL when public and approved
 - ORCID, Google Scholar, personal website, or GitHub when reviewed
-- research areas
+- research themes
+- geomatics approaches
 - research topics
 - projects
 - theses
@@ -52,7 +53,7 @@ Suggested fields:
 
 Only public Person records should appear in the public People directory. Private and internal records, including development fixtures, must remain excluded.
 
-### Research Areas
+### Research Themes
 
 Suggested fields:
 
@@ -67,6 +68,8 @@ Suggested fields:
 - related datasets
 - related tools
 
+The implemented schema may still use the legacy key `researchAreas` for compatibility. Public copy should use Research Themes, and canonical taxonomy values are defined in `docs/RESEARCH_TAXONOMY.md`.
+
 ### Projects
 
 Suggested fields:
@@ -80,7 +83,8 @@ Suggested fields:
 - end year
 - funder or partner
 - project team
-- research areas
+- research themes
+- geomatics approaches
 - publications
 - datasets
 - tools
@@ -93,17 +97,27 @@ Suggested fields:
 
 - title
 - slug or citation key
+- canonical publication ID
 - authors
 - year
 - publication type
-- venue
+- source or venue
 - abstract
 - DOI
 - URL
+- faculty relationships
+- research themes
+- geomatics approaches
+- visibility
+- bibliographic status
+- source provenance
+- internal notes
 - related projects
 - related datasets
 - related tools
 - keywords
+
+Imported faculty publications default to `visibility: internal`. Public publication pages and faculty profiles must render only `visibility: public` records and must not expose internal provenance or review fields.
 
 ### Student Research
 
@@ -125,7 +139,8 @@ Suggested fields:
 - abstract
 - keywords
 - research topics
-- research areas
+- research themes
+- geomatics approaches
 - EnviSAGE association status and basis
 - EnviSAGE adviser roles
 - projects

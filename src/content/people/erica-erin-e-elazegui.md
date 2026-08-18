@@ -14,8 +14,13 @@ shortBio: |-
 
   Within EnviSAGE, her work supports geospatial analytics and decision support by turning spatial and digital traces into understandable, responsible public information.
 researchAreas:
-  - geospatial-ai-spatial-analytics
-  - geospatial-data-decision-support
+  - urban-sustainable-systems
+  - climate-hazards-resilience
+specializations:
+  - Spatial Data Science & Spatial Analysis
+  - Digital Geography & Social Media Data
+  - Urban Analytics & Land-Use Modeling
+  - Geospatial Data Visualization
 researchInterests:
   - Spatial Analysis
   - Social Media Data

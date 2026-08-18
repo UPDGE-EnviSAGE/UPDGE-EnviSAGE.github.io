@@ -14,9 +14,14 @@ shortBio: |-
 
   His work connects environmental monitoring with spatial evidence, especially satellite-derived water quality, land-cover interpretation, and decision-ready geospatial products.
 researchAreas:
-  - earth-observation-remote-sensing
-  - environmental-monitoring-modeling
-  - geospatial-data-decision-support
+  - coastal-marine-systems
+  - ecosystems-biodiversity-land-change
+  - water-air-environmental-quality
+specializations:
+  - Ocean Color & Water Quality Remote Sensing
+  - Land Cover & Environmental Change
+  - GIS-Based Environmental Decision Analysis
+  - LiDAR & Bathymetric Mapping
 researchInterests:
   - Environmental applications of remote sensing and GIS
   - Water quality remote sensing

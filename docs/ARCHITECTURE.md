@@ -10,7 +10,7 @@ The architecture should stay simple enough for faculty, researchers, students, a
 
 `docs/FOUNDING_CHARTER.md` is the canonical identity document for EnviSAGE. Public site copy and future laboratory communication materials should derive their institutional framing from the charter rather than creating independent definitions of the laboratory.
 
-`docs/RESEARCH_MODEL.md` is the canonical research ecosystem model. It defines how research areas, topics, people, projects, theses, outputs, and supporting entities relate conceptually before those concepts are represented in website content schemas or catalog pages.
+`docs/RESEARCH_MODEL.md` is the canonical research ecosystem model. It defines how Research Themes, Geomatics Approaches, topics, people, projects, theses, outputs, and supporting entities relate conceptually before those concepts are represented in website content schemas or catalog pages.
 
 `docs/PEOPLE_MODEL.md` is the canonical Person architecture for EnviSAGE membership, roles, visibility, and future profile enrichment.
 
@@ -112,11 +112,11 @@ Phase 4A adds the research visual identity framework through `src/data/research-
 
 Phase 5A adds the Founding Charter as the highest-level identity document and replaces the `/about/` placeholder with a concise production page distilled from that charter.
 
-Phase 5B replaces the `/research/` placeholder with the public research architecture page. The page remains static-first and catalog-free in this phase. It introduces reusable research-area, topic, connection, and output presentation components backed by typed local data in `src/data/research-architecture.ts`.
+Phase 5B replaces the `/research/` placeholder with the public research architecture page. Phase 6F updates that page to use the approved Research Themes and Geomatics Approaches from `src/data/research-taxonomy.ts`, with `src/data/research-architecture.ts` retained as a compatibility wrapper for existing presentation components.
 
 The research architecture organizes discovery as:
 
-Research Areas and Topics -> Research Work -> Projects and Theses -> Outputs -> Publications, Datasets, Software, and Dashboards
+Research Themes, Geomatics Approaches, and Topics -> Research Work -> Projects and Theses -> Outputs -> Publications, Datasets, Software, and Dashboards
 
 Projects and Theses are related forms of research work. A Thesis may belong to a Project, or it may exist independently under EnviSAGE. This model prepares future catalogs without requiring a database, CMS, authentication, backend APIs, or geospatial platform integration.
 
@@ -129,6 +129,8 @@ Phase 6C imports historical BS Geodetic Engineering thesis records associated wi
 Phase 6C.1 adds internal QA and a maintainer editing workflow for those undergraduate thesis records. The workflow keeps canonical Person and Student Research files as the website source of truth while using `data-maintenance/undergraduate-theses.csv` as a non-public human editing layer. `scripts/sync-undergraduate-theses.py` is dry-run-first, matches by stable `recordId`, preserves existing slugs where practical, never deletes missing canonical records automatically, and never promotes records to public visibility.
 
 Phase 6D adds the review-gated publication workflow and public Student Research surface. `data-maintenance/student-research-publication-review.csv` is the non-public maintainer approval layer, `scripts/review-student-research.py` regenerates it while preserving decisions, and `scripts/publish-student-research.py` dry-runs by default before applying approved visibility changes. Public `/student-research/` and `/student-research/{slug}/` routes render only `visibility: public` theses.
+
+Phase 6F establishes the approved Research Theme and Geomatics Approach taxonomy, imports the verified faculty publication source register as internal canonical publication records, and replaces `/publications/` with a public-only catalog. Faculty publication sections are generated from public-approved Publication relationships only.
 
 ## Global Site Shell
 

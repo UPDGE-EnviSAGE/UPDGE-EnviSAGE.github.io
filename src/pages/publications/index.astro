@@ -1,14 +1,143 @@
 ---
-import PlaceholderPage from "@components/PlaceholderPage.astro";
+import { getCollection } from "astro:content";
+import ButtonLink from "@components/ButtonLink.astro";
+import Section from "@components/Section.astro";
+import SectionHeading from "@components/SectionHeading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+
+const publications = (
+  await getCollection(
+    "publications",
+    ({ data }) => data.visibility === "public",
+  )
+).sort(
+  (first, second) =>
+    (second.data.year ?? 0) - (first.data.year ?? 0) ||
+    first.data.title.localeCompare(second.data.title),
+);
+
+const publicationsByYear = Array.from(
+  publications.reduce((groups, publication) => {
+    const year = String(publication.data.year ?? "Undated");
+    const current = groups.get(year) ?? [];
+    current.push(publication);
+    groups.set(year, current);
+    return groups;
+  }, new Map<string, typeof publications>()),
+);
 ---
 
 <BaseLayout
   title="Publications"
-  description="EnviSAGE publications share scholarly outputs from environmental Geomatics research."
+  description="EnviSAGE publications share maintainer-approved scholarly outputs from environmental Geomatics research."
 >
-  <PlaceholderPage
-    title="Publications"
-    status="Publications share scholarly outputs from EnviSAGE environmental Geomatics research."
-  />
+  <section class="geo-surface" aria-labelledby="publications-title">
+    <div
+      class="mx-auto w-full max-w-[var(--content-width-wide)] px-5 py-10 sm:px-6 lg:px-8 lg:py-16"
+    >
+      <div class="max-w-3xl">
+        <p
+          class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
+        >
+          EnviSAGE Publications
+        </p>
+        <h1
+          id="publications-title"
+          class="mt-5 text-4xl leading-tight font-semibold text-text sm:text-5xl"
+        >
+          Publications
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
+          Scholarly records connected to EnviSAGE faculty and research, shown
+          only after maintainer review.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Section size="wide" aria-labelledby="publication-catalog">
+    <SectionHeading
+      id="publication-catalog"
+      eyebrow="Catalog"
+      title="Public publication records"
+      text="The catalog includes only records approved for public display."
+    />
+
+    {
+      publications.length > 0 ? (
+        <div class="mt-8 space-y-6">
+          {publicationsByYear.map(([year, records]) => (
+            <section aria-labelledby={`publications-${year}`}>
+              <h2
+                id={`publications-${year}`}
+                class="text-2xl font-semibold text-text"
+              >
+                {year}
+              </h2>
+              <ol class="mt-4 divide-y divide-border rounded-card border border-border bg-surface">
+                {records.map((publication) => (
+                  <li class="p-5">
+                    <h3 class="text-lg leading-snug font-semibold text-text">
+                      {publication.data.url ? (
+                        <a
+                          href={publication.data.url}
+                          class="text-text underline-offset-4 hover:text-brand-blue-deep hover:underline"
+                        >
+                          {publication.data.title}
+                        </a>
+                      ) : (
+                        publication.data.title
+                      )}
+                    </h3>
+                    {publication.data.authors.length > 0 && (
+                      <p class="mt-2 text-sm leading-relaxed text-muted">
+                        {publication.data.authors.join("; ")}
+                      </p>
+                    )}
+                    {publication.data.sourceOrVenue && (
+                      <p class="mt-2 text-sm leading-relaxed text-muted">
+                        {publication.data.sourceOrVenue}
+                      </p>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </section>
+          ))}
+        </div>
+      ) : (
+        <div class="mt-8 max-w-3xl rounded-card border border-border bg-surface p-6 shadow-subtle">
+          <h2 class="text-xl font-semibold text-text">
+            Publication records are being reviewed.
+          </h2>
+          <p class="mt-3 text-base leading-relaxed text-muted">
+            EnviSAGE is preparing a verified publication catalog. Records will
+            appear here after maintainer approval.
+          </p>
+        </div>
+      )
+    }
+  </Section>
+
+  <Section
+    size="wide"
+    tone="muted"
+    class="border-y border-border"
+    aria-labelledby="publications-next"
+  >
+    <div class="max-w-3xl">
+      <SectionHeading
+        id="publications-next"
+        eyebrow="Explore"
+        title="Connect publications with people and research"
+        text="Browse the faculty profiles and research themes shaping EnviSAGE scholarly outputs."
+      />
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <ButtonLink href="/people/">Meet the laboratory</ButtonLink>
+        <ButtonLink href="/research/" variant="secondary">
+          Explore research
+        </ButtonLink>
+      </div>
+    </div>
+  </Section>
 </BaseLayout>

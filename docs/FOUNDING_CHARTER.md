@@ -93,14 +93,13 @@ As a laboratory within the University of the Philippines, EnviSAGE recognizes pu
 
 EnviSAGE's current research themes are:
 
-1. Earth Observation & Remote Sensing
-2. Coastal & Marine Environments
-3. Environmental Monitoring & Modeling
-4. Geospatial AI & Spatial Analytics
-5. Climate, Hazards & Resilience
-6. Geospatial Data & Decision Support
+1. Coastal & Marine Systems
+2. Ecosystems, Biodiversity & Land Change
+3. Water, Air & Environmental Quality
+4. Climate, Hazards & Resilience
+5. Urban & Sustainable Systems
 
-These themes describe the laboratory's present areas of emphasis. They may evolve as environmental challenges, scientific questions, and geospatial methods evolve.
+These themes describe the laboratory's present environmental systems and problem domains. Cross-cutting Geomatics Approaches are defined in `docs/RESEARCH_TAXONOMY.md`. The themes may evolve as environmental challenges, scientific questions, and geospatial methods evolve.
 
 ## 10. Education
 
