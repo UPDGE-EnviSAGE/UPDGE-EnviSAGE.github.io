@@ -15,7 +15,8 @@ Required reviewed fields for current faculty profiles:
 - UP Department of Geodetic Engineering position
 - short professional biography
 - research interests
-- broad EnviSAGE Research Areas
+- broad EnviSAGE Research Themes
+- approved faculty specializations
 - Google Scholar URL
 - public visibility
 
@@ -55,7 +56,13 @@ Store specific reviewed interests in `researchInterests`.
 
 Research interests should come from the approved institutional faculty source or another explicitly approved source. Preserve the meaning of the source terms, but minor editorial normalization is acceptable for consistency.
 
-Do not treat research interests as the same thing as EnviSAGE Research Areas. Research Areas are broad navigation categories defined by `docs/RESEARCH_MODEL.md`; research interests are more specific faculty descriptors.
+Do not treat research interests as the same thing as EnviSAGE Research Themes. Research Themes are broad navigation categories defined by `docs/RESEARCH_TAXONOMY.md`; research interests are more specific faculty descriptors.
+
+## Faculty Specializations
+
+Store approved faculty-specific expertise statements in `specializations[]`. These values are displayed on faculty cards and profile pages only after review.
+
+Do not infer specializations from thesis titles, publication titles, citation profiles, broad Research Theme assignments, or unaudited web sources.
 
 ## Photo Policy
 
@@ -88,5 +95,7 @@ Future connections may include:
 - Software
 
 These sections must be generated from reviewed public content records. Do not manually write placeholder contribution lists into faculty biographies or profile pages.
+
+Publication lists must be generated from `visibility: public` Publication records with matching faculty relationships. Do not display imported internal publication counts, citation counts, h-index values, or source-review status on public faculty pages.
 
 Until related records exist, contribution sections should not render on public profile pages.

@@ -99,7 +99,7 @@ Import source keywords into `keywords`. Do not replace source keywords with a ne
 
 Use `researchTopics` only when a keyword maps unambiguously to an existing controlled Research Topic. Leave uncertain topics unmapped for later curation.
 
-Do not assign strategic Research Areas automatically from titles or abstracts.
+Do not assign strategic Research Themes automatically from titles or abstracts.
 
 ## GitHub Relationship
 

@@ -87,7 +87,7 @@ Create the research project catalog.
 
 Phase 5A establishes the EnviSAGE Founding Charter and production About page before the project catalog. The charter becomes the canonical identity document for the laboratory, and the About page provides a concise public-facing expression of that charter.
 
-Phase 5B establishes the public research architecture before catalog implementation. It replaces the `/research/` placeholder with a conceptual research page covering research philosophy, six research areas, example topics, output types, and the discovery path from research areas to future projects, theses, and outputs.
+Phase 5B establishes the public research architecture before catalog implementation. It replaces the `/research/` placeholder with a conceptual research page covering research philosophy, research themes, example topics, output types, and the discovery path from taxonomy to future projects, theses, and outputs.
 
 Phase 5B also adds `docs/RESEARCH_MODEL.md` as the canonical conceptual model for research entities and relationships. The Founding Charter explains why EnviSAGE exists, the Research Model explains how EnviSAGE research knowledge is organized, the Content Model translates those concepts into website content, and Architecture explains the technical implementation.
 
@@ -124,6 +124,8 @@ Phase 6D adds the student research review and publication workflow. It creates a
 Phase 6D.1 refines the public People and Student Research experience after reviewed undergraduate theses are published. It keeps `/people/` focused on the current EnviSAGE community, adds `/people/alumni/` for historical EnviSAGE-affiliated undergraduate alumni, normalizes student display names, links canonical faculty advisers, and derives faculty Undergraduate Research Advising sections from public thesis records.
 
 Phase 6E simplifies the public People, Alumni, faculty profile, and Student Research UX. It removes internal content-model language from public surfaces, reduces cards, badges, and repeated buttons, keeps the People page focused on current members, makes alumni and advising lists more compact, and documents the distinction between faculty-specific specializations and future evidence-based EnviSAGE Research Themes.
+
+Phase 6F establishes the approved five Research Themes and six Geomatics Approaches, adds approved faculty specializations, imports the verified faculty publication source register as internal canonical records, creates the faculty publication review workflow, and replaces `/publications/` with a public-only catalog that remains intentionally empty until maintainers approve records.
 
 ## Phase 6 - Publications
 

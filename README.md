@@ -8,7 +8,9 @@ The platform is public-first. Future internal collaboration features should be d
 
 The canonical identity document for EnviSAGE is the [Founding Charter](docs/FOUNDING_CHARTER.md). Public-facing copy, proposals, presentations, and laboratory materials should trace their institutional framing back to the charter.
 
-The canonical research ecosystem document is the [Research Model](docs/RESEARCH_MODEL.md). It defines how EnviSAGE research areas, topics, people, projects, theses, outputs, and supporting entities relate conceptually.
+The canonical research ecosystem document is the [Research Model](docs/RESEARCH_MODEL.md). It defines how EnviSAGE Research Themes, Geomatics Approaches, topics, people, projects, theses, outputs, and supporting entities relate conceptually.
+
+The canonical research taxonomy is the [Research Taxonomy](docs/RESEARCH_TAXONOMY.md). It defines the approved five public Research Themes and six cross-cutting Geomatics Approaches.
 
 The canonical people architecture document is the [People Model](docs/PEOPLE_MODEL.md). It defines Person records, EnviSAGE membership categories, roles, visibility, and profile-enrichment rules.
 
@@ -19,6 +21,8 @@ The canonical student research architecture document is the [Student Research Mo
 The undergraduate thesis maintainer workflow is documented in the [Undergraduate Thesis Maintenance Guide](docs/UNDERGRADUATE_THESIS_MAINTENANCE.md). Maintainers edit `data-maintenance/undergraduate-theses.csv`, run the dry-run sync, review warnings, and then apply changes to canonical Person and Student Research records.
 
 The student research publication workflow is documented in the [Student Research Publication Guide](docs/STUDENT_RESEARCH_PUBLICATION_GUIDE.md). Maintainers review `data-maintenance/student-research-publication-review.csv`; only rows explicitly marked `approve` may become public.
+
+The faculty publication workflow is documented in the [Publication Model](docs/PUBLICATION_MODEL.md). Imported faculty publications default to internal visibility and require maintainer approval before appearing on `/publications/` or faculty profiles.
 
 ## Platform Priorities
 
@@ -39,7 +43,7 @@ EnviSAGE v1.0 is expected to include:
 
 - Professional laboratory homepage
 - About section
-- Research areas
+- Research Themes
 - People directory
 - Projects catalog
 - Publications database
@@ -63,7 +67,7 @@ The Phase 2 work does not redesign the historical EnviSAGE logo, build the final
 
 ## Research Architecture
 
-Phase 5B establishes `/research/` as the conceptual center of the public platform. The page explains EnviSAGE research philosophy, six research areas, representative research topics, and the discovery path from research areas and topics into research work, projects, theses, outputs, publications, datasets, software, and dashboards.
+Phase 5B establishes `/research/` as the conceptual center of the public platform. Phase 6F updates that page to use the approved five Research Themes, six cross-cutting Geomatics Approaches, representative research topics, and the discovery path from taxonomy into research work, projects, theses, outputs, publications, datasets, software, and dashboards.
 
 This phase does not implement project, publication, student research, software, dataset, or dashboard catalogs. Those remain later roadmap work.
 

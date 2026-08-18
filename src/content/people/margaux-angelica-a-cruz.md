@@ -14,10 +14,14 @@ shortBio: |-
 
   Her work contributes to EnviSAGE's coastal, urban, and environmental monitoring directions through applied remote sensing and GIS.
 researchAreas:
-  - earth-observation-remote-sensing
-  - coastal-marine-environments
-  - environmental-monitoring-modeling
-  - geospatial-data-decision-support
+  - ecosystems-biodiversity-land-change
+  - coastal-marine-systems
+  - urban-sustainable-systems
+specializations:
+  - Biodiversity Conservation & Geospatial Ecology
+  - Coastal & Benthic Habitat Remote Sensing
+  - Environmental Change Monitoring
+  - GIS for Conservation Planning
 researchInterests:
   - Remote Sensing and Geographic Information Systems for Environmental Monitoring
   - Biodiversity Conservation

@@ -14,9 +14,14 @@ shortBio: |-
 
   Within EnviSAGE, his work supports geospatial AI and spatial analytics while remaining grounded in environmental and geomatics applications.
 researchAreas:
-  - earth-observation-remote-sensing
-  - geospatial-ai-spatial-analytics
-  - geospatial-data-decision-support
+  - urban-sustainable-systems
+  - ecosystems-biodiversity-land-change
+  - water-air-environmental-quality
+specializations:
+  - GeoAI & Machine Learning
+  - Remote Sensing & GIS
+  - Urban Geospatial Analytics & Digital Twins
+  - Environmental & Resource Assessment
 researchInterests:
   - Spatial Analysis
   - Remote Sensing

@@ -7,6 +7,7 @@ import Section from "@components/Section.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import {
+  researchApproaches,
   researchAreas,
   researchOutputs,
   researchTopics,
@@ -104,9 +105,9 @@ import {
   >
     <SectionHeading
       id="research-areas"
-      eyebrow="Research Areas"
-      title="Six themes organize the laboratory's work"
-      text="Each area combines representative geomatics methods with environmental applications."
+      eyebrow="Research Themes"
+      title="Five themes organize the laboratory's work"
+      text="Each theme connects environmental systems with representative geomatics methods and applications."
     />
     <div class="mt-10 grid gap-5 lg:grid-cols-2">
       {
@@ -123,7 +124,35 @@ import {
     </div>
   </Section>
 
-  <Section size="wide" aria-labelledby="research-topics">
+  <Section size="wide" aria-labelledby="research-approaches">
+    <div class="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+      <SectionHeading
+        id="research-approaches"
+        eyebrow="Geomatics Approaches"
+        title="Cross-cutting approaches connect work across themes"
+        text="These approaches describe the recurring geomatics capabilities used across EnviSAGE research."
+      />
+      <ul class="grid gap-3 sm:grid-cols-2">
+        {
+          researchApproaches.map((approach) => (
+            <li class="rounded-control border border-border bg-white p-4">
+              <h3 class="text-base font-semibold text-text">{approach.name}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-muted">
+                {approach.description}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </Section>
+
+  <Section
+    size="wide"
+    tone="muted"
+    class="border-y border-border"
+    aria-labelledby="research-topics"
+  >
     <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
       <SectionHeading
         id="research-topics"

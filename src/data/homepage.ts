@@ -1,40 +1,10 @@
-export const researchThemes = [
-  {
-    title: "Earth Observation & Remote Sensing",
-    description:
-      "Satellite, aerial, and field-linked observations of environmental change.",
-    motif: "grid",
-  },
-  {
-    title: "Coastal & Marine Environments",
-    description:
-      "Spatial analysis of water, reefs, seagrass, mangroves, and nearshore systems.",
-    motif: "contour",
-  },
-  {
-    title: "Environmental Monitoring & Modeling",
-    description: "Environmental indicators, models, and monitoring workflows.",
-    motif: "raster",
-  },
-  {
-    title: "Geospatial AI & Spatial Analytics",
-    description:
-      "Spatial statistics, machine learning, and reproducible analysis.",
-    motif: "grid",
-  },
-  {
-    title: "Climate, Hazards & Resilience",
-    description:
-      "Exposure, risk, and landscape change for climate and hazard resilience.",
-    motif: "contour",
-  },
-  {
-    title: "Geospatial Data & Decision Support",
-    description:
-      "Maps, data products, and decision support for research and partners.",
-    motif: "raster",
-  },
-] as const;
+import { researchThemes as approvedResearchThemes } from "./research-taxonomy";
+
+export const researchThemes = approvedResearchThemes.map((theme) => ({
+  title: theme.name,
+  description: theme.description,
+  motif: theme.motif,
+}));
 
 export const researchHighlights = [
   {

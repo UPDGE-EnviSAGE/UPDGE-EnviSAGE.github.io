@@ -15,11 +15,16 @@ shortBio: |-
 
   For EnviSAGE, Dr. Tamondong helps shape a research direction that treats environmental systems as spatial, multi-scale, and decision-relevant, with emphasis on coastal and ecosystem monitoring, satellite and aerial observation, and reproducible geospatial workflows.
 researchAreas:
-  - earth-observation-remote-sensing
-  - coastal-marine-environments
-  - environmental-monitoring-modeling
+  - coastal-marine-systems
+  - ecosystems-biodiversity-land-change
+  - water-air-environmental-quality
   - climate-hazards-resilience
-  - geospatial-data-decision-support
+  - urban-sustainable-systems
+specializations:
+  - Coastal & Marine Remote Sensing
+  - Environmental Monitoring & Modeling
+  - Air & Water Quality Geomatics
+  - LiDAR & UAS Environmental Applications
 researchInterests:
   - Coastal Remote Sensing
   - Ecosystem Monitoring and Modeling

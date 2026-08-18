@@ -15,9 +15,14 @@ shortBio: |-
 
   Within EnviSAGE, Dr. Blanco provides senior research direction for using Geomatics Engineering to understand landscapes, coasts, waters, and other spatially complex environments.
 researchAreas:
-  - earth-observation-remote-sensing
-  - environmental-monitoring-modeling
-  - geospatial-data-decision-support
+  - coastal-marine-systems
+  - ecosystems-biodiversity-land-change
+  - water-air-environmental-quality
+specializations:
+  - Environmental Remote Sensing & GIS
+  - Coastal, Aquatic & Ecosystem Monitoring
+  - Photogrammetry, LiDAR & 3D Geomatics
+  - Geospatial Modeling & Visualization
 researchInterests:
   - Environmental Geomatics and Modelling
   - Remote Sensing

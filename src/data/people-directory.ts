@@ -11,12 +11,12 @@ export const peopleRoleLabels = {
 } as const;
 
 export const researchAreaLabels = {
-  "earth-observation-remote-sensing": "Earth Observation & Remote Sensing",
-  "coastal-marine-environments": "Coastal & Marine Environments",
-  "environmental-monitoring-modeling": "Environmental Monitoring & Modeling",
-  "geospatial-ai-spatial-analytics": "Geospatial AI & Spatial Analytics",
+  "coastal-marine-systems": "Coastal & Marine Systems",
+  "ecosystems-biodiversity-land-change":
+    "Ecosystems, Biodiversity & Land Change",
+  "water-air-environmental-quality": "Water, Air & Environmental Quality",
   "climate-hazards-resilience": "Climate, Hazards & Resilience",
-  "geospatial-data-decision-support": "Geospatial Data & Decision Support",
+  "urban-sustainable-systems": "Urban & Sustainable Systems",
 } as const;
 
 export const peopleCategorySections = [

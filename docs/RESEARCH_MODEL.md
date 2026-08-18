@@ -18,7 +18,7 @@ Spatial Understanding for Environmental Sustainability
 
 The research ecosystem is organized around:
 
-Research Areas -> Research Work -> Research Outputs
+Research Themes and Geomatics Approaches -> Research Work -> Research Outputs
 
 People and supporting entities connect across the model. The model is many-to-many by default and should not imply that every entity belongs to only one parent.
 
@@ -26,38 +26,51 @@ People and supporting entities connect across the model. The model is many-to-ma
 
 The EnviSAGE research ecosystem is organized around these core entities:
 
-1. Research Area
-2. Research Topic
-3. Person
-4. Project
-5. Thesis
-6. Publication
-7. Dataset
-8. Software
-9. Grant
-10. Partner
-11. Equipment
+1. Research Theme
+2. Geomatics Approach
+3. Research Topic
+4. Person
+5. Project
+6. Thesis
+7. Publication
+8. Dataset
+9. Software
+10. Grant
+11. Partner
+12. Equipment
 
 Study Area / Geographic Location is a planned extension rather than a required v1 entity.
 
-## Research Areas
+## Research Themes
 
-Research Areas are broad, strategic, navigation-level, and relatively stable. They organize the laboratory's major environmental and geomatics directions.
+Research Themes are broad, strategic, navigation-level, and relatively stable. They organize the laboratory's major environmental systems and problem domains.
 
-Current Research Areas:
+Current Research Themes:
+
+- Coastal & Marine Systems
+- Ecosystems, Biodiversity & Land Change
+- Water, Air & Environmental Quality
+- Climate, Hazards & Resilience
+- Urban & Sustainable Systems
+
+A Project, Thesis, Publication, Dataset, Tool, or Person may belong to multiple Research Themes. Do not force one-theme-only membership.
+
+## Geomatics Approaches
+
+Geomatics Approaches are cross-cutting methods and capabilities used across Research Themes:
 
 - Earth Observation & Remote Sensing
-- Coastal & Marine Environments
-- Environmental Monitoring & Modeling
-- Geospatial AI & Spatial Analytics
-- Climate, Hazards & Resilience
-- Geospatial Data & Decision Support
+- GIS & Spatial Analytics
+- GeoAI & Spatial Data Science
+- LiDAR, Photogrammetry & 3D Geomatics
+- Environmental & Spatial Modeling
+- Geovisualization & Decision Support
 
-A Project or Thesis may belong to multiple Research Areas. Do not force one-area-only membership.
+Do not use a Geomatics Approach as a replacement for a Research Theme.
 
 ## Research Topics
 
-Research Topics are flexible, specific, descriptive, and useful for filtering or discovery. They are not equivalent to Research Areas.
+Research Topics are flexible, specific, descriptive, and useful for filtering or discovery. They are not equivalent to Research Themes or Geomatics Approaches.
 
 Examples:
 
@@ -77,7 +90,7 @@ Examples:
 - Land Cover
 - Climate Change
 
-Research Areas are broad, strategic, navigation-level, and relatively stable. Research Topics are specific, descriptive, filtering-level, and flexible.
+Research Themes are broad, strategic, navigation-level, and relatively stable. Research Topics are specific, descriptive, filtering-level, and flexible.
 
 A public Research Topic page should only be generated when at least one public item references that topic. Empty public topic sections should not be shown unnecessarily.
 
@@ -94,7 +107,8 @@ Possible Project relationships:
 - students
 - grants
 - partners
-- research areas
+- research themes
+- geomatics approaches
 - research topics
 - theses
 - publications
@@ -118,7 +132,8 @@ Each Thesis may connect to:
 - degree
 - adviser
 - co-adviser(s)
-- research areas
+- research themes
+- geomatics approaches
 - research topics
 - optional parent Project
 - publications
@@ -159,7 +174,7 @@ People should link automatically to their public contributions where possible.
 
 Examples:
 
-- Faculty -> Projects -> Students advised -> Publications -> Datasets -> Software -> Research Areas
+- Faculty -> Projects -> Students advised -> Publications -> Datasets -> Software -> Research Themes
 - Student -> Thesis -> Publications -> Datasets -> Software
 
 Do not require permanent public student profile pages for every student.
@@ -174,7 +189,8 @@ They may connect to:
 - EnviSAGE people
 - Projects
 - Theses
-- Research Areas
+- Research Themes
+- Geomatics Approaches
 - Research Topics
 - Datasets
 - Software
@@ -231,7 +247,8 @@ Software may link to:
 - version
 - license
 - documentation
-- Research Areas
+- Research Themes
+- Geomatics Approaches
 - Research Topics
 - Projects
 - Theses
@@ -380,7 +397,7 @@ Do not implement this entity in Phase 5B.
                             |
              +--------------+--------------+
              |                             |
-       Research Areas                    People
+       Research Themes                   People
              |                             |
         Research Topics ------------------+
              |
