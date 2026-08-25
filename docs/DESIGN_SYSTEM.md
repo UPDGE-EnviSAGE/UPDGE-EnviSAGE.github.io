@@ -107,6 +107,8 @@ Do not fabricate geographic boundaries or scientific data. Use motifs as low-int
 
 Use coordinate-grid, contour, and raster motifs selectively. They are best suited for hero areas, section transitions, maps/data sections, and featured visual blocks. Avoid placing them behind long-form reading, dense publication lists, tables, forms, and other information-dense interfaces where they can reduce legibility.
 
+Publication catalogs should read as scholarly lists rather than marketing cards. Use year grouping, restrained typography, compact filters when the list is long, and minimal metadata lines for authors, source, and DOI or reliable external links. Avoid badges, repeated labels, heavy borders, and large cards for individual publication entries.
+
 Homepage composition may combine these motifs with restrained borders and generous whitespace to create polished non-data-bearing visuals. Public production pages should not expose implementation labels such as "placeholder" or "approved image pending"; maintainers should rely on documentation and registry status for that distinction.
 
 ## Logo Usage Strategy

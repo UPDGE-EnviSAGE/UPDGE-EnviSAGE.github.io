@@ -4,6 +4,10 @@ import ButtonLink from "@components/ButtonLink.astro";
 import Section from "@components/Section.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import {
+  researchThemeLabels,
+  researchThemes,
+} from "../../data/research-taxonomy";
 
 const publications = (
   await getCollection(
@@ -14,6 +18,32 @@ const publications = (
   (first, second) =>
     (second.data.year ?? 0) - (first.data.year ?? 0) ||
     first.data.title.localeCompare(second.data.title),
+);
+const people = await getCollection("people");
+const facultyLabels = Object.fromEntries(
+  people.map((person) => [person.data.slug, person.data.name]),
+);
+const facultyOptions = Array.from(
+  new Set(
+    publications.flatMap(
+      (publication) => publication.data.facultyRelationships,
+    ),
+  ),
+)
+  .map((slug) => ({
+    slug,
+    name: facultyLabels[slug] ?? slug,
+  }))
+  .sort((first, second) => first.name.localeCompare(second.name));
+const yearOptions = Array.from(
+  new Set(
+    publications.map((publication) => publication.data.year).filter(Boolean),
+  ),
+).sort((first, second) => Number(second) - Number(first));
+const themeOptions = researchThemes.filter((theme) =>
+  publications.some((publication) =>
+    publication.data.researchThemes.includes(theme.slug),
+  ),
 );
 
 const publicationsByYear = Array.from(
@@ -29,7 +59,7 @@ const publicationsByYear = Array.from(
 
 <BaseLayout
   title="Publications"
-  description="EnviSAGE publications share maintainer-approved scholarly outputs from environmental Geomatics research."
+  description="EnviSAGE publications share scholarly outputs from environmental Geomatics research."
 >
   <section class="geo-surface" aria-labelledby="publications-title">
     <div
@@ -48,8 +78,8 @@ const publicationsByYear = Array.from(
           Publications
         </h1>
         <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-          Scholarly records connected to EnviSAGE faculty and research, shown
-          only after maintainer review.
+          Scholarly outputs connected to EnviSAGE faculty and environmental
+          Geomatics research.
         </p>
       </div>
     </div>
@@ -60,62 +90,129 @@ const publicationsByYear = Array.from(
       id="publication-catalog"
       eyebrow="Catalog"
       title="Public publication records"
-      text="The catalog includes only records approved for public display."
+      text="Browse EnviSAGE publication records by year. Use the filters to narrow the catalog by faculty, year, or Research Theme."
     />
 
     {
       publications.length > 0 ? (
-        <div class="mt-8 space-y-6">
-          {publicationsByYear.map(([year, records]) => (
-            <section aria-labelledby={`publications-${year}`}>
-              <h2
-                id={`publications-${year}`}
-                class="text-2xl font-semibold text-text"
+        <div class="mt-8">
+          <form
+            class="grid gap-4 border-y border-border py-5 lg:grid-cols-3"
+            data-publication-filters
+          >
+            <label class="grid gap-2 text-sm font-semibold text-text">
+              <span>Faculty</span>
+              <select
+                class="min-h-11 rounded-control border border-border bg-surface px-3 py-2 text-sm font-normal text-text"
+                data-filter="faculty"
               >
-                {year}
-              </h2>
-              <ol class="mt-4 divide-y divide-border">
-                {records.map((publication) => (
-                  <li class="py-5">
-                    <h3 class="text-lg leading-snug font-semibold text-text">
-                      {publication.data.url ? (
-                        <a
-                          href={publication.data.url}
-                          class="text-text underline-offset-4 hover:text-brand-blue-deep hover:underline"
-                        >
-                          {publication.data.title}
-                        </a>
-                      ) : (
-                        publication.data.title
-                      )}
-                    </h3>
-                    {publication.data.authors.length > 0 && (
-                      <p class="mt-2 text-sm leading-relaxed text-muted">
-                        {publication.data.authors.join("; ")}
-                      </p>
-                    )}
-                    {(publication.data.sourceOrVenue ||
-                      publication.data.doi) && (
-                      <p class="mt-2 text-sm leading-relaxed text-muted">
-                        {publication.data.sourceOrVenue}
-                        {publication.data.sourceOrVenue &&
-                          publication.data.doi &&
-                          " · "}
-                        {publication.data.doi && (
-                          <a
-                            href={`https://doi.org/${publication.data.doi}`}
-                            class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
-                          >
-                            DOI
-                          </a>
-                        )}
-                      </p>
-                    )}
-                  </li>
+                <option value="">All faculty</option>
+                {facultyOptions.map((faculty) => (
+                  <option value={faculty.slug}>{faculty.name}</option>
                 ))}
-              </ol>
-            </section>
-          ))}
+              </select>
+            </label>
+            <label class="grid gap-2 text-sm font-semibold text-text">
+              <span>Year</span>
+              <select
+                class="min-h-11 rounded-control border border-border bg-surface px-3 py-2 text-sm font-normal text-text"
+                data-filter="year"
+              >
+                <option value="">All years</option>
+                {yearOptions.map((year) => (
+                  <option value={String(year)}>{year}</option>
+                ))}
+              </select>
+            </label>
+            <label class="grid gap-2 text-sm font-semibold text-text">
+              <span>Research Theme</span>
+              <select
+                class="min-h-11 rounded-control border border-border bg-surface px-3 py-2 text-sm font-normal text-text"
+                data-filter="theme"
+              >
+                <option value="">All themes</option>
+                {themeOptions.map((theme) => (
+                  <option value={theme.slug}>
+                    {researchThemeLabels[theme.slug]}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </form>
+          <p
+            class="mt-4 text-sm leading-relaxed text-muted"
+            aria-live="polite"
+            data-filter-summary
+          >
+            Showing {publications.length} publications
+          </p>
+          <div class="mt-8 space-y-6" data-publication-list>
+            {publicationsByYear.map(([year, records]) => (
+              <section aria-labelledby={`publications-${year}`} data-year-group>
+                <h2
+                  id={`publications-${year}`}
+                  class="text-2xl font-semibold text-text"
+                >
+                  {year}
+                </h2>
+                <ol class="mt-4 divide-y divide-border">
+                  {records.map((publication) => (
+                    <li
+                      class="py-5"
+                      data-publication-entry
+                      data-year={String(publication.data.year ?? "")}
+                      data-faculty={publication.data.facultyRelationships.join(
+                        " ",
+                      )}
+                      data-themes={publication.data.researchThemes.join(" ")}
+                    >
+                      <h3 class="text-lg leading-snug font-semibold text-text">
+                        {publication.data.url ? (
+                          <a
+                            href={publication.data.url}
+                            class="text-text underline-offset-4 hover:text-brand-blue-deep hover:underline"
+                          >
+                            {publication.data.title}
+                          </a>
+                        ) : (
+                          publication.data.title
+                        )}
+                      </h3>
+                      {publication.data.authors.length > 0 && (
+                        <p class="mt-2 text-sm leading-relaxed text-muted">
+                          {publication.data.authors.join("; ")}
+                        </p>
+                      )}
+                      {(publication.data.sourceOrVenue ||
+                        publication.data.doi) && (
+                        <p class="mt-2 text-sm leading-relaxed text-muted">
+                          {publication.data.sourceOrVenue}
+                          {publication.data.sourceOrVenue &&
+                            publication.data.doi &&
+                            " · "}
+                          {publication.data.doi && (
+                            <a
+                              href={`https://doi.org/${publication.data.doi}`}
+                              class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
+                              aria-label={`DOI for ${publication.data.title}`}
+                            >
+                              DOI ↗
+                            </a>
+                          )}
+                        </p>
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            ))}
+          </div>
+          <p
+            class="mt-8 hidden text-base leading-relaxed text-muted"
+            data-filter-empty
+          >
+            No publications match the selected filters.
+          </p>
         </div>
       ) : (
         <div class="mt-8 max-w-3xl border-t border-border pt-6">
@@ -123,8 +220,8 @@ const publicationsByYear = Array.from(
             Publication records are being reviewed.
           </h2>
           <p class="mt-3 text-base leading-relaxed text-muted">
-            EnviSAGE is preparing a verified publication catalog. Records will
-            appear here after maintainer approval.
+            EnviSAGE is preparing a publication catalog. Records will appear
+            here as the catalog is prepared.
           </p>
         </div>
       )
@@ -152,4 +249,62 @@ const publicationsByYear = Array.from(
       </div>
     </div>
   </Section>
+
+  <script>
+    const filterForm = document.querySelector("[data-publication-filters]");
+    const entries = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-publication-entry]"),
+    );
+    const yearGroups = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-year-group]"),
+    );
+    const summary = document.querySelector<HTMLElement>(
+      "[data-filter-summary]",
+    );
+    const empty = document.querySelector<HTMLElement>("[data-filter-empty]");
+
+    function selectedValue(name: string) {
+      const field = filterForm?.querySelector<HTMLSelectElement>(
+        `[data-filter="${name}"]`,
+      );
+      return field?.value ?? "";
+    }
+
+    function applyPublicationFilters() {
+      const faculty = selectedValue("faculty");
+      const year = selectedValue("year");
+      const theme = selectedValue("theme");
+      let shown = 0;
+
+      entries.forEach((entry) => {
+        const matchesFaculty =
+          !faculty || entry.dataset.faculty?.split(" ").includes(faculty);
+        const matchesYear = !year || entry.dataset.year === year;
+        const matchesTheme =
+          !theme || entry.dataset.themes?.split(" ").includes(theme);
+        const visible = Boolean(matchesFaculty && matchesYear && matchesTheme);
+        entry.hidden = !visible;
+        if (visible) {
+          shown += 1;
+        }
+      });
+
+      yearGroups.forEach((group) => {
+        const hasVisibleEntry = Boolean(
+          group.querySelector("[data-publication-entry]:not([hidden])"),
+        );
+        group.hidden = !hasVisibleEntry;
+      });
+
+      if (summary) {
+        summary.textContent = `Showing ${shown} ${shown === 1 ? "publication" : "publications"}`;
+      }
+      if (empty) {
+        empty.hidden = shown > 0;
+        empty.classList.toggle("hidden", shown > 0);
+      }
+    }
+
+    filterForm?.addEventListener("change", applyPublicationFilters);
+  </script>
 </BaseLayout>

@@ -22,9 +22,9 @@ projects: []
 datasets: []
 tools: []
 keywords: []
-visibility: internal
+visibility: public
 bibliographicStatus: verified
 sourceProvenance: "Supplied Google Scholar profile copy"
 ---
 
-This internal publication record was generated from the verified Phase 6F source register and remains excluded from public pages until maintainer approval.
+This publication record is part of the EnviSAGE public scholarly catalog.

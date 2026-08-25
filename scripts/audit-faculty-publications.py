@@ -427,26 +427,42 @@ def privacy_audit() -> int:
     if not dist.exists():
         print("privacy_audit=missing_dist")
         return 1
-    forbidden = [
-        "READY",
-        "REVIEW -",
-        "HOLD -",
-        "bibliographicStatus",
-        "sourceProvenance",
-        "internalNotes",
-        "source rows",
-        "canonical publication",
-        "duplicate",
-        "import count",
-        "verification count",
-    ]
+    forbidden_patterns = {
+        "READY": re.compile(r"\bREADY\b"),
+        "REVIEW -": re.compile(r"\bREVIEW\s+-"),
+        "HOLD -": re.compile(r"\bHOLD\s+-"),
+        "canonical record": re.compile(r"\bcanonical\s+record\b", re.I),
+        "canonical publication": re.compile(r"\bcanonical\s+publication\b", re.I),
+        "record ID": re.compile(r"\brecord\s+ID\b", re.I),
+        "publication ID": re.compile(r"\bpublication\s+ID\b", re.I),
+        "review status": re.compile(r"\breview\s+status\b", re.I),
+        "publication decision": re.compile(r"\bpublication\s+decision\b", re.I),
+        "bibliographic status": re.compile(r"\bbibliographic\s+status\b", re.I),
+        "bibliographicStatus": re.compile(r"\bbibliographicStatus\b"),
+        "clean-for-review": re.compile(r"\bclean-for-review\b"),
+        "source-supported": re.compile(r"\bsource-supported\b"),
+        "pending-review": re.compile(r"\bpending-review\b"),
+        "needs-fix": re.compile(r"\bneeds-fix\b"),
+        "hold decision": re.compile(r"\bhold\s+decision\b", re.I),
+        "duplicate candidate": re.compile(r"\bduplicate\s+candidate\b", re.I),
+        "sourceProvenance": re.compile(r"\bsourceProvenance\b"),
+        "internalNotes": re.compile(r"\binternalNotes\b"),
+        "source rows": re.compile(r"\bsource\s+rows\b", re.I),
+        "source register": re.compile(r"\bsource\s+register\b", re.I),
+        "data-maintenance": re.compile(r"\bdata-maintenance\b", re.I),
+        "review CSV": re.compile(r"\breview\s+CSV\b", re.I),
+        "exception CSV": re.compile(r"\bexception\s+CSV\b", re.I),
+        "provenance": re.compile(r"\bprovenance\b", re.I),
+        "import count": re.compile(r"\bimport\s+count\b", re.I),
+        "verification count": re.compile(r"\bverification\s+count\b", re.I),
+    }
     hits: list[str] = []
     for path in dist.rglob("*"):
         if path.is_file() and path.suffix.lower() in {".html", ".js", ".css", ".json"}:
             text = path.read_text(encoding="utf-8", errors="ignore")
-            for token in forbidden:
-                if token in text:
-                    hits.append(f"{path.relative_to(dist)}:{token}")
+            for label, pattern in forbidden_patterns.items():
+                if pattern.search(text):
+                    hits.append(f"{path.relative_to(dist)}:{label}")
     maintenance_hits = [path for path in dist.rglob("*") if "faculty-publications" in path.name]
     if hits or maintenance_hits:
         print(f"privacy_audit=fail hits={hits} maintenance_files={[str(path.relative_to(dist)) for path in maintenance_hits]}")

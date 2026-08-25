@@ -1,6 +1,6 @@
 # Publication Model
 
-Status: Canonical Phase 6F.1 publication workflow
+Status: Canonical Phase 6F.2 publication workflow
 
 Publications are independent scholarly records. A publication may be related to multiple EnviSAGE faculty members, Research Themes, Geomatics Approaches, projects, theses, datasets, or tools.
 
@@ -24,7 +24,7 @@ Imported faculty publication records default to `visibility: internal`.
 
 Public pages and faculty profiles must render only `visibility: public` publication records. Internal fields such as `bibliographicStatus`, `sourceProvenance`, and `internalNotes` are maintainer fields and must not appear on public pages.
 
-At Phase 6F.1 completion, all newly imported faculty publication records remain internal. Public display requires an explicit maintainer review decision followed by the publication script.
+At Phase 6F.2 completion, the 289 clean records explicitly approved by maintainers are public. The 10 exception records remain non-public until later review.
 
 ## Maintainer Workflow
 
@@ -38,7 +38,7 @@ At Phase 6F.1 completion, all newly imported faculty publication records remain 
 8. Run `python3 scripts/publish-faculty-publications.py` to dry-run publication.
 9. Run `python3 scripts/publish-faculty-publications.py --write` only after review.
 
-The public `/publications/` route is production-capable but intentionally empty until maintainers approve records.
+The public `/publications/` route renders approved records in a minimalist scholarly list grouped by year. Compact static filters support faculty, year, and Research Theme browsing without exposing internal taxonomy or review metadata on each entry.
 
 ## Review Fields
 
