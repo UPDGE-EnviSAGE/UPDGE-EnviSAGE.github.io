@@ -222,7 +222,7 @@ const publicationsByYear = Array.from(
           id="profile-publications"
           eyebrow="Publications"
           title="Publications"
-          text="Maintainer-approved publication records connected to this faculty profile."
+          text="Scholarly outputs connected to this faculty profile."
         />
         <p class="mt-5 text-base font-semibold text-text">
           {publicPublications.length}{" "}
@@ -267,8 +267,9 @@ const publicationsByYear = Array.from(
                           <a
                             href={`https://doi.org/${publication.data.doi}`}
                             class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
+                            aria-label={`DOI for ${publication.data.title}`}
                           >
-                            DOI
+                            DOI ↗
                           </a>
                         )}
                       </p>
@@ -279,8 +280,9 @@ const publicationsByYear = Array.from(
                           <a
                             href={`https://doi.org/${publication.data.doi}`}
                             class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
+                            aria-label={`DOI for ${publication.data.title}`}
                           >
-                            DOI
+                            DOI ↗
                           </a>
                         </p>
                       )}

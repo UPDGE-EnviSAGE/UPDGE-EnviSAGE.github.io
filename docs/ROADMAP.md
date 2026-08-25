@@ -129,6 +129,8 @@ Phase 6F establishes the approved five Research Themes and six Geomatics Approac
 
 Phase 6F.1 completes faculty publication QA and controlled publication safeguards. It adds clean review, exceptions, duplicate, multi-faculty, faculty summary, deduplication reconciliation, and taxonomy audit files; updates dry-run-first review tooling; and keeps all newly imported faculty publications internal until explicit maintainer approval.
 
+Phase 6F.2 publishes the 289 explicitly approved faculty publication records, keeps 10 exception records non-public, validates multi-faculty relationships, and refines the public scholarly UX with year grouping, compact faculty/year/Research Theme filters, and concise faculty profile publication sections.
+
 ## Phase 6 - Publications
 
 Create the publications database.

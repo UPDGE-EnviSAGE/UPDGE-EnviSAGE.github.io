@@ -1,6 +1,6 @@
 # Faculty Publication Review Guide
 
-Status: Phase 6F.1 maintainer workflow
+Status: Phase 6F.2 maintainer workflow
 
 This guide controls the review and publication workflow for the imported faculty publication records. It uses only the maintainer-supplied verified source register and repository-managed QA files. Do not use web lookup, bibliographic databases, or inferred metadata to complete blank fields during this review.
 
@@ -81,7 +81,7 @@ DOI is not required. Venue is not required. Blank fields must remain blank unles
 
 ## Public Display
 
-Public pages may show only:
+At Phase 6F.2, 289 maintainer-approved faculty publication records are public and 10 exception records remain non-public. Public pages may show only:
 
 - title
 - authors
@@ -89,5 +89,7 @@ Public pages may show only:
 - source or venue when available
 - DOI link when available
 - reliable URL when available
+
+The public catalog uses year grouping plus compact static filters for faculty, year, and Research Theme. Individual publication entries should not show Research Theme badges by default; theme relationships primarily support filtering and future discovery.
 
 Public pages must not show source-review statuses, import counts, READY/REVIEW/HOLD labels, duplicate counts, verification counts, `bibliographicStatus`, `sourceProvenance`, or `internalNotes`.
