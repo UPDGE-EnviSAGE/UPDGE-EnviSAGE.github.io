@@ -1,88 +1,44 @@
 ---
 import ButtonLink from "@components/ButtonLink.astro";
-import FeatureCard from "@components/FeatureCard.astro";
-import ResearchThemeCard from "@components/ResearchThemeCard.astro";
 import ResearchVisualPlaceholder from "@components/ResearchVisualPlaceholder.astro";
 import Section from "@components/Section.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-
-const whatWeDo = [
-  {
-    title: "Observe environmental change",
-    description:
-      "Use Earth observation, field-linked data, and spatial monitoring to understand changing environmental conditions.",
-    href: "/research/",
-    linkText: "Explore research",
-  },
-  {
-    title: "Analyze systems spatially",
-    description:
-      "Connect land, water, atmosphere, ecosystems, and society through GIS, spatial analytics, modeling, and quantitative methods.",
-    href: "/projects/",
-    linkText: "View projects",
-  },
-  {
-    title: "Share reusable outputs",
-    description:
-      "Develop tools, workflows, student outputs, and spatial data products that support environmental research.",
-    href: "/tools/",
-    linkText: "Browse tools",
-  },
-];
-
-const philosophyCards = [
-  {
-    title: "Scientific integrity",
-    description:
-      "Careful methods, transparent assumptions, and honest interpretation guide the laboratory's work.",
-    motif: "grid",
-  },
-  {
-    title: "Environmental stewardship",
-    description:
-      "Spatial knowledge should support responsible care for land, water, coastal, marine, and atmospheric systems.",
-    motif: "contour",
-  },
-  {
-    title: "Service to society",
-    description:
-      "Research and training should help communities and institutions act with clearer environmental evidence.",
-    motif: "raster",
-  },
-] as const;
 ---
 
 <BaseLayout
   title="About"
-  description="About EnviSAGE, the UP Department of Geodetic Engineering research lab using Geomatics and spatial analysis for environmental sustainability."
+  description="About EnviSAGE, the environmental geomatics research laboratory of the UP Department of Geodetic Engineering."
 >
   <section class="geo-surface" aria-labelledby="about-title">
     <div
-      class="mx-auto grid w-full max-w-[var(--content-width-wide)] gap-8 px-5 py-10 sm:px-6 md:grid-cols-[0.95fr_1.05fr] md:items-center lg:px-8 lg:py-18"
+      class="mx-auto grid w-full max-w-[var(--content-width-wide)] gap-8 px-5 py-10 sm:px-6 md:grid-cols-[0.95fr_1.05fr] md:items-center lg:px-8 lg:py-16"
     >
       <div class="max-w-3xl">
         <p
           class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
         >
-          About EnviSAGE
+          Identity
         </p>
         <h1
           id="about-title"
-          class="mt-5 text-4xl leading-tight font-semibold text-text sm:text-5xl"
+          class="mt-5 text-3xl leading-tight font-semibold break-words text-text sm:text-5xl"
+        >
+          Environmental Systems Applications of Geomatics Engineering (EnviSAGE)
+        </h1>
+        <p
+          class="mt-5 max-w-2xl text-xl leading-snug font-semibold break-words text-brand-blue-deep sm:text-3xl sm:leading-tight"
         >
           Spatial Understanding for Environmental Sustainability
-        </h1>
-        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-          EnviSAGE is the research laboratory of the UP Department of Geodetic
-          Engineering using Geomatics to understand environmental systems.
         </p>
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <ButtonLink href="/research/">Explore research</ButtonLink>
-          <ButtonLink href="/people/" variant="secondary">
-            Meet the laboratory
-          </ButtonLink>
-        </div>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
+          EnviSAGE is the environmental geomatics research laboratory of the UP
+          Department of Geodetic Engineering.
+        </p>
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-muted">
+          It sits within the University of the Philippines Diliman, College of
+          Engineering, Department of Geodetic Engineering.
+        </p>
       </div>
 
       <ResearchVisualPlaceholder
@@ -115,13 +71,18 @@ const philosophyCards = [
       <SectionHeading
         id="mission"
         eyebrow="Mission"
-        title="Research and training for environmental sustainability."
+        title="Research for environmental sustainability"
       />
       <div class="max-w-3xl">
         <p class="text-xl leading-relaxed text-text">
-          EnviSAGE integrates Geomatics Engineering, Earth observation, spatial
-          analysis, and environmental science to build spatial evidence for
-          public value.
+          EnviSAGE advances environmental sustainability through research in
+          Geomatics Engineering, Earth observation, spatial analysis,
+          environmental modeling, and geospatial data science.
+        </p>
+        <p class="mt-5 text-base leading-relaxed text-muted">
+          The laboratory also mentors students as developing researchers and
+          supports training, extension, and collaboration where spatial evidence
+          can help communities and institutions understand environmental change.
         </p>
       </div>
     </div>
@@ -131,46 +92,34 @@ const philosophyCards = [
     size="wide"
     tone="muted"
     class="border-y border-border"
-    aria-labelledby="what-we-do"
+    aria-labelledby="how-envisage-thinks"
   >
-    <SectionHeading
-      id="what-we-do"
-      eyebrow="What We Do"
-      title="Geomatics in service of environmental understanding"
-      text="The laboratory observes environmental change, analyzes spatial relationships, and shares reusable outputs."
-    />
-    <div class="mt-10 grid gap-5 md:grid-cols-3">
-      {
-        whatWeDo.map((item) => (
-          <FeatureCard
-            title={item.title}
-            description={item.description}
-            href={item.href}
-            linkText={item.linkText}
-          />
-        ))
-      }
-    </div>
-  </Section>
-
-  <Section size="wide" aria-labelledby="why-geomatics">
     <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
       <div>
         <p
           class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
         >
-          Why Geomatics
+          How EnviSAGE Thinks
         </p>
         <h2
-          id="why-geomatics"
+          id="how-envisage-thinks"
           class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
         >
           Environmental challenges are spatial.
         </h2>
         <p class="mt-5 text-lg leading-relaxed text-muted">
           Environmental change unfolds across places, scales, and time.
-          Geomatics Engineering helps measure and communicate those
-          relationships through spatial evidence.
+          Geomatics Engineering helps measure, connect, and communicate those
+          relationships.
+        </p>
+        <h3 class="mt-8 text-2xl leading-tight font-semibold text-text">
+          Systems thinking through spatial evidence
+        </h3>
+        <p class="mt-4 text-base leading-relaxed text-muted">
+          EnviSAGE brings together maps, satellite observations, field
+          measurements, model outputs, and spatial analysis to understand linked
+          conditions across land, water, atmosphere, ecosystems, infrastructure,
+          and society.
         </p>
       </div>
 
@@ -182,91 +131,28 @@ const philosophyCards = [
     </div>
   </Section>
 
-  <Section
-    size="wide"
-    tone="surface"
-    class="border-y border-border"
-    aria-labelledby="philosophy"
-  >
-    <SectionHeading
-      id="philosophy"
-      eyebrow="Research Philosophy"
-      title="Systems thinking through spatial evidence"
-      text="The Founding Charter states that understanding environmental systems requires integrating observations across land, water, atmosphere, and society."
-    />
-    <div class="mt-10 grid gap-5 md:grid-cols-3">
-      {
-        philosophyCards.map((card) => (
-          <ResearchThemeCard
-            title={card.title}
-            description={card.description}
-            motif={card.motif}
-          />
-        ))
-      }
-    </div>
-  </Section>
-
-  <Section size="wide" aria-labelledby="collaboration">
-    <div class="grid gap-10 lg:grid-cols-2">
-      <div>
-        <p
-          class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
-        >
-          Collaboration
+  <Section size="wide" aria-labelledby="research-community">
+    <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+      <SectionHeading
+        id="research-community"
+        eyebrow="Research Community"
+        title="People, projects, and student research connected by environmental questions"
+        text="EnviSAGE brings together faculty, researchers, students, and collaborators working with spatial evidence for environmental understanding."
+      />
+      <div class="max-w-3xl">
+        <p class="text-base leading-relaxed text-muted">
+          Explore the laboratory's research themes, meet the current community,
+          and browse student research connected to EnviSAGE faculty advising.
         </p>
-        <h2
-          id="collaboration"
-          class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
-        >
-          Working across institutions and communities
-        </h2>
-        <p class="mt-5 text-base leading-relaxed text-muted">
-          EnviSAGE welcomes collaboration with universities, government,
-          industry, communities, and international partners where shared work
-          can advance environmental understanding and public value.
-        </p>
-      </div>
-
-      <div>
-        <p
-          class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
-        >
-          Student Opportunities
-        </p>
-        <h2
-          class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
-        >
-          Training responsible geospatial researchers
-        </h2>
-        <p class="mt-5 text-base leading-relaxed text-muted">
-          The laboratory supports students in developing technical competence,
-          scientific rigor, environmental responsibility, ethical judgment, and
-          collaborative practice.
-        </p>
-      </div>
-    </div>
-  </Section>
-
-  <Section size="wide" class="contour-surface" aria-labelledby="about-cta">
-    <div class="max-w-3xl">
-      <p
-        class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
-      >
-        Explore EnviSAGE
-      </p>
-      <h2
-        id="about-cta"
-        class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
-      >
-        Discover the research, people, and outputs shaped by the EnviSAGE
-        mission.
-      </h2>
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-        <ButtonLink href="/research/">Explore research</ButtonLink>
-        <ButtonLink href="/projects/" variant="secondary">
-          View projects
-        </ButtonLink>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <ButtonLink href="/research/">Explore research</ButtonLink>
+          <ButtonLink href="/people/" variant="secondary">
+            Meet the laboratory
+          </ButtonLink>
+          <ButtonLink href="/student-research/" variant="ghost">
+            Student research
+          </ButtonLink>
+        </div>
       </div>
     </div>
   </Section>

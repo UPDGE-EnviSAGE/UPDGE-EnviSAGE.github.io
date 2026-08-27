@@ -4,7 +4,7 @@ Persistent instructions for Codex agents working on the EnviSAGE web platform.
 
 ## Project Purpose
 
-This repository supports Environmental Systems Applications of Geomatics Engineering (EnviSAGE), the research laboratory of the UP Department of Geodetic Engineering focusing on the use of Geomatics and geospatial technologies in addressing environmental issues. The platform should present EnviSAGE as a clean, modern, professional, geospatial, environmental, research-oriented laboratory with its own visual identity while clearly acknowledging UP and the UP Department of Geodetic Engineering.
+This repository supports Environmental Systems Applications of Geomatics Engineering (EnviSAGE), the environmental geomatics research laboratory of the UP Department of Geodetic Engineering. The platform should present EnviSAGE as a clean, modern, professional, geospatial, environmental, research-oriented laboratory with its own visual identity while clearly acknowledging UP and the UP Department of Geodetic Engineering.
 
 ## Engineering Principles
 
@@ -17,6 +17,8 @@ This repository supports Environmental Systems Applications of Geomatics Enginee
 ## Naming Conventions
 
 - Use `EnviSAGE` for the laboratory name in prose.
+- Use `Environmental Systems Applications of Geomatics Engineering (EnviSAGE)` as the expanded official name.
+- Use `Spatial Understanding for Environmental Sustainability` as the tagline.
 - Use lowercase kebab-case for routes, filenames, content slugs, and asset names unless a framework convention requires otherwise.
 - Use descriptive names for research areas, projects, people, publications, datasets, and tools.
 - Keep content identifiers stable once published.

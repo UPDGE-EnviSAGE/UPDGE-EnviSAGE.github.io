@@ -165,9 +165,10 @@ The hierarchy is:
 
 1. Primary: `EnviSAGE`
 2. Secondary: `Environmental Systems Applications of Geomatics Engineering`
-3. Institutional: `Research Laboratory`, `UP Department of Geodetic Engineering`
+3. Tagline: `Spatial Understanding for Environmental Sustainability`
+4. Institutional: `University of the Philippines Diliman`, `College of Engineering`, `Department of Geodetic Engineering`, `EnviSAGE`
 
-UP DGE affiliation should be visible, but the website should retain EnviSAGE's laboratory identity and should not mimic the main UP website. Do not add UP logos or seals unless approved assets are provided.
+UP DGE affiliation should be visible, but the website should retain EnviSAGE's laboratory identity and should not mimic the main UP website. EnviSAGE should not be presented as a separate UP unit. Do not add UP logos or seals unless approved assets are provided.
 
 ## Accessibility
 

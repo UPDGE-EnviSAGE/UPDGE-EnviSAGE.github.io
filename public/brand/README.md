@@ -18,3 +18,5 @@ Expected future assets may include:
 - `envisage-logo-mono.svg` - future monochrome lockup
 
 The design system must remain compatible with both the current legacy logo and future redesigned assets.
+
+Temporary favicon files may be generated from the legacy logo for browser metadata, including `/favicon.ico`, `/favicon-32x32.png`, `/favicon-16x16.png`, and `/apple-touch-icon.png`, provided the source logo is not redesigned, redrawn, recolored, cropped, or replaced.

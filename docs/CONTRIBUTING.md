@@ -2,7 +2,7 @@
 
 This guide defines how future EnviSAGE maintainers, researchers, and students should contribute to the web platform.
 
-EnviSAGE is Environmental Systems Applications of Geomatics Engineering, the research laboratory of the UP Department of Geodetic Engineering focusing on the use of Geomatics and geospatial technologies in addressing environmental issues.
+Environmental Systems Applications of Geomatics Engineering (EnviSAGE) is the environmental geomatics research laboratory of the UP Department of Geodetic Engineering.
 
 ## Contribution Model
 

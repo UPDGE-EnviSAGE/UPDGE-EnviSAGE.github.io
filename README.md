@@ -1,12 +1,12 @@
 # Environmental Systems Applications of Geomatics Engineering
 
-Environmental Systems Applications of Geomatics Engineering (EnviSAGE) is the research laboratory of the UP Department of Geodetic Engineering focusing on the use of Geomatics and geospatial technologies in addressing environmental issues.
+Environmental Systems Applications of Geomatics Engineering (EnviSAGE) is the environmental geomatics research laboratory of the UP Department of Geodetic Engineering.
 
 This repository is the GitHub Pages organization repository for the EnviSAGE web platform.
 
 The platform is public-first. Future internal collaboration features should be deferred until later phases unless explicitly approved.
 
-The canonical identity document for EnviSAGE is the [Founding Charter](docs/FOUNDING_CHARTER.md). Public-facing copy, proposals, presentations, and laboratory materials should trace their institutional framing back to the charter.
+The EnviSAGE identity reference is [EnviSAGE Identity Reference](docs/ENVISAGE_IDENTITY.md). It records the current name, tagline, public description, acronym meaning, and institutional context without serving as a formally adopted founding charter.
 
 The canonical research ecosystem document is the [Research Model](docs/RESEARCH_MODEL.md). It defines how EnviSAGE Research Themes, Geomatics Approaches, topics, people, projects, theses, outputs, and supporting entities relate conceptually.
 
@@ -144,7 +144,7 @@ Do not commit `dist/`; GitHub Actions builds and uploads the static site artifac
 - `public/` - static public assets
 - `public/images/research/` - future optimized, public-approved research visual derivatives
 - `docs/FACULTY_PROFILE_GUIDE.md` - maintainer rules for public faculty profile enrichment
-- `docs/STUDENT_RESEARCH_MODEL.md` - canonical student research and thesis model
+- `docs/STUDENT_RESEARCH_MODEL.md` - student research and thesis model
 - `docs/UNDERGRADUATE_THESIS_MAINTENANCE.md` - maintainer workflow for internal undergraduate thesis updates
 - `docs/STUDENT_RESEARCH_PUBLICATION_GUIDE.md` - maintainer workflow for reviewed student research publication
 - `scripts/import-undergraduate-theses.py` - reproducible internal import tool for the Phase 6C undergraduate thesis source workbook
@@ -173,7 +173,7 @@ Future technologies such as Cloud Optimized GeoTIFF, PMTiles, GeoParquet, PostGI
 - [Architecture](docs/ARCHITECTURE.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Content model](docs/CONTENT_MODEL.md)
-- [Founding Charter](docs/FOUNDING_CHARTER.md)
+- [EnviSAGE Identity Reference](docs/ENVISAGE_IDENTITY.md)
 - [Research Model](docs/RESEARCH_MODEL.md)
 - [People Model](docs/PEOPLE_MODEL.md)
 - [Faculty Profile Guide](docs/FACULTY_PROFILE_GUIDE.md)

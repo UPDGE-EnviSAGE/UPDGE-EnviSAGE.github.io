@@ -8,7 +8,7 @@ The platform should become a public-first research laboratory website and catalo
 
 The architecture should stay simple enough for faculty, researchers, students, and future maintainers to understand and extend through GitHub pull requests.
 
-`docs/FOUNDING_CHARTER.md` is the canonical identity document for EnviSAGE. Public site copy and future laboratory communication materials should derive their institutional framing from the charter rather than creating independent definitions of the laboratory.
+`docs/ENVISAGE_IDENTITY.md` records the current EnviSAGE identity reference, including the official name, public description, tagline, acronym meaning, and institutional context. It is not a formally adopted founding charter.
 
 `docs/RESEARCH_MODEL.md` is the canonical research ecosystem model. It defines how Research Themes, Geomatics Approaches, topics, people, projects, theses, outputs, and supporting entities relate conceptually before those concepts are represented in website content schemas or catalog pages.
 
@@ -44,7 +44,7 @@ The design system includes:
 - Lightweight geospatial motif classes
 - A development-only `/design-system` preview route that is available in Astro dev and excluded from production static builds
 
-The historical EnviSAGE logo remains the temporary official logo, but no logo asset is fabricated in this repository. Approved future brand files should be placed in `public/brand/`.
+The historical EnviSAGE logo remains the temporary official logo and is stored at `public/brand/envisage-logo-legacy.png`. Approved future brand files should be placed in `public/brand/`.
 
 ## Hosting Model
 
@@ -110,7 +110,7 @@ Homepage imagery remains static and image-ready. Where approved EnviSAGE researc
 
 Phase 4A adds the research visual identity framework through `src/data/research-visuals.ts`, `ResearchVisual`, and `ResearchVisualPlaceholder`. The registry supports zero entries, filters production use to `public-approved` visuals, and keeps decorative motifs separate from authentic research imagery with provenance.
 
-Phase 5A adds the Founding Charter as the highest-level identity document and replaces the `/about/` placeholder with a concise production page distilled from that charter.
+Phase 5A added an initial identity document and production About page before the project catalog. Phase 6G reframes that document as `docs/ENVISAGE_IDENTITY.md`, an internal identity reference rather than a formally adopted founding charter, and simplifies the public About experience.
 
 Phase 5B replaces the `/research/` placeholder with the public research architecture page. Phase 6F updates that page to use the approved Research Themes and Geomatics Approaches from `src/data/research-taxonomy.ts`, with `src/data/research-architecture.ts` retained as a compatibility wrapper for existing presentation components.
 

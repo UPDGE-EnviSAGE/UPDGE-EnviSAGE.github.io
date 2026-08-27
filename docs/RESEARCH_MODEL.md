@@ -6,7 +6,7 @@ Status: Canonical design document
 
 This document defines the conceptual model for organizing EnviSAGE research knowledge. It is not yet a database schema, content schema, CMS model, or required implementation plan for every website feature.
 
-`docs/FOUNDING_CHARTER.md` remains authoritative for why EnviSAGE exists. This document is authoritative for how EnviSAGE research entities and relationships are organized. `docs/PEOPLE_MODEL.md` specializes Person records, `docs/STUDENT_RESEARCH_MODEL.md` specializes Thesis and student research records, `docs/CONTENT_MODEL.md` describes how these concepts are represented as website content, and `docs/ARCHITECTURE.md` describes how the platform implements them technically.
+`docs/ENVISAGE_IDENTITY.md` records the current EnviSAGE name, public description, tagline, acronym meaning, and institutional context. This document defines how EnviSAGE research entities and relationships are organized. `docs/PEOPLE_MODEL.md` specializes Person records, `docs/STUDENT_RESEARCH_MODEL.md` specializes Thesis and student research records, `docs/CONTENT_MODEL.md` describes how these concepts are represented as website content, and `docs/ARCHITECTURE.md` describes how the platform implements them technically.
 
 ## Research Principle
 
