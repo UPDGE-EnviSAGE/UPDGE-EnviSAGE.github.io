@@ -11,7 +11,7 @@ interface Props {
 
 const {
   title,
-  description = "Environmental Systems Applications of Geomatics Engineering web platform foundation.",
+  description = "EnviSAGE is the environmental geomatics research laboratory of the UP Department of Geodetic Engineering.",
   titleTemplate = "default",
 } = Astro.props;
 
@@ -25,6 +25,10 @@ const pathname = Astro.url.pathname;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>{pageTitle}</title>
   </head>
   <body>

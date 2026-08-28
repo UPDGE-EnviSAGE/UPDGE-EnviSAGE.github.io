@@ -85,11 +85,11 @@ Likely deliverables:
 
 Create the research project catalog.
 
-Phase 5A establishes the EnviSAGE Founding Charter and production About page before the project catalog. The charter becomes the canonical identity document for the laboratory, and the About page provides a concise public-facing expression of that charter.
+Phase 5A established an initial EnviSAGE identity document and production About page before the project catalog. Phase 6G reframes that document as an internal identity reference rather than a formally adopted founding charter.
 
 Phase 5B establishes the public research architecture before catalog implementation. It replaces the `/research/` placeholder with a conceptual research page covering research philosophy, research themes, example topics, output types, and the discovery path from taxonomy to future projects, theses, and outputs.
 
-Phase 5B also adds `docs/RESEARCH_MODEL.md` as the canonical conceptual model for research entities and relationships. The Founding Charter explains why EnviSAGE exists, the Research Model explains how EnviSAGE research knowledge is organized, the Content Model translates those concepts into website content, and Architecture explains the technical implementation.
+Phase 5B also adds `docs/RESEARCH_MODEL.md` as the conceptual model for research entities and relationships. The EnviSAGE Identity Reference defines current identity wording, the Research Model explains how EnviSAGE research knowledge is organized, the Content Model translates those concepts into website content, and Architecture explains the technical implementation.
 
 Phase 5C refines public content and UX across the homepage, About page, Research page, site footer, and public placeholder pages. It reduces developer-facing language, tightens hero spacing, lowers card density where appropriate, and keeps each public page focused on a distinct visitor question.
 
@@ -130,6 +130,8 @@ Phase 6F establishes the approved five Research Themes and six Geomatics Approac
 Phase 6F.1 completes faculty publication QA and controlled publication safeguards. It adds clean review, exceptions, duplicate, multi-faculty, faculty summary, deduplication reconciliation, and taxonomy audit files; updates dry-run-first review tooling; and keeps all newly imported faculty publications internal until explicit maintainer approval.
 
 Phase 6F.2 publishes the 289 explicitly approved faculty publication records, keeps 10 exception records non-public, validates multi-faculty relationships, and refines the public scholarly UX with year grouping, compact faculty/year/Research Theme filters, and concise faculty profile publication sections.
+
+Phase 6G strengthens EnviSAGE identity and simplifies the public About experience. It uses the official expanded name, tagline, and public description; removes public founding-charter language; clarifies institutional affiliation; and keeps About focused on identity, research mission, spatial systems thinking, and the research community.
 
 ## Phase 6 - Publications
 
