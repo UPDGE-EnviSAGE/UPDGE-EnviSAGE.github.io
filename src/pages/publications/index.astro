@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import ButtonLink from "@components/ButtonLink.astro";
 import Section from "@components/Section.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
@@ -8,6 +7,7 @@ import {
   researchThemeLabels,
   researchThemes,
 } from "../../data/research-taxonomy";
+import { classifyVenueForDisplay, pluralize } from "../../utils/publications";
 
 const publications = (
   await getCollection(
@@ -19,51 +19,109 @@ const publications = (
     (second.data.year ?? 0) - (first.data.year ?? 0) ||
     first.data.title.localeCompare(second.data.title),
 );
+
+const missingYear = publications.find((publication) => !publication.data.year);
+if (missingYear) {
+  throw new Error(
+    `Public publication is missing a supported year: ${missingYear.id}`,
+  );
+}
+
 const people = await getCollection("people");
 const facultyLabels = Object.fromEntries(
   people.map((person) => [person.data.slug, person.data.name]),
 );
-const facultyOptions = Array.from(
-  new Set(
-    publications.flatMap(
-      (publication) => publication.data.facultyRelationships,
-    ),
-  ),
-)
-  .map((slug) => ({
+
+const facultyCounts = publications.reduce((counts, publication) => {
+  publication.data.facultyRelationships.forEach((slug) => {
+    counts.set(slug, (counts.get(slug) ?? 0) + 1);
+  });
+  return counts;
+}, new Map<string, number>());
+
+const facultyOptions = Array.from(facultyCounts.entries())
+  .map(([slug, count]) => ({
     slug,
+    count,
     name: facultyLabels[slug] ?? slug,
   }))
   .sort((first, second) => first.name.localeCompare(second.name));
-const yearOptions = Array.from(
-  new Set(
-    publications.map((publication) => publication.data.year).filter(Boolean),
-  ),
-).sort((first, second) => Number(second) - Number(first));
-const themeOptions = researchThemes.filter((theme) =>
-  publications.some((publication) =>
+
+const yearCounts = Array.from(
+  publications.reduce((counts, publication) => {
+    const year = Number(publication.data.year);
+    counts.set(year, (counts.get(year) ?? 0) + 1);
+    return counts;
+  }, new Map<number, number>()),
+).sort((first, second) => Number(first[0]) - Number(second[0]));
+
+const yearOptions = yearCounts
+  .map(([year, count]) => ({ year, count }))
+  .sort((first, second) => Number(second.year) - Number(first.year));
+
+const yearRange =
+  yearCounts.length > 0
+    ? `${yearCounts[0][0]}-${yearCounts[yearCounts.length - 1][0]}`
+    : "";
+const maxYearCount = Math.max(...yearCounts.map(([, count]) => count), 1);
+
+const themeCounts = researchThemes.map((theme) => ({
+  ...theme,
+  label: researchThemeLabels[theme.slug],
+  count: publications.filter((publication) =>
     publication.data.researchThemes.includes(theme.slug),
-  ),
-);
+  ).length,
+}));
+const maxThemeCount = Math.max(...themeCounts.map((theme) => theme.count), 1);
+const themeOptions = themeCounts.filter((theme) => theme.count > 0);
+
+const publicationRows = publications.map((publication) => {
+  const venueReview = classifyVenueForDisplay(
+    publication.data.sourceOrVenue,
+    publication.data.title,
+  );
+  const facultyNames = publication.data.facultyRelationships.map(
+    (slug) => facultyLabels[slug] ?? slug,
+  );
+  const themeNames = publication.data.researchThemes.map(
+    (slug) => researchThemeLabels[slug] ?? slug,
+  );
+  const searchText = [
+    publication.data.title,
+    ...publication.data.authors,
+    venueReview.displayValue,
+    String(publication.data.year),
+    ...facultyNames,
+    ...themeNames,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return {
+    publication,
+    venueReview,
+    searchText,
+  };
+});
 
 const publicationsByYear = Array.from(
-  publications.reduce((groups, publication) => {
-    const year = String(publication.data.year ?? "Undated");
+  publicationRows.reduce((groups, row) => {
+    const year = String(row.publication.data.year);
     const current = groups.get(year) ?? [];
-    current.push(publication);
+    current.push(row);
     groups.set(year, current);
     return groups;
-  }, new Map<string, typeof publications>()),
-);
+  }, new Map<string, typeof publicationRows>()),
+).sort((first, second) => Number(second[0]) - Number(first[0]));
 ---
 
 <BaseLayout
   title="Publications"
-  description="EnviSAGE publications share scholarly outputs from environmental Geomatics research."
+  description="EnviSAGE publications share scholarly work across environmental systems and Geomatics Engineering."
 >
   <section class="geo-surface" aria-labelledby="publications-title">
     <div
-      class="mx-auto w-full max-w-[var(--content-width-wide)] px-5 py-10 sm:px-6 lg:px-8 lg:py-16"
+      class="mx-auto w-full max-w-[var(--content-width-wide)] px-5 py-10 sm:px-6 lg:px-8 lg:py-14"
     >
       <div class="max-w-3xl">
         <p
@@ -78,123 +136,307 @@ const publicationsByYear = Array.from(
           Publications
         </h1>
         <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-          Scholarly outputs connected to EnviSAGE faculty and environmental
-          Geomatics research.
+          Scholarly work by EnviSAGE faculty across environmental systems and
+          Geomatics Engineering.
         </p>
       </div>
     </div>
   </section>
 
-  <Section size="wide" aria-labelledby="publication-catalog">
-    <SectionHeading
-      id="publication-catalog"
-      eyebrow="Catalog"
-      title="Public publication records"
-      text="Browse EnviSAGE publication records by year. Use the filters to narrow the catalog by faculty, year, or Research Theme."
-    />
+  {
+    publications.length > 0 ? (
+      <>
+        <Section
+          size="wide"
+          class="py-12 sm:py-14 lg:py-18"
+          aria-labelledby="scholarly-output"
+        >
+          <SectionHeading
+            id="scholarly-output"
+            eyebrow="Scholarly Output"
+            title="Scale and evolution of EnviSAGE scholarship"
+            text="A compact view of EnviSAGE faculty publications, computed from the current scholarly catalog."
+          />
 
-    {
-      publications.length > 0 ? (
-        <div class="mt-8">
+          <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="rounded-card border border-border bg-surface p-5">
+              <p class="font-mono text-3xl leading-none font-semibold text-brand-blue-deep">
+                {publications.length}
+              </p>
+              <p class="mt-3 text-sm font-semibold text-text">Publications</p>
+            </div>
+            <div class="rounded-card border border-border bg-surface p-5">
+              <p class="font-mono text-3xl leading-none font-semibold text-brand-blue-deep">
+                {yearCounts.length}
+              </p>
+              <p class="mt-3 text-sm font-semibold text-text">
+                Years represented
+              </p>
+              <p class="mt-1 text-sm text-muted">{yearRange}</p>
+            </div>
+            <div class="rounded-card border border-border bg-surface p-5">
+              <p class="font-mono text-3xl leading-none font-semibold text-brand-blue-deep">
+                {facultyOptions.length}
+              </p>
+              <p class="mt-3 text-sm font-semibold text-text">
+                Faculty represented
+              </p>
+            </div>
+            <div class="rounded-card border border-border bg-surface p-5">
+              <p class="font-mono text-3xl leading-none font-semibold text-brand-blue-deep">
+                {themeOptions.length}
+              </p>
+              <p class="mt-3 text-sm font-semibold text-text">
+                Research Themes represented
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-10 grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+            <section aria-labelledby="publications-through-time">
+              <h2
+                id="publications-through-time"
+                class="text-2xl leading-tight font-semibold text-text"
+              >
+                Publications through time
+              </h2>
+              <p class="mt-2 text-sm leading-relaxed text-muted">
+                Select a year to filter the catalog.
+              </p>
+              <ul class="sr-only">
+                {yearCounts.map(([year, count]) => (
+                  <li>
+                    {year}: {pluralize(count, "publication")}
+                  </li>
+                ))}
+              </ul>
+              <div
+                class="mt-5 flex min-h-52 items-end gap-1 overflow-x-auto border-b border-border pb-3"
+                role="list"
+                aria-label="Publications by year"
+              >
+                {yearCounts.map(([year, count]) => (
+                  <button
+                    type="button"
+                    class="group flex min-h-44 min-w-8 flex-1 cursor-pointer flex-col items-center justify-end gap-2 rounded-control px-1 py-1 text-xs font-semibold text-muted transition-colors hover:bg-surface-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus motion-reduce:transition-none"
+                    data-chart-year={String(year)}
+                    aria-label={`${year}, ${pluralize(count, "publication")}`}
+                  >
+                    <span
+                      class="w-full rounded-t-control bg-brand-blue/70 group-hover:bg-brand-blue group-focus-visible:bg-brand-blue"
+                      style={`height: ${Math.max(10, Math.round((count / maxYearCount) * 132))}px`}
+                      aria-hidden="true"
+                    />
+                    <span class="font-mono text-[0.7rem] text-text">
+                      {count}
+                    </span>
+                    <span class="[writing-mode:vertical-rl]">{year}</span>
+                  </button>
+                ))}
+              </div>
+            </section>
+
+            <section aria-labelledby="publication-theme-distribution">
+              <h2
+                id="publication-theme-distribution"
+                class="text-2xl leading-tight font-semibold text-text"
+              >
+                Research Themes
+              </h2>
+              <p class="mt-2 text-sm leading-relaxed text-muted">
+                Publications may connect to more than one Research Theme.
+              </p>
+              <ul
+                class="mt-5 space-y-4"
+                aria-label="Publications by Research Theme"
+              >
+                {themeCounts.map((theme) => (
+                  <li>
+                    <button
+                      type="button"
+                      class="grid w-full cursor-pointer grid-cols-[minmax(0,1fr)_3rem] gap-3 rounded-control text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus"
+                      data-chart-theme={theme.slug}
+                      aria-label={`${theme.label}, ${pluralize(theme.count, "publication")}`}
+                    >
+                      <span class="min-w-0">
+                        <span class="block text-sm font-semibold text-text">
+                          {theme.label}
+                        </span>
+                        <span
+                          class="mt-2 block h-2 rounded-full bg-surface-muted"
+                          aria-hidden="true"
+                        >
+                          <span
+                            class="block h-2 rounded-full bg-brand-green"
+                            style={`width: ${Math.max(4, Math.round((theme.count / maxThemeCount) * 100))}%`}
+                          />
+                        </span>
+                      </span>
+                      <span class="text-right font-mono text-sm font-semibold text-brand-blue-deep">
+                        {theme.count}
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
+        </Section>
+
+        <Section
+          size="wide"
+          tone="muted"
+          class="border-y border-border py-12 sm:py-14 lg:py-18"
+          aria-labelledby="publication-catalog"
+        >
+          <SectionHeading
+            id="publication-catalog"
+            eyebrow="Explore Publications"
+            title="Find scholarly work"
+            text="Search by title, author, venue, year, faculty, or Research Theme; combine search with the compact filters below."
+          />
+
           <form
-            class="grid gap-4 border-y border-border py-5 lg:grid-cols-3"
+            class="mt-8 grid gap-4 border-y border-border py-5"
             data-publication-filters
           >
             <label class="grid gap-2 text-sm font-semibold text-text">
-              <span>Faculty</span>
-              <select
-                class="min-h-11 rounded-control border border-border bg-surface px-3 py-2 text-sm font-normal text-text"
-                data-filter="faculty"
-              >
-                <option value="">All faculty</option>
-                {facultyOptions.map((faculty) => (
-                  <option value={faculty.slug}>{faculty.name}</option>
-                ))}
-              </select>
+              <span>Search publications</span>
+              <input
+                type="search"
+                placeholder="Search publications"
+                autocomplete="off"
+                class="min-h-11 rounded-control border border-border bg-surface px-3 py-2 text-base font-normal text-text"
+                data-filter="search"
+              />
             </label>
-            <label class="grid gap-2 text-sm font-semibold text-text">
-              <span>Year</span>
-              <select
-                class="min-h-11 rounded-control border border-border bg-surface px-3 py-2 text-sm font-normal text-text"
-                data-filter="year"
-              >
-                <option value="">All years</option>
-                {yearOptions.map((year) => (
-                  <option value={String(year)}>{year}</option>
-                ))}
-              </select>
-            </label>
-            <label class="grid gap-2 text-sm font-semibold text-text">
-              <span>Research Theme</span>
-              <select
-                class="min-h-11 rounded-control border border-border bg-surface px-3 py-2 text-sm font-normal text-text"
-                data-filter="theme"
-              >
-                <option value="">All themes</option>
-                {themeOptions.map((theme) => (
-                  <option value={theme.slug}>
-                    {researchThemeLabels[theme.slug]}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </form>
-          <p
-            class="mt-4 text-sm leading-relaxed text-muted"
-            aria-live="polite"
-            data-filter-summary
-          >
-            Showing {publications.length} publications
-          </p>
-          <div class="mt-8 space-y-6" data-publication-list>
-            {publicationsByYear.map(([year, records]) => (
-              <section aria-labelledby={`publications-${year}`} data-year-group>
-                <h2
-                  id={`publications-${year}`}
-                  class="text-2xl font-semibold text-text"
+            <div class="grid gap-4 lg:grid-cols-3">
+              <label class="grid gap-2 text-sm font-semibold text-text">
+                <span>Faculty</span>
+                <select
+                  class="min-h-11 rounded-control border border-border bg-surface px-3 py-2 text-sm font-normal text-text"
+                  data-filter="faculty"
                 >
-                  {year}
-                </h2>
-                <ol class="mt-4 divide-y divide-border">
-                  {records.map((publication) => (
+                  <option value="">All faculty</option>
+                  {facultyOptions.map((faculty) => (
+                    <option value={faculty.slug}>
+                      {faculty.name} ({faculty.count})
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label class="grid gap-2 text-sm font-semibold text-text">
+                <span>Research Theme</span>
+                <select
+                  class="min-h-11 rounded-control border border-border bg-surface px-3 py-2 text-sm font-normal text-text"
+                  data-filter="theme"
+                >
+                  <option value="">All themes</option>
+                  {themeOptions.map((theme) => (
+                    <option value={theme.slug}>
+                      {theme.label} ({theme.count})
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label class="grid gap-2 text-sm font-semibold text-text">
+                <span>Year</span>
+                <select
+                  class="min-h-11 rounded-control border border-border bg-surface px-3 py-2 text-sm font-normal text-text"
+                  data-filter="year"
+                >
+                  <option value="">All years</option>
+                  {yearOptions.map(({ year, count }) => (
+                    <option value={String(year)}>
+                      {year} ({count})
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p
+                class="text-sm leading-relaxed text-muted"
+                aria-live="polite"
+                data-filter-summary
+              >
+                {pluralize(publications.length, "publication")}
+              </p>
+              <button
+                type="button"
+                class="hidden min-h-10 rounded-control border border-border bg-surface px-3 py-2 text-sm font-semibold text-brand-blue-deep hover:bg-surface-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"
+                data-clear-filters
+              >
+                Clear filters
+              </button>
+            </div>
+          </form>
+
+          <div class="mt-8 space-y-3" data-publication-list>
+            {publicationsByYear.map(([year, records], index) => (
+              <details
+                class="group border-b border-border pb-3"
+                open={index === 0}
+                data-year-group
+                data-default-open={index === 0 ? "true" : "false"}
+              >
+                <summary
+                  class="flex min-h-12 cursor-pointer items-center justify-between gap-4 rounded-control px-1 text-left text-lg font-semibold text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"
+                  aria-label={`${year}, ${pluralize(records.length, "publication")}`}
+                >
+                  <span>{year}</span>
+                  <span class="text-sm font-semibold text-muted">
+                    {pluralize(records.length, "publication")}
+                  </span>
+                </summary>
+                <ol class="mt-2 divide-y divide-border">
+                  {records.map((row) => (
                     <li
-                      class="py-5"
+                      class="py-4"
                       data-publication-entry
-                      data-year={String(publication.data.year ?? "")}
-                      data-faculty={publication.data.facultyRelationships.join(
+                      data-year={String(row.publication.data.year)}
+                      data-faculty={row.publication.data.facultyRelationships.join(
                         " ",
                       )}
-                      data-themes={publication.data.researchThemes.join(" ")}
+                      data-themes={row.publication.data.researchThemes.join(
+                        " ",
+                      )}
+                      data-search={row.searchText}
                     >
-                      <h3 class="text-lg leading-snug font-semibold text-text">
-                        {publication.data.url ? (
+                      <h3 class="max-w-5xl text-base leading-snug font-semibold break-words text-text">
+                        {row.publication.data.url ? (
                           <a
-                            href={publication.data.url}
+                            href={row.publication.data.url}
                             class="text-text underline-offset-4 hover:text-brand-blue-deep hover:underline"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`Open publication: ${row.publication.data.title}`}
                           >
-                            {publication.data.title}
+                            {row.publication.data.title}
                           </a>
                         ) : (
-                          publication.data.title
+                          row.publication.data.title
                         )}
                       </h3>
-                      {publication.data.authors.length > 0 && (
-                        <p class="mt-2 text-sm leading-relaxed text-muted">
-                          {publication.data.authors.join("; ")}
+                      {row.publication.data.authors.length > 0 && (
+                        <p class="mt-2 max-w-5xl text-sm leading-relaxed text-muted">
+                          {row.publication.data.authors.join("; ")}
                         </p>
                       )}
-                      {(publication.data.sourceOrVenue ||
-                        publication.data.doi) && (
-                        <p class="mt-2 text-sm leading-relaxed text-muted">
-                          {publication.data.sourceOrVenue}
-                          {publication.data.sourceOrVenue &&
-                            publication.data.doi &&
+                      {(row.venueReview.displayValue ||
+                        row.publication.data.doi) && (
+                        <p class="mt-2 max-w-5xl text-sm leading-relaxed text-muted">
+                          {row.venueReview.displayValue}
+                          {row.venueReview.displayValue &&
+                            row.publication.data.doi &&
                             " · "}
-                          {publication.data.doi && (
+                          {row.publication.data.doi && (
                             <a
-                              href={`https://doi.org/${publication.data.doi}`}
+                              href={`https://doi.org/${row.publication.data.doi}`}
                               class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
-                              aria-label={`DOI for ${publication.data.title}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`Open DOI for ${row.publication.data.title}`}
                             >
                               DOI ↗
                             </a>
@@ -204,19 +446,48 @@ const publicationsByYear = Array.from(
                     </li>
                   ))}
                 </ol>
-              </section>
+              </details>
             ))}
           </div>
           <p
             class="mt-8 hidden text-base leading-relaxed text-muted"
             data-filter-empty
           >
-            No publications match the selected filters.
+            No publications found.
           </p>
-        </div>
-      ) : (
-        <div class="mt-8 max-w-3xl border-t border-border pt-6">
-          <h2 class="text-xl font-semibold text-text">
+        </Section>
+
+        <Section
+          size="wide"
+          class="py-10 sm:py-12"
+          aria-labelledby="publications-next"
+        >
+          <div class="flex flex-col gap-3 text-sm sm:flex-row sm:items-center">
+            <h2 id="publications-next" class="font-semibold text-text">
+              Explore:
+            </h2>
+            <a
+              href="/research/"
+              class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
+            >
+              Research
+            </a>
+            <span class="hidden text-muted sm:inline" aria-hidden="true">
+              ·
+            </span>
+            <a
+              href="/people/"
+              class="font-semibold text-brand-blue-deep underline-offset-4 hover:underline"
+            >
+              People
+            </a>
+          </div>
+        </Section>
+      </>
+    ) : (
+      <Section size="wide" aria-labelledby="publication-catalog">
+        <div class="max-w-3xl border-t border-border pt-6">
+          <h2 id="publication-catalog" class="text-xl font-semibold text-text">
             Publications are being prepared.
           </h2>
           <p class="mt-3 text-base leading-relaxed text-muted">
@@ -224,87 +495,158 @@ const publicationsByYear = Array.from(
             appear here as they become available.
           </p>
         </div>
-      )
-    }
-  </Section>
-
-  <Section
-    size="wide"
-    tone="muted"
-    class="border-y border-border"
-    aria-labelledby="publications-next"
-  >
-    <div class="max-w-3xl">
-      <SectionHeading
-        id="publications-next"
-        eyebrow="Explore"
-        title="Connect publications with people and research"
-        text="Browse the faculty profiles and research themes shaping EnviSAGE scholarly outputs."
-      />
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-        <ButtonLink href="/people/">Meet the laboratory</ButtonLink>
-        <ButtonLink href="/research/" variant="secondary">
-          Explore research
-        </ButtonLink>
-      </div>
-    </div>
-  </Section>
+      </Section>
+    )
+  }
 
   <script>
-    const filterForm = document.querySelector("[data-publication-filters]");
+    const filterForm = document.querySelector<HTMLFormElement>(
+      "[data-publication-filters]",
+    );
     const entries = Array.from(
       document.querySelectorAll<HTMLElement>("[data-publication-entry]"),
     );
     const yearGroups = Array.from(
-      document.querySelectorAll<HTMLElement>("[data-year-group]"),
+      document.querySelectorAll<HTMLDetailsElement>("[data-year-group]"),
     );
     const summary = document.querySelector<HTMLElement>(
       "[data-filter-summary]",
     );
     const empty = document.querySelector<HTMLElement>("[data-filter-empty]");
+    const clearButton = document.querySelector<HTMLButtonElement>(
+      "[data-clear-filters]",
+    );
+    const yearButtons = Array.from(
+      document.querySelectorAll<HTMLButtonElement>("[data-chart-year]"),
+    );
+    const themeButtons = Array.from(
+      document.querySelectorAll<HTMLButtonElement>("[data-chart-theme]"),
+    );
 
-    function selectedValue(name: string) {
-      const field = filterForm?.querySelector<HTMLSelectElement>(
+    function field(name: string) {
+      return filterForm?.querySelector<HTMLInputElement | HTMLSelectElement>(
         `[data-filter="${name}"]`,
       );
-      return field?.value ?? "";
+    }
+
+    function selectedValue(name: string) {
+      return field(name)?.value.trim() ?? "";
+    }
+
+    function setActiveButton(
+      buttons: HTMLButtonElement[],
+      dataKey: "chartYear" | "chartTheme",
+      activeValue: string,
+    ) {
+      buttons.forEach((button) => {
+        const active = button.dataset[dataKey] === activeValue;
+        button.setAttribute("aria-pressed", String(active));
+        button.classList.toggle("bg-surface-muted", active);
+        button.classList.toggle("text-brand-blue-deep", active);
+      });
+    }
+
+    function filtersAreActive() {
+      return Boolean(
+        selectedValue("search") ||
+        selectedValue("faculty") ||
+        selectedValue("theme") ||
+        selectedValue("year"),
+      );
+    }
+
+    function resetYearGroups() {
+      yearGroups.forEach((group) => {
+        group.hidden = false;
+        group.open = group.dataset.defaultOpen === "true";
+      });
     }
 
     function applyPublicationFilters() {
+      const search = selectedValue("search").toLocaleLowerCase();
       const faculty = selectedValue("faculty");
-      const year = selectedValue("year");
       const theme = selectedValue("theme");
+      const year = selectedValue("year");
+      const active = filtersAreActive();
       let shown = 0;
 
       entries.forEach((entry) => {
+        const matchesSearch =
+          !search || entry.dataset.search?.toLocaleLowerCase().includes(search);
         const matchesFaculty =
           !faculty || entry.dataset.faculty?.split(" ").includes(faculty);
-        const matchesYear = !year || entry.dataset.year === year;
         const matchesTheme =
           !theme || entry.dataset.themes?.split(" ").includes(theme);
-        const visible = Boolean(matchesFaculty && matchesYear && matchesTheme);
+        const matchesYear = !year || entry.dataset.year === year;
+        const visible = Boolean(
+          matchesSearch && matchesFaculty && matchesTheme && matchesYear,
+        );
         entry.hidden = !visible;
         if (visible) {
           shown += 1;
         }
       });
 
-      yearGroups.forEach((group) => {
-        const hasVisibleEntry = Boolean(
-          group.querySelector("[data-publication-entry]:not([hidden])"),
-        );
-        group.hidden = !hasVisibleEntry;
-      });
+      if (active) {
+        yearGroups.forEach((group) => {
+          const hasVisibleEntry = Boolean(
+            group.querySelector("[data-publication-entry]:not([hidden])"),
+          );
+          group.hidden = !hasVisibleEntry;
+          group.open = hasVisibleEntry;
+        });
+      } else {
+        resetYearGroups();
+      }
 
       if (summary) {
-        summary.textContent = `Showing ${shown} ${shown === 1 ? "publication" : "publications"}`;
+        summary.textContent =
+          shown === 0
+            ? "No publications found"
+            : `${shown} ${shown === 1 ? "publication" : "publications"}`;
       }
       if (empty) {
         empty.hidden = shown > 0;
         empty.classList.toggle("hidden", shown > 0);
       }
+      clearButton?.classList.toggle("hidden", !active);
+      setActiveButton(yearButtons, "chartYear", year);
+      setActiveButton(themeButtons, "chartTheme", theme);
     }
 
+    filterForm?.addEventListener("input", applyPublicationFilters);
     filterForm?.addEventListener("change", applyPublicationFilters);
+    clearButton?.addEventListener("click", () => {
+      filterForm?.reset();
+      applyPublicationFilters();
+      field("search")?.focus();
+    });
+    yearButtons.forEach((button) => {
+      button.setAttribute("aria-pressed", "false");
+      button.addEventListener("click", () => {
+        const year = field("year");
+        if (year) {
+          year.value =
+            year.value === button.dataset.chartYear
+              ? ""
+              : (button.dataset.chartYear ?? "");
+        }
+        applyPublicationFilters();
+      });
+    });
+    themeButtons.forEach((button) => {
+      button.setAttribute("aria-pressed", "false");
+      button.addEventListener("click", () => {
+        const theme = field("theme");
+        if (theme) {
+          theme.value =
+            theme.value === button.dataset.chartTheme
+              ? ""
+              : (button.dataset.chartTheme ?? "");
+        }
+        applyPublicationFilters();
+      });
+    });
+    applyPublicationFilters();
   </script>
 </BaseLayout>

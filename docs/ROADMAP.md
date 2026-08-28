@@ -133,6 +133,8 @@ Phase 6F.2 publishes the 289 explicitly approved faculty publication records, ke
 
 Phase 6G strengthens EnviSAGE identity and simplifies the public About experience. It uses the official expanded name, tagline, and public description; removes public founding-charter language; clarifies institutional affiliation; and keeps About focused on identity, research mission, spatial systems thinking, and the research community.
 
+Phase 6H improves the public Publications discovery experience without changing publication decisions or bibliographic data. It adds public-data-derived scholarly output metrics, a lightweight publications-through-time chart, Research Theme distribution, combined search and filters, collapsible year groups, a compact final Explore link area, and a venue display-quality audit. Citation metrics and word clouds remain deferred.
+
 ## Phase 6 - Publications
 
 Create the publications database.

@@ -38,7 +38,15 @@ At Phase 6F.2 completion, the 289 clean records explicitly approved by maintaine
 8. Run `python3 scripts/publish-faculty-publications.py` to dry-run publication.
 9. Run `python3 scripts/publish-faculty-publications.py --write` only after review.
 
-The public `/publications/` route renders approved records in a minimalist scholarly list grouped by year. Compact static filters support faculty, year, and Research Theme browsing without exposing internal taxonomy or review metadata on each entry.
+The public `/publications/` route renders approved publications in a minimalist scholarly discovery experience. The overview metrics, publications-through-time chart, Research Theme distribution, search results, filter counts, and year groups must be computed from public publication data at build time.
+
+Search may use public-safe page data: title, author text, displayed source or venue, year, faculty relationship labels, and approved Research Theme labels. It must not search or serialize review notes, provenance, publication IDs, bibliographic status, duplicate status, maintenance fields, or publication decisions.
+
+The catalog remains the authoritative scholarly list. It groups publications by year with native disclosure controls: the newest year is open by default, older years are collapsed by default, and active search or filters open matching year groups while hiding empty groups.
+
+Citation metrics and word clouds are not part of the Phase 6H public publication model. Do not add citation counts, h-index, i10-index, most-cited rankings, or keyword-frequency visualizations until a future approved source and methodology is supplied.
+
+Venue display should be conservative. Use existing `sourceOrVenue` text when it is usable as displayed. Truncated but meaningful strings may be displayed honestly. Blank values, no-title placeholders, and values that repeat the publication title should be omitted from public display while preserved in canonical content for later bibliographic correction. The venue display-quality audit is emitted to `data-maintenance/publication-venue-display-audit.csv`.
 
 ## Review Fields
 
