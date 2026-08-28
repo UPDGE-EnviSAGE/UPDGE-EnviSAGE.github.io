@@ -107,7 +107,11 @@ Do not fabricate geographic boundaries or scientific data. Use motifs as low-int
 
 Use coordinate-grid, contour, and raster motifs selectively. They are best suited for hero areas, section transitions, maps/data sections, and featured visual blocks. Avoid placing them behind long-form reading, dense publication lists, tables, forms, and other information-dense interfaces where they can reduce legibility.
 
-Publication catalogs should read as scholarly lists rather than marketing cards. Use year grouping, restrained typography, compact filters when the list is long, and minimal metadata lines for authors, source, and DOI or reliable external links. Avoid badges, repeated labels, heavy borders, and large cards for individual publication entries.
+Publication catalogs should read as scholarly lists rather than marketing cards. Use restrained typography, compact filters when the list is long, and minimal metadata lines for authors, source, and DOI or reliable external links. Avoid badges, repeated labels, heavy borders, and large cards for individual publication entries.
+
+The public Publications page may include compact discovery aids before the scholarly list: summary metrics, a simple publications-through-time chart, and a Research Theme distribution. These summaries must be computed from public publication data, remain visually secondary to the catalog, and include text-accessible equivalents. Search, Faculty, Year, and Research Theme filters should combine cleanly and stack on mobile. Large year groups should use accessible disclosure behavior so the newest year is open by default and filtered results are not hidden in collapsed groups.
+
+Do not add citation metrics, h-index, i10-index, most-cited rankings, word clouds, or arbitrary keyword-frequency visualizations without a future approved source and methodology.
 
 Homepage composition may combine these motifs with restrained borders and generous whitespace to create polished non-data-bearing visuals. Public production pages should not expose implementation labels such as "placeholder" or "approved image pending"; maintainers should rely on documentation and registry status for that distinction.
 
