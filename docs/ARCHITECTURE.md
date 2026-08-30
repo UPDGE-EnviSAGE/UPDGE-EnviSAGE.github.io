@@ -104,7 +104,7 @@ The `/design-system` route is a development preview and is not emitted as produc
 
 ## Homepage Architecture
 
-Phase 3B replaces the development homepage placeholder with the first production homepage. Reusable homepage presentation components live in `src/components/`, while temporary homepage section definitions live in `src/data/homepage.ts` so broad research themes, research highlights, and open research feature links can later be connected to validated content collections without rewriting the page structure.
+Phase 3B replaces the development homepage placeholder with the first production homepage. Phase 6I simplifies that page into five primary public sections: Hero, What EnviSAGE Does, Research Themes, EnviSAGE at a Glance, and Explore EnviSAGE. The homepage uses `src/data/homepage.ts` for concise exploration links and Research Theme presentation, while public counts are derived at build time from approved Research Themes and public content collections through shared metric helpers.
 
 Homepage imagery remains static and image-ready. Where approved EnviSAGE research imagery is not yet available, the page uses non-data-bearing geospatial motifs rather than fabricated maps or unsourced imagery.
 
@@ -119,6 +119,8 @@ The research architecture organizes discovery as:
 Research Themes, Geomatics Approaches, and Topics -> Research Work -> Projects and Theses -> Outputs -> Publications, Datasets, Software, and Dashboards
 
 Projects and Theses are related forms of research work. A Thesis may belong to a Project, or it may exist independently under EnviSAGE. This model prepares future catalogs without requiring a database, CMS, authentication, backend APIs, or geospatial platform integration.
+
+Until project information and interactive spatial products are ready for publication, `/projects/` and `/explorer/` use polished public preparation pages with natural visitor-facing language and links back to established public sections.
 
 Phase 6A replaces the `/people/` placeholder with a production People directory backed by the Astro `people` content collection. It creates current public leadership and faculty-affiliate records and omits empty categories.
 
@@ -146,6 +148,8 @@ The shell provides:
 - Centralized navigation configuration in `src/utils/navigation.ts`
 - Active/current-page navigation logic
 - Restrained institutional footer
+
+The About page and footer may display the supplied UP, UP College of Engineering, and UP Department of Geodetic Engineering marks with official outbound links. These institutional marks establish affiliation and should remain visually subordinate to the EnviSAGE identity. Source logo files in `public/brand/` must not be altered; use CSS sizing and native image rendering only.
 
 Phase 3A placeholder routes exist only to support navigation and shell testing. They should be replaced by substantive pages in later roadmap phases.
 

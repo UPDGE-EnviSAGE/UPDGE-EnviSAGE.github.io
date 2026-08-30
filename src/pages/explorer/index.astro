@@ -1,5 +1,5 @@
 ---
-import PlaceholderPage from "@components/PlaceholderPage.astro";
+import PreparedSectionPage from "@components/PreparedSectionPage.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
@@ -7,8 +7,14 @@ import BaseLayout from "@layouts/BaseLayout.astro";
   title="Spatial Explorer"
   description="The EnviSAGE Spatial Explorer focuses on selected environmental datasets and spatial products."
 >
-  <PlaceholderPage
+  <PreparedSectionPage
     title="Spatial Explorer"
-    status="Selected environmental datasets and spatial products support interactive spatial understanding."
+    intro="Interactive maps and selected environmental spatial products will be made available through EnviSAGE."
+    note="This space will support public spatial understanding of selected environmental research outputs."
+    motif="raster"
+    links={[
+      { href: "/research/", label: "Explore research" },
+      { href: "/data/", label: "Explore data", variant: "secondary" },
+    ]}
   />
 </BaseLayout>

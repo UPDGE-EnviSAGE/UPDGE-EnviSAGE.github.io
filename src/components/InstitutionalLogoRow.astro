@@ -1,0 +1,54 @@
+---
+import { institutionalLinks } from "../data/institutional-links";
+
+interface Props {
+  variant?: "about" | "footer";
+}
+
+const { variant = "about" } = Astro.props;
+
+const listClass =
+  variant === "footer"
+    ? "flex flex-wrap items-center gap-3"
+    : "grid gap-4 sm:grid-cols-3";
+const linkClass =
+  variant === "footer"
+    ? "inline-flex min-h-9 items-center rounded-control border border-white/10 bg-white/6 px-2 py-1 no-underline hover:bg-white/10"
+    : "flex min-h-32 flex-col items-center justify-center rounded-card border border-border bg-surface p-5 text-center no-underline shadow-subtle hover:bg-surface-muted";
+const imageClass =
+  variant === "footer"
+    ? "h-7 w-auto object-contain"
+    : "h-auto w-auto object-contain";
+const labelClass =
+  variant === "footer"
+    ? "sr-only"
+    : "mt-4 text-sm font-semibold leading-snug text-text";
+---
+
+<ul class={listClass} aria-label="Institutional affiliation">
+  {
+    institutionalLinks.map((institution) => (
+      <li>
+        <a
+          href={institution.href}
+          class={linkClass}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={institution.name}
+        >
+          <img
+            src={institution.logo}
+            alt=""
+            class:list={[
+              imageClass,
+              variant === "about" && institution.logoClass,
+            ]}
+            loading="lazy"
+            decoding="async"
+          />
+          <span class={labelClass}>{institution.shortName}</span>
+        </a>
+      </li>
+    ))
+  }
+</ul>

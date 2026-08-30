@@ -27,7 +27,7 @@ export const resourceItems: NavItem[] = [
   {
     label: "Spatial Explorer",
     href: "/explorer/",
-    description: "Interactive environmental geospatial dashboard.",
+    description: "Environmental spatial products and maps.",
   },
   {
     label: "Training",

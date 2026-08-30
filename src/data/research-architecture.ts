@@ -52,7 +52,7 @@ export const researchTopics = [
 export const researchOutputs: readonly ResearchOutput[] = [
   {
     title: "Publications",
-    description: "Papers, theses, reports, and citable scholarly records.",
+    description: "Papers, theses, reports, and citable scholarly works.",
   },
   {
     title: "Datasets",

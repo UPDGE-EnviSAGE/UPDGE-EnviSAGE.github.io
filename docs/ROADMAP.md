@@ -58,7 +58,7 @@ Status: Begun with Phase 3A global site shell. Phase 3A adds the production head
 
 Phase 3A.1 adds automatic GitHub Pages deployment for the organization Pages site at `https://updge-envisage.github.io/`. Deployment runs on pushes to `main` through the official GitHub Pages artifact workflow. The repository Pages source must be set to GitHub Actions.
 
-Phase 3B adds the first production homepage. The homepage introduces EnviSAGE, broad research themes, research highlights, the Spatial Explorer, open research outputs, publications, people, and final calls to action while keeping destination pages as placeholders for later phases.
+Phase 3B adds the first production homepage. Phase 6I later simplifies the homepage into a shorter research-laboratory landing page focused on the hero, what EnviSAGE does, Research Themes, dynamic public metrics, and compact discovery links.
 
 Likely remaining deliverables:
 
@@ -134,6 +134,8 @@ Phase 6F.2 publishes the 289 explicitly approved faculty publication records, ke
 Phase 6G strengthens EnviSAGE identity and simplifies the public About experience. It uses the official expanded name, tagline, and public description; removes public founding-charter language; clarifies institutional affiliation; and keeps About focused on identity, research mission, spatial systems thinking, and the research community.
 
 Phase 6H improves the public Publications discovery experience without changing publication decisions or bibliographic data. It adds public-data-derived scholarly output metrics, a lightweight publications-through-time chart, Research Theme distribution, combined search and filters, collapsible year groups, a compact final Explore link area, and a venue display-quality audit. Citation metrics and word clouds remain deferred.
+
+Phase 6I simplifies the homepage, strengthens institutional identity, and cleans public-facing language before Phase 7. It adds dynamic homepage metrics, uses the supplied UP, College of Engineering, and DGE marks on About and the footer with official links, keeps Projects and Spatial Explorer as polished public preparation pages, and removes public copy that sounds like internal content management.
 
 ## Phase 6 - Publications
 

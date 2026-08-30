@@ -1,5 +1,6 @@
 ---
 import ButtonLink from "@components/ButtonLink.astro";
+import InstitutionalLogoRow from "@components/InstitutionalLogoRow.astro";
 import ResearchVisualPlaceholder from "@components/ResearchVisualPlaceholder.astro";
 import Section from "@components/Section.astro";
 import SectionHeading from "@components/SectionHeading.astro";
@@ -92,8 +93,20 @@ import BaseLayout from "@layouts/BaseLayout.astro";
     size="wide"
     tone="muted"
     class="border-y border-border"
-    aria-labelledby="how-envisage-thinks"
+    aria-labelledby="institutional-home"
   >
+    <div class="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+      <SectionHeading
+        id="institutional-home"
+        eyebrow="Institutional Home"
+        title="Rooted in UP Diliman, Engineering, and Geodetic Engineering"
+        text="EnviSAGE is based in the University of the Philippines Diliman, College of Engineering, Department of Geodetic Engineering."
+      />
+      <InstitutionalLogoRow />
+    </div>
+  </Section>
+
+  <Section size="wide" aria-labelledby="how-envisage-thinks">
     <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
       <div>
         <p

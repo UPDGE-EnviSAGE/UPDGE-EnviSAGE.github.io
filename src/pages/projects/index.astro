@@ -1,5 +1,5 @@
 ---
-import PlaceholderPage from "@components/PlaceholderPage.astro";
+import PreparedSectionPage from "@components/PreparedSectionPage.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
@@ -7,8 +7,18 @@ import BaseLayout from "@layouts/BaseLayout.astro";
   title="Projects"
   description="EnviSAGE research projects connect environmental questions with Geomatics methods, teams, partners, and outputs."
 >
-  <PlaceholderPage
+  <PreparedSectionPage
     title="Projects"
-    status="Research projects connect environmental questions with Geomatics methods, teams, partners, and outputs."
+    intro="EnviSAGE research projects will bring together people, methods, partners, and research outputs across the laboratory's environmental research themes."
+    note="Research project information is being prepared for publication."
+    motif="contour"
+    links={[
+      { href: "/research/", label: "Explore research" },
+      {
+        href: "/people/",
+        label: "Meet the laboratory",
+        variant: "secondary",
+      },
+    ]}
   />
 </BaseLayout>

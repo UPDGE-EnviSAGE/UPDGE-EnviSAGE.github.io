@@ -19,4 +19,12 @@ Expected future assets may include:
 
 The design system must remain compatible with both the current legacy logo and future redesigned assets.
 
+Supplied institutional marks:
+
+- `up.png` - University of the Philippines, links to https://up.edu.ph/
+- `engineering.png` - UP College of Engineering, links to https://coe.upd.edu.ph/
+- `DGE_svg.svg` - UP Department of Geodetic Engineering, links to https://home.dge.upd.edu.ph/
+
+Use these files exactly as supplied. Do not recolor, redraw, crop, distort, filter, convert, or recompress them unnecessarily. Use CSS sizing only and preserve each mark's natural proportions.
+
 Temporary favicon files may be generated from the legacy logo for browser metadata, including `/favicon.ico`, `/favicon-32x32.png`, `/favicon-16x16.png`, and `/apple-touch-icon.png`, provided the source logo is not redesigned, redrawn, recolored, cropped, or replaced.
