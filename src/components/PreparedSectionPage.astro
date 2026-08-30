@@ -1,0 +1,70 @@
+---
+import ButtonLink from "./ButtonLink.astro";
+import ResearchVisualPlaceholder from "./ResearchVisualPlaceholder.astro";
+
+interface Link {
+  href: string;
+  label: string;
+  variant?: "primary" | "secondary" | "ghost";
+}
+
+interface Props {
+  title: string;
+  eyebrow?: string;
+  intro: string;
+  note: string;
+  motif?: "grid" | "contour" | "raster";
+  links?: Link[];
+}
+
+const {
+  title,
+  eyebrow = "EnviSAGE",
+  intro,
+  note,
+  motif = "grid",
+  links = [],
+} = Astro.props;
+---
+
+<section class="bg-background" aria-labelledby="prepared-section-title">
+  <div
+    class="mx-auto grid w-full max-w-[var(--content-width-wide)] gap-8 px-5 py-12 sm:px-6 md:grid-cols-[0.95fr_1.05fr] md:items-center lg:px-8 lg:py-18"
+  >
+    <div class="max-w-3xl">
+      <p
+        class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
+      >
+        {eyebrow}
+      </p>
+      <h1
+        id="prepared-section-title"
+        class="mt-5 text-4xl leading-tight font-semibold text-text sm:text-5xl"
+      >
+        {title}
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
+        {intro}
+      </p>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-muted">{note}</p>
+      {
+        links.length > 0 && (
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            {links.map((link) => (
+              <ButtonLink href={link.href} variant={link.variant ?? "primary"}>
+                {link.label}
+              </ButtonLink>
+            ))}
+          </div>
+        )
+      }
+    </div>
+
+    <ResearchVisualPlaceholder
+      motif={motif}
+      class="hidden sm:block"
+      aspectClass="aspect-[4/3] min-h-[12rem] sm:min-h-[16rem] lg:min-h-[17rem]"
+      label={`Abstract geospatial motif for ${title}`}
+    />
+  </div>
+</section>

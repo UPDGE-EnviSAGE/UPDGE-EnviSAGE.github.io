@@ -1,17 +1,14 @@
 ---
 import ButtonLink from "@components/ButtonLink.astro";
-import FeatureCard from "@components/FeatureCard.astro";
 import ResearchVisualPlaceholder from "@components/ResearchVisualPlaceholder.astro";
 import ResearchThemeCard from "@components/ResearchThemeCard.astro";
 import Section from "@components/Section.astro";
 import SectionHeading from "@components/SectionHeading.astro";
-import SpatialExplorerTeaser from "@components/SpatialExplorerTeaser.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import {
-  openResearchFeatures,
-  researchHighlights,
-  researchThemes,
-} from "../data/homepage";
+import { exploreLinks, researchThemes } from "../data/homepage";
+import { getHomepageMetrics } from "../utils/site-metrics";
+
+const homepageMetrics = await getHomepageMetrics();
 ---
 
 <BaseLayout
@@ -21,7 +18,7 @@ import {
 >
   <section class="geo-surface" aria-labelledby="home-title">
     <div
-      class="mx-auto grid w-full max-w-[var(--content-width-wide)] gap-8 px-5 py-10 sm:px-6 md:grid-cols-[0.95fr_1.05fr] md:items-center md:py-12 lg:px-8 lg:py-18"
+      class="mx-auto grid w-full max-w-[var(--content-width-wide)] gap-8 px-5 py-10 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-12 lg:px-8 lg:py-16"
     >
       <div class="max-w-3xl">
         <p
@@ -51,16 +48,13 @@ import {
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <ButtonLink href="/research/">Explore research</ButtonLink>
-          <ButtonLink href="/projects/" variant="secondary">
-            View projects
+          <ButtonLink href="/people/" variant="secondary">
+            Meet the laboratory
           </ButtonLink>
+          <ButtonLink href="/projects/" variant="ghost"
+            >View projects</ButtonLink
+          >
         </div>
-        <a
-          href="/people/"
-          class="mt-6 inline-flex text-sm font-semibold text-brand-blue no-underline hover:text-brand-blue-deep"
-        >
-          Meet the laboratory
-        </a>
       </div>
 
       <ResearchVisualPlaceholder
@@ -90,7 +84,7 @@ import {
   </section>
 
   <Section size="wide" aria-labelledby="what-envisage-does">
-    <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+    <div class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
       <SectionHeading
         id="what-envisage-does"
         eyebrow="What EnviSAGE Does"
@@ -98,16 +92,10 @@ import {
       />
       <div class="max-w-3xl">
         <p class="text-xl leading-relaxed text-text">
-          EnviSAGE applies Geomatics Engineering, Earth observation, spatial
-          analytics, and environmental data science to environmental systems.
+          EnviSAGE combines Earth observation, GIS, spatial analytics, modeling,
+          field observations, and environmental data science to understand how
+          environmental systems change across space and time.
         </p>
-        <p class="mt-5 text-base leading-relaxed text-muted">
-          The laboratory connects Earth observation, GIS, spatial analytics,
-          modeling, and environmental data science to support clearer decisions.
-        </p>
-        <ButtonLink href="/about/" variant="ghost" class="mt-6 px-0">
-          About EnviSAGE
-        </ButtonLink>
       </div>
     </div>
   </Section>
@@ -125,7 +113,7 @@ import {
         id="research-themes"
         eyebrow="Research Themes"
         title="Geomatics for environmental systems"
-        text="Five themes connect the laboratory's work across environmental systems, Geomatics approaches, resilience, and decision support."
+        text="Five themes connect the laboratory's work across coastal, ecological, environmental-quality, climate, hazard, urban, and sustainable systems."
       />
       <ButtonLink href="/research/" variant="secondary">
         Explore all research
@@ -144,132 +132,59 @@ import {
     </div>
   </Section>
 
-  <Section size="wide" aria-labelledby="featured-projects">
-    <div
-      class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
-    >
+  <Section size="wide" aria-labelledby="envisage-glance">
+    <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
       <SectionHeading
-        id="featured-projects"
-        eyebrow="Research Impact"
-        title="From spatial evidence to environmental action"
-        text="EnviSAGE turns observations, models, and tools into research outputs that can be reused, communicated, and built upon."
+        id="envisage-glance"
+        eyebrow="EnviSAGE at a Glance"
+        title="Current public research activity"
+        text="A concise view of the laboratory's public themes, people, publications, theses, and alumni."
       />
-      <ButtonLink href="/projects/" variant="secondary">
-        View all projects
-      </ButtonLink>
-    </div>
-    <div class="mt-10 grid gap-5 md:grid-cols-3">
-      {
-        researchHighlights.map((highlight) => (
-          <FeatureCard
-            title={highlight.title}
-            description={highlight.description}
-            href="/projects/"
-            linkText="View projects"
-          />
-        ))
-      }
-    </div>
-  </Section>
-
-  <SpatialExplorerTeaser />
-
-  <Section size="wide" aria-labelledby="open-research">
-    <SectionHeading
-      id="open-research"
-      eyebrow="Open Research Outputs"
-      title="Selected public outputs"
-      text="Publications, student outputs, tools, and datasets make EnviSAGE research easier to find and reuse."
-    />
-    <div class="mt-10 grid gap-5 md:grid-cols-3">
-      {
-        openResearchFeatures.map((feature) => (
-          <FeatureCard
-            title={feature.title}
-            description={feature.description}
-            href={feature.href}
-            linkText={feature.linkText}
-          />
-        ))
-      }
+      <dl class="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+        {
+          homepageMetrics.map((metric) => (
+            <div class="border-t border-border pt-4">
+              <dt class="text-sm font-semibold leading-snug text-muted">
+                {metric.label}
+              </dt>
+              <dd class="mt-2 font-mono text-3xl leading-none font-semibold text-brand-blue-deep">
+                {metric.value}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
     </div>
   </Section>
 
   <Section
     size="wide"
     tone="surface"
-    class="border-y border-border"
-    aria-labelledby="research-output"
-  >
-    <div class="grid gap-8 lg:grid-cols-2">
-      <div>
-        <p
-          class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
-        >
-          Publications
-        </p>
-        <h2
-          id="research-output"
-          class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
-        >
-          Research outputs
-        </h2>
-        <p class="mt-4 text-lg leading-relaxed text-muted">
-          Explore peer-reviewed publications and technical outputs produced by
-          EnviSAGE researchers and collaborators.
-        </p>
-        <ButtonLink href="/publications/" variant="ghost" class="mt-6 px-0">
-          View publications
-        </ButtonLink>
-      </div>
-
-      <div>
-        <p
-          class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
-        >
-          People
-        </p>
-        <h2
-          class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
-        >
-          A research community
-        </h2>
-        <p class="mt-4 text-lg leading-relaxed text-muted">
-          EnviSAGE brings together faculty, researchers, graduate students, and
-          undergraduate researchers working across environmental and geospatial
-          questions.
-        </p>
-        <ButtonLink href="/people/" variant="ghost" class="mt-6 px-0">
-          Meet the team
-        </ButtonLink>
-      </div>
-    </div>
-  </Section>
-
-  <Section
-    size="wide"
-    class="contour-surface"
+    class="border-y border-border py-12 sm:py-14 lg:py-18"
     aria-labelledby="explore-envisage"
   >
-    <div class="max-w-3xl">
-      <p
-        class="text-xs font-semibold tracking-[0.16em] text-brand-green-deep uppercase"
-      >
-        Explore EnviSAGE
-      </p>
-      <h2
+    <div class="grid gap-8 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
+      <SectionHeading
         id="explore-envisage"
-        class="mt-3 text-3xl leading-tight font-semibold text-text sm:text-4xl"
+        eyebrow="Explore EnviSAGE"
+        title="Research, people, outputs, tools, and spatial data"
+        text="Explore the laboratory's research, scholarly outputs, people, tools, and environmental spatial data."
+      />
+      <nav
+        class="grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-4"
+        aria-label="Explore EnviSAGE"
       >
-        Explore research, projects, people, tools, and environmental spatial
-        data.
-      </h2>
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-        <ButtonLink href="/research/">Explore research</ButtonLink>
-        <ButtonLink href="/projects/" variant="secondary">
-          View projects
-        </ButtonLink>
-      </div>
+        {
+          exploreLinks.map((link) => (
+            <a
+              href={link.href}
+              class="min-h-11 border-b border-border py-2 text-sm font-semibold text-brand-blue-deep no-underline hover:text-brand-blue hover:underline"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </nav>
     </div>
   </Section>
 </BaseLayout>

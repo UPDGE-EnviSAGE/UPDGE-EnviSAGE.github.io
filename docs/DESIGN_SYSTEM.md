@@ -129,6 +129,16 @@ Until approved assets are provided, use typographic fallback lockups:
 2. Standard: `EnviSAGE` plus full laboratory name
 3. Institutional: standard lockup plus `Research Laboratory` and `UP Department of Geodetic Engineering`
 
+The supplied institutional marks may be used to communicate EnviSAGE's UP affiliation:
+
+- `public/brand/up.png` links to `https://up.edu.ph/`
+- `public/brand/engineering.png` links to `https://coe.upd.edu.ph/`
+- `public/brand/DGE_svg.svg` links to `https://home.dge.upd.edu.ph/`
+
+Use these source files exactly as supplied. Do not recolor, redraw, crop, distort, convert, filter, or recompress them unnecessarily. Keep their natural proportions with CSS sizing and `object-fit: contain`.
+
+On the About page, the institutional logo row should be clear but subordinate to the EnviSAGE heading and narrative. In the footer, the row should be much smaller and act only as provenance. Linked logo marks need meaningful accessible names; avoid duplicating noisy alt text when adjacent labels or `aria-label` already provide the name.
+
 ## Header And Navigation
 
 The production shell uses a restrained header with a subtle border, the EnviSAGE brand treatment, primary navigation, active states, and a Resources menu. Desktop layouts may use the legacy PNG when it remains legible. Narrower layouts should fall back to a text-based `EnviSAGE` lockup rather than forcing the wide logo into an unreadable space.
@@ -147,6 +157,14 @@ Resources contains Student Research, Research Tools, Data, Spatial Explorer, and
 ## Footer
 
 The footer should remain restrained and institutional. It may include the EnviSAGE name, full laboratory name, UP Department of Geodetic Engineering affiliation, useful navigation groups, and a simple current-year copyright line. Do not invent addresses, phone numbers, social accounts, email addresses, partner logos, or unsupported legal claims.
+
+## Homepage Composition
+
+The public homepage should stay short, active, and easy to scan. Its primary sequence is Hero, What EnviSAGE Does, Research Themes, EnviSAGE at a Glance, and Explore EnviSAGE.
+
+Homepage metrics should be restrained and derived from public site data at build time. Do not hard-code public counts in homepage content or maintain a duplicate statistics file. Avoid animated counters, charts, and large dashboard treatments on the homepage.
+
+The temporary abstract hero visual may remain until approved EnviSAGE research imagery is available. It should be secondary to the EnviSAGE identity and straightforward to replace with an approved research image later.
 
 ## Public Content UX
 

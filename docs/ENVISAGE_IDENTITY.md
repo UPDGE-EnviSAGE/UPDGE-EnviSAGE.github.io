@@ -31,6 +31,14 @@ EnviSAGE should be presented through this affiliation hierarchy:
 
 Public language should clearly acknowledge UP and the UP Department of Geodetic Engineering while keeping EnviSAGE framed as a research laboratory, not as a separate UP unit.
 
+The public site may display the supplied institutional marks for:
+
+- University of the Philippines: https://up.edu.ph/
+- UP College of Engineering: https://coe.upd.edu.ph/
+- UP Department of Geodetic Engineering: https://home.dge.upd.edu.ph/
+
+These marks establish institutional affiliation. They should remain visually subordinate to EnviSAGE and should not be altered, recolored, cropped, distorted, or replaced.
+
 ## Purpose
 
 EnviSAGE connects the technical strength of Geomatics Engineering with environmental research questions. Its work uses Earth observation, GIS, spatial analytics, environmental modeling, geospatial data science, and related spatial technologies to understand environmental systems and support evidence-based decisions.
@@ -52,3 +60,5 @@ EnviSAGE approaches environmental questions through systems thinking and spatial
 ## Public Tone
 
 Public pages should be concise, confident, and accessible. They should explain what EnviSAGE is, what it studies, and how people can explore its work without exposing internal governance, content-model, maintainer, or review terminology.
+
+The homepage should present EnviSAGE through a simplified research-laboratory sequence: Hero, What EnviSAGE Does, Research Themes, EnviSAGE at a Glance, and Explore EnviSAGE. Projects and Spatial Explorer may appear as public destinations while their detailed information is being prepared, but public copy should avoid implementation-phase language.

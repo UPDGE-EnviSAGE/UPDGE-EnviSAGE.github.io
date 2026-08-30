@@ -1,4 +1,5 @@
 ---
+import InstitutionalLogoRow from "./InstitutionalLogoRow.astro";
 import { footerNavigation } from "@utils/navigation";
 
 const year = new Date().getFullYear();
@@ -19,6 +20,9 @@ const year = new Date().getFullYear();
         Research Laboratory<br />
         UP Department of Geodetic Engineering
       </p>
+      <div class="mt-6">
+        <InstitutionalLogoRow variant="footer" />
+      </div>
     </div>
 
     <nav class="grid gap-8 sm:grid-cols-3" aria-label="Footer navigation">

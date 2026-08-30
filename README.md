@@ -12,6 +12,8 @@ The canonical research ecosystem document is the [Research Model](docs/RESEARCH_
 
 The canonical research taxonomy is the [Research Taxonomy](docs/RESEARCH_TAXONOMY.md). It defines the approved five public Research Themes and six cross-cutting Geomatics Approaches.
 
+The public homepage uses a simplified research-laboratory hierarchy: Hero, What EnviSAGE Does, Research Themes, EnviSAGE at a Glance, and Explore EnviSAGE. Homepage metrics are derived at build time from public site content and the approved Research Themes rather than from a duplicate statistics file.
+
 The canonical people architecture document is the [People Model](docs/PEOPLE_MODEL.md). It defines Person records, EnviSAGE membership categories, roles, visibility, and profile-enrichment rules.
 
 The faculty profile maintainer guide is the [Faculty Profile Guide](docs/FACULTY_PROFILE_GUIDE.md). It defines source, biography, photo, Google Scholar, ORCID, and future relationship rules for public faculty pages.
@@ -69,7 +71,7 @@ The Phase 2 work does not redesign the historical EnviSAGE logo, build the final
 
 Phase 5B establishes `/research/` as the conceptual center of the public platform. Phase 6F updates that page to use the approved five Research Themes, six cross-cutting Geomatics Approaches, representative research topics, and the discovery path from taxonomy into research work, projects, theses, outputs, publications, datasets, software, and dashboards.
 
-This phase does not implement project, publication, student research, software, dataset, or dashboard catalogs. Those remain later roadmap work.
+Project, software, dataset, and dashboard catalogs remain later roadmap work. The public publications and student research surfaces now render reviewed public content only.
 
 Student research schema support now uses `students[]` for thesis authorship. BS Geodetic Engineering thesis records support 1 to 2 students, while MS thesis and PhD dissertation records require exactly 1 student.
 
@@ -128,6 +130,20 @@ The repository must be configured in GitHub:
 Settings → Pages → Build and deployment → Source: GitHub Actions
 
 Do not commit `dist/`; GitHub Actions builds and uploads the static site artifact.
+
+## Public Pages And Institutional Identity
+
+Public pages should describe EnviSAGE as a research laboratory, not as a content-management system or database interface. Avoid internal workflow terms on public routes unless they appear in legitimate scholarly titles or abstracts.
+
+The `/projects/` and `/explorer/` routes remain public destinations while project information and interactive spatial products are being prepared. They should not contain fake project records, fake spatial data, or implementation-phase language.
+
+The official institutional links used with supplied marks are:
+
+- University of the Philippines: https://up.edu.ph/
+- UP College of Engineering: https://coe.upd.edu.ph/
+- UP Department of Geodetic Engineering: https://home.dge.upd.edu.ph/
+
+The source logo assets in `public/brand/` must not be recolored, redrawn, cropped, distorted, converted, filtered, or recompressed unnecessarily. Use CSS sizing only and keep EnviSAGE as the dominant public identity.
 
 ## Project Structure
 

@@ -6,42 +6,37 @@ export const researchThemes = approvedResearchThemes.map((theme) => ({
   motif: theme.motif,
 }));
 
-export const researchHighlights = [
+export const exploreLinks = [
   {
-    title: "Environmental observation",
-    description:
-      "Field, satellite, and spatial datasets for environmental change.",
+    label: "Research",
+    href: "/research/",
   },
   {
-    title: "Spatial analysis for decisions",
-    description: "Geospatial evidence for research, planning, and monitoring.",
+    label: "Projects",
+    href: "/projects/",
   },
   {
-    title: "Reusable research workflows",
-    description:
-      "Reproducible methods, code, and data products for environmental research.",
+    label: "Publications",
+    href: "/publications/",
   },
-] as const;
-
-export const openResearchFeatures = [
   {
-    title: "Student Research",
-    description: "Thesis outputs, repositories, notebooks, and maps.",
+    label: "Student Research",
     href: "/student-research/",
-    linkText: "Explore student research",
   },
   {
-    title: "Research Tools",
-    description:
-      "Reusable code, GitHub repositories, tools, and documentation.",
+    label: "People",
+    href: "/people/",
+  },
+  {
+    label: "Research Tools",
     href: "/tools/",
-    linkText: "Explore tools",
   },
   {
-    title: "Data",
-    description:
-      "Dataset metadata, spatial products, access notes, and citations.",
+    label: "Data",
     href: "/data/",
-    linkText: "Explore data",
+  },
+  {
+    label: "Spatial Explorer",
+    href: "/explorer/",
   },
 ] as const;
